@@ -2,6 +2,8 @@ package vista;
 
 import java.awt.BorderLayout;
 import java.awt.EventQueue;
+import java.awt.event.MouseAdapter;
+import java.awt.event.MouseEvent;
 
 import javax.swing.JFrame;
 import javax.swing.JPanel;
@@ -32,6 +34,29 @@ public class Frame extends JFrame {
 		setContentPane(contentPane);
 		
 		getContentPane().add(Ventana2);
+		Ventana2.setVisible(false);
+		getContentPane().add(Ventana3);
+		Ventana3.setVisible(false);
+		getContentPane().add(Ventana4);
+		Ventana4.setVisible(false);
+		
+		Ventana1.setBounds(0, 0, 750, 650);
+		Ventana1.addMouseListener(New MouseAdapter(){
+			@Override
+			public void mouseClicked(MouseEvent arg0) {
+		   		 if(Ventana1.isVisible()){
+		   			Ventana2.setVisible(true);
+		        	Ventana3.setVisible(false);
+		        	Ventana4.setVisible(false);
+		        	Ventana5.setVisible(false);
+		        	Ventana6.setVisible(false);
+		        	Ventana7.setVisible(false);
+		        	Ventana1.setVisible(false);           	 
+		   	 
+		   		 }   	 
+		   		 
+		   	 }
+			});
 		
 	}
 
