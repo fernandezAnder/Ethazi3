@@ -5,11 +5,11 @@ import java.sql.DriverManager;
 import java.sql.SQLException;
 
 public class Conexion {
-	private String  maquina     = "localhost/ethazi";
-    private String  usuario     = "root";
-    private String  clave       = "";
+	private String  maquina;
+    private String  usuario;
+    private String  clave;
     private int puerto          = 3306;
-    private String  servidor    = "127.0.0.1";
+    private String  servidor;
     private static Connection conexion  = null;
  
     //CONSTRUCTOR
@@ -25,7 +25,7 @@ public class Conexion {
     		 
     		      String linea;
     		      while((linea = br.readLine()) != null) {
-    		    	  //System.out.println(linea);
+    		    	  System.out.println(linea);
     		        if(kontagailua==0) {
     		        	this.maquina=linea;}
     		      	if (kontagailua==1) {

@@ -1,0 +1,4 @@
+localhost/ethazi
+root
+
+127.0.0.1
