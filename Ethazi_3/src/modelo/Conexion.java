@@ -1,5 +1,5 @@
 package modelo;
-
+import java.io.*;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.SQLException;
@@ -15,7 +15,41 @@ public class Conexion {
     //CONSTRUCTOR
     //Recibe el nombre de la base de datos
     public Conexion(String baseDatos){
-        this.servidor="jdbc:mysql://"+this.maquina+":"+ this.puerto+"/"+baseDatos;
+        
+
+    		String fichero = "\\Asier\\mvcEthazi3\\bin\\Modelo\\Conexión txt\\Konexioa.txt";
+    		int kontagailua =0;
+    		String server="jdbc:mysql://";
+    		try {
+    		      FileReader fr = new FileReader(fichero);
+    		      BufferedReader br = new BufferedReader(fr);
+    		 
+    		      String linea;
+    		      while((linea = br.readLine()) != null) {
+    		    	  //System.out.println(linea);
+    		        if(kontagailua==0) {
+    		        	this.maquina=linea;}
+    		      	if (kontagailua==1) {
+    		      		this.usuario=linea;}
+    		      	if (kontagailua==2) {
+    		      		this.clave=linea;}
+    		      	kontagailua++;
+    		      	linea="";
+    		      	}
+    		      
+    		      if (kontagailua==3) {
+    		    	  this.servidor="";
+    		    	  
+    		      }
+    		      
+    		 
+    		      fr.close();
+    		    }
+    		    catch(Exception e) {
+    		      System.out.println("Excepcion leyendo fichero "+ fichero + ": " + e);
+    		    }
+    	
+    	this.servidor="jdbc:mysql://"+this.maquina+":"+ this.puerto+"/"+baseDatos;
     	
         //Registrar el driver
         try {
