@@ -34,10 +34,8 @@ public class Conexion {
         }
         System.out.println("Conectado a "+baseDatos);
     }
-    private void syso() {
-		//to-generated method 
+ 
 
-	}
     //Devuelve el objeto Connection que se usará en la clase Controller
     public static Connection getConexion() {
         return conexion;
