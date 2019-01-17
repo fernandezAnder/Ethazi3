@@ -8,6 +8,8 @@ public class BileteMakinaAPP {
 		String baseDatos="ethazi";
 		Conexion base1 = new Conexion(baseDatos);
 		Statement s = DbCliente.datosCliente();
+		
+		System.out.println("hola");
 
 		
 		
