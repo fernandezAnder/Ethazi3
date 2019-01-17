@@ -15,7 +15,7 @@ public class Conexion {
     //CONSTRUCTOR
     //Recibe el nombre de la base de datos
     public Conexion(String baseDatos){
-        
+       
     		String fichero = "\\Asier\\mvcEthazi3\\bin\\Modelo\\Conexión txt\\Konexioa.txt";
     		int kontagailua =0;
     		String server="jdbc:mysql://";
