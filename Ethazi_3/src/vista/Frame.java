@@ -1,168 +1,38 @@
 package vista;
+
 import java.awt.BorderLayout;
 import java.awt.EventQueue;
-import java.awt.GridBagConstraints;
-import java.awt.event.MouseAdapter;
-import java.awt.event.MouseEvent;
 
 import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
-import javax.swing.JScrollPane;
 
 public class Frame extends JFrame {
 
-	GridBagConstraints config = new GridBagConstraints();
-  	 
-  	 
+	private JPanel contentPane;
+
 	static Ventana1 Ventana1 = new  Ventana1();
 	static Ventana2 Ventana2 = new  Ventana2();
-	static Ventana3 Ventana3 = new  Ventana3();    
-	static Ventana4 Ventana4 = new  Ventana4();    
-	static Ventana5 Ventana5 = new  Ventana5(); 
-	static Ventana6 Ventana6 = new  Ventana6(); 
-	static Ventana7 Ventana7 = new  Ventana7(); 
-	 
+	static Ventana3 Ventana3 = new  Ventana3();
+	static Ventana4 Ventana4 = new  Ventana4();
+	static Ventana5 Ventana5 = new  Ventana5();
+	static Ventana6 Ventana6 = new  Ventana6();
+	static Ventana7 Ventana7 = new  Ventana7();
 
-	/**
-	 * Launch the application.
-	 */
-
-	/**
-	 * Create the frame.
-	 */
+	
 	public Frame() {
-		setTitle("Txartel Saltzailea");
-		  this.setSize(770,670);  
-			this.setLocationRelativeTo(null);  
-			this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		setTitle("Makina Saltzailea");
 		
+		this.setSize(770,670);
+		this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		
-		getContentPane().add(Ventana1);
-		Ventana2.setVisible(false);
+		contentPane = new JPanel();
+		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
+		contentPane.setLayout(new BorderLayout(0, 0));
+		setContentPane(contentPane);
+		
 		getContentPane().add(Ventana2);
-		Ventana3.setVisible(false);
-		getContentPane().add(Ventana3);
-		Ventana4.setVisible(false);
-		getContentPane().add(Ventana4);
-		Ventana5.setVisible(false);
-		getContentPane().add(Ventana5);
-		Ventana6.setVisible(false);
-		getContentPane().add(Ventana6);
-		Ventana7.setVisible(false);
-		getContentPane().add(Ventana7);
-		Ventana1.setBounds(0, 0, 750, 650);
-		Ventana1.addMouseListener(new MouseAdapter() {
-	   	 @Override
-	   	 public void mouseClicked(MouseEvent arg0) {
-	   		 if(Ventana1.isVisible()){
-	       	 
-	        	Ventana2.setVisible(true);
-	        	Ventana3.setVisible(false);
-	        	Ventana4.setVisible(false);
-	        	Ventana5.setVisible(false);
-	        	Ventana6.setVisible(false);
-	        	Ventana7.setVisible(false);
-	        	Ventana1.setVisible(false);           	 
-	   	 
-	   		 }   	 
-	   		 
-	   	 }
-		});
 		
-		//JPANEL2
-		Ventana2.setBounds(0, 0, 750, 650);
-		config.gridx=0;
-		config.gridy=1;
-		config.gridwidth=1;
-		config.gridheight=1;
-		config.ipadx=100;
-		config.ipady=10;
-		config.weighty=0.0;
-		config.anchor=GridBagConstraints.CENTER;
-		config.fill= GridBagConstraints.CENTER;
-
-		config.gridx=1;
-		config.gridy=1;
-		config.gridwidth=1;
-		config.gridheight=1;
-		config.ipadx=100;
-		config.ipady=10;
-		config.weighty=0.0;
-		config.anchor=GridBagConstraints.CENTER;
-		config.fill= GridBagConstraints.CENTER;
-	    
-	  //JPANEL3
-		Ventana3.setBounds(0, 0, 750, 650);
-
-		config.gridx=0;
-		config.gridy=1;
-		config.gridwidth=1;
-		config.gridheight=1;
-		config.ipadx=100;
-		config.ipady=10;
-		config.weighty=0.0;
-		config.anchor=GridBagConstraints.CENTER;
-		config.fill= GridBagConstraints.CENTER;
-
-		config.gridx=1;
-		config.gridy=1;
-		config.gridwidth=1;
-		config.gridheight=1;
-		config.ipadx=100;
-		config.ipady=10;
-		config.weighty=0.0;
-		config.anchor=GridBagConstraints.CENTER;
-		config.fill= GridBagConstraints.CENTER;
-		 
-	  //JPANEL4
-		
-		Ventana4.setBounds(0, 0, 750, 650);
-	    
-		config.gridx=0;
-		config.gridy=1;
-		config.gridwidth=1;
-		config.gridheight=1;
-		config.ipadx=100;
-		config.ipady=10;
-		config.weighty=0.0;
-		config.anchor=GridBagConstraints.CENTER;
-		config.fill= GridBagConstraints.CENTER;
-
-		config.gridx=1;
-		config.gridy=1;
-		config.gridwidth=1;
-		config.gridheight=1;
-		config.ipadx=100;
-		config.ipady=10;
-		config.weighty=0.0;
-		config.anchor=GridBagConstraints.CENTER;
-		config.fill= GridBagConstraints.CENTER;
-		
-	    
-	  //JPANEL5
-		
-		Ventana5.setBounds(0, 0, 750, 650);
-
-		config.gridx=0;
-		config.gridy=1;
-		config.gridwidth=1;
-		config.gridheight=1;
-		config.ipadx=100;
-		config.ipady=10;
-		config.weighty=0.0;
-		config.anchor=GridBagConstraints.CENTER;
-		config.fill= GridBagConstraints.CENTER;
-
-		config.gridx=1;
-		config.gridy=1;
-		config.gridwidth=1;
-		config.gridheight=1;
-		config.ipadx=100;
-		config.ipady=10;
-		config.weighty=0.0;
-		config.anchor=GridBagConstraints.CENTER;
-		config.fill= GridBagConstraints.CENTER;
-	    }
 	}
 
+}
