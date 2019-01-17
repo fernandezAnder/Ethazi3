@@ -10,8 +10,6 @@ public class BileteMakinaAPP {
 		Statement s = DbCliente.datosCliente();
 		
 		
-		pablo
-		
 	}
 
 }
