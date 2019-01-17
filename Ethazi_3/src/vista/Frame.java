@@ -41,7 +41,7 @@ public class Frame extends JFrame {
 		Ventana4.setVisible(false);
 		
 		Ventana1.setBounds(0, 0, 750, 650);
-		Ventana1.addMouseListener(New MouseAdapter(){
+		Ventana1.addMouseListener(new MouseAdapter(){
 			@Override
 			public void mouseClicked(MouseEvent arg0) {
 		   		 if(Ventana1.isVisible()){
