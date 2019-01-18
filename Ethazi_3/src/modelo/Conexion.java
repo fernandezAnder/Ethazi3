@@ -37,7 +37,7 @@ public class Conexion {
     		      	}
     		      
     		      if (kontagailua==3) {
-    		    	  this.servidor="";
+    		    	  this.servidor=linea;
     		    	  
     		      }
     		      

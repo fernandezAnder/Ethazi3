@@ -9,7 +9,6 @@ public class BileteMakinaAPP {
 		Conexion base1 = new Conexion(baseDatos);
 		Statement s = Consultas.datosCliente();
 		
-		System.out.println("hola");
 
 		
 		
