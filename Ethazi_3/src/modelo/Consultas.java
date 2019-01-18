@@ -1,6 +1,6 @@
 package modelo;
 import java.sql.*;
-public class DbCliente {
+public class Consultas {
 
 	public static Statement datosCliente() {
 		Statement s=null;
