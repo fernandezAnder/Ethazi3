@@ -25,7 +25,7 @@ public class Ventana2 extends JPanel {
 		setLayout(null);
 		
 		textoAukeratuLinea.setFont(new Font("Comic Sans MS", Font.BOLD, 24));
-		textoAukeratuLinea.setBounds(108, 29, 193, 35);
+		textoAukeratuLinea.setBounds(265, 43, 193, 35);
 		add(textoAukeratuLinea);
 		
 		btnBilbomungia.setFont(new Font("Bookman Old Style", Font.PLAIN, 20));
@@ -33,7 +33,7 @@ public class Ventana2 extends JPanel {
 			public void actionPerformed(ActionEvent arg0) {
 			}
 		});
-		btnBilbomungia.setBounds(125, 97, 176, 27);
+		btnBilbomungia.setBounds(282, 160, 176, 27);
 		add(btnBilbomungia);
 		
 		btnBilbogernika.addActionListener(new ActionListener() {
@@ -41,11 +41,11 @@ public class Ventana2 extends JPanel {
 			}
 		});
 		btnBilbogernika.setFont(new Font("Bookman Old Style", Font.PLAIN, 20));
-		btnBilbogernika.setBounds(125, 146, 176, 27);
+		btnBilbogernika.setBounds(282, 236, 176, 27);
 		add(btnBilbogernika);
 		
 		btnBilbodonosti.setFont(new Font("Bookman Old Style", Font.PLAIN, 20));
-		btnBilbodonosti.setBounds(125, 196, 176, 27);
+		btnBilbodonosti.setBounds(282, 314, 176, 27);
 		add(btnBilbodonosti);
 		btnAtzera.setFont(new Font("Bookman Old Style", Font.PLAIN, 16));
 		
@@ -55,8 +55,9 @@ public class Ventana2 extends JPanel {
 				
 			}
 		});
-		btnAtzera.setBounds(337, 252, 89, 23);
+		btnAtzera.setBounds(557, 493, 89, 23);
 		add(btnAtzera);
 
 	}
 }
+
