@@ -51,6 +51,8 @@ public class Ventana2 extends JPanel {
 		
 		btnAtzera.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
+				
+				
 			}
 		});
 		btnAtzera.setBounds(337, 252, 89, 23);
