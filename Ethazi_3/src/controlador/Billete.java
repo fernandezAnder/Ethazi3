@@ -1,5 +1,5 @@
 package controlador;
-
+import java.sql.*;
 public class Billete {
 
 	private int cod_billete;
