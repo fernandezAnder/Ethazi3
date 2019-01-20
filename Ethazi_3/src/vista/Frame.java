@@ -2,6 +2,7 @@ package vista;
 
 import java.awt.BorderLayout;
 import java.awt.EventQueue;
+import java.awt.GridBagConstraints;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
 
@@ -13,6 +14,11 @@ public class Frame extends JFrame {
 
 	private JPanel contentPane;
 
+	private static final long serialVersionUID = 1L;
+
+
+	GridBagConstraints config = new GridBagConstraints();
+	
 	static Ventana1 Ventana1 = new  Ventana1();
 	static Ventana2 Ventana2 = new  Ventana2();
 	static Ventana3 Ventana3 = new  Ventana3();
@@ -58,6 +64,148 @@ public class Frame extends JFrame {
 		   	 }
 			});
 		
-	}
+		//JPANEL2
+		Ventana2.setBounds(0, 0, 750, 650);
 
-}
+		config.gridx=0;
+		config.gridy=1;
+		config.gridwidth=1;
+		config.gridheight=1;
+		config.ipadx=100;
+		config.ipady=10;
+		config.weighty=0.0;
+		config.anchor=GridBagConstraints.CENTER;
+		config.fill= GridBagConstraints.CENTER;
+
+		config.gridx=1;
+		config.gridy=1;
+		config.gridwidth=1;
+		config.gridheight=1;
+		config.ipadx=100;
+		config.ipady=10;
+		config.weighty=0.0;
+		config.anchor=GridBagConstraints.CENTER;
+		config.fill= GridBagConstraints.CENTER;
+	    
+	  //JPANEL3
+		Ventana3.setBounds(0, 0, 750, 650);
+
+		config.gridx=0;
+		config.gridy=1;
+		config.gridwidth=1;
+		config.gridheight=1;
+		config.ipadx=100;
+		config.ipady=10;
+		config.weighty=0.0;
+		config.anchor=GridBagConstraints.CENTER;
+		config.fill= GridBagConstraints.CENTER;
+
+		config.gridx=1;
+		config.gridy=1;
+		config.gridwidth=1;
+		config.gridheight=1;
+		config.ipadx=100;
+		config.ipady=10;
+		config.weighty=0.0;
+		config.anchor=GridBagConstraints.CENTER;
+		config.fill= GridBagConstraints.CENTER;
+		 
+	  //JPANEL4
+		
+		Ventana4.setBounds(0, 0, 750, 650);
+	    
+		config.gridx=0;
+		config.gridy=1;
+		config.gridwidth=1;
+		config.gridheight=1;
+		config.ipadx=100;
+		config.ipady=10;
+		config.weighty=0.0;
+		config.anchor=GridBagConstraints.CENTER;
+		config.fill= GridBagConstraints.CENTER;
+
+		config.gridx=1;
+		config.gridy=1;
+		config.gridwidth=1;
+		config.gridheight=1;
+		config.ipadx=100;
+		config.ipady=10;
+		config.weighty=0.0;
+		config.anchor=GridBagConstraints.CENTER;
+		config.fill= GridBagConstraints.CENTER;
+		
+	    
+	  //JPANEL5
+		
+		Ventana5.setBounds(0, 0, 750, 650);
+
+		config.gridx=0;
+		config.gridy=1;
+		config.gridwidth=1;
+		config.gridheight=1;
+		config.ipadx=100;
+		config.ipady=10;
+		config.weighty=0.0;
+		config.anchor=GridBagConstraints.CENTER;
+		config.fill= GridBagConstraints.CENTER;
+
+		config.gridx=1;
+		config.gridy=1;
+		config.gridwidth=1;
+		config.gridheight=1;
+		config.ipadx=100;
+		config.ipady=10;
+		config.weighty=0.0;
+		config.anchor=GridBagConstraints.CENTER;
+		config.fill= GridBagConstraints.CENTER;
+		
+		//JPANEL6
+		
+		Ventana6.setBounds(0, 0, 750, 650);
+
+		config.gridx=0;
+		config.gridy=1;
+		config.gridwidth=1;
+		config.gridheight=1;
+		config.ipadx=100;
+		config.ipady=10;
+		config.weighty=0.0;
+		config.anchor=GridBagConstraints.CENTER;
+		config.fill= GridBagConstraints.CENTER;
+
+		config.gridx=1;
+		config.gridy=1;
+		config.gridwidth=1;
+		config.gridheight=1;
+		config.ipadx=100;
+		config.ipady=10;
+		config.weighty=0.0;
+		config.anchor=GridBagConstraints.CENTER;
+		config.fill= GridBagConstraints.CENTER;
+		
+		//JPANEL7
+		
+		Ventana7.setBounds(0, 0, 750, 650);
+
+		config.gridx=0;
+		config.gridy=1;
+		config.gridwidth=1;
+		config.gridheight=1;
+		config.ipadx=100;
+		config.ipady=10;
+		config.weighty=0.0;
+		config.anchor=GridBagConstraints.CENTER;
+		config.fill= GridBagConstraints.CENTER;
+
+		config.gridx=1;
+		config.gridy=1;
+		config.gridwidth=1;
+		config.gridheight=1;
+		config.ipadx=100;
+		config.ipady=10;
+		config.weighty=0.0;
+		config.anchor=GridBagConstraints.CENTER;
+		config.fill= GridBagConstraints.CENTER;
+	    }
+	    
+	}

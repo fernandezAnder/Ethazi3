@@ -50,7 +50,7 @@ public class Conexion {
     		    }
     	
     	this.servidor="jdbc:mysql://"+this.maquina+":"+ this.puerto+"/"+baseDatos;
-    	
+
         //Registrar el driver
         try {
             Class.forName("com.mysql.jdbc.Driver");
