@@ -12,7 +12,6 @@ import javax.swing.border.EmptyBorder;
 
 public class Frame extends JFrame {
 
-	//private JPanel contentPane;
 
 	private static final long serialVersionUID = 1L;
 
@@ -33,18 +32,11 @@ public class Frame extends JFrame {
 		
 		this.setSize(770,670);
 		this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		
-		getContentPane().add(Ventana2);
 		Ventana2.setVisible(false);
-		getContentPane().add(Ventana3);
 		Ventana3.setVisible(false);
-		getContentPane().add(Ventana4);
 		Ventana4.setVisible(false);
-		getContentPane().add(Ventana5);
 		Ventana5.setVisible(false);
-		getContentPane().add(Ventana6);
 		Ventana6.setVisible(false);
-		getContentPane().add(Ventana7);
 		Ventana7.setVisible(false);
 		
 		Ventana1.setBounds(0, 0, 750, 650);
