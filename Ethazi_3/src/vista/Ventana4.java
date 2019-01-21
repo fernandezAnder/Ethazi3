@@ -4,6 +4,9 @@ import javax.swing.JPanel;
 import javax.swing.JLabel;
 import java.awt.Font;
 import javax.swing.JTextPane;
+import javax.swing.JButton;
+import java.awt.event.ActionListener;
+import java.awt.event.ActionEvent;
 
 public class Ventana4 extends JPanel {
 
@@ -14,6 +17,8 @@ public class Ventana4 extends JPanel {
 	JTextPane textPaneBidaia = new JTextPane();
 	JTextPane textPaneData = new JTextPane();
 	JTextPane textPanePrezioa = new JTextPane();
+	private final JButton btnAtzera = new JButton("Atzera");
+	private final JButton btnBalidatu = new JButton("Balidatu");
 	
 	
 	/**
@@ -46,6 +51,22 @@ public class Ventana4 extends JPanel {
 		
 		textPanePrezioa.setBounds(139, 202, 104, 20);
 		add(textPanePrezioa);
+		
+		JButton btnEzeztatu = new JButton("Ezeztatu");
+		btnEzeztatu.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent arg0) {
+				
+				
+			}
+		});
+		btnEzeztatu.setBounds(169, 266, 74, 23);
+		add(btnEzeztatu);
+		btnAtzera.setBounds(253, 266, 74, 23);
+		
+		add(btnAtzera);
+		btnBalidatu.setBounds(350, 266, 74, 23);
+		
+		add(btnBalidatu);
 
 	}
 }
