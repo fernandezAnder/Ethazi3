@@ -1,14 +1,78 @@
 package vista;
 
 import javax.swing.JPanel;
+import javax.swing.JLabel;
+import java.awt.Font;
+import javax.swing.JTextField;
+import javax.swing.JButton;
+import java.awt.event.ActionListener;
+import java.awt.event.ActionEvent;
+import javax.swing.JPasswordField;
 
 public class Ventana6 extends JPanel {
+	private JTextField textField;
+	private JTextField textField_1;
+	private JPasswordField passwordField;
 
 	/**
 	 * Create the panel.
 	 */
 	public Ventana6() {
+		setLayout(null);
+		
+		JLabel lblTxatelaErregistroa = new JLabel("Txatela Erregistroa");
+		lblTxatelaErregistroa.setFont(new Font("Comic Sans MS", Font.BOLD, 17));
+		lblTxatelaErregistroa.setBounds(144, 36, 163, 40);
+		add(lblTxatelaErregistroa);
+		
+		JLabel lblNan = new JLabel("NAN");
+		lblNan.setFont(new Font("Comic Sans MS", Font.BOLD, 17));
+		lblNan.setBounds(83, 120, 62, 40);
+		add(lblNan);
+		
+		textField = new JTextField();
+		textField.setBounds(146, 124, 142, 38);
+		add(textField);
+		textField.setColumns(10);
+		
+		textField_1 = new JTextField();
+		textField_1.setColumns(10);
+		textField_1.setBounds(391, 124, 40, 38);
+		add(textField_1);
+		
+		JLabel lblLetra = new JLabel("Letra");
+		lblLetra.setFont(new Font("Comic Sans MS", Font.BOLD, 17));
+		lblLetra.setBounds(320, 120, 62, 40);
+		add(lblLetra);
+		
+		JLabel lblPasahitza = new JLabel("Pasahitza");
+		lblPasahitza.setFont(new Font("Comic Sans MS", Font.BOLD, 17));
+		lblPasahitza.setBounds(83, 191, 88, 40);
+		add(lblPasahitza);
+		
+		JButton btnEzeztatu = new JButton("Ezeztatu");
+		btnEzeztatu.setFont(new Font("Comic Sans MS", Font.BOLD, 15));
+		btnEzeztatu.setBounds(69, 295, 102, 33);
+		add(btnEzeztatu);
+		
+		JButton btnAtzera = new JButton("Atzera");
+		btnAtzera.setFont(new Font("Comic Sans MS", Font.BOLD, 15));
+		btnAtzera.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent arg0) {
+			}
+		});
+		btnAtzera.setBounds(199, 295, 89, 33);
+		add(btnAtzera);
+		
+		JButton btnBalidatu = new JButton("Balidatu");
+		btnBalidatu.setFont(new Font("Comic Sans MS", Font.BOLD, 15));
+		btnBalidatu.setBounds(333, 295, 89, 33);
+		add(btnBalidatu);
+		
+		passwordField = new JPasswordField();
+		passwordField.setBounds(199, 198, 124, 40);
+		add(passwordField);
 
 	}
-
 }
+
