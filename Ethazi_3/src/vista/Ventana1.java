@@ -13,9 +13,7 @@ public class Ventana1 extends JPanel {
 
 	private static final long serialVersionUID = 1L;
 	Font fuente = new Font("Comic Sans MS", Font.ITALIC, 40);
-    /**
-	 * LEHIOAN SORTUTAKO ELEMENTUAK.
-	 */
+   
     JLabel txtOngiEotirriMaquina = new JLabel("Ongi Etorri");
     JLabel Icono = new JLabel("");
     JLabel lblTxrtelSaltzailera = new JLabel("Txartel Saltzailea");
@@ -25,8 +23,8 @@ public class Ventana1 extends JPanel {
 		   		 @Override
 		   		 public void mouseClicked(MouseEvent e) {
 		   			 
-		   			 //Ventana2 Ejecutar=new Ventana2 ();
-		   			// Ejecutar.setVisible(true);
+		   			 Ventana2 Ejecutar=new Ventana2 ();
+		   			 Ejecutar.setVisible(true);
 		   		 }
 		   	});
         	this.setBackground(SystemColor.control);

@@ -14,17 +14,15 @@ public class Frame extends JFrame {
 
 
 	private static final long serialVersionUID = 1L;
-
-
 	GridBagConstraints config = new GridBagConstraints();
 	
-	static Ventana1 Ventana1 = new  Ventana1();
-	static Ventana2 Ventana2 = new  Ventana2();
-	static Ventana3 Ventana3 = new  Ventana3();
-	static Ventana4 Ventana4 = new  Ventana4();
-	static Ventana5 Ventana5 = new  Ventana5();
-	static Ventana6 Ventana6 = new  Ventana6();
-	static Ventana7 Ventana7 = new  Ventana7();
+	static vista.Ventana1 Ventana1 = new  vista.Ventana1();
+	static vista.Ventana2 Ventana2 = new  vista.Ventana2();
+	static Ventana3 Ventana3 = new  vista.Ventana3();
+	static Ventana4 Ventana4 = new  vista.Ventana4();
+	static Ventana5 Ventana5 = new  vista.Ventana5();
+	static Ventana6 Ventana6 = new  vista.Ventana6();
+	static Ventana7 Ventana7 = new  vista.Ventana7();
 
 	
 	public Frame() {
@@ -32,6 +30,7 @@ public class Frame extends JFrame {
 		
 		this.setSize(770,670);
 		this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		getContentPane().setLayout(null);
 		Ventana2.setVisible(false);
 		Ventana3.setVisible(false);
 		Ventana4.setVisible(false);
