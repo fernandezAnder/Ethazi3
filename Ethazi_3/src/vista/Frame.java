@@ -41,6 +41,8 @@ public class Frame extends JFrame {
 		
 	
 		
+		
+		
 		//JPanel1
 		Ventana1.setVisible(false);
 		Ventana1.setBounds(0, 0, 750, 650);

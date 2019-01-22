@@ -17,13 +17,9 @@ public class BileteMakinaAPP {
 		
 		ArrayList <Autobus> buses= new ArrayList <Autobus>();
 		
-		
-		
 		buses =Consultas.datosAutobus();
 		
-//		for (int i=0;i<buses.size();i++) {
-//			System.out.println(buses.get(i));
-//		}
+		
 
 		
 		
