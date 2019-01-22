@@ -4,6 +4,10 @@ import javax.swing.JPanel;
 import javax.swing.JLabel;
 import java.awt.Font;
 import javax.swing.JTextPane;
+
+import bigarrenErronka.Frame;
+import bigarrenErronka.Metodoak;
+
 import javax.swing.JButton;
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
@@ -19,7 +23,8 @@ public class Ventana4 extends JPanel {
 	JTextPane textPanePrezioa = new JTextPane();
 	private final JButton btnAtzera = new JButton("Atzera");
 	private final JButton btnBalidatu = new JButton("Balidatu");
-	
+	JButton btnEzeztatu = new JButton("Ezeztatu");
+
 	
 	/**
 	 * Create the panel.
@@ -52,10 +57,17 @@ public class Ventana4 extends JPanel {
 		textPanePrezioa.setBounds(139, 202, 104, 20);
 		add(textPanePrezioa);
 		
-		JButton btnEzeztatu = new JButton("Ezeztatu");
 		btnEzeztatu.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
-				
+				// 
+				if(Frame.Ventana3.isVisible()){
+                	Frame.Ventana1.setVisible(true);
+                	Frame.Ventana2.setVisible(false);
+                	Frame.Ventana3.setVisible(false);  
+                	Frame.Ventana4.setVisible(false);
+                	Frame.Ventana5.setVisible(false);
+            	}
+   			 
 				
 			}
 		});

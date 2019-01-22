@@ -13,6 +13,12 @@ import javax.swing.JList;
 
 public class Ventana5 extends JPanel {
 	private JTextField textSartzekoDirua;
+	JLabel lblOrdainketa = new JLabel("Ordainketa :");
+	JLabel lblSartuDirua = new JLabel("Sartu Dirua :");
+	JButton btnOrdaindu = new JButton("Ordaindu");
+	JLabel lblItzuliak = new JLabel("Itzuliak :");
+	JTextArea textAreaItzuliak = new JTextArea();
+	JButton btnAmaitu = new JButton("Amaitu");
 
 	/**
 	 * Create the panel.
@@ -20,12 +26,10 @@ public class Ventana5 extends JPanel {
 	public Ventana5() {
 		setLayout(null);
 		
-		JLabel lblOrdainketa = new JLabel("Ordainketa :");
 		lblOrdainketa.setFont(new Font("Bookman Old Style", Font.PLAIN, 25));
 		lblOrdainketa.setBounds(36, 25, 162, 34);
 		add(lblOrdainketa);
 		
-		JLabel lblSartuDirua = new JLabel("Sartu Dirua :");
 		lblSartuDirua.setFont(new Font("Bookman Old Style", Font.PLAIN, 20));
 		lblSartuDirua.setBounds(36, 70, 136, 34);
 		add(lblSartuDirua);
@@ -36,21 +40,17 @@ public class Ventana5 extends JPanel {
 		add(textSartzekoDirua);
 		textSartzekoDirua.setColumns(10);
 		
-		JButton btnOrdaindu = new JButton("Ordaindu");
 		btnOrdaindu.setFont(new Font("Bookman Old Style", Font.PLAIN, 15));
 		btnOrdaindu.setBounds(316, 76, 110, 24);
 		add(btnOrdaindu);
 		
-		JLabel lblItzuliak = new JLabel("Itzuliak :");
 		lblItzuliak.setFont(new Font("Bookman Old Style", Font.PLAIN, 20));
 		lblItzuliak.setBounds(36, 105, 136, 34);
 		add(lblItzuliak);
 		
-		JTextArea textArea = new JTextArea();
-		textArea.setBounds(36, 139, 390, 109);
-		add(textArea);
+		textAreaItzuliak.setBounds(36, 139, 390, 109);
+		add(textAreaItzuliak);
 		
-		JButton btnAmaitu = new JButton("Amaitu");
 		btnAmaitu.setFont(new Font("Bookman Old Style", Font.PLAIN, 15));
 		btnAmaitu.setBounds(316, 265, 110, 24);
 		add(btnAmaitu);

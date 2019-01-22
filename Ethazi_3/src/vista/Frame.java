@@ -31,13 +31,13 @@ public class Frame extends JFrame {
 		this.setSize(770,670);
 		this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		
-		getContentPane().add(Ventana1);
-		getContentPane().add(Ventana2);
-		getContentPane().add(Ventana3);
-		getContentPane().add(Ventana4);
-		getContentPane().add(Ventana5);
-		getContentPane().add(Ventana6);
-		getContentPane().add(Ventana7);
+//		getContentPane().add(Ventana1);
+//		getContentPane().add(Ventana2);
+//		getContentPane().add(Ventana3);
+//		getContentPane().add(Ventana4);
+//		getContentPane().add(Ventana5);
+//		getContentPane().add(Ventana6);
+//		getContentPane().add(Ventana7);
 		
 	
 		
