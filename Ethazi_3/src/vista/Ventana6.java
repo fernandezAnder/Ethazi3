@@ -4,10 +4,6 @@ import javax.swing.JPanel;
 import javax.swing.JLabel;
 import java.awt.Font;
 import javax.swing.JTextField;
-
-import bigarrenErronka.Frame;
-import bigarrenErronka.Zerrenda;
-
 import javax.swing.JButton;
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;

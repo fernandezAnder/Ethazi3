@@ -38,7 +38,7 @@ public class Ventana1 extends JPanel {
        	 
         	//LABEL ICONO
 
-        	Icono.setIcon(new ImageIcon(Ventana1.class.getResource("/ethazi2/fotos/termibus.png")));
+        	//Icono.setIcon(new ImageIcon(Ventana1.class.getResource("/ethazi2/fotos/termibus.png")));
         	Icono.setBounds(257, 271, 301, 139);
         	add(Icono);
        	 

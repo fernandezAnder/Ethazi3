@@ -38,21 +38,24 @@ public class Consultas {
 		ArrayList <Autobus> arraybus = new ArrayList<Autobus>();
 		PreparedStatement s=null;
 		Connection konexioa=Conexion.getConexion();
-		Autobus bus= new Autobus(0, 0, 0, null);
+		
 		try {
 			
 
 			s = konexioa.prepareStatement("select * from autobus");
 			ResultSet rs = s.executeQuery();
-
+			int cod_bus;
+			int plazas;
+			double consumo;
+			String color;
 			 while (rs.next()) {
-				 	bus.setCod_bus(rs.getInt(1));
-				 	bus.setN_plazas(rs.getInt(2));
-				 	bus.setConsumo_km(rs.getDouble(3));
-				 	bus.setColor(rs.getString(4));
+				 	cod_bus=(rs.getInt(1));
+				 	plazas=(rs.getInt(2));
+				 	consumo=(rs.getDouble(3));
+				 	color=(rs.getString(4));
+				 	Autobus bus= new Autobus(cod_bus, plazas, consumo, color);
 			        arraybus.add(bus);
-//				System.out.println(bus.getCod_bus() + "\t\t " +bus.getN_plazas()+ "\t\t "+ bus.getConsumo_km()+"\t\t "
-//						+bus.getColor());
+//				
 			}
 		}catch(Exception e) {e.getMessage();}
 		return arraybus;

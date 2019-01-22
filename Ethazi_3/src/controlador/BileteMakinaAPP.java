@@ -10,17 +10,17 @@ public class BileteMakinaAPP {
 	public static void main(String[] args) {
 		
 		String baseDatos="ethazi";
-		//Conexion base1 = new Conexion(baseDatos);
+		Conexion base1 = new Conexion(baseDatos);
 		
-//		Frame Ejecutar=new Frame();
-//		Ejecutar.setVisible(true);
+		Frame Ejecutar=new Frame();
+		Ejecutar.setVisible(true);
 		
-		//ArrayList <Autobus> buses= new ArrayList <Autobus>();
+		ArrayList <Autobus> buses= new ArrayList <Autobus>();
 		
-		//buses =Consultas.datosAutobus();
+		buses =Consultas.datosAutobus();
 		System.out.println("Emaitza");
 		for (Autobus a : buses) {
-		    System.out.println(a.getCod_bus());
+		    System.out.println(a.getColor());
 		}
 		
 
