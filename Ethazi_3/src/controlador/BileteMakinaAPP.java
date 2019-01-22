@@ -18,7 +18,7 @@ public class BileteMakinaAPP {
 		ArrayList <Autobus> buses= new ArrayList <Autobus>();
 		
 		buses =Consultas.datosAutobus();
-		System.out.println("Emaitza");
+		
 		for (Autobus a : buses) {
 		    System.out.println(a.getColor());
 		}

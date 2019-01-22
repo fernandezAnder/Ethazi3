@@ -55,7 +55,7 @@ public class Consultas {
 				 	color=(rs.getString(4));
 				 	Autobus bus= new Autobus(cod_bus, plazas, consumo, color);
 			        arraybus.add(bus);
-//				
+				
 			}
 		}catch(Exception e) {e.getMessage();}
 		return arraybus;
