@@ -40,6 +40,7 @@ public class Consultas {
 		Connection konexioa=Conexion.getConexion();
 		Autobus bus= new Autobus(0, 0, 0, null);
 		try {
+			
 
 			s = konexioa.prepareStatement("select * from autobus");
 			ResultSet rs = s.executeQuery();
