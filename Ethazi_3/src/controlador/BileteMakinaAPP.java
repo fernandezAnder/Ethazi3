@@ -25,7 +25,7 @@ public class BileteMakinaAPP {
 		
 		for (Cliente b : clientes) {
 		    System.out.println(b.getDni()+"\t\t"+b.getNombre()+"\t\t"+b.getApellido()+
-		    		"\t\t"+b.getSexo()+"\t\t"+b.getContraseña());
+		    		"\t\t"+b.getFecha_nac()+"\t\t"+b.getContraseña());
 		}
 
 		String pasahitza="abracadabra";
