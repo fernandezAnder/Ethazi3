@@ -56,7 +56,7 @@ public class Ventana3 extends JPanel {
 	   	 
 	   	 //TEXTAREA ZERRENDA
 	   	 geltokiak.setFont(new Font("Franklin Gothic Book", Font.PLAIN, 20));
-	   	 geltokiak.setBorder(new MatteBorder(1, 1, 1, 1, (Color) new Color(0, 0, 0)));
+	   	 geltokiak.setBorder(new MatteBorder(1, 1, 1, 1, new Color(0, 0, 0)));
 	   	 geltokiak.setBounds(222, 110, 505, 90);
 	   	 add(geltokiak);
 	   	 ordaintzeko_dirua.setFocusable(false);
@@ -118,7 +118,8 @@ public class Ventana3 extends JPanel {
 	   	 //JARRAITU BOTOIA
 	   	 jarraitu.setFont(new Font("Comic Sans MS", Font.PLAIN, 18));
 	   	 jarraitu.addActionListener(new ActionListener() {
-	   		 public void actionPerformed(ActionEvent arg0) {
+	   		 @Override
+			public void actionPerformed(ActionEvent arg0) {
 	   			 if(Frame.Ventana3.isVisible()){
 	                	Frame.Ventana4.setVisible(true);
 	                	Frame.Ventana5.setVisible(false);
@@ -139,7 +140,8 @@ public class Ventana3 extends JPanel {
 	   	 //EZEZTATU BOTOIA
 	   	 ezeztatu.setFont(new Font("Comic Sans MS", Font.PLAIN, 18));
 	   	 ezeztatu.addActionListener(new ActionListener() {
-	   		 public void actionPerformed(ActionEvent e) {
+	   		 @Override
+			public void actionPerformed(ActionEvent e) {
 	   			 if(Frame.Ventana3.isVisible()){
 	                	Frame.Ventana1.setVisible(true);
 	                	Frame.Ventana2.setVisible(false);
@@ -158,7 +160,8 @@ public class Ventana3 extends JPanel {
 	   	 
 	   	 //ATZERA BOTOIA
 	   	 atzera.addActionListener(new ActionListener() {
-	   		 public void actionPerformed(ActionEvent arg0) {
+	   		 @Override
+			public void actionPerformed(ActionEvent arg0) {
 	   			 if(Frame.Ventana3.isVisible()){
 	                	Frame.Ventana1.setVisible(false);
 	                	Frame.Ventana2.setVisible(true);

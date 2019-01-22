@@ -3,7 +3,6 @@ package vista;
 import javax.swing.JPanel;
 import javax.swing.JLabel;
 import java.awt.Font;
-import javax.swing.JSlider;
 
 public class Ventana7 extends JPanel {
 	JLabel lblEskerrikAsko = new JLabel("Eskerrik asko erosteagatik ");

@@ -1,14 +1,10 @@
 package vista;
 
-import java.awt.BorderLayout;
-import java.awt.EventQueue;
 import java.awt.GridBagConstraints;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
 
 import javax.swing.JFrame;
-import javax.swing.JPanel;
-import javax.swing.border.EmptyBorder;
 
 public class Frame extends JFrame {
 
@@ -16,9 +12,9 @@ public class Frame extends JFrame {
 	private static final long serialVersionUID = 1L;
 	GridBagConstraints config = new GridBagConstraints();
 	
-	static Ventana1 Ventana1 = new  Ventana1();
-	static Ventana2 Ventana2 = new  Ventana2();
-	static Ventana3 Ventana3 = new  Ventana3();
+	public static Ventana1 Ventana1 = new  Ventana1();
+	public static Ventana2 Ventana2 = new  Ventana2();
+	public static Ventana3 Ventana3 = new  Ventana3();
 	static Ventana4 Ventana4 = new  Ventana4();
 	static Ventana5 Ventana5 = new  Ventana5();
 	static Ventana6 Ventana6 = new  Ventana6();
@@ -44,7 +40,7 @@ public class Frame extends JFrame {
 		
 		
 		//JPanel1
-		Ventana1.setVisible(false);
+		Ventana1.setVisible(true);
 		Ventana1.setBounds(0, 0, 750, 650);
 		Ventana1.addMouseListener(new MouseAdapter(){
 			@Override
@@ -64,9 +60,9 @@ public class Frame extends JFrame {
 			});
 		
 		//JPANEL2
-		Ventana2.setVisible(true);
-		Ventana2.setBounds(0, 0, 750, 650);
-
+		Ventana2.setVisible(false);
+		Ventana2.setBounds(0, 0, 750, 650);	
+	
 		config.gridx=0;
 		config.gridy=1;
 		config.gridwidth=1;

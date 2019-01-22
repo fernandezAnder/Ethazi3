@@ -5,7 +5,6 @@ import java.awt.SystemColor;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
 
-import javax.swing.ImageIcon;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
 
@@ -25,6 +24,8 @@ public class Ventana1 extends JPanel {
 		   			 
 		   			 Ventana2 Ejecutar=new Ventana2 ();
 		   			 Ejecutar.setVisible(true);
+		   			 
+		   			 
 		   		 }
 		   	});
         	this.setBackground(SystemColor.control);

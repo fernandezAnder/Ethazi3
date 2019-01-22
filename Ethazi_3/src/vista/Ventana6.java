@@ -59,6 +59,7 @@ public class Ventana6 extends JPanel {
 		
 		btnAtzera.setFont(new Font("Comic Sans MS", Font.BOLD, 15));
 		btnAtzera.addActionListener(new ActionListener() {
+			@Override
 			public void actionPerformed(ActionEvent arg0) {
 				if(Frame.Ventana3.isVisible()){
                 	Frame.Ventana1.setVisible(false);

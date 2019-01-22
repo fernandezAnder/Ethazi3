@@ -1,36 +1,39 @@
 package modelo;
 import java.sql.*;
 import java.util.ArrayList;
-import java.util.HashMap;
+
 
 import controlador.*;
 public class Consultas {
 
 	public static ArrayList <Cliente> datosCliente() {
 
-		ArrayList <Cliente> arrayClientes = new ArrayList<Cliente>();
-		Statement s=null;
+		ArrayList <Cliente> arraycliente = new ArrayList<Cliente>();
+		PreparedStatement s=null;
 		Connection konexioa=Conexion.getConexion();
-		Cliente cliente= new Cliente(null, null, null, null, null, null);
+		
 		try {
-
-			s = konexioa.createStatement();
-			ResultSet rs = s.executeQuery("select * from cliente");
-
+			s = konexioa.prepareStatement("select * from cliente");
+			ResultSet rs = s.executeQuery();
+			String dni;
+			String nombre;
+			String apellidos;
+			Date fecha_nac;
+			String sexo;
+			String contraseña;
 			 while (rs.next()) {
-//			        cliente.setApellido(rs.getString(columnIndex));
-//			        cliente.setContraseña(contraseña);
-//			        cliente.setDni();
-//			        cliente.setFecha_nac(fecha_nac);
-//			        cliente.setNombre(nombre);
-//			        cliente.setSexo(sexo);
-//			        arrayClientes.add(cliente);
-				//System.out.println(rs.getString(1) + "\t\t " + rs.getString(2));
+				 	dni=(rs.getString(1));
+				 	nombre=(rs.getString(2));
+				 	apellidos=(rs.getString(3));
+				 	fecha_nac=(rs.getDate(4));
+				 	sexo=(rs.getString(5));
+				 	contraseña=(rs.getString(6));
+				 	Cliente cliente= new Cliente(dni, nombre, apellidos, fecha_nac, sexo, contraseña);
+			        arraycliente.add(cliente);
+				
 			}
 		}catch(Exception e) {e.getMessage();}
-
-
-		return arrayClientes;
+		return arraycliente;
 	}
 
 	public static ArrayList <Autobus> datosAutobus() {
@@ -40,8 +43,6 @@ public class Consultas {
 		Connection konexioa=Conexion.getConexion();
 		
 		try {
-			
-
 			s = konexioa.prepareStatement("select * from autobus");
 			ResultSet rs = s.executeQuery();
 			int cod_bus;

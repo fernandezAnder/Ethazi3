@@ -54,6 +54,7 @@ public class Ventana4 extends JPanel {
 		add(textPanePrezioa);
 		
 		btnEzeztatu.addActionListener(new ActionListener() {
+			@Override
 			public void actionPerformed(ActionEvent arg0) {
 				// 
 				if(Frame.Ventana3.isVisible()){
