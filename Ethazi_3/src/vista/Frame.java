@@ -16,9 +16,9 @@ public class Frame extends JFrame {
 	private static final long serialVersionUID = 1L;
 	GridBagConstraints config = new GridBagConstraints();
 	
-	//static Ventana1 Ventana1 = new  Ventana1();
+	static Ventana1 Ventana1 = new  Ventana1();
 	static Ventana2 Ventana2 = new  Ventana2();
-	//static Ventana3 Ventana3 = new  Ventana3();
+	static Ventana3 Ventana3 = new  Ventana3();
 	static Ventana4 Ventana4 = new  Ventana4();
 	static Ventana5 Ventana5 = new  Ventana5();
 	static Ventana6 Ventana6 = new  Ventana6();
