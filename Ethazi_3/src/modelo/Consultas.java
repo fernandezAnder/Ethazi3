@@ -45,42 +45,17 @@ public class Consultas {
 			ResultSet rs = s.executeQuery();
 
 			 while (rs.next()) {
-				 	bus.setCod_bus(rs.getInt("Cod_bus"));
+				 	bus.setCod_bus(rs.getInt(1));
 				 	bus.setN_plazas(rs.getInt(2));
 				 	bus.setConsumo_km(rs.getDouble(3));
 				 	bus.setColor(rs.getString(4));
 			        arraybus.add(bus);
-				System.out.println(bus.getCod_bus() + "\t\t " +bus.getN_plazas()+ "\t\t "+ bus.getConsumo_km()+"\t\t "
-						+bus.getColor());
+//				System.out.println(bus.getCod_bus() + "\t\t " +bus.getN_plazas()+ "\t\t "+ bus.getConsumo_km()+"\t\t "
+//						+bus.getColor());
 			}
 		}catch(Exception e) {e.getMessage();}
-
-
 		return arraybus;
 	}
-//	public void resultSetToArrayList(ResultSet rsArreglo) { 
-//		try 
-//		{ 
-//			ResultSetMetaData rmdInstrucciones = rsArreglo.getMetaData(); 
-//			int columns = rmdInstrucciones.getColumnCount(); 
-//			ArrayList lstParticipant= new ArrayList(); 
-//
-//			while (rsArreglo.next()) { 
-//				HashMap row = new HashMap(); 
-//				lstParticipant.add(row); 
-//
-//				for(int i=1; i<=columns; i++){ 
-//
-//				} 
-//			} 
-//
-//
-//		}catch(Exception e) 
-//		{ 
-//
-//
-//		} 
-//	} 
 }
 
 
