@@ -8,11 +8,13 @@ import javax.swing.JButton;
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
 import javax.swing.JPasswordField;
+import java.awt.event.MouseAdapter;
+import java.awt.event.MouseEvent;
 
 public class Ventana6 extends JPanel {
-	private JTextField textField;
-	private JTextField textField_1;
-	private JPasswordField passwordField;
+	private JTextField textNAN;
+	private JTextField textLetra;
+	private JPasswordField Pasahitza;
 	JLabel lblTxatelaErregistroa = new JLabel("Txatela Erregistroa");
 	JLabel lblNan = new JLabel("NAN");
 	JLabel lblLetra = new JLabel("Letra");
@@ -27,65 +29,106 @@ public class Ventana6 extends JPanel {
 	public Ventana6() {
 		setLayout(null);
 		
-		lblTxatelaErregistroa.setFont(new Font("Comic Sans MS", Font.BOLD, 17));
-		lblTxatelaErregistroa.setBounds(144, 36, 163, 40);
+		//LABEL TXARTEL ERREGISTROA
+		lblTxatelaErregistroa.setFont(new Font("Comic Sans MS", Font.BOLD, 26));
+		lblTxatelaErregistroa.setBounds(206, 25, 274, 54);
 		add(lblTxatelaErregistroa);
 		
-		lblNan.setFont(new Font("Comic Sans MS", Font.BOLD, 17));
-		lblNan.setBounds(83, 120, 62, 40);
+		//LABEL NAN
+		lblNan.setFont(new Font("Comic Sans MS", Font.BOLD, 20));
+		lblNan.setBounds(117, 156, 62, 40);
 		add(lblNan);
 		
-		textField = new JTextField();
-		textField.setBounds(146, 124, 142, 38);
-		add(textField);
-		textField.setColumns(10);
+		//TEXT NAN
+		textNAN = new JTextField();
+		textNAN.setBounds(223, 160, 142, 40);
+		add(textNAN);
+		textNAN.setColumns(10);
 		
-		textField_1 = new JTextField();
-		textField_1.setColumns(10);
-		textField_1.setBounds(391, 124, 40, 38);
-		add(textField_1);
+		//TEXT LETRA
+		textLetra = new JTextField();
+		textLetra.setColumns(10);
+		textLetra.setBounds(525, 161, 40, 38);
+		add(textLetra);
 		
-		lblLetra.setFont(new Font("Comic Sans MS", Font.BOLD, 17));
-		lblLetra.setBounds(320, 120, 62, 40);
+		//LETRA LABEL
+		lblLetra.setFont(new Font("Comic Sans MS", Font.BOLD, 20));
+		lblLetra.setBounds(430, 159, 62, 40);
 		add(lblLetra);
 		
-		lblPasahitza.setFont(new Font("Comic Sans MS", Font.BOLD, 17));
-		lblPasahitza.setBounds(83, 191, 88, 40);
+		//LABEL PASAHITZA
+		lblPasahitza.setFont(new Font("Comic Sans MS", Font.BOLD, 20));
+		lblPasahitza.setBounds(182, 280, 120, 54);
 		add(lblPasahitza);
 		
+		//EZEZTATU BOTOIA
+		btnEzeztatu.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				if(Frame.Ventana6.isVisible()){
+                	Frame.Ventana1.setVisible(true);
+                	Frame.Ventana2.setVisible(false);
+                	Frame.Ventana3.setVisible(false);  
+                	Frame.Ventana4.setVisible(false);
+                	Frame.Ventana5.setVisible(false);
+                	Frame.Ventana6.setVisible(false);
+                	Frame.Ventana7.setVisible(false);
+            	}
+				
+			}
+		});
+		
 		btnEzeztatu.setFont(new Font("Comic Sans MS", Font.BOLD, 15));
-		btnEzeztatu.setBounds(69, 295, 102, 33);
+		btnEzeztatu.setBounds(89, 464, 114, 40);
 		add(btnEzeztatu);
 		
+		//ATZERA BOTOIA
 		btnAtzera.setFont(new Font("Comic Sans MS", Font.BOLD, 15));
 		btnAtzera.addActionListener(new ActionListener() {
 			@Override
 			public void actionPerformed(ActionEvent arg0) {
-				if(Frame.Ventana3.isVisible()){
+				if(Frame.Ventana6.isVisible()){
+                	Frame.Ventana5.setVisible(true);
                 	Frame.Ventana1.setVisible(false);
-                	Frame.Ventana2.setVisible(true);
+                	Frame.Ventana2.setVisible(false);
+                	Frame.Ventana3.setVisible(false);  
+                	Frame.Ventana4.setVisible(false);
+                	Frame.Ventana6.setVisible(false);
+                	Frame.Ventana7.setVisible(false);
+            	}
+	
+			}
+		});
+		btnAtzera.setBounds(294, 463, 114, 42);
+		add(btnAtzera);
+		btnBalidatu.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+			}
+		});
+		
+		//BALIDATU BOTOIA
+		btnBalidatu.addMouseListener(new MouseAdapter() {
+			@Override
+			public void mouseClicked(MouseEvent e) {
+				if(Frame.Ventana6.isVisible()){
+                	Frame.Ventana7.setVisible(true);
+                	Frame.Ventana1.setVisible(false);
+                	Frame.Ventana2.setVisible(false);
                 	Frame.Ventana3.setVisible(false);  
                 	Frame.Ventana4.setVisible(false);
                 	Frame.Ventana5.setVisible(false);
+                	Frame.Ventana6.setVisible(false);
             	}
-
-
-				
-				
-				
-				
 			}
 		});
-		btnAtzera.setBounds(199, 295, 89, 33);
-		add(btnAtzera);
 		
 		btnBalidatu.setFont(new Font("Comic Sans MS", Font.BOLD, 15));
-		btnBalidatu.setBounds(333, 295, 89, 33);
+		btnBalidatu.setBounds(497, 464, 120, 40);
 		add(btnBalidatu);
 		
-		passwordField = new JPasswordField();
-		passwordField.setBounds(199, 198, 124, 40);
-		add(passwordField);
+		//PASAHITZA TEXTUA
+		Pasahitza = new JPasswordField();
+		Pasahitza.setBounds(338, 290, 142, 43);
+		add(Pasahitza);
 
 	}
 }

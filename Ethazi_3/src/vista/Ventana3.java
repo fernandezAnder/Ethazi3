@@ -13,10 +13,16 @@ import javax.swing.JPanel;
 import javax.swing.JTextArea;
 import javax.swing.JTextPane;
 import javax.swing.border.MatteBorder;
+import javax.swing.event.ChangeEvent;
+import javax.swing.table.DefaultTableModel;
 import javax.swing.JSpinner;
 import javax.swing.SpinnerListModel;
 import com.toedter.calendar.JDateChooser;
 import javax.swing.JCheckBox;
+import javax.swing.JTable;
+import javax.swing.border.BevelBorder;
+import javax.swing.ListSelectionModel;
+import javax.swing.JSeparator;
 
 public class Ventana3 extends JPanel {
 
@@ -25,9 +31,6 @@ public class Ventana3 extends JPanel {
 		 * LEHIOAN SORTUTAKO ELEMENTUAK.
 		 */
 		JLabel lblGeltokiak = new JLabel("GELTOKIAK");
-		JTextArea geltokiak = new JTextArea();
-		JTextPane ordaintzeko_dirua = new JTextPane();
-		JLabel label = new JLabel("\u20AC");
 		JButton jarraitu = new JButton("Jarraitu");
 		JButton ezeztatu = new JButton("Ezeztatu");
 		JButton atzera = new JButton("Atzera");
@@ -36,43 +39,24 @@ public class Ventana3 extends JPanel {
 	   	JSpinner jatorri_geltokia = new JSpinner();
 	   	JLabel lblHelmugaGeltokia = new JLabel("Helmuga Geltokia");
 	    JSpinner spinner = new JSpinner();
-	  	JLabel lblData = new JLabel("Data");
-	   	JDateChooser dateChooser = new JDateChooser();
 	   	JLabel lblJoanEtaEtorri = new JLabel("Joan eta etorri?");
-	    JCheckBox chckbxNewCheckBox = new JCheckBox("Bai");
+	    JCheckBox chckbxJoanEtorri = new JCheckBox("Bai");
+	    JDateChooser dateChooser = new JDateChooser();
+		JLabel lblItzuliData = new JLabel("Itzuli data");
+		private final JTable table = new JTable();
+	    
 
 		
 	    public Ventana3() {
+	    	setVerifyInputWhenFocusTarget(false);
 	     setBackground(SystemColor.control);
 	   	 setLayout(null);
 	   	 lblGeltokiak.setRequestFocusEnabled(false);
 	   	 
 	   	 //LABEL ZERRENDA
 	   	 lblGeltokiak.setFont(new Font("Comic Sans MS", Font.BOLD, 25));
-	   	 lblGeltokiak.setBounds(66, 131, 153, 49);
+	   	 lblGeltokiak.setBounds(464, 86, 153, 49);
 	   	 add(lblGeltokiak);
-	   	 geltokiak.setLineWrap(true);
-	   	 geltokiak.setRows(10);
-	   	 
-	   	 //TEXTAREA ZERRENDA
-	   	 geltokiak.setFont(new Font("Franklin Gothic Book", Font.PLAIN, 20));
-	   	 geltokiak.setBorder(new MatteBorder(1, 1, 1, 1, new Color(0, 0, 0)));
-	   	 geltokiak.setBounds(222, 110, 505, 90);
-	   	 add(geltokiak);
-	   	 ordaintzeko_dirua.setFocusable(false);
-	   	 
-	   	 //TEXTPANE ORDAINTZEKO DIRUA
-	   	 ordaintzeko_dirua.setComponentOrientation(ComponentOrientation.RIGHT_TO_LEFT);
-	   	 ordaintzeko_dirua.setFont(new Font("Comic Sans MS", Font.BOLD, 20));
-	   	 ordaintzeko_dirua.setBounds(331, 395, 76, 32);
-	   	 add(ordaintzeko_dirua);
-	   	// String dirua=String.valueOf(Zerrenda.preziototala);
-	   	 //ordaintzeko_dirua.setText(dirua);
-	   	 
-	   	 //LABEL EURO
-	   	 label.setFont(new Font("Comic Sans MS", Font.BOLD, 20));
-	   	 label.setBounds(424, 397, 24, 28);
-	   	 add(label);
 	   	 
 	   	
 	   	 
@@ -83,38 +67,61 @@ public class Ventana3 extends JPanel {
 	   	 
 	   	 lblJatorriGeltokia.setRequestFocusEnabled(false);
 	   	 lblJatorriGeltokia.setFont(new Font("Comic Sans MS", Font.BOLD, 25));
-	   	 lblJatorriGeltokia.setBounds(66, 247, 201, 49);
+	   	 lblJatorriGeltokia.setBounds(57, 162, 201, 49);
 	   	 add(lblJatorriGeltokia);
 	   	 
 	   	 jatorri_geltokia.setModel(new SpinnerListModel(new String[] {"kaixo", "egunon", "zelan"}));
-	   	 jatorri_geltokia.setBounds(277, 259, 57, 32);
+	   	 jatorri_geltokia.setBounds(268, 176, 57, 32);
 	   	 add(jatorri_geltokia);
 	   	 
 	   	 lblHelmugaGeltokia.setRequestFocusEnabled(false);
 	   	 lblHelmugaGeltokia.setFont(new Font("Comic Sans MS", Font.BOLD, 25));
-	   	 lblHelmugaGeltokia.setBounds(66, 296, 226, 49);
+	   	 lblHelmugaGeltokia.setBounds(57, 224, 226, 49);
 	   	 add(lblHelmugaGeltokia);
 	   	 
 	   	 spinner.setModel(new SpinnerListModel(new String[] {"zelan ", "ondo ", "ondo", "bai"}));
-	   	 spinner.setBounds(294, 302, 57, 32);
+	   	 spinner.setBounds(293, 238, 57, 32);
 	   	 add(spinner);
-	   	 
-	   	 lblData.setRequestFocusEnabled(false);
-	   	 lblData.setFont(new Font("Comic Sans MS", Font.BOLD, 25));
-	   	 lblData.setBounds(66, 356, 76, 49);
-	   	 add(lblData);
-	   	 
-	   	 dateChooser.setBounds(177, 371, 95, 20);
-	   	 add(dateChooser);
 	   	 
 	   	 lblJoanEtaEtorri.setRequestFocusEnabled(false);
 	   	 lblJoanEtaEtorri.setFont(new Font("Comic Sans MS", Font.BOLD, 25));
-	   	 lblJoanEtaEtorri.setBounds(424, 247, 216, 49);
+	   	 lblJoanEtaEtorri.setBounds(67, 318, 216, 49);
 	   	 add(lblJoanEtaEtorri);
 	   	 
-	   	 chckbxNewCheckBox.setBounds(646, 259, 97, 30);
-	   	 add(chckbxNewCheckBox);
+	   	 chckbxJoanEtorri.setBounds(293, 333, 97, 30); 
+	   	 add(chckbxJoanEtorri);
+	   	 dateChooser.setVerifyInputWhenFocusTarget(false);
+	   	 dateChooser.setVisible(false);
+	    
 	   	 
+	   	 dateChooser.setDateFormatString("dd-MM-yyyy");
+	   	 dateChooser.getCalendarButton().addActionListener(new ActionListener() {
+	   	 	public void actionPerformed(ActionEvent arg0) {
+	   	 	}
+	   	 });
+	   	 dateChooser.setBounds(230, 397, 95, 20);
+	   	 add(dateChooser);
+	   	 
+	   	 
+	   	 lblItzuliData.setRequestFocusEnabled(false);
+	   	 lblItzuliData.setFont(new Font("Comic Sans MS", Font.BOLD, 20));
+	   	 lblItzuliData.setBounds(67, 378, 175, 49);
+	   	 add(lblItzuliData);
+	   	 
+	   	 
+	 	chckbxJoanEtorri.addActionListener(new ActionListener() {
+	 	    public void actionPerformed(ActionEvent e) {
+	             if (chckbxJoanEtorri.isSelected()==false) {
+	                 lblItzuliData.setVisible(false);
+	                 dateChooser.setVisible(false);
+	             }else {
+	            	 lblItzuliData.setVisible(true);
+	                 dateChooser.setVisible(true);
+	             }
+	
+	 	    }
+	   	});
+	   
 	   	 //JARRAITU BOTOIA
 	   	 jarraitu.setFont(new Font("Comic Sans MS", Font.PLAIN, 18));
 	   	 jarraitu.addActionListener(new ActionListener() {
@@ -128,9 +135,6 @@ public class Ventana3 extends JPanel {
 	                	Frame.Ventana3.setVisible(false);           	 
 	             }
 
-
-	   			 
-	   			 
 	   			 
 	   		 }
 	   	 });
@@ -150,9 +154,6 @@ public class Ventana3 extends JPanel {
 	                	Frame.Ventana5.setVisible(false);
 	            	}
 
-
-	   			 
-	   			 
 	   		 }
 	   	 });
 	   	 ezeztatu.setBounds(89, 464, 114, 40);
@@ -169,16 +170,18 @@ public class Ventana3 extends JPanel {
 	                	Frame.Ventana4.setVisible(false);
 	                	Frame.Ventana5.setVisible(false);
 	            	}
-	   			
-	   			 
-	   			 
-	   			 
+	   		
 	   			 
 	   		 }
 	   	 });
 	   	 atzera.setFont(new Font("Comic Sans MS", Font.PLAIN, 18));
 	   	 atzera.setBounds(294, 463, 114, 42);
 	   	 add(atzera);
-
-	    }
+	   	 table.setBorder(new MatteBorder(1, 1, 1, 1, (Color) new Color(0, 0, 0)));
+	   	 table.setBounds(406, 196, 284, 221);
+	   	 
+	   	 add(table);
+	   	 
+	  
 	}
+}
