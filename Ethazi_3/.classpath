@@ -2,7 +2,7 @@
 <classpath>
 	<classpathentry exported="true" kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER/org.eclipse.jdt.internal.debug.ui.launcher.StandardVMType/JavaSE-1.8"/>
 	<classpathentry kind="src" path="src"/>
-	<classpathentry exported="true" kind="lib" path="C:/Users/ander/Desktop/base datos/mysql-connector-java-5.1.47/mysql-connector-java-5.1.47/mysql-connector-java-5.1.47-bin.jar"/>
-	<classpathentry exported="true" kind="lib" path="C:/Users/ander/Desktop/base datos/mysql-connector-java-5.1.47/mysql-connector-java-5.1.47/jcalendar-1.4.jar"/>
+	<classpathentry exported="true" kind="lib" path="C:/Users/mañana/Desktop/mysql-connector-java-5.1.47/mysql-connector-java-5.1.47/mysql-connector-java-5.1.47-bin.jar"/>
+	<classpathentry exported="true" kind="lib" path="G:/Descargas2/jcalendar-1.4.jar"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>
