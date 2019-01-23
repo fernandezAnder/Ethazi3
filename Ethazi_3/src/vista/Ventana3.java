@@ -6,6 +6,7 @@ import java.awt.Font;
 import java.awt.SystemColor;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.util.ArrayList;
 
 import javax.swing.JButton;
 import javax.swing.JLabel;
@@ -17,8 +18,8 @@ import javax.swing.JSpinner;
 import javax.swing.SpinnerListModel;
 import com.toedter.calendar.JDateChooser;
 import javax.swing.JCheckBox;
-
-public class Ventana3 extends JPanel {
+import controlador.*
+;public class Ventana3 extends JPanel {
 
 		private static final long serialVersionUID = 1L;
 		/**
@@ -41,6 +42,7 @@ public class Ventana3 extends JPanel {
 	   	JLabel lblJoanEtaEtorri = new JLabel("Joan eta etorri?");
 	    JCheckBox chckbxNewCheckBox = new JCheckBox("Bai");
 
+	    ArrayList <Parada> paradas= new ArrayList <Parada>();
 		
 	    public Ventana3() {
 	     setBackground(SystemColor.control);

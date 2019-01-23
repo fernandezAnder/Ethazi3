@@ -18,9 +18,7 @@ public class Ventana2 extends JPanel {
 	JButton btnAtzera = new JButton("Atzera");
 
 
-	/**
-	 * Create the panel.
-	 */
+	
 	public Ventana2() {
 		setLayout(null);
 
@@ -40,7 +38,7 @@ public class Ventana2 extends JPanel {
                 	Frame.Ventana2.setVisible(false);    
                 	Frame.Ventana6.setVisible(false);
                 	Frame.Ventana7.setVisible(false);
-            }	
+				}	
 				
 			}
 		});
