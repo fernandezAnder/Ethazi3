@@ -6,6 +6,9 @@ import javax.swing.JLabel;
 import java.awt.ComponentOrientation;
 import java.awt.Font;
 import javax.swing.JTextPane;
+
+import modelo.Consultas;
+
 import javax.swing.JButton;
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
@@ -125,6 +128,7 @@ public class Ventana4 extends JPanel {
                 	Frame.Ventana6.setVisible(false);
                 	Frame.Ventana7.setVisible(false);
             	}
+				
 				
 			}
 		});

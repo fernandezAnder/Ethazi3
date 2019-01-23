@@ -22,18 +22,7 @@ public class BileteMakinaAPP {
 		//clientes=Consultas.datosCliente();
 		String linea="L1";
 		paradas=Consultas.mostrarParadas(linea);		
-		for (Autobus a : buses) {
-		    System.out.println(a.getColor());
-		}
 		
-		for (Cliente b : clientes) {
-		    System.out.println(b.getDni()+"\t\t"+b.getNombre()+"\t\t"+b.getApellido()+
-		    		"\t\t"+b.getFecha_nac()+"\t\t"+b.getContraseña());
-		}
-
-		for (Parada c : paradas) {
-		    System.out.println(c.getNombre());
-		}
 		
 		
 		
