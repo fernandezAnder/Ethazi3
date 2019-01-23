@@ -62,7 +62,7 @@ public class Consultas {
 		return arraybus;
 	}
 
-	public static ArrayList <Parada> datosParadas(String linea){
+	public static ArrayList <Parada> mostrarParadas(String linea){
 		ArrayList <Parada> arrayparada = new ArrayList<Parada>();
 		PreparedStatement s=null;
 		Connection konexioa=Conexion.getConexion();
@@ -70,7 +70,7 @@ public class Consultas {
 		linea="L2";
 		try {
 			
-			s = konexioa.prepareStatement("SELECT parada.Nombre FROM parada, linea_parada,linea WHERE parada.Cod_Parada=linea_parada.Cod_Parada and linea.Cod_Linea=linea_parada.Cod_Linea AND linea.Cod_Linea like"+"'" +linea+"'");
+			s = konexioa.prepareStatement("SELECT * FROM parada, linea_parada,linea WHERE parada.Cod_Parada=linea_parada.Cod_Parada and linea.Cod_Linea=linea_parada.Cod_Linea AND linea.Cod_Linea like"+"'" +linea+"'");
 			ResultSet rs = s.executeQuery();
 			
 			int paradanum;
@@ -80,14 +80,14 @@ public class Consultas {
 			double longitud;
 			 while (rs.next()) {
 				 System.out.println(rs.getString(1));
-//				 	paradanum=(rs.getInt(1));
-//				 	nombre=(rs.getString(2));
-//				 	calle=(rs.getString(3));
-//				 	latitud=(rs.getDouble(4));
-//				 	longitud=(rs.getDouble(5));
-//				 	Parada parada= new Parada(paradanum, nombre, calle, longitud, latitud);
-//			        arrayparada.add(parada);
-//			        System.out.println(parada.getNombre());
+				 	paradanum=(rs.getInt(1));
+				 	nombre=(rs.getString(2));
+				 	calle=(rs.getString(3));
+				 	latitud=(rs.getDouble(4));
+				 	longitud=(rs.getDouble(5));
+				 	Parada parada= new Parada(paradanum, nombre, calle, longitud, latitud);
+			        arrayparada.add(parada);
+			        
 				
 			}
 		}catch(Exception e) {e.getMessage();}

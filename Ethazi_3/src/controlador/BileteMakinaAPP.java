@@ -21,8 +21,7 @@ public class BileteMakinaAPP {
 		//buses =Consultas.datosAutobus();
 		//clientes=Consultas.datosCliente();
 		String linea="L1";
-		paradas=Consultas.datosParadas(linea);
-		
+		paradas=Consultas.mostrarParadas(linea);		
 		for (Autobus a : buses) {
 		    System.out.println(a.getColor());
 		}
