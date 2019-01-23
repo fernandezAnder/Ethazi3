@@ -19,9 +19,9 @@ public class BileteMakinaAPP {
 		buses =Consultas.datosAutobus();
 		clientes=Consultas.datosCliente();
 		
-//		for (Autobus a : buses) {
-//		    System.out.println(a.getColor());
-//		}
+		for (Autobus a : buses) {
+		    System.out.println(a.getColor());
+		}
 		
 		for (Cliente b : clientes) {
 		    System.out.println(b.getDni()+"\t\t"+b.getNombre()+"\t\t"+b.getApellido()+
