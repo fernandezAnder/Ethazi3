@@ -58,7 +58,6 @@ public class Ventana3 extends JPanel {
 	   	 lblGeltokiak.setBounds(464, 86, 153, 49);
 	   	 add(lblGeltokiak);
 	   	 
-	   	
 	   	 
 	   	 lblXLinearenInformazioa.setRequestFocusEnabled(false);
 	   	 lblXLinearenInformazioa.setFont(new Font("Comic Sans MS", Font.BOLD, 25));
