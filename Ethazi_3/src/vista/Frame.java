@@ -41,7 +41,7 @@ public class Frame extends JFrame {
 		
 		//JPanel1
 		Ventana1.setVisible(true);
-		Ventana1.setBounds(0, 0, 750, 650);
+		Ventana1.setBounds(0, 0, 770, 670);
 		Ventana1.addMouseListener(new MouseAdapter(){
 			@Override
 			public void mouseClicked(MouseEvent arg0) {
@@ -61,7 +61,7 @@ public class Frame extends JFrame {
 		
 		//JPANEL2
 		Ventana2.setVisible(false);
-		Ventana2.setBounds(0, 0, 750, 650);	
+		Ventana2.setBounds(0, 0, 770, 670);	
 	
 		config.gridx=0;
 		config.gridy=1;

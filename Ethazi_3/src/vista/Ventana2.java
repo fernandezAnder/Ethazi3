@@ -1,6 +1,7 @@
 package vista;
 
 import javax.swing.JPanel;
+
 import javax.swing.JLabel;
 import java.awt.Font;
 import javax.swing.JButton;
@@ -31,8 +32,15 @@ public class Ventana2 extends JPanel {
 		btnBilbomungia.addActionListener(new ActionListener() {
 			@Override
 			public void actionPerformed(ActionEvent arg0) {
-				
-					
+				if(Frame.Ventana2.isVisible()){
+                	Frame.Ventana3.setVisible(true);
+                	Frame.Ventana4.setVisible(false);
+                	Frame.Ventana5.setVisible(false);
+                	Frame.Ventana1.setVisible(false);
+                	Frame.Ventana2.setVisible(false);    
+                	Frame.Ventana6.setVisible(false);
+                	Frame.Ventana7.setVisible(false);
+            }	
 				
 			}
 		});
@@ -42,6 +50,11 @@ public class Ventana2 extends JPanel {
 		btnBilbogernika.addActionListener(new ActionListener() {
 			@Override
 			public void actionPerformed(ActionEvent e) {
+				
+				
+				
+				
+				
 			}
 		});
 		btnBilbogernika.setFont(new Font("Bookman Old Style", Font.PLAIN, 20));
