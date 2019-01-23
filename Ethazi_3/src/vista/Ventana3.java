@@ -41,12 +41,12 @@ public class Ventana3 extends JPanel {
 		JButton atzera = new JButton("Atzera");
 	   	JLabel lblXLinearenInformazioa = new JLabel("X Linearen Informazioa");
 	   	JLabel lblJatorriGeltokia = new JLabel("Jatorri Geltokia");
-	   	JSpinner jatorri_geltokia = new JSpinner();
+	   	JSpinner spinnerJatorri_geltokia = new JSpinner();
 	   	JLabel lblHelmugaGeltokia = new JLabel("Helmuga Geltokia");
-	    JSpinner spinner = new JSpinner();
+	    JSpinner spinnerHelmuga_Geltokia = new JSpinner();
 	   	JLabel lblJoanEtaEtorri = new JLabel("Joan eta etorri?");
 	    JCheckBox chckbxJoanEtorri = new JCheckBox("Bai");
-	    JDateChooser dateChooser = new JDateChooser();
+	    JDateChooser btnJCalendar = new JDateChooser();
 		JLabel lblItzuliData = new JLabel("Itzuli data");
 		private final JTable table = new JTable();
 	    
@@ -64,52 +64,58 @@ public class Ventana3 extends JPanel {
 	   	 lblGeltokiak.setBounds(464, 86, 153, 49);
 	   	 add(lblGeltokiak);
 	   	 
-	   	
-	   	 
+	   	 //TITULOAREN LABELA
 	   	 lblXLinearenInformazioa.setRequestFocusEnabled(false);
 	   	 lblXLinearenInformazioa.setFont(new Font("Comic Sans MS", Font.BOLD, 25));
 	   	 lblXLinearenInformazioa.setBounds(202, 26, 304, 49);
 	   	 add(lblXLinearenInformazioa);
 	   	 
+	   	 //JATORRI GELTOKIA LABELA
 	   	 lblJatorriGeltokia.setRequestFocusEnabled(false);
 	   	 lblJatorriGeltokia.setFont(new Font("Comic Sans MS", Font.BOLD, 25));
 	   	 lblJatorriGeltokia.setBounds(57, 162, 201, 49);
 	   	 add(lblJatorriGeltokia);
 	   	 
-	   	 jatorri_geltokia.setModel(new SpinnerListModel(new String[] {"kaixo", "egunon", "zelan"}));
-	   	 jatorri_geltokia.setBounds(268, 176, 57, 32);
-	   	 add(jatorri_geltokia);
+	   	 //JATORRI GELTOKIA SpinnerLista 
+	   	 spinnerJatorri_geltokia.setModel(new SpinnerListModel(new String[] {"kaixo", "egunon", "zelan"}));
+	   	 spinnerJatorri_geltokia.setBounds(268, 176, 57, 32);
+	   	 add(spinnerJatorri_geltokia);
 	   	 
+	   	 //HELMUGA GELTOKIA LABELA
 	   	 lblHelmugaGeltokia.setRequestFocusEnabled(false);
 	   	 lblHelmugaGeltokia.setFont(new Font("Comic Sans MS", Font.BOLD, 25));
 	   	 lblHelmugaGeltokia.setBounds(57, 224, 226, 49);
 	   	 add(lblHelmugaGeltokia);
 	   	 
-	   	 spinner.setModel(new SpinnerListModel(new String[] {"zelan ", "ondo ", "ondo", "bai"}));
-	   	 spinner.setBounds(293, 238, 57, 32);
-	   	 add(spinner);
+	   	 //HELMUGA GELTOKIA SPINNER
+	   	 spinnerHelmuga_Geltokia.setModel(new SpinnerListModel(new String[] {"zelan ", "ondo ", "ondo", "bai"}));
+	   	 spinnerHelmuga_Geltokia.setBounds(293, 238, 57, 32);
+	   	 add(spinnerHelmuga_Geltokia);
 	   	 
+	   	 //JOAN ETORRI LABELA
 	   	 lblJoanEtaEtorri.setRequestFocusEnabled(false);
 	   	 lblJoanEtaEtorri.setFont(new Font("Comic Sans MS", Font.BOLD, 25));
 	   	 lblJoanEtaEtorri.setBounds(67, 318, 216, 49);
 	   	 add(lblJoanEtaEtorri);
 	   	 
+	   	 //CHECKBOX JOAN ETORRI 
 	   	 chckbxJoanEtorri.setBounds(293, 333, 97, 30); 
 	   	 add(chckbxJoanEtorri);
-	   	 dateChooser.setVerifyInputWhenFocusTarget(false);
-	   	 dateChooser.setVisible(false);
+	   	 btnJCalendar.setVerifyInputWhenFocusTarget(false);
+	   	 btnJCalendar.setVisible(false);
 	    
-	   	 
-	   	 dateChooser.setDateFormatString("dd-MM-yyyy");
-	   	 dateChooser.getCalendarButton().addActionListener(new ActionListener() {
+	   	 //DATA JCALENDAR
+	   	 btnJCalendar.setDateFormatString("dd-MM-yyyy");
+	   	 btnJCalendar.getCalendarButton().addActionListener(new ActionListener() {
 	   	 	public void actionPerformed(ActionEvent arg0) {
 	   	 	}
 	   	 });
-	   	 dateChooser.setBounds(230, 397, 95, 20);
-	   	 add(dateChooser);
+	   	 btnJCalendar.setBounds(230, 397, 95, 20);
+	   	 add(btnJCalendar);
 	   	 
-	   	 
-	   	 lblItzuliData.setRequestFocusEnabled(false);
+	   	 //ITZULI DATA LABELA
+	   	 //lblItzuliData.setRequestFocusEnabled(false);
+	   	 lblItzuliData.setVisible(false);
 	   	 lblItzuliData.setFont(new Font("Comic Sans MS", Font.BOLD, 20));
 	   	 lblItzuliData.setBounds(67, 378, 175, 49);
 	   	 add(lblItzuliData);
@@ -119,10 +125,10 @@ public class Ventana3 extends JPanel {
 	 	    public void actionPerformed(ActionEvent e) {
 	             if (chckbxJoanEtorri.isSelected()==false) {
 	                 lblItzuliData.setVisible(false);
-	                 dateChooser.setVisible(false);
+	                 btnJCalendar.setVisible(false);
 	             }else {
 	            	 lblItzuliData.setVisible(true);
-	                 dateChooser.setVisible(true);
+	                 btnJCalendar.setVisible(true);
 	             }
 	
 	 	    }
