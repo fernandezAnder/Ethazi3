@@ -43,7 +43,7 @@ public class Ventana1 extends JPanel {
         	Icono.setBounds(257, 271, 301, 139);
         	add(Icono);
        	 
-        	 //LABEL MAKINA SALTZAILEA
+        	 //LABEL TXARTEL SALTZAILEA
 
         	lblTxrtelSaltzailera.setFont(new Font("Comic Sans MS", Font.PLAIN, 26));
         	lblTxrtelSaltzailera.setBounds(321, 131, 255, 44);

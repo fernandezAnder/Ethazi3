@@ -14,12 +14,14 @@ public class Ventana7 extends JPanel {
 	public Ventana7() {
 		setLayout(null);
 		
-		lblEskerrikAsko.setFont(new Font("Comic Sans MS", Font.BOLD, 18));
-		lblEskerrikAsko.setBounds(98, 75, 245, 41);
+		//LABEL ESKERRIK ASKO
+		lblEskerrikAsko.setFont(new Font("Comic Sans MS", Font.BOLD, 25));
+		lblEskerrikAsko.setBounds(217, 74, 346, 78);
 		add(lblEskerrikAsko);
 		
-		lblZureTxartelaOrain.setFont(new Font("Comic Sans MS", Font.BOLD, 18));
-		lblZureTxartelaOrain.setBounds(81, 127, 272, 46);
+		//LABEL ZURE TXARTELA ORAIN
+		lblZureTxartelaOrain.setFont(new Font("Comic Sans MS", Font.BOLD, 25));
+		lblZureTxartelaOrain.setBounds(207, 182, 389, 78);
 		add(lblZureTxartelaOrain);
 
 	}

@@ -67,8 +67,9 @@ public class Consultas {
 		PreparedStatement s=null;
 		Connection konexioa=Conexion.getConexion();
 		
-		linea="L1";
+		linea="L2";
 		try {
+			
 			s = konexioa.prepareStatement("SELECT parada.Nombre FROM parada, linea_parada,linea WHERE parada.Cod_Parada=linea_parada.Cod_Parada and linea.Cod_Linea=linea_parada.Cod_Linea AND linea.Cod_Linea like"+"'" +linea+"'");
 			ResultSet rs = s.executeQuery();
 			
@@ -78,14 +79,15 @@ public class Consultas {
 			double latitud;
 			double longitud;
 			 while (rs.next()) {
-				 	paradanum=(rs.getInt(1));
-				 	nombre=(rs.getString(2));
-				 	calle=(rs.getString(3));
-				 	latitud=(rs.getDouble(4));
-				 	longitud=(rs.getDouble(5));
-				 	Parada parada= new Parada(paradanum, nombre, calle, longitud, latitud);
-			        arrayparada.add(parada);
-			        System.out.println(parada.getNombre());
+				 System.out.println(rs.getString(1));
+//				 	paradanum=(rs.getInt(1));
+//				 	nombre=(rs.getString(2));
+//				 	calle=(rs.getString(3));
+//				 	latitud=(rs.getDouble(4));
+//				 	longitud=(rs.getDouble(5));
+//				 	Parada parada= new Parada(paradanum, nombre, calle, longitud, latitud);
+//			        arrayparada.add(parada);
+//			        System.out.println(parada.getNombre());
 				
 			}
 		}catch(Exception e) {e.getMessage();}
