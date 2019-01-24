@@ -106,11 +106,11 @@ public class Ventana3 extends JPanel {
 		//JOAN ETORRI LABELA
 		lblJoanEtaEtorri.setRequestFocusEnabled(false);
 		lblJoanEtaEtorri.setFont(new Font("Comic Sans MS", Font.BOLD, 25));
-		lblJoanEtaEtorri.setBounds(67, 318, 216, 49);
+		lblJoanEtaEtorri.setBounds(57, 284, 216, 49);
 		add(lblJoanEtaEtorri);
 
 		//CHECKBOX JOAN ETORRI 
-		chckbxJoanEtorri.setBounds(293, 333, 97, 30); 
+		chckbxJoanEtorri.setBounds(293, 299, 97, 30); 
 		add(chckbxJoanEtorri);
 		btnJCalendar.setVerifyInputWhenFocusTarget(false);
 		btnJCalendar.setVisible(false);
@@ -121,14 +121,14 @@ public class Ventana3 extends JPanel {
 			public void actionPerformed(ActionEvent arg0) {
 			}
 		});
-		btnJCalendar.setBounds(230, 397, 95, 20);
+		btnJCalendar.setBounds(230, 408, 95, 20);
 		add(btnJCalendar);
 
 		//ITZULI DATA LABELA
 		//lblItzuliData.setRequestFocusEnabled(false);
 		lblItzuliData.setVisible(false);
 		lblItzuliData.setFont(new Font("Comic Sans MS", Font.BOLD, 20));
-		lblItzuliData.setBounds(67, 378, 175, 49);
+		lblItzuliData.setBounds(70, 390, 135, 49);
 		add(lblItzuliData);
 
 
@@ -188,6 +188,17 @@ public class Ventana3 extends JPanel {
 		tabla.setBounds(408, 196, 284, 221);
 		modelo.addColumn("PARADAS");
 		add(tabla);
+		
+		JLabel lblData = new JLabel("Data");
+		lblData.setRequestFocusEnabled(false);
+		lblData.setFont(new Font("Comic Sans MS", Font.BOLD, 22));
+		lblData.setBounds(87, 344, 97, 38);
+		add(lblData);
+		
+		JDateChooser dateChooser = new JDateChooser();
+		dateChooser.setDateFormatString("dd-MM-yyyy");
+		dateChooser.setBounds(230, 362, 95, 20);
+		add(dateChooser);
 
 
 	}

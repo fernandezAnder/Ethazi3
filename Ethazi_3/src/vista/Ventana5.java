@@ -13,6 +13,8 @@ import java.awt.Color;
 import java.awt.ComponentOrientation;
 import modelo.*;
 import controlador.*;
+import java.awt.event.KeyAdapter;
+import java.awt.event.KeyEvent;
 public class Ventana5 extends JPanel {
 	private JTextField textSartzekoDirua;
 	JLabel lblOrdainketa = new JLabel("Ordainketa :");
@@ -40,6 +42,16 @@ public class Ventana5 extends JPanel {
 		
 		//TEXTUA SARTZEKO DIRUA
 		textSartzekoDirua = new JTextField();
+		textSartzekoDirua.addKeyListener(new KeyAdapter() {
+			@Override
+			public void keyTyped(java.awt.event.KeyEvent evt) {
+				char validar =evt.getKeyChar();
+				if(Character.isLetter(validar)) {
+					getToolkit().beep();
+					evt.consume();
+					}
+			}
+		});
 		textSartzekoDirua.setFont(new Font("Bookman Old Style", Font.PLAIN, 11));
 		textSartzekoDirua.setBounds(266, 73, 162, 34);
 		add(textSartzekoDirua);
