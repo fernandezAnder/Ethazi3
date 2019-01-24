@@ -55,7 +55,7 @@ public class Ventana3 extends JPanel {
 
 	ArrayList <Parada> paradas= new ArrayList <Parada>();
 
-	public Ventana3() {
+		public Ventana3(ArrayList<Parada> paradas) {
 		setVerifyInputWhenFocusTarget(false);
 		setBackground(SystemColor.control);
 		this.setBounds(275,100,700,600);
@@ -90,16 +90,11 @@ public class Ventana3 extends JPanel {
 		add(lblHelmugaGeltokia);
 
 		//HELMUGA GELTOKIA SPINNER
-		ArrayList <Parada> paradas= new ArrayList <Parada>();
-		String linea="L1";
-		paradas=Consultas.paradastabla(linea);
+		
 		for (int i=0;i<paradas.size();i++) {
 			spinnerHelmuga_Geltokia.setToolTipText(paradas.get(i).getNombre());
 		}
-		
-		
 		spinnerHelmuga_Geltokia.setBounds(293, 238, 97, 32);
-		
 		add(spinnerHelmuga_Geltokia);
 
 		//JOAN ETORRI LABELA

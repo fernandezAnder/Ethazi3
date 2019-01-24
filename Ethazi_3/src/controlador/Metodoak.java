@@ -3,6 +3,7 @@ import modelo.*;
 import vista.*;
 import java.math.BigInteger;
 import java.security.*;
+import java.util.ArrayList;
 
 public class Metodoak {
 
