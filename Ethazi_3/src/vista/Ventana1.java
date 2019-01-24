@@ -1,5 +1,5 @@
 package vista;
-
+import controlador.*;
 import java.awt.Font;
 import java.awt.SystemColor;
 import java.awt.event.MouseAdapter;
@@ -22,8 +22,7 @@ public class Ventana1 extends JPanel {
 		   		 @Override
 		   		 public void mouseClicked(MouseEvent e) {
 		   			 
-		   			 Ventana2 Ejecutar=new Ventana2 ();
-		   			 Ejecutar.setVisible(true);
+		   			 Metodoak.bigarrenLeihoa();
 		   			 
 		   			 
 		   		 }

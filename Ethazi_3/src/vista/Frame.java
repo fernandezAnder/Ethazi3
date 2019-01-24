@@ -21,16 +21,6 @@ public class Frame extends JFrame {
 
 		getContentPane().add(Ventana1);
 
-		//JPanel1
-		Ventana1.setVisible(true);
-		Ventana1.setBounds(0, 0, 750, 650);
-		Ventana1.addMouseListener(new MouseAdapter(){
-			@Override
-			public void mouseClicked(MouseEvent arg0) {
-
-
-			}
-		});
 
 	}
 

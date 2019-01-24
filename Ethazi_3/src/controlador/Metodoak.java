@@ -23,7 +23,7 @@ public class Metodoak {
 		}
 	}
 	
-	public void bigarrenLeihoa() {
+	public static void bigarrenLeihoa() {
 		Ventana2 ventana2= new Ventana2();
 		ventana2.setVisible(true);
 	}
