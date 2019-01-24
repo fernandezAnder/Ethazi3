@@ -49,6 +49,7 @@ public class Ventana2 extends JFrame {
 		btnBilbogernika.addActionListener(new ActionListener() {
 			@Override
 			public void actionPerformed(ActionEvent e) {
+				dispose();
 				String linea="L2";
 				Metodoak.hirugarrenLeihoa(linea);
 			}

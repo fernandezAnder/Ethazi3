@@ -40,6 +40,7 @@ public class Metodoak {
 		
 		ArrayList <Parada> paradas= new ArrayList <Parada>();
 		paradas= Consultas.paradastabla(linea);
+		
 		Ventana3 ventana3= new Ventana3(paradas);
 		ventana3.setVisible(true);
 		
