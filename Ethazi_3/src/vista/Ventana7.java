@@ -1,10 +1,10 @@
 package vista;
 
-import javax.swing.JPanel;
+import javax.swing.JFrame;
 import javax.swing.JLabel;
 import java.awt.Font;
 
-public class Ventana7 extends JPanel {
+public class Ventana7 extends JFrame {
 	JLabel lblEskerrikAsko = new JLabel("Eskerrik asko erosteagatik ");
 	JLabel lblZureTxartelaOrain = new JLabel("Zure txartela orain aterako da");
 
