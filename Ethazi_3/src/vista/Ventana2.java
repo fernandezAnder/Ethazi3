@@ -1,78 +1,79 @@
 package vista;
 
-import javax.swing.JPanel;
-import javax.swing.JLabel;
-import javax.swing.JOptionPane;
-
 import java.awt.Font;
-import javax.swing.JTextField;
-import javax.swing.plaf.RootPaneUI;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+import java.awt.event.KeyAdapter;
+import java.util.ArrayList;
+
 import javax.swing.JButton;
 import javax.swing.JFrame;
-
-import java.awt.event.ActionListener;
-import java.awt.event.ActionEvent;
+import javax.swing.JLabel;
 import javax.swing.JPasswordField;
-import java.awt.event.MouseAdapter;
-import java.awt.event.MouseEvent;
-import java.awt.event.KeyAdapter;
-import java.awt.event.KeyEvent;
+import javax.swing.JTextField;
+import javax.swing.SwingConstants;
+
+import controlador.*;
 
 public class Ventana2 extends JFrame {
-	private JTextField textNAN;
-	private JTextField textLetra;
-	private JPasswordField Pasahitza;
+
+	JTextField textNAN;
+	JTextField textLetra;
+	JPasswordField Pasahitza;
 	JLabel lblTxatelaErregistroa = new JLabel("Txatela Erregistroa");
 	JLabel lblNan = new JLabel("NAN");
 	JLabel lblLetra = new JLabel("Letra");
 	JLabel lblPasahitza = new JLabel("Pasahitza");
 	JButton btnEzeztatu = new JButton("Ezeztatu");
-	JButton btnAtzera = new JButton("Atzera");
-	JButton btnBalidatu = new JButton("Balidatu");
+	JButton Ezeztatu = new JButton("Atzera");
+	JButton Jarraitu = new JButton("Jarraitu");
+	JButton Balidatu = new JButton("Balidatu");
+	String nan="";
+	String letra="";
+	String zenbakia="";
+	String pasahitza="";
 
-	/**
-	 * Create the panel.
-	 */
-	public Ventana2() {
+	public Ventana2(ArrayList<Cliente> clientes) {
 		this.setBounds(275,100,700,600);
-		setLayout(null);
-		
+		getContentPane().setLayout(null);
+
 		//LABEL TXARTEL ERREGISTROA
 		lblTxatelaErregistroa.setFont(new Font("Comic Sans MS", Font.BOLD, 26));
-		lblTxatelaErregistroa.setBounds(224, 11, 250, 37);
-		add(lblTxatelaErregistroa);
-		
+		lblTxatelaErregistroa.setBounds(222, 46, 250, 37);
+		getContentPane().add(lblTxatelaErregistroa);
+
 		//LABEL NAN
 		lblNan.setFont(new Font("Comic Sans MS", Font.BOLD, 20));
-		lblNan.setBounds(169, 75, 47, 28);
-		add(lblNan);
-		
-		String kaixo;
-		int adibidide;
+		lblNan.setBounds(165, 128, 47, 28);
+		getContentPane().add(lblNan);
+
 		//TEXT NAN
 		textNAN = new JTextField();
+		textNAN.setFont(new Font("Tahoma", Font.PLAIN, 16));
 		textNAN.addKeyListener(new KeyAdapter() {
 			@Override
 			public void keyTyped(java.awt.event.KeyEvent evt) {
 				if(textNAN.getText().length()>=8) {
 					evt.consume();	
-					
+
 				}
 				char validar =evt.getKeyChar();
 				if(Character.isLetter(validar)) {
 					getToolkit().beep();
 					evt.consume();	
-					
-					}
+
+				}
 			}
 		});
-		String zenbakia=textNAN.getText();
-		textNAN.setBounds(241, 83, 86, 20);
-		add(textNAN);
+		zenbakia=textNAN.getText();
+		textNAN.setBounds(241, 128, 109, 28);
+		getContentPane().add(textNAN);
 		textNAN.setColumns(10);
-		
+
 		//TEXT LETRA
 		textLetra = new JTextField();
+		textLetra.setHorizontalAlignment(SwingConstants.CENTER);
+		textLetra.setFont(new Font("Tahoma", Font.PLAIN, 16));
 		textLetra.addKeyListener(new KeyAdapter() {
 			@Override
 			public void keyTyped(java.awt.event.KeyEvent evt) {
@@ -84,86 +85,101 @@ public class Ventana2 extends JFrame {
 				if(Character.isDigit(validar) ) {
 					getToolkit().beep();
 					evt.consume();	
-					
-					}
+
+				}
 				if(Character.isLowerCase(c)) {
 					String cad=(""+c).toUpperCase();
 					c=cad.charAt(0);
 					evt.setKeyChar(c);
 				}
-				
+
 			}
 		});
-		String letra=textLetra.getText();
+		letra=textLetra.getText();
 		textLetra.setColumns(10);
-		textLetra.setBounds(457, 83, 32, 20);
-		add(textLetra);
-		
-		//NANaren Stringa
-		String nan=zenbakia+letra;
-		
+		textLetra.setBounds(422, 128, 32, 28);
+		getContentPane().add(textLetra);
+
+
+
 		//LETRA LABEL
 		lblLetra.setFont(new Font("Comic Sans MS", Font.BOLD, 20));
-		lblLetra.setBounds(377, 75, 52, 28);
-		add(lblLetra);
-		
+		lblLetra.setBounds(360, 128, 52, 28);
+		getContentPane().add(lblLetra);
+
 		//LABEL PASAHITZA
 		lblPasahitza.setFont(new Font("Comic Sans MS", Font.BOLD, 20));
 		lblPasahitza.setBounds(165, 212, 92, 28);
-		add(lblPasahitza);
-		
+		getContentPane().add(lblPasahitza);
+
 		//EZEZTATU BOTOIA
-		btnEzeztatu.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent e) {
-				
-				
-			}
-		});
-		
-		btnEzeztatu.setFont(new Font("Comic Sans MS", Font.BOLD, 15));
-		btnEzeztatu.setBounds(162, 321, 95, 31);
-		add(btnEzeztatu);
-		
-		//ATZERA BOTOIA
-		btnAtzera.setFont(new Font("Comic Sans MS", Font.BOLD, 15));
-		btnAtzera.addActionListener(new ActionListener() {
+		Ezeztatu.setFont(new Font("Comic Sans MS", Font.BOLD, 15));
+		Ezeztatu.addActionListener(new ActionListener() {
 			@Override
 			public void actionPerformed(ActionEvent arg0) {
+				dispose();
+				Metodoak.lehenengoLeihoa();
 
-				
-
-				
 			}
 		});
-		btnAtzera.setBounds(302, 321, 81, 31);
-		add(btnAtzera);
-		//BALIDATU BOTOIA
+		Ezeztatu.setBounds(241, 343, 109, 44);
+		getContentPane().add(Ezeztatu);
 
-		btnBalidatu.addActionListener(new ActionListener() {
+		//JARRAITU BOTOIA
+		Jarraitu.setEnabled(false);
+		Jarraitu.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-
-				
-
+				dispose();
+				Metodoak.hirugarrenLeihoa();
 			}
 		});
+		Jarraitu.setFont(new Font("Comic Sans MS", Font.BOLD, 15));
+		Jarraitu.setBounds(424, 343, 115, 44);
+		getContentPane().add(Jarraitu);
+
 		
-		//BALIDATU BOTOIA
-		btnBalidatu.addMouseListener(new MouseAdapter() {
-			@Override
-			public void mouseClicked(MouseEvent e) {
-				
-			}
-		});
-		
-		btnBalidatu.setFont(new Font("Comic Sans MS", Font.BOLD, 15));
-		btnBalidatu.setBounds(414, 321, 89, 31);
-		add(btnBalidatu);
-		
+
 		//PASAHITZA TEXTUA
 		Pasahitza = new JPasswordField();
-		Pasahitza.setBounds(302, 220, 92, 20);
-		add(Pasahitza);
+		Pasahitza.setFont(new Font("Tahoma", Font.PLAIN, 16));
+		Pasahitza.setBounds(302, 212, 170, 28);
+		getContentPane().add(Pasahitza);
 
+		//DNI ETA PASAHITZA BALIDATZEKO BOTOIA
+		
+				
+				
+				Balidatu.addActionListener(new ActionListener() {
+					public void actionPerformed(ActionEvent arg0) {
+						//BALIDAZIORAKO BARIABLEAK
+						zenbakia=textNAN.getText();
+						letra=textLetra.getText();
+						nan=zenbakia+letra;
+						pasahitza=Pasahitza.getText();
+						
+						for (int i=0;i<clientes.size();i++) {
+							System.out.println(clientes.get(i).getDni());
+							//System.out.println(nan);
+						}
+
+						for (int i=0;i<clientes.size();i++) {
+							if (clientes.get(i).getDni().equals(nan)) {
+								System.out.println(nan);
+								
+								if (clientes.get(i).getContraseña().equals(Metodoak.ateraMD5(pasahitza))) {
+									System.out.println(pasahitza);
+									Jarraitu.setEnabled(true);
+									Balidatu.setEnabled(false);
+								}
+							}
+						}
+					}
+				});
+				Balidatu.setFont(new Font("Comic Sans MS", Font.BOLD, 15));
+				Balidatu.setBounds(529, 196, 115, 44);
+				getContentPane().add(Balidatu);
+
+		
 	}
 }
 

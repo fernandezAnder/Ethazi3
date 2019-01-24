@@ -39,7 +39,7 @@ public class Ventana3 extends JFrame {
 			public void actionPerformed(ActionEvent arg0) {
 				dispose();
 				String linea="L1";
-				Metodoak.hirugarrenLeihoa(linea);
+				Metodoak.laugarrenLeihoa(linea);
 			}
 		});
 		btnBilbomungia.setBounds(282, 139, 198, 48);
@@ -51,7 +51,7 @@ public class Ventana3 extends JFrame {
 			public void actionPerformed(ActionEvent e) {
 				dispose();
 				String linea="L2";
-				Metodoak.hirugarrenLeihoa(linea);
+				Metodoak.laugarrenLeihoa(linea);
 			}
 		});
 		btnBilbogernika.setFont(new Font("Bookman Old Style", Font.PLAIN, 20));
@@ -64,7 +64,7 @@ public class Ventana3 extends JFrame {
 			public void mouseClicked(MouseEvent arg0) {
 				dispose();
 				String linea="L3";
-				Metodoak.hirugarrenLeihoa(linea);
+				Metodoak.laugarrenLeihoa(linea);
 			}
 		});
 
