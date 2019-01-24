@@ -47,7 +47,7 @@ public class Ventana6 extends JFrame {
 		lblNan.setBounds(169, 75, 47, 28);
 		add(lblNan);
 		
-		bvg hjnmklpñ
+		//TEXT NAN
 		//TEXT NAN
 		textNAN = new JTextField();
 		textNAN.addKeyListener(new KeyAdapter() {
@@ -149,6 +149,7 @@ public class Ventana6 extends JFrame {
 		//BALIDATU BOTOIA
 		btnBalidatu.addMouseListener(new MouseAdapter() {
 			@Override
+
 			public void mouseClicked(MouseEvent e) {
 				
 			}
@@ -157,7 +158,7 @@ public class Ventana6 extends JFrame {
 		btnBalidatu.setFont(new Font("Comic Sans MS", Font.BOLD, 15));
 		btnBalidatu.setBounds(414, 321, 89, 31);
 		add(btnBalidatu);
-		
+		add(btnBalidatu);
 		//PASAHITZA TEXTUA
 		Pasahitza = new JPasswordField();
 		Pasahitza.setBounds(302, 220, 92, 20);
