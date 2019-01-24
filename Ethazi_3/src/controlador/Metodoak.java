@@ -45,5 +45,29 @@ public class Metodoak {
 		ventana3.setVisible(true);
 		
 		}
+	public static void laugarrenLeihoa() {
+		
+		Ventana4 ventana4= new Ventana4();
+		ventana4.setVisible(true);
+		
+		}
+	public static void bostgarrenLeihoa() {
+		
+		Ventana5 ventana5= new Ventana5();
+		ventana5.setVisible(true);
+		
+		}
+	public static void seigarrenLeihoa() {
+	
+	Ventana6 ventana6= new Ventana6();
+	ventana6.setVisible(true);
+	
+	}
+	public static void zazpigarrenLeihoa() {
+		
+		Ventana7 ventana7= new Ventana7();
+		ventana7.setVisible(true);
+		
+		}
 }
 	
