@@ -192,14 +192,18 @@ public class Ventana3 extends JFrame {
 		textFieldGeltokiak = new JFormattedTextField();
 		textFieldGeltokiak.setAlignmentY(Component.TOP_ALIGNMENT);
 		textFieldGeltokiak.setAlignmentX(Component.LEFT_ALIGNMENT);
-		textFieldGeltokiak.setText("iki");
+		
 		textFieldGeltokiak.setFont(new Font("Bookman Old Style", Font.PLAIN, 16));
 		textFieldGeltokiak.setComponentOrientation(ComponentOrientation.LEFT_TO_RIGHT);
 		textFieldGeltokiak.setEditable(false);
 		textFieldGeltokiak.setBounds(396, 220, 245, 228);
+		String geltokiak="";
 		for (int i=0;i<paradas.size();i++) {
-			textFieldGeltokiak.setText(paradas.get(i).getNombre());
+			geltokiak=geltokiak+(paradas.get(i).getNombre()+" \n");
+			
 		}
+		System.out.println(geltokiak);
+		textFieldGeltokiak.setText(geltokiak);
 		getContentPane().add(textFieldGeltokiak);
 		textFieldGeltokiak.setColumns(10);
 
