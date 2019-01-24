@@ -187,5 +187,6 @@ public class Ventana3 extends JFrame {
 		getContentPane().add(Amaiera_geltoki);
 srigheri
 
+
 	}
 }
