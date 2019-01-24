@@ -1,34 +1,23 @@
 package vista;
 
-import java.awt.Color;
-import java.awt.ComponentOrientation;
 import java.awt.Font;
 import java.awt.SystemColor;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import java.sql.ResultSet;
 import java.util.ArrayList;
 
 import javax.swing.JButton;
+import javax.swing.JCheckBox;
+import javax.swing.JComboBox;
+import javax.swing.JFrame;
 import javax.swing.JLabel;
-import javax.swing.JPanel;
-import javax.swing.JTextArea;
 import javax.swing.JTextPane;
-import javax.swing.border.MatteBorder;
-import javax.swing.event.ChangeEvent;
 import javax.swing.table.DefaultTableModel;
-import javax.swing.JSpinner;
-import javax.swing.SpinnerListModel;
 
 import com.toedter.calendar.JDateChooser;
-import javax.swing.JCheckBox;
-import javax.swing.JFrame;
 
-
-import controlador.*;
-import javax.swing.JTextField;
-import java.awt.Component;
-import javax.swing.JFormattedTextField;
+import controlador.Metodoak;
+import controlador.Parada;
 public class Ventana3 extends JFrame {
 
 
@@ -42,9 +31,7 @@ public class Ventana3 extends JFrame {
 	JButton atzera = new JButton("Atzera");
 	JLabel lblXLinearenInformazioa = new JLabel("X Linearen Informazioa");
 	JLabel lblJatorriGeltokia = new JLabel("Jatorri Geltokia");
-	JSpinner spinnerJatorri_geltokia = new JSpinner();
 	JLabel lblHelmugaGeltokia = new JLabel("Helmuga Geltokia");
-	JSpinner spinnerHelmuga_Geltokia = new JSpinner();
 	JLabel lblJoanEtaEtorri = new JLabel("Joan eta etorri?");
 	JCheckBox chckbxJoanEtorri = new JCheckBox("Bai");
 	JDateChooser btnJCalendar = new JDateChooser();
@@ -52,17 +39,18 @@ public class Ventana3 extends JFrame {
 	DefaultTableModel modelo = new DefaultTableModel();
 	JLabel lblData = new JLabel("Data");
 	JDateChooser dateChooser = new JDateChooser();
-
-
+	JComboBox Hasiera_geltoki = new JComboBox();
+	JComboBox Amaiera_geltoki = new JComboBox();
+	JTextPane geltoki = new JTextPane();
+	
 	ArrayList <Parada> paradas= new ArrayList <Parada>();
-	JFormattedTextField textFieldGeltokiak;
 
 		public Ventana3(ArrayList<Parada> paradas) {
 		
 		setBackground(SystemColor.control);
 		this.setBounds(275,100,700,600);
 		getContentPane().setLayout(null);
-		lblGeltokiak.setBounds(447, 129, 146, 36);
+		lblGeltokiak.setBounds(458, 129, 146, 36);
 		lblGeltokiak.setRequestFocusEnabled(false);
 
 		//LABEL ZERRENDA
@@ -80,30 +68,15 @@ public class Ventana3 extends JFrame {
 		lblJatorriGeltokia.setRequestFocusEnabled(false);
 		lblJatorriGeltokia.setFont(new Font("Comic Sans MS", Font.BOLD, 25));
 		getContentPane().add(lblJatorriGeltokia);
-		spinnerJatorri_geltokia.setBounds(283, 143, 48, 20);
-
-		//JATORRI GELTOKIA SpinnerLista
-		for (int i=0;i<paradas.size();i++) {
-			spinnerJatorri_geltokia.setToolTipText(paradas.get(i).getNombre());
-		}
-		getContentPane().add(spinnerJatorri_geltokia);
-		lblHelmugaGeltokia.setBounds(37, 193, 208, 36);
 
 		//HELMUGA GELTOKIA LABELA
+		lblHelmugaGeltokia.setBounds(37, 193, 208, 36);
 		lblHelmugaGeltokia.setRequestFocusEnabled(false);
 		lblHelmugaGeltokia.setFont(new Font("Comic Sans MS", Font.BOLD, 25));
 		getContentPane().add(lblHelmugaGeltokia);
 
-		//HELMUGA GELTOKIA SPINNER
-		
-		for (int i=0;i<paradas.size();i++) {
-			spinnerHelmuga_Geltokia.setToolTipText(paradas.get(i).getNombre());
-		}
-		spinnerHelmuga_Geltokia.setBounds(287, 207, 29, 20);
-		getContentPane().add(spinnerHelmuga_Geltokia);
-		lblJoanEtaEtorri.setBounds(30, 269, 203, 36);
-
 		//JOAN ETORRI LABELA
+		lblJoanEtaEtorri.setBounds(30, 269, 203, 36);
 		lblJoanEtaEtorri.setRequestFocusEnabled(false);
 		lblJoanEtaEtorri.setFont(new Font("Comic Sans MS", Font.BOLD, 25));
 		getContentPane().add(lblJoanEtaEtorri);
@@ -188,24 +161,27 @@ public class Ventana3 extends JFrame {
 		dateChooser.setBounds(154, 375, 87, 20);
 		dateChooser.setDateFormatString("dd-MM-yyyy");
 		getContentPane().add(dateChooser);
-		
-		textFieldGeltokiak = new JFormattedTextField();
-		textFieldGeltokiak.setAlignmentY(Component.TOP_ALIGNMENT);
-		textFieldGeltokiak.setAlignmentX(Component.LEFT_ALIGNMENT);
-		
-		textFieldGeltokiak.setFont(new Font("Bookman Old Style", Font.PLAIN, 16));
-		textFieldGeltokiak.setComponentOrientation(ComponentOrientation.LEFT_TO_RIGHT);
-		textFieldGeltokiak.setEditable(false);
-		textFieldGeltokiak.setBounds(396, 220, 245, 228);
 		String geltokiak="";
 		for (int i=0;i<paradas.size();i++) {
-			geltokiak=geltokiak+(paradas.get(i).getNombre()+" \n");
+			geltokiak=geltokiak+(paradas.get(i).getNombre()+"\r\n");
 			
 		}
 		System.out.println(geltokiak);
-		textFieldGeltokiak.setText(geltokiak);
-		getContentPane().add(textFieldGeltokiak);
-		textFieldGeltokiak.setColumns(10);
+		
+		
+		geltoki.setText(geltokiak);
+		geltoki.setBounds(447, 176, 175, 156);
+		getContentPane().add(geltoki);
+		
+		//Hasiera geltoki konbo box-a
+		Hasiera_geltoki.setBounds(277, 143, 114, 20);
+		Hasiera_geltoki.addItem(geltokiak);
+		getContentPane().add(Hasiera_geltoki);
+		
+		//Amaiera geltoki konbo box-a
+		Amaiera_geltoki.setBounds(277, 207, 114, 20);
+		Amaiera_geltoki.addItem(geltokiak);
+		getContentPane().add(Amaiera_geltoki);
 
 
 	}
