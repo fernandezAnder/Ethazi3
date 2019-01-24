@@ -7,10 +7,12 @@ import javax.swing.JTextField;
 import javax.swing.JButton;
 import javax.swing.JTextArea;
 import java.awt.event.ActionListener;
+import java.util.ArrayList;
 import java.awt.event.ActionEvent;
 import java.awt.Color;
 import java.awt.ComponentOrientation;
-
+import modelo.*;
+import controlador.*;
 public class Ventana5 extends JPanel {
 	private JTextField textSartzekoDirua;
 	JLabel lblOrdainketa = new JLabel("Ordainketa :");
@@ -72,6 +74,16 @@ public class Ventana5 extends JPanel {
 		textAreaItzuliak.setComponentOrientation(ComponentOrientation.RIGHT_TO_LEFT);
 		textAreaItzuliak.setEditable(false);
 		textAreaItzuliak.setBounds(126, 214, 454, 199);
+		
+		ArrayList <Parada> paradas= new ArrayList <Parada>();
+		String linea="L1";
+		paradas=Consultas.mostrarParadas(linea);
+		String pantailaratu;
+		for (Parada emaitza : paradas) {
+			pantailaratu= emaitza.toString()+"\n";
+		    textAreaItzuliak.setText(pantailaratu);
+		}
+		
 		add(textAreaItzuliak);
 		
 		//BOTOIA AMAITU

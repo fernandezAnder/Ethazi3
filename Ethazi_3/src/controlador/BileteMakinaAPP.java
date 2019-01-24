@@ -17,24 +17,12 @@ public class BileteMakinaAPP {
 		
 		ArrayList <Autobus> buses= new ArrayList <Autobus>();
 		ArrayList <Cliente> clientes= new ArrayList <Cliente>();
-		buses =Consultas.datosAutobus();
-		clientes=Consultas.datosCliente();
+		ArrayList <Parada> paradas= new ArrayList <Parada>();
+		//buses =Consultas.datosAutobus();
+		//clientes=Consultas.datosCliente();
+		String linea="L1";
+		paradas=Consultas.mostrarParadas(linea);		
 		
-		for (Autobus a : buses) {
-		    System.out.println(a.getColor());
-		}
-		
-		for (Cliente b : clientes) {
-		    System.out.println(b.getDni()+"\t\t"+b.getNombre()+"\t\t"+b.getApellido()+
-		    		"\t\t"+b.getFecha_nac()+"\t\t"+b.getContraseña());
-		}
-
-		String pasahitza="abracadabra";
-		String pasahitza2="ec5287c45f0e70ec22d52e8bcbeeb640";
-		if (Metodoak.ateraMD5(pasahitza).equals(pasahitza2))
-				System.out.println("berdinak dira");
-		else
-			System.out.println("Ezberdinak dira");
 		
 		
 		
