@@ -23,6 +23,7 @@ import javax.swing.SpinnerModel;
 
 import com.toedter.calendar.JDateChooser;
 import javax.swing.JCheckBox;
+import javax.swing.JFrame;
 import javax.swing.JTable;
 import javax.swing.border.BevelBorder;
 import javax.swing.ListSelectionModel;
@@ -30,7 +31,7 @@ import javax.swing.JSeparator;
 import modelo.*;
 import controlador.*;
 import javax.swing.JTextField;
-public class Ventana3 extends JPanel {
+public class Ventana3 extends JFrame {
 
 
 	private static final long serialVersionUID = 1L;
@@ -59,7 +60,7 @@ public class Ventana3 extends JPanel {
 	JTextField textFieldGeltokiak;
 
 		public Ventana3(ArrayList<Parada> paradas) {
-		setVerifyInputWhenFocusTarget(false);
+		
 		setBackground(SystemColor.control);
 		this.setBounds(275,100,700,600);
 		setLayout(null);

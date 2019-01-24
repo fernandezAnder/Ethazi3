@@ -5,6 +5,7 @@ import javax.swing.JLabel;
 import java.awt.Font;
 import javax.swing.JTextField;
 import javax.swing.JButton;
+import javax.swing.JFrame;
 import javax.swing.JTextArea;
 import java.awt.event.ActionListener;
 import java.util.ArrayList;
@@ -15,7 +16,7 @@ import modelo.*;
 import controlador.*;
 import java.awt.event.KeyAdapter;
 import java.awt.event.KeyEvent;
-public class Ventana5 extends JPanel {
+public class Ventana5 extends JFrame {
 	private JTextField textSartzekoDirua;
 	JLabel lblOrdainketa = new JLabel("Ordainketa :");
 	JLabel lblSartuDirua = new JLabel("Sartu Dirua :");
