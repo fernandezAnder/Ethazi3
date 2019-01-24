@@ -141,20 +141,14 @@ public class Ventana6 extends JPanel {
                 	Frame.Ventana6.setVisible(false);
                 	Frame.Ventana7.setVisible(false);
             	}
-	
 			}
 		});
 		btnAtzera.setBounds(294, 463, 114, 42);
 		add(btnAtzera);
+		//BALIDATU BOTOIA
+
 		btnBalidatu.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-			}
-		});
-		
-		//BALIDATU BOTOIA
-		btnBalidatu.addMouseListener(new MouseAdapter() {
-			@Override
-			public void mouseClicked(MouseEvent e) {
 				if(Frame.Ventana6.isVisible()){
                 	Frame.Ventana7.setVisible(true);
                 	Frame.Ventana1.setVisible(false);
@@ -163,7 +157,7 @@ public class Ventana6 extends JPanel {
                 	Frame.Ventana4.setVisible(false);
                 	Frame.Ventana5.setVisible(false);
                 	Frame.Ventana6.setVisible(false);
-            	}
+				}
 			}
 		});
 		
