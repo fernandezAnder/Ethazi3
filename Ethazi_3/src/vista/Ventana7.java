@@ -13,16 +13,17 @@ public class Ventana7 extends JFrame {
 	 */
 	public Ventana7() {
 		this.setBounds(275,100,700,600);
+		getContentPane().setLayout(null);
 		
 		//LABEL ESKERRIK ASKO
 		lblEskerrikAsko.setFont(new Font("Comic Sans MS", Font.BOLD, 25));
-		lblEskerrikAsko.setBounds(217, 74, 346, 78);
-		add(lblEskerrikAsko);
+		lblEskerrikAsko.setBounds(184, 94, 346, 78);
+		getContentPane().add(lblEskerrikAsko);
 		
 		//LABEL ZURE TXARTELA ORAIN
 		lblZureTxartelaOrain.setFont(new Font("Comic Sans MS", Font.BOLD, 25));
-		lblZureTxartelaOrain.setBounds(207, 182, 389, 78);
-		add(lblZureTxartelaOrain);
+		lblZureTxartelaOrain.setBounds(161, 259, 439, 45);
+		getContentPane().add(lblZureTxartelaOrain);
 
 	}
 }
