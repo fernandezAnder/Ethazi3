@@ -19,16 +19,12 @@ import javax.swing.event.ChangeEvent;
 import javax.swing.table.DefaultTableModel;
 import javax.swing.JSpinner;
 import javax.swing.SpinnerListModel;
-import javax.swing.SpinnerModel;
 
 import com.toedter.calendar.JDateChooser;
 import javax.swing.JCheckBox;
 import javax.swing.JFrame;
-import javax.swing.JTable;
-import javax.swing.border.BevelBorder;
-import javax.swing.ListSelectionModel;
-import javax.swing.JSeparator;
-import modelo.*;
+
+
 import controlador.*;
 import javax.swing.JTextField;
 public class Ventana3 extends JFrame {
@@ -84,8 +80,10 @@ public class Ventana3 extends JFrame {
 		add(lblJatorriGeltokia);
 		spinnerJatorri_geltokia.setBounds(283, 143, 48, 20);
 
-		//JATORRI GELTOKIA SpinnerLista 
-		spinnerJatorri_geltokia.setModel(new SpinnerListModel(new String[] {"kaixo", "egunon", "zelan"}));
+		//JATORRI GELTOKIA SpinnerLista
+		for (int i=0;i<paradas.size();i++) {
+			spinnerJatorri_geltokia.setToolTipText(paradas.get(i).getNombre());
+		}
 		add(spinnerJatorri_geltokia);
 		lblHelmugaGeltokia.setBounds(37, 193, 208, 36);
 
@@ -172,9 +170,8 @@ public class Ventana3 extends JFrame {
 		atzera.addActionListener(new ActionListener() {
 			@Override
 			public void actionPerformed(ActionEvent arg0) {
-				
-
-
+				dispose();
+				Metodoak.lehenengoLeihoa();
 			}
 		});
 		atzera.setFont(new Font("Comic Sans MS", Font.PLAIN, 18));
@@ -195,6 +192,9 @@ public class Ventana3 extends JFrame {
 		textFieldGeltokiak.setComponentOrientation(ComponentOrientation.RIGHT_TO_LEFT);
 		textFieldGeltokiak.setEditable(false);
 		textFieldGeltokiak.setBounds(396, 220, 275, 228);
+		for (int i=0;i<paradas.size();i++) {
+			textFieldGeltokiak.setText(paradas.get(i).getNombre());
+		}
 		add(textFieldGeltokiak);
 		textFieldGeltokiak.setColumns(10);
 
