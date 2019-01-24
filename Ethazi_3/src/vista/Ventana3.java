@@ -27,6 +27,8 @@ import javax.swing.JFrame;
 
 import controlador.*;
 import javax.swing.JTextField;
+import java.awt.Component;
+import javax.swing.JFormattedTextField;
 public class Ventana3 extends JFrame {
 
 
@@ -53,44 +55,44 @@ public class Ventana3 extends JFrame {
 
 
 	ArrayList <Parada> paradas= new ArrayList <Parada>();
-	JTextField textFieldGeltokiak;
+	JFormattedTextField textFieldGeltokiak;
 
 		public Ventana3(ArrayList<Parada> paradas) {
 		
 		setBackground(SystemColor.control);
 		this.setBounds(275,100,700,600);
-		setLayout(null);
+		getContentPane().setLayout(null);
 		lblGeltokiak.setBounds(447, 129, 146, 36);
 		lblGeltokiak.setRequestFocusEnabled(false);
 
 		//LABEL ZERRENDA
 		lblGeltokiak.setFont(new Font("Comic Sans MS", Font.BOLD, 25));
-		add(lblGeltokiak);
+		getContentPane().add(lblGeltokiak);
 		lblXLinearenInformazioa.setBounds(244, 5, 286, 36);
 
 		//TITULOAREN LABELA
 		lblXLinearenInformazioa.setRequestFocusEnabled(false);
 		lblXLinearenInformazioa.setFont(new Font("Comic Sans MS", Font.BOLD, 25));
-		add(lblXLinearenInformazioa);
+		getContentPane().add(lblXLinearenInformazioa);
 		lblJatorriGeltokia.setBounds(37, 129, 196, 36);
 
 		//JATORRI GELTOKIA LABELA
 		lblJatorriGeltokia.setRequestFocusEnabled(false);
 		lblJatorriGeltokia.setFont(new Font("Comic Sans MS", Font.BOLD, 25));
-		add(lblJatorriGeltokia);
+		getContentPane().add(lblJatorriGeltokia);
 		spinnerJatorri_geltokia.setBounds(283, 143, 48, 20);
 
 		//JATORRI GELTOKIA SpinnerLista
 		for (int i=0;i<paradas.size();i++) {
 			spinnerJatorri_geltokia.setToolTipText(paradas.get(i).getNombre());
 		}
-		add(spinnerJatorri_geltokia);
+		getContentPane().add(spinnerJatorri_geltokia);
 		lblHelmugaGeltokia.setBounds(37, 193, 208, 36);
 
 		//HELMUGA GELTOKIA LABELA
 		lblHelmugaGeltokia.setRequestFocusEnabled(false);
 		lblHelmugaGeltokia.setFont(new Font("Comic Sans MS", Font.BOLD, 25));
-		add(lblHelmugaGeltokia);
+		getContentPane().add(lblHelmugaGeltokia);
 
 		//HELMUGA GELTOKIA SPINNER
 		
@@ -98,15 +100,15 @@ public class Ventana3 extends JFrame {
 			spinnerHelmuga_Geltokia.setToolTipText(paradas.get(i).getNombre());
 		}
 		spinnerHelmuga_Geltokia.setBounds(287, 207, 29, 20);
-		add(spinnerHelmuga_Geltokia);
+		getContentPane().add(spinnerHelmuga_Geltokia);
 		lblJoanEtaEtorri.setBounds(30, 269, 203, 36);
 
 		//JOAN ETORRI LABELA
 		lblJoanEtaEtorri.setRequestFocusEnabled(false);
 		lblJoanEtaEtorri.setFont(new Font("Comic Sans MS", Font.BOLD, 25));
-		add(lblJoanEtaEtorri);
+		getContentPane().add(lblJoanEtaEtorri);
 		chckbxJoanEtorri.setBounds(277, 282, 39, 23);
-		add(chckbxJoanEtorri);
+		getContentPane().add(chckbxJoanEtorri);
 		btnJCalendar.setBounds(190, 439, 87, 20);
 		btnJCalendar.setVerifyInputWhenFocusTarget(false);
 		btnJCalendar.setVisible(false);
@@ -117,14 +119,14 @@ public class Ventana3 extends JFrame {
 			public void actionPerformed(ActionEvent arg0) {
 			}
 		});
-		add(btnJCalendar);
+		getContentPane().add(btnJCalendar);
 		lblItzuliData.setBounds(42, 431, 104, 28);
 
 		//ITZULI DATA LABELA
 		//lblItzuliData.setRequestFocusEnabled(false);
 		lblItzuliData.setVisible(false);
 		lblItzuliData.setFont(new Font("Comic Sans MS", Font.BOLD, 20));
-		add(lblItzuliData);
+		getContentPane().add(lblItzuliData);
 
 
 		chckbxJoanEtorri.addActionListener(new ActionListener() {
@@ -151,7 +153,7 @@ public class Ventana3 extends JFrame {
 
 			}
 		});
-		add(jarraitu);
+		getContentPane().add(jarraitu);
 		ezeztatu.setBounds(326, 490, 107, 35);
 
 		//EZEZTATU BOTOIA
@@ -163,7 +165,7 @@ public class Ventana3 extends JFrame {
 
 			}
 		});
-		add(ezeztatu);
+		getContentPane().add(ezeztatu);
 		atzera.setBounds(154, 490, 91, 35);
 
 		//ATZERA BOTOIA
@@ -175,27 +177,30 @@ public class Ventana3 extends JFrame {
 			}
 		});
 		atzera.setFont(new Font("Comic Sans MS", Font.PLAIN, 18));
-		add(atzera);
+		getContentPane().add(atzera);
 		modelo.addColumn("PARADAS");
 		
 		lblData.setBounds(42, 363, 50, 32);
 		lblData.setRequestFocusEnabled(false);
 		lblData.setFont(new Font("Comic Sans MS", Font.BOLD, 22));
-		add(lblData);
+		getContentPane().add(lblData);
 		
 		dateChooser.setBounds(154, 375, 87, 20);
 		dateChooser.setDateFormatString("dd-MM-yyyy");
-		add(dateChooser);
+		getContentPane().add(dateChooser);
 		
-		textFieldGeltokiak = new JTextField();
+		textFieldGeltokiak = new JFormattedTextField();
+		textFieldGeltokiak.setAlignmentY(Component.TOP_ALIGNMENT);
+		textFieldGeltokiak.setAlignmentX(Component.LEFT_ALIGNMENT);
+		textFieldGeltokiak.setText("iki");
 		textFieldGeltokiak.setFont(new Font("Bookman Old Style", Font.PLAIN, 16));
-		textFieldGeltokiak.setComponentOrientation(ComponentOrientation.RIGHT_TO_LEFT);
+		textFieldGeltokiak.setComponentOrientation(ComponentOrientation.LEFT_TO_RIGHT);
 		textFieldGeltokiak.setEditable(false);
-		textFieldGeltokiak.setBounds(396, 220, 275, 228);
+		textFieldGeltokiak.setBounds(396, 220, 245, 228);
 		for (int i=0;i<paradas.size();i++) {
 			textFieldGeltokiak.setText(paradas.get(i).getNombre());
 		}
-		add(textFieldGeltokiak);
+		getContentPane().add(textFieldGeltokiak);
 		textFieldGeltokiak.setColumns(10);
 
 
