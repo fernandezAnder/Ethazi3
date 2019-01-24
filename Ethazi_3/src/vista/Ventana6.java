@@ -2,14 +2,19 @@ package vista;
 
 import javax.swing.JPanel;
 import javax.swing.JLabel;
+import javax.swing.JOptionPane;
+
 import java.awt.Font;
 import javax.swing.JTextField;
+import javax.swing.plaf.RootPaneUI;
 import javax.swing.JButton;
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
 import javax.swing.JPasswordField;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
+import java.awt.event.KeyAdapter;
+import java.awt.event.KeyEvent;
 
 public class Ventana6 extends JPanel {
 	private JTextField textNAN;
@@ -41,12 +46,38 @@ public class Ventana6 extends JPanel {
 		
 		//TEXT NAN
 		textNAN = new JTextField();
+		textNAN.addKeyListener(new KeyAdapter() {
+			@Override
+			public void keyTyped(java.awt.event.KeyEvent evt) {
+				int numerocaracteresNumeros=8;
+				char validar =evt.getKeyChar();
+				if(Character.isDigit(validar) && textNAN.getText().length()>=numerocaracteresNumeros) {
+					getToolkit().beep();
+					evt.consume();	
+					
+					}
+			}
+		});
 		textNAN.setBounds(223, 160, 142, 40);
 		add(textNAN);
 		textNAN.setColumns(10);
 		
 		//TEXT LETRA
 		textLetra = new JTextField();
+		textLetra.addKeyListener(new KeyAdapter() {
+			@Override
+			public void keyTyped(java.awt.event.KeyEvent evt) {
+				int numerocaracteresLetra=1;
+				char validar =evt.getKeyChar();
+				
+				if(Character.isLetter(validar) && textLetra.getText().length()>=numerocaracteresLetra) {
+					getToolkit().beep();
+					evt.consume();	
+					
+					}
+				
+			}
+		});
 		textLetra.setColumns(10);
 		textLetra.setBounds(525, 161, 40, 38);
 		add(textLetra);
