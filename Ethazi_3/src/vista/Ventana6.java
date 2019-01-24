@@ -8,6 +8,8 @@ import java.awt.Font;
 import javax.swing.JTextField;
 import javax.swing.plaf.RootPaneUI;
 import javax.swing.JButton;
+import javax.swing.JFrame;
+
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
 import javax.swing.JPasswordField;
@@ -16,7 +18,7 @@ import java.awt.event.MouseEvent;
 import java.awt.event.KeyAdapter;
 import java.awt.event.KeyEvent;
 
-public class Ventana6 extends JPanel {
+public class Ventana6 extends JFrame {
 	private JTextField textNAN;
 	private JTextField textLetra;
 	private JPasswordField Pasahitza;
@@ -33,15 +35,16 @@ public class Ventana6 extends JPanel {
 	 */
 	public Ventana6() {
 		this.setBounds(275,100,700,600);
+		setLayout(null);
 		
 		//LABEL TXARTEL ERREGISTROA
 		lblTxatelaErregistroa.setFont(new Font("Comic Sans MS", Font.BOLD, 26));
-		lblTxatelaErregistroa.setBounds(206, 25, 274, 54);
+		lblTxatelaErregistroa.setBounds(224, 11, 250, 37);
 		add(lblTxatelaErregistroa);
 		
 		//LABEL NAN
 		lblNan.setFont(new Font("Comic Sans MS", Font.BOLD, 20));
-		lblNan.setBounds(117, 156, 62, 40);
+		lblNan.setBounds(169, 75, 47, 28);
 		add(lblNan);
 		
 		//TEXT NAN
@@ -62,7 +65,7 @@ public class Ventana6 extends JPanel {
 			}
 		});
 		String zenbakia=textNAN.getText();
-		textNAN.setBounds(223, 160, 142, 40);
+		textNAN.setBounds(241, 83, 86, 20);
 		add(textNAN);
 		textNAN.setColumns(10);
 		
@@ -91,7 +94,7 @@ public class Ventana6 extends JPanel {
 		});
 		String letra=textLetra.getText();
 		textLetra.setColumns(10);
-		textLetra.setBounds(525, 161, 40, 38);
+		textLetra.setBounds(457, 83, 32, 20);
 		add(textLetra);
 		
 		//NANaren Stringa
@@ -99,12 +102,12 @@ public class Ventana6 extends JPanel {
 		
 		//LETRA LABEL
 		lblLetra.setFont(new Font("Comic Sans MS", Font.BOLD, 20));
-		lblLetra.setBounds(430, 159, 62, 40);
+		lblLetra.setBounds(377, 75, 52, 28);
 		add(lblLetra);
 		
 		//LABEL PASAHITZA
 		lblPasahitza.setFont(new Font("Comic Sans MS", Font.BOLD, 20));
-		lblPasahitza.setBounds(182, 280, 120, 54);
+		lblPasahitza.setBounds(165, 212, 92, 28);
 		add(lblPasahitza);
 		
 		//EZEZTATU BOTOIA
@@ -116,7 +119,7 @@ public class Ventana6 extends JPanel {
 		});
 		
 		btnEzeztatu.setFont(new Font("Comic Sans MS", Font.BOLD, 15));
-		btnEzeztatu.setBounds(89, 464, 114, 40);
+		btnEzeztatu.setBounds(162, 321, 95, 31);
 		add(btnEzeztatu);
 		
 		//ATZERA BOTOIA
@@ -130,7 +133,7 @@ public class Ventana6 extends JPanel {
 				
 			}
 		});
-		btnAtzera.setBounds(294, 463, 114, 42);
+		btnAtzera.setBounds(302, 321, 81, 31);
 		add(btnAtzera);
 		//BALIDATU BOTOIA
 
@@ -151,12 +154,12 @@ public class Ventana6 extends JPanel {
 		});
 		
 		btnBalidatu.setFont(new Font("Comic Sans MS", Font.BOLD, 15));
-		btnBalidatu.setBounds(497, 464, 120, 40);
+		btnBalidatu.setBounds(414, 321, 89, 31);
 		add(btnBalidatu);
 		
 		//PASAHITZA TEXTUA
 		Pasahitza = new JPasswordField();
-		Pasahitza.setBounds(338, 290, 142, 43);
+		Pasahitza.setBounds(302, 220, 92, 20);
 		add(Pasahitza);
 
 	}
