@@ -22,7 +22,7 @@ public class Ventana2 extends JFrame {
 	JButton btnAtzera = new JButton("Atzera");
 
 
-	
+
 	public Ventana2() {
 		this.setBounds(275,100,700,600);
 		getContentPane().setLayout(null);
@@ -37,12 +37,9 @@ public class Ventana2 extends JFrame {
 		btnBilbomungia.addActionListener(new ActionListener() {
 			@Override
 			public void actionPerformed(ActionEvent arg0) {
-	   			 Metodoak.hirugarrenLeihoa();
-	   			 
-	   			 
-				String linea="L2";
+				dispose();
+				String linea="L1";
 				Metodoak.hirugarrenLeihoa(linea);
-				
 			}
 		});
 		btnBilbomungia.setBounds(282, 139, 198, 48);
@@ -52,7 +49,6 @@ public class Ventana2 extends JFrame {
 		btnBilbogernika.addActionListener(new ActionListener() {
 			@Override
 			public void actionPerformed(ActionEvent e) {
-	   			 Metodoak.hirugarrenLeihoa();
 				String linea="L2";
 				Metodoak.hirugarrenLeihoa(linea);
 			}
@@ -60,29 +56,30 @@ public class Ventana2 extends JFrame {
 		btnBilbogernika.setFont(new Font("Bookman Old Style", Font.PLAIN, 20));
 		btnBilbogernika.setBounds(282, 236, 198, 48);
 		getContentPane().add(btnBilbogernika);
-		
+
 		//BILBO-DONOSTIA BOTOIA
 		btnBilbodonosti.addMouseListener(new MouseAdapter() {
 			@Override
 			public void mouseClicked(MouseEvent arg0) {
-	   			 Metodoak.hirugarrenLeihoa();
-
-	
+				dispose();
+				String linea="L3";
+				Metodoak.hirugarrenLeihoa(linea);
 			}
 		});
 
-		
+
 		btnBilbodonosti.setFont(new Font("Bookman Old Style", Font.PLAIN, 20));
 		btnBilbodonosti.setBounds(282, 324, 198, 48);
 		getContentPane().add(btnBilbodonosti);
-		
+
 		//ATZERA BOTOIA
 		btnAtzera.setFont(new Font("Bookman Old Style", Font.PLAIN, 16));
 		btnAtzera.addActionListener(new ActionListener() {
 			@Override
 			public void actionPerformed(ActionEvent e) {
-	   			 Metodoak.bigarrenLeihoa();
-	   			 
+				dispose();
+				Metodoak.lehenengoLeihoa();
+
 			}
 		});
 		btnAtzera.setBounds(515, 492, 120, 35);
