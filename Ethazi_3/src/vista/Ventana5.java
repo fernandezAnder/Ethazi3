@@ -62,12 +62,7 @@ public class Ventana5 extends JPanel {
 			public void actionPerformed(ActionEvent e) {
 				
 				
-				
-				
-				
-				
-				
-				
+	
 			}
 		});
 		
@@ -102,16 +97,7 @@ public class Ventana5 extends JPanel {
 		btnAmaitu.setFont(new Font("Bookman Old Style", Font.PLAIN, 20));
 		btnAmaitu.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				if(Frame.Ventana5.isVisible()){
-                	Frame.Ventana6.setVisible(true);
-                	Frame.Ventana1.setVisible(false);
-                	Frame.Ventana2.setVisible(false);
-                	Frame.Ventana3.setVisible(false);  
-                	Frame.Ventana4.setVisible(false);
-                	Frame.Ventana5.setVisible(false);
-                	Frame.Ventana7.setVisible(false);
-            	}
-
+				
 			}
 		});
 		

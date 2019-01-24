@@ -110,15 +110,7 @@ public class Ventana6 extends JPanel {
 		//EZEZTATU BOTOIA
 		btnEzeztatu.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				if(Frame.Ventana6.isVisible()){
-                	Frame.Ventana1.setVisible(true);
-                	Frame.Ventana2.setVisible(false);
-                	Frame.Ventana3.setVisible(false);  
-                	Frame.Ventana4.setVisible(false);
-                	Frame.Ventana5.setVisible(false);
-                	Frame.Ventana6.setVisible(false);
-                	Frame.Ventana7.setVisible(false);
-            	}
+				
 				
 			}
 		});
@@ -132,15 +124,10 @@ public class Ventana6 extends JPanel {
 		btnAtzera.addActionListener(new ActionListener() {
 			@Override
 			public void actionPerformed(ActionEvent arg0) {
-				if(Frame.Ventana6.isVisible()){
-                	Frame.Ventana5.setVisible(true);
-                	Frame.Ventana1.setVisible(false);
-                	Frame.Ventana2.setVisible(false);
-                	Frame.Ventana3.setVisible(false);  
-                	Frame.Ventana4.setVisible(false);
-                	Frame.Ventana6.setVisible(false);
-                	Frame.Ventana7.setVisible(false);
-            	}
+
+				
+
+				
 			}
 		});
 		btnAtzera.setBounds(294, 463, 114, 42);
@@ -149,15 +136,17 @@ public class Ventana6 extends JPanel {
 
 		btnBalidatu.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				if(Frame.Ventana6.isVisible()){
-                	Frame.Ventana7.setVisible(true);
-                	Frame.Ventana1.setVisible(false);
-                	Frame.Ventana2.setVisible(false);
-                	Frame.Ventana3.setVisible(false);  
-                	Frame.Ventana4.setVisible(false);
-                	Frame.Ventana5.setVisible(false);
-                	Frame.Ventana6.setVisible(false);
-				}
+
+				
+
+			}
+		});
+		
+		//BALIDATU BOTOIA
+		btnBalidatu.addMouseListener(new MouseAdapter() {
+			@Override
+			public void mouseClicked(MouseEvent e) {
+				
 			}
 		});
 		

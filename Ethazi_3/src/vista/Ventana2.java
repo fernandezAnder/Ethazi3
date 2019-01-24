@@ -5,12 +5,14 @@ import javax.swing.JPanel;
 import javax.swing.JLabel;
 import java.awt.Font;
 import javax.swing.JButton;
+import javax.swing.JFrame;
+
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
 
-public class Ventana2 extends JPanel {
+public class Ventana2 extends JFrame {
 
 	//Botoiak eta Jlabelak sortzen dira
 	JLabel textoAukeratuLinea = new JLabel("Aukeratu linea :");
@@ -34,15 +36,7 @@ public class Ventana2 extends JPanel {
 		btnBilbomungia.addActionListener(new ActionListener() {
 			@Override
 			public void actionPerformed(ActionEvent arg0) {
-				if(Frame.Ventana2.isVisible()){
-                	Frame.Ventana3.setVisible(true);
-                	Frame.Ventana4.setVisible(false);
-                	Frame.Ventana5.setVisible(false);
-                	Frame.Ventana1.setVisible(false);
-                	Frame.Ventana2.setVisible(false);    
-                	Frame.Ventana6.setVisible(false);
-                	Frame.Ventana7.setVisible(false);
-				}	
+				
 				
 			}
 		});
@@ -53,15 +47,7 @@ public class Ventana2 extends JPanel {
 		btnBilbogernika.addActionListener(new ActionListener() {
 			@Override
 			public void actionPerformed(ActionEvent e) {
-				if(Frame.Ventana2.isVisible()){
-                	Frame.Ventana3.setVisible(true);
-                	Frame.Ventana4.setVisible(false);
-                	Frame.Ventana5.setVisible(false);
-                	Frame.Ventana1.setVisible(false);
-                	Frame.Ventana2.setVisible(false);    
-                	Frame.Ventana6.setVisible(false);
-                	Frame.Ventana7.setVisible(false);
-            }	
+				
 
 			}
 		});
@@ -73,15 +59,7 @@ public class Ventana2 extends JPanel {
 		btnBilbodonosti.addMouseListener(new MouseAdapter() {
 			@Override
 			public void mouseClicked(MouseEvent arg0) {
-				if(Frame.Ventana2.isVisible()){
-                	Frame.Ventana3.setVisible(true);
-                	Frame.Ventana4.setVisible(false);
-                	Frame.Ventana5.setVisible(false);
-                	Frame.Ventana1.setVisible(false);
-                	Frame.Ventana2.setVisible(false);    
-                	Frame.Ventana6.setVisible(false);
-                	Frame.Ventana7.setVisible(false);
-            }	
+				
 	
 			}
 		});
@@ -96,15 +74,7 @@ public class Ventana2 extends JPanel {
 		btnAtzera.addActionListener(new ActionListener() {
 			@Override
 			public void actionPerformed(ActionEvent e) {
-				if(Frame.Ventana2.isVisible()){
-					Frame.Ventana1.setVisible(true);
-                	Frame.Ventana3.setVisible(false);
-                	Frame.Ventana4.setVisible(false);
-                	Frame.Ventana5.setVisible(false);
-                	Frame.Ventana2.setVisible(false);    
-                	Frame.Ventana6.setVisible(false);
-                	Frame.Ventana7.setVisible(false);
-            }	
+				
 		
 			}
 		});

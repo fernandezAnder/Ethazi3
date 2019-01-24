@@ -1,5 +1,6 @@
 package controlador;
-
+import modelo.*;
+import vista.*;
 import java.math.BigInteger;
 import java.security.*;
 
@@ -22,6 +23,9 @@ public class Metodoak {
 		}
 	}
 	
-	
+	public void bigarrenLeihoa() {
+		Ventana2 ventana2= new Ventana2();
+		ventana2.setVisible(true);
+	}
 }
 	
