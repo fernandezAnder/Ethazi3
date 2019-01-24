@@ -93,9 +93,8 @@ public class Ventana3 extends JPanel {
 		ArrayList <Parada> paradas= new ArrayList <Parada>();
 		String linea="L1";
 		paradas=Consultas.paradastabla(linea);
-		for (Parada emaitza : paradas) {
-		    System.out.println(emaitza);
-		    spinnerHelmuga_Geltokia.setModel(new SpinnerListModel(paradas));
+		for (int i=0;i<paradas.size();i++) {
+			spinnerHelmuga_Geltokia.setToolTipText(paradas.get(i).getNombre());
 		}
 		
 		

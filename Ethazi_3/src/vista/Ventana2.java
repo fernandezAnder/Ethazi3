@@ -1,5 +1,8 @@
 package vista;
 import javax.swing.JLabel;
+
+import controlador.Metodoak;
+
 import java.awt.Font;
 import javax.swing.JButton;
 import javax.swing.JFrame;
@@ -32,7 +35,8 @@ public class Ventana2 extends JFrame {
 		btnBilbomungia.addActionListener(new ActionListener() {
 			@Override
 			public void actionPerformed(ActionEvent arg0) {
-				
+				String linea="L2";
+				Metodoak.hirugarrenLeihoa(linea);
 				
 			}
 		});
@@ -43,7 +47,8 @@ public class Ventana2 extends JFrame {
 		btnBilbogernika.addActionListener(new ActionListener() {
 			@Override
 			public void actionPerformed(ActionEvent e) {
-				
+				String linea="L2";
+				Metodoak.hirugarrenLeihoa(linea);
 
 			}
 		});
