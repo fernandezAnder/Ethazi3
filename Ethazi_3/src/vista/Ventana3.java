@@ -19,6 +19,8 @@ import javax.swing.event.ChangeEvent;
 import javax.swing.table.DefaultTableModel;
 import javax.swing.JSpinner;
 import javax.swing.SpinnerListModel;
+import javax.swing.SpinnerModel;
+
 import com.toedter.calendar.JDateChooser;
 import javax.swing.JCheckBox;
 import javax.swing.JTable;
@@ -78,7 +80,7 @@ public class Ventana3 extends JPanel {
 
 		//JATORRI GELTOKIA SpinnerLista 
 		spinnerJatorri_geltokia.setModel(new SpinnerListModel(new String[] {"kaixo", "egunon", "zelan"}));
-		spinnerJatorri_geltokia.setBounds(268, 176, 57, 32);
+		spinnerJatorri_geltokia.setBounds(268, 176, 122, 32);
 		add(spinnerJatorri_geltokia);
 
 		//HELMUGA GELTOKIA LABELA
@@ -88,8 +90,17 @@ public class Ventana3 extends JPanel {
 		add(lblHelmugaGeltokia);
 
 		//HELMUGA GELTOKIA SPINNER
-		spinnerHelmuga_Geltokia.setModel(new SpinnerListModel(new String[] {"zelan ", "ondo ", "ondo", "bai"}));
-		spinnerHelmuga_Geltokia.setBounds(293, 238, 57, 32);
+		ArrayList <Parada> paradas= new ArrayList <Parada>();
+		String linea="L1";
+		paradas=Consultas.paradastabla(linea);
+		for (Parada emaitza : paradas) {
+		    System.out.println(emaitza);
+		    spinnerHelmuga_Geltokia.setModel(new SpinnerListModel(paradas));
+		}
+		
+		
+		spinnerHelmuga_Geltokia.setBounds(293, 238, 97, 32);
+		
 		add(spinnerHelmuga_Geltokia);
 
 		//JOAN ETORRI LABELA
@@ -139,13 +150,7 @@ public class Ventana3 extends JPanel {
 		jarraitu.addActionListener(new ActionListener() {
 			@Override
 			public void actionPerformed(ActionEvent arg0) {
-				if(Frame.Ventana3.isVisible()){
-					Frame.Ventana4.setVisible(true);
-					Frame.Ventana5.setVisible(false);
-					Frame.Ventana1.setVisible(false);
-					Frame.Ventana2.setVisible(false);
-					Frame.Ventana3.setVisible(false);           	 
-				}
+				
 
 
 			}
@@ -158,13 +163,7 @@ public class Ventana3 extends JPanel {
 		ezeztatu.addActionListener(new ActionListener() {
 			@Override
 			public void actionPerformed(ActionEvent e) {
-				if(Frame.Ventana3.isVisible()){
-					Frame.Ventana1.setVisible(true);
-					Frame.Ventana2.setVisible(false);
-					Frame.Ventana3.setVisible(false);  
-					Frame.Ventana4.setVisible(false);
-					Frame.Ventana5.setVisible(false);
-				}
+				
 
 			}
 		});
@@ -175,13 +174,7 @@ public class Ventana3 extends JPanel {
 		atzera.addActionListener(new ActionListener() {
 			@Override
 			public void actionPerformed(ActionEvent arg0) {
-				if(Frame.Ventana3.isVisible()){
-					Frame.Ventana1.setVisible(false);
-					Frame.Ventana2.setVisible(true);
-					Frame.Ventana3.setVisible(false);  
-					Frame.Ventana4.setVisible(false);
-					Frame.Ventana5.setVisible(false);
-				}
+				
 
 
 			}
@@ -192,30 +185,8 @@ public class Ventana3 extends JPanel {
 
 		//JTable
 		tabla.setBorder(new MatteBorder(1, 1, 1, 1, (Color) new Color(0, 0, 0)));
-		tabla.setBounds(406, 196, 284, 221);
+		tabla.setBounds(408, 196, 284, 221);
 		modelo.addColumn("PARADAS");
-		String linea="L1";
-		ResultSet rs;
-		rs= Consultas.paradastabla(linea);
-		try {
-		int paradanum;
-		String nombre;
-		String calle;
-		double latitud;
-		double longitud;
-		 while (rs.next()) {
-			 System.out.println(rs.getString(1));
-			 	paradanum=(rs.getInt(1));
-			 	nombre=(rs.getString(2));
-			 	calle=(rs.getString(3));
-			 	latitud=(rs.getDouble(4));
-			 	longitud=(rs.getDouble(5));
-			 	Parada parada= new Parada(paradanum, nombre, calle, longitud, latitud);
-		        paradas.add(parada);
-		        
-		 }
-		 }catch(Exception e) {e.getMessage();}
-		
 		add(tabla);
 
 

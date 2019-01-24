@@ -77,16 +77,7 @@ public class Ventana4 extends JPanel {
 		btnEzeztatu.addActionListener(new ActionListener() {
 			@Override
 			public void actionPerformed(ActionEvent arg0) {
-				//
-				if(Frame.Ventana4.isVisible()){
-                	Frame.Ventana1.setVisible(true);
-                	Frame.Ventana2.setVisible(false);
-                	Frame.Ventana3.setVisible(false);  
-                	Frame.Ventana4.setVisible(false);
-                	Frame.Ventana5.setVisible(false);
-                	Frame.Ventana6.setVisible(false);
-                	Frame.Ventana7.setVisible(false);
-            	}
+				
    			 
 				
 			}
@@ -98,15 +89,7 @@ public class Ventana4 extends JPanel {
 		btnAtzera.setFont(new Font("Comic Sans MS", Font.PLAIN, 18));
 		btnAtzera.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
-				if(Frame.Ventana4.isVisible()){
-                	Frame.Ventana3.setVisible(true);  
-                	Frame.Ventana1.setVisible(false);
-                	Frame.Ventana2.setVisible(false);
-                	Frame.Ventana4.setVisible(false);
-                	Frame.Ventana5.setVisible(false);
-                	Frame.Ventana6.setVisible(false);
-                	Frame.Ventana7.setVisible(false);
-            	}
+				
 				
 				
 			}
@@ -119,15 +102,7 @@ public class Ventana4 extends JPanel {
 		btnBalidatu.setFont(new Font("Comic Sans MS", Font.PLAIN, 18));
 		btnBalidatu.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				if(Frame.Ventana4.isVisible()){
-                	Frame.Ventana5.setVisible(true);
-                	Frame.Ventana1.setVisible(false);
-                	Frame.Ventana2.setVisible(false);
-                	Frame.Ventana3.setVisible(false);  
-                	Frame.Ventana4.setVisible(false);
-                	Frame.Ventana6.setVisible(false);
-                	Frame.Ventana7.setVisible(false);
-            	}
+				
 				
 				
 			}
