@@ -48,7 +48,7 @@ public class Ventana5 extends JPanel {
 				char validar =evt.getKeyChar();
 				if(Character.isLetter(validar)) {
 					getToolkit().beep();
-					evt.consume();	
+					evt.consume();
 					}
 			}
 		});

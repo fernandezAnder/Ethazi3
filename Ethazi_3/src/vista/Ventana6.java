@@ -51,7 +51,7 @@ public class Ventana6 extends JPanel {
 			public void keyTyped(java.awt.event.KeyEvent evt) {
 				if(textNAN.getText().length()>=8) {
 					evt.consume();	
-
+					
 				}
 				char validar =evt.getKeyChar();
 				if(Character.isLetter(validar)) {
