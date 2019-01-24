@@ -12,7 +12,7 @@ public class Ventana7 extends JPanel {
 	 * Create the panel.
 	 */
 	public Ventana7() {
-		setLayout(null);
+		this.setBounds(275,100,700,600);
 		
 		//LABEL ESKERRIK ASKO
 		lblEskerrikAsko.setFont(new Font("Comic Sans MS", Font.BOLD, 25));

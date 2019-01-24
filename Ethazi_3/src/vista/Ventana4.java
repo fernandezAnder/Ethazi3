@@ -31,7 +31,7 @@ public class Ventana4 extends JPanel {
 	 * Create the panel.
 	 */
 	public Ventana4() {
-		setLayout(null);
+		this.setBounds(275,100,700,600);
 		
 		//AUKERATUTAKO BOTOIA LABEL
 		lblAukeratutakoBidaia.setBounds(141, 23, 297, 34);

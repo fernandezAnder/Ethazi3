@@ -5,10 +5,11 @@ import java.awt.SystemColor;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
 
+import javax.swing.JFrame;
 import javax.swing.JLabel;
-import javax.swing.JPanel;
 
-public class Ventana1 extends JPanel {
+
+public class Ventana1 extends JFrame {
 
 	private static final long serialVersionUID = 1L;
 	Font fuente = new Font("Comic Sans MS", Font.ITALIC, 40);
@@ -18,6 +19,8 @@ public class Ventana1 extends JPanel {
     JLabel lblTxrtelSaltzailera = new JLabel("Txartel Saltzailea");
 
 	public Ventana1() {
+			
+			this.setBounds(275,100,700,600);
 		   	addMouseListener(new MouseAdapter() {
 		   		 @Override
 		   		 public void mouseClicked(MouseEvent e) {

@@ -20,7 +20,7 @@ public class Ventana2 extends JFrame {
 
 	
 	public Ventana2() {
-		setLayout(null);
+		this.setBounds(275,100,700,600);
 
 		//TEXTO AUKERATU LINEA
 		textoAukeratuLinea.setFont(new Font("Comic Sans MS", Font.BOLD, 24));

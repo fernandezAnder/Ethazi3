@@ -12,8 +12,7 @@ public class BileteMakinaAPP {
 		String baseDatos="ethazi";
 		Conexion base1 = new Conexion(baseDatos);
 		
-		Frame Ejecutar=new Frame();
-		Ejecutar.setVisible(true);
+		Metodoak.lehenengoLeihoa();
 		
 		ArrayList <Autobus> buses= new ArrayList <Autobus>();
 		ArrayList <Cliente> clientes= new ArrayList <Cliente>();

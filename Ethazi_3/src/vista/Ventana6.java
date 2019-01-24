@@ -32,7 +32,7 @@ public class Ventana6 extends JPanel {
 	 * Create the panel.
 	 */
 	public Ventana6() {
-		setLayout(null);
+		this.setBounds(275,100,700,600);
 		
 		//LABEL TXARTEL ERREGISTROA
 		lblTxatelaErregistroa.setFont(new Font("Comic Sans MS", Font.BOLD, 26));

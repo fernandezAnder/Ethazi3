@@ -58,7 +58,7 @@ public class Ventana3 extends JPanel {
 	public Ventana3() {
 		setVerifyInputWhenFocusTarget(false);
 		setBackground(SystemColor.control);
-		setLayout(null);
+		this.setBounds(275,100,700,600);
 		lblGeltokiak.setRequestFocusEnabled(false);
 
 		//LABEL ZERRENDA

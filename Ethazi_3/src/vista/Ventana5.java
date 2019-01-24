@@ -28,7 +28,7 @@ public class Ventana5 extends JPanel {
 	 * Create the panel.
 	 */
 	public Ventana5() {
-		setLayout(null);
+		this.setBounds(275,100,700,600);
 		
 		//LABEL ORDAINKETA
 		lblOrdainketa.setFont(new Font("Bookman Old Style", Font.PLAIN, 25));
