@@ -1,30 +1,34 @@
 package vista;
 
-import javax.swing.JPanel;
+import javax.swing.JPanel; 
 import javax.swing.JLabel;
+
+import java.awt.ComponentOrientation;
 import java.awt.Font;
-import javax.swing.JTextField;
+import javax.swing.JTextPane;
+
+import modelo.Consultas;
+
 import javax.swing.JButton;
 import javax.swing.JFrame;
-import javax.swing.JTextArea;
-import java.awt.event.ActionListener;
-import java.util.ArrayList;
-import java.awt.event.ActionEvent;
-import java.awt.Color;
-import java.awt.ComponentOrientation;
-import modelo.*;
-import controlador.*;
-import java.awt.event.KeyAdapter;
-import java.awt.event.KeyEvent;
-public class Ventana5 extends JFrame {
-	private JTextField textSartzekoDirua;
-	JLabel lblOrdainketa = new JLabel("Ordainketa :");
-	JLabel lblSartuDirua = new JLabel("Sartu Dirua :");
-	JButton btnOrdaindu = new JButton("Ordaindu");
-	JLabel lblItzuliak = new JLabel("Itzuliak :");
-	JTextArea textAreaItzuliak = new JTextArea();
-	JButton btnAmaitu = new JButton("Amaitu");
 
+import java.awt.event.ActionListener;
+import java.awt.event.ActionEvent;
+
+public class Ventana5 extends JFrame {
+
+	JLabel lblAukeratutakoBidaia = new JLabel("Aukeratutako Bidaia :");
+	JLabel lblBidaia = new JLabel("Bidaia :");
+	JLabel lblData = new JLabel("Data :");
+	JLabel lblPrezioa = new JLabel("Prezioa :");
+	JTextPane textPaneBidaia = new JTextPane();
+	JTextPane textPaneData = new JTextPane();
+	JTextPane textPanePrezioa = new JTextPane();
+	private final JButton btnAtzera = new JButton("Atzera");
+	private final JButton btnBalidatu = new JButton("Balidatu");
+	JButton btnEzeztatu = new JButton("Ezeztatu");
+
+	
 	/**
 	 * Create the panel.
 	 */
@@ -32,87 +36,83 @@ public class Ventana5 extends JFrame {
 		this.setBounds(275,100,700,600);
 		getContentPane().setLayout(null);
 		
-		//LABEL ORDAINKETA
-		lblOrdainketa.setFont(new Font("Bookman Old Style", Font.PLAIN, 25));
-		lblOrdainketa.setBounds(104, 11, 162, 34);
-		getContentPane().add(lblOrdainketa);
+		//AUKERATUTAKO BOTOIA LABEL
+		lblAukeratutakoBidaia.setBounds(286, 11, 253, 34);
+		lblAukeratutakoBidaia.setFont(new Font("Comic Sans MS", Font.BOLD, 24));
+		getContentPane().add(lblAukeratutakoBidaia);
 		
-		//LABEL SARTU DIRUA
-		lblSartuDirua.setFont(new Font("Bookman Old Style", Font.PLAIN, 24));
-		lblSartuDirua.setBounds(90, 67, 162, 37);
-		getContentPane().add(lblSartuDirua);
+		//BIDAIA LABEL
+		lblBidaia.setBounds(155, 129, 91, 29);
+		lblBidaia.setFont(new Font("Bookman Old Style", Font.PLAIN, 24));
+		getContentPane().add(lblBidaia);
 		
-		//TEXTUA SARTZEKO DIRUA
-		textSartzekoDirua = new JTextField();
-		textSartzekoDirua.addKeyListener(new KeyAdapter() {
+		//BIDAIA DATA
+		lblData.setBounds(155, 210, 72, 29);
+		lblData.setFont(new Font("Bookman Old Style", Font.PLAIN, 24));
+		getContentPane().add(lblData);
+		
+		//PREZIOA LABEL
+		lblPrezioa.setBounds(155, 297, 101, 29);
+		lblPrezioa.setFont(new Font("Bookman Old Style", Font.PLAIN, 24));
+		getContentPane().add(lblPrezioa);
+		
+		//TEXTPANE BIDAIA
+		textPaneBidaia.setComponentOrientation(ComponentOrientation.RIGHT_TO_LEFT);
+		textPaneBidaia.setEditable(false);
+		textPaneBidaia.setBounds(286, 138, 104, 20);
+		getContentPane().add(textPaneBidaia);
+		
+		//TEXTPANE DATA
+		textPaneData.setComponentOrientation(ComponentOrientation.RIGHT_TO_LEFT);
+		textPaneData.setEditable(false);
+		textPaneData.setBounds(286, 219, 104, 20);
+		getContentPane().add(textPaneData);
+		
+		//TEXTPANE PREZIOA
+		textPanePrezioa.setComponentOrientation(ComponentOrientation.RIGHT_TO_LEFT);
+		textPanePrezioa.setEditable(false);
+		textPanePrezioa.setBounds(286, 297, 104, 20);
+		getContentPane().add(textPanePrezioa);
+		btnEzeztatu.setFont(new Font("Bookman Old Style", Font.PLAIN, 20));
+		
+		//EZEZTATU BOTOIA
+		btnEzeztatu.setFont(new Font("Comic Sans MS", Font.PLAIN, 18));
+		btnEzeztatu.addActionListener(new ActionListener() {
 			@Override
-			public void keyTyped(java.awt.event.KeyEvent evt) {
-				char validar =evt.getKeyChar();
-				if(Character.isLetter(validar)) {
-					getToolkit().beep();
-					evt.consume();
-					}
+			public void actionPerformed(ActionEvent arg0) {
+				
+   			 
+				
 			}
 		});
-		textSartzekoDirua.setFont(new Font("Bookman Old Style", Font.PLAIN, 11));
-		textSartzekoDirua.setBounds(266, 73, 162, 34);
-		getContentPane().add(textSartzekoDirua);
-		textSartzekoDirua.setColumns(10);
+		btnEzeztatu.setBounds(335, 471, 107, 35);
+		getContentPane().add(btnEzeztatu);
 		
-		//ORDAINDU BOTOIA
-		btnOrdaindu.addActionListener(new ActionListener() {
+		//ATZERA BOTOIA
+		btnAtzera.setFont(new Font("Comic Sans MS", Font.PLAIN, 18));
+		btnAtzera.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent arg0) {
+				
+				
+				
+			}
+		});
+		btnAtzera.setBounds(187, 471, 91, 35);
+		
+		getContentPane().add(btnAtzera);
+		
+		//BALIDATU BOTOIA
+		btnBalidatu.setFont(new Font("Comic Sans MS", Font.PLAIN, 18));
+		btnBalidatu.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				
 				
-	
-			}
-		});
-		
-		btnOrdaindu.setFont(new Font("Bookman Old Style", Font.PLAIN, 15));
-		btnOrdaindu.setBounds(534, 86, 120, 40);
-		getContentPane().add(btnOrdaindu);
-		
-		
-		//LABEL ITZULIAK
-		lblItzuliak.setFont(new Font("Bookman Old Style", Font.PLAIN, 24));
-		lblItzuliak.setBounds(120, 153, 136, 34);
-		getContentPane().add(lblItzuliak);
-		textAreaItzuliak.setForeground(Color.WHITE);
-		
-		//TEXTAREA ITZULIAK
-		textAreaItzuliak.setComponentOrientation(ComponentOrientation.RIGHT_TO_LEFT);
-		textAreaItzuliak.setEditable(false);
-		textAreaItzuliak.setBounds(126, 214, 454, 199);
-		
-		ArrayList <Parada> paradas= new ArrayList <Parada>();
-		String linea="L1";
-		paradas=Consultas.mostrarParadas(linea);
-		String pantailaratu;
-		for (Parada emaitza : paradas) {
-			pantailaratu= emaitza.toString()+"\n";
-		    textAreaItzuliak.setText(pantailaratu);
-		}
-		
-		getContentPane().add(textAreaItzuliak);
-		
-		//BOTOIA AMAITU
-		btnAmaitu.setFont(new Font("Bookman Old Style", Font.PLAIN, 20));
-		btnAmaitu.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent e) {
 				
 			}
 		});
+		btnBalidatu.setBounds(507, 471, 99, 35);
 		
-		btnAmaitu.setBounds(308, 470, 120, 37);
-		getContentPane().add(btnAmaitu);
-		
-		// SCROLLBAR
-//		JScrollPane scrollBar = new JScrollPane(textArea, JScrollPane.VERTICAL_SCROLLBAR_AS_NEEDED, JScrollPane.HORIZONTAL_SCROLLBAR_AS_NEEDED);
-//		scrollBar.setBounds(409, 139, 17, 109);
-//		add(scrollBar);
-//
-//		textArea.add(scrollBar);
+		getContentPane().add(btnBalidatu);
 
-		
 	}
 }

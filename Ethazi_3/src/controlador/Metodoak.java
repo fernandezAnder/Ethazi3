@@ -31,7 +31,7 @@ public class Metodoak {
 		}
 	public static void bigarrenLeihoa() {
 		
-		Ventana2 ventana2= new Ventana2();
+		Ventana3 ventana2= new Ventana3();
 		ventana2.setVisible(true);
 		
 		
@@ -41,25 +41,25 @@ public class Metodoak {
 		ArrayList <Parada> paradas= new ArrayList <Parada>();
 		paradas= Consultas.paradastabla(linea);
 		
-		Ventana3 ventana3= new Ventana3(paradas);
+		Ventana4 ventana3= new Ventana4(paradas);
 		ventana3.setVisible(true);
 		
 		}
 	public static void laugarrenLeihoa() {
 		
-		Ventana4 ventana4= new Ventana4();
+		Ventana5 ventana4= new Ventana5();
 		ventana4.setVisible(true);
 		
 		}
 	public static void bostgarrenLeihoa() {
 		
-		Ventana5 ventana5= new Ventana5();
+		Ventana6 ventana5= new Ventana6();
 		ventana5.setVisible(true);
 		
 		}
 	public static void seigarrenLeihoa() {
 	
-	Ventana6 ventana6= new Ventana6();
+	Ventana2 ventana6= new Ventana2();
 	ventana6.setVisible(true);
 	
 	}
