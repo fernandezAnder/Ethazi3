@@ -30,16 +30,17 @@ public class Ventana5 extends JFrame {
 	 */
 	public Ventana5() {
 		this.setBounds(275,100,700,600);
+		getContentPane().setLayout(null);
 		
 		//LABEL ORDAINKETA
 		lblOrdainketa.setFont(new Font("Bookman Old Style", Font.PLAIN, 25));
 		lblOrdainketa.setBounds(104, 11, 162, 34);
-		add(lblOrdainketa);
+		getContentPane().add(lblOrdainketa);
 		
 		//LABEL SARTU DIRUA
 		lblSartuDirua.setFont(new Font("Bookman Old Style", Font.PLAIN, 24));
 		lblSartuDirua.setBounds(90, 67, 162, 37);
-		add(lblSartuDirua);
+		getContentPane().add(lblSartuDirua);
 		
 		//TEXTUA SARTZEKO DIRUA
 		textSartzekoDirua = new JTextField();
@@ -55,7 +56,7 @@ public class Ventana5 extends JFrame {
 		});
 		textSartzekoDirua.setFont(new Font("Bookman Old Style", Font.PLAIN, 11));
 		textSartzekoDirua.setBounds(266, 73, 162, 34);
-		add(textSartzekoDirua);
+		getContentPane().add(textSartzekoDirua);
 		textSartzekoDirua.setColumns(10);
 		
 		//ORDAINDU BOTOIA
@@ -69,13 +70,13 @@ public class Ventana5 extends JFrame {
 		
 		btnOrdaindu.setFont(new Font("Bookman Old Style", Font.PLAIN, 15));
 		btnOrdaindu.setBounds(534, 86, 120, 40);
-		add(btnOrdaindu);
+		getContentPane().add(btnOrdaindu);
 		
 		
 		//LABEL ITZULIAK
 		lblItzuliak.setFont(new Font("Bookman Old Style", Font.PLAIN, 24));
 		lblItzuliak.setBounds(120, 153, 136, 34);
-		add(lblItzuliak);
+		getContentPane().add(lblItzuliak);
 		textAreaItzuliak.setForeground(Color.WHITE);
 		
 		//TEXTAREA ITZULIAK
@@ -92,7 +93,7 @@ public class Ventana5 extends JFrame {
 		    textAreaItzuliak.setText(pantailaratu);
 		}
 		
-		add(textAreaItzuliak);
+		getContentPane().add(textAreaItzuliak);
 		
 		//BOTOIA AMAITU
 		btnAmaitu.setFont(new Font("Bookman Old Style", Font.PLAIN, 20));
@@ -102,8 +103,8 @@ public class Ventana5 extends JFrame {
 			}
 		});
 		
-		btnAmaitu.setBounds(497, 464, 120, 40);
-		add(btnAmaitu);
+		btnAmaitu.setBounds(308, 470, 120, 37);
+		getContentPane().add(btnAmaitu);
 		
 		// SCROLLBAR
 //		JScrollPane scrollBar = new JScrollPane(textArea, JScrollPane.VERTICAL_SCROLLBAR_AS_NEEDED, JScrollPane.HORIZONTAL_SCROLLBAR_AS_NEEDED);
