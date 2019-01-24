@@ -37,9 +37,15 @@ public class Ventana2 extends JFrame {
 		btnBilbomungia.addActionListener(new ActionListener() {
 			@Override
 			public void actionPerformed(ActionEvent arg0) {
+<<<<<<< HEAD
 	   			 Metodoak.hirugarrenLeihoa();
 	   			 
 	   			 
+=======
+				String linea="L2";
+				Metodoak.hirugarrenLeihoa(linea);
+				
+>>>>>>> branch 'master' of https://github.com/fernandezAnder/Ethazi3.git
 			}
 		});
 		btnBilbomungia.setBounds(282, 139, 198, 48);
@@ -49,8 +55,13 @@ public class Ventana2 extends JFrame {
 		btnBilbogernika.addActionListener(new ActionListener() {
 			@Override
 			public void actionPerformed(ActionEvent e) {
+<<<<<<< HEAD
 	   			 Metodoak.hirugarrenLeihoa();
 
+=======
+				String linea="L2";
+				Metodoak.hirugarrenLeihoa(linea);
+>>>>>>> branch 'master' of https://github.com/fernandezAnder/Ethazi3.git
 
 			}
 		});

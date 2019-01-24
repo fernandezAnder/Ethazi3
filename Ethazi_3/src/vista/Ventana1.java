@@ -24,10 +24,10 @@ public class Ventana1 extends JFrame {
 		   	addMouseListener(new MouseAdapter() {
 		   		 @Override
 		   		 public void mouseClicked(MouseEvent e) {
-		   			 Metodoak.bigarrenLeihoa();
-
+		   			dispose();
+		   			Metodoak.bigarrenLeihoa();
 		   			 
-		   			 
+		   			
 		   		 }
 		   	});
         	this.setBackground(SystemColor.control);
@@ -51,5 +51,7 @@ public class Ventana1 extends JFrame {
         	lblTxrtelSaltzailera.setBounds(321, 131, 255, 44);
         	add(lblTxrtelSaltzailera);
        	 
+        
     	}
+	
     }
