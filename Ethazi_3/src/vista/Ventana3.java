@@ -166,23 +166,26 @@ public class Ventana3 extends JFrame {
 			geltokiak=geltokiak+(paradas.get(i).getNombre()+"\r\n");
 			
 		}
-		System.out.println(geltokiak);
-		
-		
+		//Geltoki textPane
 		geltoki.setText(geltokiak);
 		geltoki.setBounds(447, 176, 175, 156);
 		getContentPane().add(geltoki);
 		
 		//Hasiera geltoki konbo box-a
 		Hasiera_geltoki.setBounds(277, 143, 114, 20);
-		Hasiera_geltoki.addItem(geltokiak);
+		for (int i=0;i<paradas.size();i++) {
+			Hasiera_geltoki.addItem(paradas.get(i).getNombre());
+		}
+		
 		getContentPane().add(Hasiera_geltoki);
 		
 		//Amaiera geltoki konbo box-a
 		Amaiera_geltoki.setBounds(277, 207, 114, 20);
-		Amaiera_geltoki.addItem(geltokiak);
+		for (int i=0;i<paradas.size();i++) {
+			Amaiera_geltoki.addItem(paradas.get(i).getNombre());
+		}
 		getContentPane().add(Amaiera_geltoki);
-
+srigheri
 
 	}
 }
