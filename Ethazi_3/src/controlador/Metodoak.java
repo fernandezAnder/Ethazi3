@@ -37,9 +37,10 @@ public class Metodoak {
 		}
 	public static void hirugarrenLeihoa(String linea) {
 		
-		
-		Ventana2 ventana2= new Ventana2();
-		ventana2.setVisible(true);
+		ArrayList <Parada> paradas= new ArrayList <Parada>();
+		paradas= Consultas.paradastabla(linea);
+		Ventana3 ventana3= new Ventana3(paradas);
+		ventana3.setVisible(true);
 		
 		}
 }

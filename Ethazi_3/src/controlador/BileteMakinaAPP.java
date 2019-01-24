@@ -16,7 +16,7 @@ public class BileteMakinaAPP {
 		
 //		ArrayList <Autobus> buses= new ArrayList <Autobus>();
 //		ArrayList <Cliente> clientes= new ArrayList <Cliente>();
-//		ArrayList <Parada> paradas= new ArrayList <Parada>();
+//		
 //		//buses =Consultas.datosAutobus();
 //		//clientes=Consultas.datosCliente();
 //		String linea="L1";
