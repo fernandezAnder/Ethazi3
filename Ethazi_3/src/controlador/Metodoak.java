@@ -31,6 +31,8 @@ public class Metodoak {
 	public static void bigarrenLeihoa() {
 		Ventana2 ventana2= new Ventana2();
 		ventana2.setVisible(true);
+		Ventana1 ventana1 =
+		
 		
 		}
 	public static void hirugarrenLeihoa() {
