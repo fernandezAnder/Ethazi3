@@ -5,6 +5,7 @@ import java.awt.SystemColor;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.util.ArrayList;
+import java.util.Date;
 
 import javax.swing.JButton;
 import javax.swing.JCheckBox;
@@ -36,19 +37,22 @@ public class Ventana4 extends JFrame {
 	JLabel lblHelmugaGeltokia = new JLabel("Helmuga Geltokia");
 	JLabel lblJoanEtaEtorri = new JLabel("Joan eta etorri?");
 	JCheckBox chckbxJoanEtorri = new JCheckBox("Bai");
-	JDateChooser btnJCalendar = new JDateChooser();
+	JDateChooser bigarrendata = new JDateChooser();
 	JLabel lblItzuliData = new JLabel("Itzuli data");
 	DefaultTableModel modelo = new DefaultTableModel();
 	JLabel lblData = new JLabel("Data");
-	JDateChooser dateChooser = new JDateChooser();
+	JDateChooser lehendata = new JDateChooser();
 	JComboBox Hasiera_geltoki = new JComboBox();
 	JComboBox Amaiera_geltoki = new JComboBox();
 	JTextPane geltoki = new JTextPane();
-
 	ArrayList <Parada> paradas= new ArrayList <Parada>();
-
+	private String hasiera_geltokia="";
+	private String amaiera_geltokia="";
+	private Date lehen_data;
+	private Date bigarren_data;
+	
+	
 	public Ventana4(ArrayList<Parada> paradas,String linea) {
-
 		setBackground(SystemColor.control);
 		this.setBounds(275,100,700,600);
 		getContentPane().setLayout(null);
@@ -76,6 +80,7 @@ public class Ventana4 extends JFrame {
 		lblHelmugaGeltokia.setBounds(37, 193, 208, 36);
 		lblHelmugaGeltokia.setRequestFocusEnabled(false);
 		lblHelmugaGeltokia.setFont(new Font("Comic Sans MS", Font.BOLD, 25));
+		
 		getContentPane().add(lblHelmugaGeltokia);
 
 		//JOAN ETORRI LABELA
@@ -87,17 +92,18 @@ public class Ventana4 extends JFrame {
 		chckbxJoanEtorri.setMaximumSize(new Dimension(49, 23));
 		chckbxJoanEtorri.setBounds(277, 261, 61, 36);
 		getContentPane().add(chckbxJoanEtorri);
-		btnJCalendar.setBounds(158, 402, 117, 20);
-		btnJCalendar.setVerifyInputWhenFocusTarget(false);
-		btnJCalendar.setVisible(false);
+		bigarrendata.setBounds(158, 402, 117, 20);
+		bigarrendata.setVerifyInputWhenFocusTarget(false);
+		bigarrendata.setVisible(false);
 
 		//DATA JCALENDAR
-		btnJCalendar.setDateFormatString("dd-MM-yyyy");
-		btnJCalendar.getCalendarButton().addActionListener(new ActionListener() {
+		bigarrendata.setDateFormatString("dd-MM-yyyy");
+		bigarrendata.getCalendarButton().addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
 			}
 		});
-		getContentPane().add(btnJCalendar);
+		
+		getContentPane().add(bigarrendata);
 		lblItzuliData.setBounds(37, 394, 104, 28);
 
 		//ITZULI DATA LABELA
@@ -111,27 +117,17 @@ public class Ventana4 extends JFrame {
 			public void actionPerformed(ActionEvent e) {
 				if (chckbxJoanEtorri.isSelected()==false) {
 					lblItzuliData.setVisible(false);
-					btnJCalendar.setVisible(false);
+					bigarrendata.setVisible(false);
 				}else {
 					lblItzuliData.setVisible(true);
-					btnJCalendar.setVisible(true);
+					bigarrendata.setVisible(true);
 				}
 
 			}
 		});
 		jarraitu.setBounds(491, 490, 131, 35);
 
-		//JARRAITU BOTOIA
-		jarraitu.setFont(new Font("Comic Sans MS", Font.PLAIN, 18));
-		jarraitu.addActionListener(new ActionListener() {
-			@Override
-			public void actionPerformed(ActionEvent arg0) {
-				dispose();
-				Metodoak.bostgarrenLeihoa();
-			}
-		});
-		getContentPane().add(jarraitu);
-		ezeztatu.setBounds(326, 490, 131, 35);
+		
 
 		//EZEZTATU BOTOIA
 		ezeztatu.setFont(new Font("Comic Sans MS", Font.PLAIN, 18));
@@ -162,9 +158,9 @@ public class Ventana4 extends JFrame {
 		lblData.setFont(new Font("Comic Sans MS", Font.BOLD, 22));
 		getContentPane().add(lblData);
 
-		dateChooser.setBounds(157, 337, 118, 20);
-		dateChooser.setDateFormatString("dd-MM-yyyy");
-		getContentPane().add(dateChooser);
+		lehendata.setBounds(157, 337, 118, 20);
+		lehendata.setDateFormatString("dd-MM-yyyy");
+		getContentPane().add(lehendata);
 		String geltokiak="";
 		for (int i=0;i<paradas.size();i++) {
 			geltokiak=geltokiak+(paradas.get(i).getNombre()+"\r\n");
@@ -193,7 +189,27 @@ public class Ventana4 extends JFrame {
 		}
 		getContentPane().add(Amaiera_geltoki);
 
-
+		//JARRAITU BOTOIA
+				jarraitu.setFont(new Font("Comic Sans MS", Font.PLAIN, 18));
+				jarraitu.addActionListener(new ActionListener() {
+					@Override
+					public void actionPerformed(ActionEvent arg0) {
+						dispose();
+						Metodoak.bostgarrenLeihoa();
+						lehen_data=lehendata.getDate();
+						bigarren_data=bigarrendata.getDate();
+						for(int i=0;i<paradas.size();i++) {
+						hasiera_geltokia=paradas.get(Hasiera_geltoki.getSelectedIndex()).getNombre();
+						amaiera_geltokia=paradas.get(Amaiera_geltoki.getSelectedIndex()).getNombre();
+						}
+						System.out.println(lehen_data);
+						System.out.println(bigarren_data);
+						System.out.println(hasiera_geltokia);
+						System.out.println(amaiera_geltokia);
+					}
+				});
+				getContentPane().add(jarraitu);
+				ezeztatu.setBounds(326, 490, 131, 35);
 
 	}
 }

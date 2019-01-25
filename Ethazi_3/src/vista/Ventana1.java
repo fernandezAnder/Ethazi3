@@ -12,11 +12,11 @@ import javax.swing.JLabel;
 public class Ventana1 extends JFrame {
 
 	private static final long serialVersionUID = 1L;
-	Font fuente = new Font("Comic Sans MS", Font.ITALIC, 40);
+	private Font fuente = new Font("Comic Sans MS", Font.ITALIC, 40);
    
-    JLabel txtOngiEotirriMaquina = new JLabel("Ongi Etorri");
-    JLabel Icono = new JLabel("");
-    JLabel lblTxrtelSaltzailera = new JLabel("Txartel Saltzailea");
+    private JLabel txtOngiEotirriMaquina = new JLabel("Ongi Etorri");
+    private JLabel Icono = new JLabel("");
+    private JLabel lblTxrtelSaltzailera = new JLabel("Txartel Saltzailea");
 
 	public Ventana1() {
 			

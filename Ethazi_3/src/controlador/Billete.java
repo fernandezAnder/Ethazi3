@@ -16,7 +16,7 @@ public class Billete {
 	
 	public Billete(int cod_billete, String n_trayecto, int cod_linea, int cod_bus, int cod_parada_inicio,
 			int cod_parada_fin, Date fecha, String hora, String dni, double precio) {
-		super();
+		
 		this.cod_billete = cod_billete;
 		this.n_trayecto = n_trayecto;
 		this.cod_linea = cod_linea;
