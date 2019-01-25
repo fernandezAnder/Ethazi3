@@ -15,7 +15,7 @@ public class BileteMakinaAPP {
 		Metodoak.lehenengoLeihoa();
 		
 //		ArrayList <Autobus> buses= new ArrayList <Autobus>();
-//		ArrayList <Cliente> clientes= new ArrayList <Cliente>();
+
 //		
 //		//buses =Consultas.datosAutobus();
 //		//clientes=Consultas.datosCliente();

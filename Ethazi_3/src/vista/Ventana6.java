@@ -2,167 +2,117 @@ package vista;
 
 import javax.swing.JPanel;
 import javax.swing.JLabel;
-import javax.swing.JOptionPane;
-
 import java.awt.Font;
 import javax.swing.JTextField;
-import javax.swing.plaf.RootPaneUI;
 import javax.swing.JButton;
 import javax.swing.JFrame;
-
+import javax.swing.JTextArea;
 import java.awt.event.ActionListener;
+import java.util.ArrayList;
 import java.awt.event.ActionEvent;
-import javax.swing.JPasswordField;
-import java.awt.event.MouseAdapter;
-import java.awt.event.MouseEvent;
+import java.awt.Color;
+import java.awt.ComponentOrientation;
+import modelo.*;
+import controlador.*;
 import java.awt.event.KeyAdapter;
 import java.awt.event.KeyEvent;
-
 public class Ventana6 extends JFrame {
-	private JTextField textNAN;
-	private JTextField textLetra;
-	private JPasswordField Pasahitza;
-	JLabel lblTxatelaErregistroa = new JLabel("Txatela Erregistroa");
-	JLabel lblNan = new JLabel("NAN");
-	JLabel lblLetra = new JLabel("Letra");
-	JLabel lblPasahitza = new JLabel("Pasahitza");
-	JButton btnEzeztatu = new JButton("Ezeztatu");
-	JButton btnAtzera = new JButton("Atzera");
-	JButton btnBalidatu = new JButton("Balidatu");
+	private JTextField textSartzekoDirua;
+	JLabel lblOrdainketa = new JLabel("Ordainketa :");
+	JLabel lblSartuDirua = new JLabel("Sartu Dirua :");
+	JButton btnOrdaindu = new JButton("Ordaindu");
+	JLabel lblItzuliak = new JLabel("Itzuliak :");
+	JTextArea textAreaItzuliak = new JTextArea();
+	JButton btnAmaitu = new JButton("Amaitu");
 
 	/**
 	 * Create the panel.
 	 */
 	public Ventana6() {
 		this.setBounds(275,100,700,600);
-		setLayout(null);
+		getContentPane().setLayout(null);
 		
-		//LABEL TXARTEL ERREGISTROA
-		lblTxatelaErregistroa.setFont(new Font("Comic Sans MS", Font.BOLD, 26));
-		lblTxatelaErregistroa.setBounds(224, 11, 250, 37);
-		add(lblTxatelaErregistroa);
+		//LABEL ORDAINKETA
+		lblOrdainketa.setFont(new Font("Bookman Old Style", Font.PLAIN, 25));
+		lblOrdainketa.setBounds(104, 11, 162, 34);
+		getContentPane().add(lblOrdainketa);
 		
-		//LABEL NAN
-		lblNan.setFont(new Font("Comic Sans MS", Font.BOLD, 20));
-		lblNan.setBounds(169, 75, 47, 28);
-		add(lblNan);
+		//LABEL SARTU DIRUA
+		lblSartuDirua.setFont(new Font("Bookman Old Style", Font.PLAIN, 24));
+		lblSartuDirua.setBounds(90, 67, 162, 37);
+		getContentPane().add(lblSartuDirua);
 		
-		//TEXT NAN
-		textNAN = new JTextField();
-		textNAN.addKeyListener(new KeyAdapter() {
+		//TEXTUA SARTZEKO DIRUA
+		textSartzekoDirua = new JTextField();
+		textSartzekoDirua.addKeyListener(new KeyAdapter() {
 			@Override
 			public void keyTyped(java.awt.event.KeyEvent evt) {
-				if(textNAN.getText().length()>=8) {
-					evt.consume();	
-					
-				}
 				char validar =evt.getKeyChar();
 				if(Character.isLetter(validar)) {
 					getToolkit().beep();
-					evt.consume();	
-					
+					evt.consume();
 					}
 			}
 		});
-		String zenbakia=textNAN.getText();
-		textNAN.setBounds(241, 83, 86, 20);
-		add(textNAN);
-		textNAN.setColumns(10);
+		textSartzekoDirua.setFont(new Font("Bookman Old Style", Font.PLAIN, 11));
+		textSartzekoDirua.setBounds(266, 73, 162, 34);
+		getContentPane().add(textSartzekoDirua);
+		textSartzekoDirua.setColumns(10);
 		
-		//TEXT LETRA
-		textLetra = new JTextField();
-		textLetra.addKeyListener(new KeyAdapter() {
-			@Override
-			public void keyTyped(java.awt.event.KeyEvent evt) {
-				if(textLetra.getText().length()>=1) {
-					evt.consume();	
-				}
-				char validar =evt.getKeyChar();
-				char c=evt.getKeyChar();
-				if(Character.isDigit(validar) ) {
-					getToolkit().beep();
-					evt.consume();	
-					
-					}
-				if(Character.isLowerCase(c)) {
-					String cad=(""+c).toUpperCase();
-					c=cad.charAt(0);
-					evt.setKeyChar(c);
-				}
-				
-			}
-		});
-		String letra=textLetra.getText();
-		textLetra.setColumns(10);
-		textLetra.setBounds(457, 83, 32, 20);
-		add(textLetra);
-		
-		//NANaren Stringa
-		String nan=zenbakia+letra;
-		
-		//LETRA LABEL
-		lblLetra.setFont(new Font("Comic Sans MS", Font.BOLD, 20));
-		lblLetra.setBounds(377, 75, 52, 28);
-		add(lblLetra);
-		
-		//LABEL PASAHITZA
-		lblPasahitza.setFont(new Font("Comic Sans MS", Font.BOLD, 20));
-		lblPasahitza.setBounds(165, 212, 92, 28);
-		add(lblPasahitza);
-		
-		//EZEZTATU BOTOIA
-		btnEzeztatu.addActionListener(new ActionListener() {
+		//ORDAINDU BOTOIA
+		btnOrdaindu.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				
 				
+	
 			}
 		});
 		
-		btnEzeztatu.setFont(new Font("Comic Sans MS", Font.BOLD, 15));
-		btnEzeztatu.setBounds(162, 321, 95, 31);
-		add(btnEzeztatu);
+		btnOrdaindu.setFont(new Font("Bookman Old Style", Font.PLAIN, 15));
+		btnOrdaindu.setBounds(534, 86, 120, 40);
+		getContentPane().add(btnOrdaindu);
 		
-		//ATZERA BOTOIA
-		btnAtzera.setFont(new Font("Comic Sans MS", Font.BOLD, 15));
-		btnAtzera.addActionListener(new ActionListener() {
-			@Override
-			public void actionPerformed(ActionEvent arg0) {
-
-				
-
-				
-			}
-		});
-		btnAtzera.setBounds(302, 321, 81, 31);
-		add(btnAtzera);
-		//BALIDATU BOTOIA
-
-		btnBalidatu.addActionListener(new ActionListener() {
+		
+		//LABEL ITZULIAK
+		lblItzuliak.setFont(new Font("Bookman Old Style", Font.PLAIN, 24));
+		lblItzuliak.setBounds(120, 153, 136, 34);
+		getContentPane().add(lblItzuliak);
+		textAreaItzuliak.setForeground(Color.WHITE);
+		
+		//TEXTAREA ITZULIAK
+		textAreaItzuliak.setComponentOrientation(ComponentOrientation.RIGHT_TO_LEFT);
+		textAreaItzuliak.setEditable(false);
+		textAreaItzuliak.setBounds(126, 214, 454, 199);
+		
+		ArrayList <Parada> paradas= new ArrayList <Parada>();
+		String linea="L1";
+		paradas=Consultas.mostrarParadas(linea);
+		String pantailaratu;
+		for (Parada emaitza : paradas) {
+			pantailaratu= emaitza.toString()+"\n";
+		    textAreaItzuliak.setText(pantailaratu);
+		}
+		
+		getContentPane().add(textAreaItzuliak);
+		
+		//BOTOIA AMAITU
+		btnAmaitu.setFont(new Font("Bookman Old Style", Font.PLAIN, 20));
+		btnAmaitu.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-
-				
-
-			}
-		});
-		
-		//BALIDATU BOTOIA
-		btnBalidatu.addMouseListener(new MouseAdapter() {
-			@Override
-
-			public void mouseClicked(MouseEvent e) {
 				
 			}
 		});
 		
-		btnBalidatu.setFont(new Font("Comic Sans MS", Font.BOLD, 15));
-		btnBalidatu.setBounds(414, 321, 89, 31);
-		add(btnBalidatu);
-		add(btnBalidatu);
-		//PASAHITZA TEXTUA
-		Pasahitza = new JPasswordField();
-		Pasahitza.setBounds(302, 220, 92, 20);
-		add(Pasahitza);
+		btnAmaitu.setBounds(308, 470, 120, 37);
+		getContentPane().add(btnAmaitu);
+		
+		// SCROLLBAR
+//		JScrollPane scrollBar = new JScrollPane(textArea, JScrollPane.VERTICAL_SCROLLBAR_AS_NEEDED, JScrollPane.HORIZONTAL_SCROLLBAR_AS_NEEDED);
+//		scrollBar.setBounds(409, 139, 17, 109);
+//		add(scrollBar);
+//
+//		textArea.add(scrollBar);
 
+		
 	}
 }
-
