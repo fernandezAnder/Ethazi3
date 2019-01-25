@@ -16,9 +16,9 @@ public class Ventana3 extends JFrame {
 
 	//Botoiak eta Jlabelak sortzen dira
 	JLabel textoAukeratuLinea = new JLabel("Aukeratu linea :");
-	JButton btnBilbomungia = new JButton("Bilbo-Mungia");
-	JButton btnBilbogernika = new JButton("Bilbo-Gernika");
-	JButton btnBilbodonosti = new JButton("Bilbo-Donosti");
+	JButton btnBilbomungia = new JButton("Bilbo-Plentzia");
+	JButton btnBilbogernika = new JButton("Bilbo-Muskiz");
+	JButton btnBilbodonosti = new JButton("Bilbo-Balmaseda");
 	JButton btnAtzera = new JButton("Atzera");
 
 
@@ -70,7 +70,7 @@ public class Ventana3 extends JFrame {
 
 
 		btnBilbodonosti.setFont(new Font("Bookman Old Style", Font.PLAIN, 20));
-		btnBilbodonosti.setBounds(282, 324, 198, 48);
+		btnBilbodonosti.setBounds(282, 323, 198, 48);
 		getContentPane().add(btnBilbodonosti);
 
 		//ATZERA BOTOIA
@@ -85,6 +85,18 @@ public class Ventana3 extends JFrame {
 		});
 		btnAtzera.setBounds(515, 492, 120, 35);
 		getContentPane().add(btnAtzera);
+		
+		JButton btnBilboPlentzia = new JButton("Bilbo-Durango");
+		btnBilboPlentzia.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent arg0) {
+				dispose();
+				String linea="L4";
+				Metodoak.laugarrenLeihoa(linea);
+			}
+		});
+		btnBilboPlentzia.setFont(new Font("Bookman Old Style", Font.PLAIN, 20));
+		btnBilboPlentzia.setBounds(282, 421, 198, 48);
+		getContentPane().add(btnBilboPlentzia);
 
 	}
 }
