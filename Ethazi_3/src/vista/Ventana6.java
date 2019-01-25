@@ -48,7 +48,6 @@ public class Ventana6 extends JFrame {
 		add(lblNan);
 		
 		//TEXT NAN
-		//TEXT NAN
 		textNAN = new JTextField();
 		textNAN.addKeyListener(new KeyAdapter() {
 			@Override
