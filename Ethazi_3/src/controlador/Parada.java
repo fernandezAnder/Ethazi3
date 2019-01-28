@@ -1,27 +1,27 @@
 package controlador;
 
 public class Parada {
-	private int parada;
+	private int paradanum;
 	private String nombre;
 	private String calle;
 	private double latitud;
 	private double longitud;
 	
-	public Parada(int parada, String nombre, String calle, double latitud, double longitud) {
+	public Parada(int paradanum, String nombre, String calle, double latitud, double longitud) {
 	
-		this.parada = parada;
+		this.paradanum = paradanum;
 		this.nombre = nombre;
 		this.calle = calle;
 		this.latitud = latitud;
 		this.longitud = longitud;
 	}
 
-	public int getParada() {
-		return parada;
+	public int getParadanum() {
+		return paradanum;
 	}
 
-	public void setParada(int parada) {
-		this.parada = parada;
+	public void setParadanum(int paradanum) {
+		this.paradanum = paradanum;
 	}
 
 	public String getNombre() {

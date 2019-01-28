@@ -6,7 +6,7 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.util.ArrayList;
 import java.util.Date;
-
+import java.sql.*;
 import javax.swing.JButton;
 import javax.swing.JCheckBox;
 import javax.swing.JComboBox;
@@ -19,6 +19,8 @@ import com.toedter.calendar.JDateChooser;
 
 import controlador.Metodoak;
 import controlador.Parada;
+import modelo.Consultas;
+
 import java.awt.Dimension;
 import java.awt.Color;
 public class Ventana4 extends JFrame {
@@ -47,7 +49,9 @@ public class Ventana4 extends JFrame {
 	JTextPane geltoki = new JTextPane();
 	ArrayList <Parada> paradas= new ArrayList <Parada>();
 	private String hasiera_geltokia="";
+	private int hasiera_geltoki_kod=0;
 	private String amaiera_geltokia="";
+	private int amaiera_geltoki_kod=0;
 	private Date lehen_data;
 	private Date bigarren_data;
 	
@@ -177,6 +181,7 @@ public class Ventana4 extends JFrame {
 		Hasiera_geltoki.setBounds(258, 129, 175, 34);
 		for (int i=0;i<paradas.size();i++) {
 			Hasiera_geltoki.addItem(paradas.get(i).getNombre());
+			
 		}
 
 		getContentPane().add(Hasiera_geltoki);
@@ -186,7 +191,8 @@ public class Ventana4 extends JFrame {
 		Amaiera_geltoki.setBounds(258, 193, 175, 34);
 		for (int i=0;i<paradas.size();i++) {
 			Amaiera_geltoki.addItem(paradas.get(i).getNombre());
-		}
+	
+			}
 		getContentPane().add(Amaiera_geltoki);
 
 		//JARRAITU BOTOIA
@@ -195,17 +201,16 @@ public class Ventana4 extends JFrame {
 					@Override
 					public void actionPerformed(ActionEvent arg0) {
 						dispose();
-						Metodoak.bostgarrenLeihoa();
 						lehen_data=lehendata.getDate();
 						bigarren_data=bigarrendata.getDate();
 						for(int i=0;i<paradas.size();i++) {
 						hasiera_geltokia=paradas.get(Hasiera_geltoki.getSelectedIndex()).getNombre();
+						hasiera_geltoki_kod=paradas.get(Hasiera_geltoki.getSelectedIndex()).getParadanum();
 						amaiera_geltokia=paradas.get(Amaiera_geltoki.getSelectedIndex()).getNombre();
+						amaiera_geltoki_kod=paradas.get(Amaiera_geltoki.getSelectedIndex()).getParadanum();
 						}
-						System.out.println(lehen_data);
-						System.out.println(bigarren_data);
-						System.out.println(hasiera_geltokia);
-						System.out.println(amaiera_geltokia);
+						Consultas.billete(lehen_data,bigarren_data,hasiera_geltokia,amaiera_geltokia);
+						Metodoak.bostgarrenLeihoa();
 					}
 				});
 				getContentPane().add(jarraitu);

@@ -1,7 +1,7 @@
 package modelo;
 import java.sql.*;
+import java.sql.Date;
 import java.util.ArrayList;
-
 
 import controlador.*;
 public class Consultas {
@@ -125,6 +125,13 @@ public class Consultas {
 		}catch(Exception e) {e.getMessage();}
 		return arrayparada;
 	}
+	
+	public static Billete billete(java.util.Date lehen_data,java.util.Date bigarren_data, String hasiera_geltokia, String amaiera_geltokia) {
+		Billete billete= new Billete(0, null, 0, 0, 0, 0, null, null, null, 0);
+		return billete;
+		
+	}
+	
 }
 
 

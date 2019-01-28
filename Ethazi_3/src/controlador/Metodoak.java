@@ -4,6 +4,7 @@ import vista.*;
 import java.math.BigInteger;
 import java.security.*;
 import java.util.ArrayList;
+import java.util.Date;
 
 public class Metodoak {
 
@@ -55,9 +56,10 @@ public class Metodoak {
 	}
 
 	public static void bostgarrenLeihoa() {
-
+		
 		Ventana5 ventana5= new Ventana5();
 		ventana5.setVisible(true);
+		
 
 	}
 	public static void seigarrenLeihoa() {
