@@ -47,14 +47,27 @@ public class Ventana4 extends JFrame {
 	JComboBox Hasiera_geltoki = new JComboBox();
 	JComboBox Amaiera_geltoki = new JComboBox();
 	JTextPane geltoki = new JTextPane();
+	
+	//BARIABLEAK
 	ArrayList <Parada> paradas= new ArrayList <Parada>();
+	
 	private String hasiera_geltokia="";
 	private int hasiera_geltoki_kod=0;
+	//Hasiera geltoki kooordenatuak
+	private double hasiera_geltoki_latit=0;
+	private double hasiera_geltoki_longi=0;
+	//Amaiera geltoki koordenatuak
+	private double amaiera_geltoki_latit=0;
+	private double amaiera_geltoki_longi=0;
 	private String amaiera_geltokia="";
 	private int amaiera_geltoki_kod=0;
 	private Date lehen_data;
 	private Date bigarren_data;
-	
+	private int cod_billete=0;
+	private String bidaia="";
+	private int cod_linea=0;
+	private int cod_bus=0;
+	private double prezioa;
 	
 	public Ventana4(ArrayList<Parada> paradas,String linea) {
 		setBackground(SystemColor.control);
@@ -196,25 +209,33 @@ public class Ventana4 extends JFrame {
 		getContentPane().add(Amaiera_geltoki);
 
 		//JARRAITU BOTOIA
-				jarraitu.setFont(new Font("Comic Sans MS", Font.PLAIN, 18));
-				jarraitu.addActionListener(new ActionListener() {
-					@Override
-					public void actionPerformed(ActionEvent arg0) {
-						dispose();
-						lehen_data=lehendata.getDate();
-						bigarren_data=bigarrendata.getDate();
-						for(int i=0;i<paradas.size();i++) {
-						hasiera_geltokia=paradas.get(Hasiera_geltoki.getSelectedIndex()).getNombre();
-						hasiera_geltoki_kod=paradas.get(Hasiera_geltoki.getSelectedIndex()).getParadanum();
-						amaiera_geltokia=paradas.get(Amaiera_geltoki.getSelectedIndex()).getNombre();
-						amaiera_geltoki_kod=paradas.get(Amaiera_geltoki.getSelectedIndex()).getParadanum();
-						}
-						Consultas.billete(lehen_data,bigarren_data,hasiera_geltokia,amaiera_geltokia);
-						Metodoak.bostgarrenLeihoa();
-					}
-				});
-				getContentPane().add(jarraitu);
-				ezeztatu.setBounds(326, 490, 131, 35);
+		jarraitu.setFont(new Font("Comic Sans MS", Font.PLAIN, 18));
+		jarraitu.addActionListener(new ActionListener() {
+			@Override
+			public void actionPerformed(ActionEvent arg0) {
+				dispose();
+				lehen_data=lehendata.getDate();
+				bigarren_data=bigarrendata.getDate();
+				cod_billete++;
+				for(int i=0;i<paradas.size();i++) {
+					//Hasiera geltoki bariableak
+					hasiera_geltokia=paradas.get(Hasiera_geltoki.getSelectedIndex()).getNombre();
+					hasiera_geltoki_kod=paradas.get(Hasiera_geltoki.getSelectedIndex()).getParadanum();
+					hasiera_geltoki_latit=paradas.get(Hasiera_geltoki.getSelectedIndex()).getLatitud();
+					hasiera_geltoki_longi=paradas.get(Hasiera_geltoki.getSelectedIndex()).getLongitud();
+					//amaiera geltoki bariableak
+					amaiera_geltokia=paradas.get(Amaiera_geltoki.getSelectedIndex()).getNombre();
+					amaiera_geltoki_kod=paradas.get(Amaiera_geltoki.getSelectedIndex()).getParadanum();
+					amaiera_geltoki_latit=paradas.get(Amaiera_geltoki.getSelectedIndex()).getLatitud();
+					amaiera_geltoki_longi=paradas.get(Amaiera_geltoki.getSelectedIndex()).getLongitud();
+				}
+
+				Consultas.billete(cod_billete,bidaia,cod_linea,cod_bus,hasiera_geltoki_kod,amaiera_geltoki_kod,lehen_data,null,prezioa);
+				Metodoak.bostgarrenLeihoa();
+			}
+		});
+		getContentPane().add(jarraitu);
+		ezeztatu.setBounds(326, 490, 131, 35);
 
 	}
 }

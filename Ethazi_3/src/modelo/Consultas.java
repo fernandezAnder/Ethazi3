@@ -126,8 +126,8 @@ public class Consultas {
 		return arrayparada;
 	}
 	
-	public static Billete billete(java.util.Date lehen_data,java.util.Date bigarren_data, String hasiera_geltokia, String amaiera_geltokia) {
-		Billete billete= new Billete(0, null, 0, 0, 0, 0, null, null, null, 0);
+	public static Billete billete(int cod_billete,String bidaia,int cod_linea,int cod_bus,int hasiera_geltoki_kod,int amaiera_geltoki_kod,Date lehen_data,null,double prezioa) {
+		Billete billete= new Billete();
 		return billete;
 		
 	}
