@@ -22,10 +22,10 @@ import controlador.Billete;
 
 public class Ventana5 extends JFrame {
 
-	JLabel lblAukeratutakoBidaia = new JLabel("Aukeratutako Bidaia :");
+	private JLabel lblAukeratutakoBidaia = new JLabel("Aukeratutako Bidaia :");
 	private final JButton btnAtzera = new JButton("Atzera");
 	private final JButton btnBalidatu = new JButton("Balidatu");
-	JButton btnEzeztatu = new JButton("Ezeztatu");
+	private JButton btnEzeztatu = new JButton("Ezeztatu");
 	private JTable taula;
 
 	
