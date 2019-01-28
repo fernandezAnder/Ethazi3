@@ -18,12 +18,12 @@ import java.awt.event.KeyAdapter;
 import java.awt.event.KeyEvent;
 public class Ventana6 extends JFrame {
 	private JTextField textSartzekoDirua;
-	JLabel lblOrdainketa = new JLabel("Ordainketa :");
-	JLabel lblSartuDirua = new JLabel("Sartu Dirua :");
-	JButton btnOrdaindu = new JButton("Ordaindu");
-	JLabel lblItzuliak = new JLabel("Itzuliak :");
-	JTextArea textAreaItzuliak = new JTextArea();
-	JButton btnAmaitu = new JButton("Amaitu");
+	private JLabel lblOrdainketa = new JLabel("Ordainketa :");
+	private JLabel lblSartuDirua = new JLabel("Sartu Dirua :");
+	private JButton btnOrdaindu = new JButton("Ordaindu");
+	private JLabel lblItzuliak = new JLabel("Itzuliak :");
+	private JTextArea textAreaItzuliak = new JTextArea();
+	private JButton btnAmaitu = new JButton("Amaitu");
 
 	/**
 	 * Create the panel.
@@ -43,7 +43,7 @@ public class Ventana6 extends JFrame {
 		getContentPane().add(lblSartuDirua);
 		
 		//TEXTUA SARTZEKO DIRUA
-		textSartzekoDirua = new JTextField();
+		
 		textSartzekoDirua.addKeyListener(new KeyAdapter() {
 			@Override
 			public void keyTyped(java.awt.event.KeyEvent evt) {

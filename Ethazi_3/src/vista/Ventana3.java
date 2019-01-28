@@ -15,11 +15,12 @@ import java.awt.BorderLayout;
 public class Ventana3 extends JFrame {
 
 	//Botoiak eta Jlabelak sortzen dira
-	JLabel textoAukeratuLinea = new JLabel("Aukeratu linea :");
-	JButton btnBilbomungia = new JButton("Bilbo-Plentzia");
-	JButton btnBilbogernika = new JButton("Bilbo-Muskiz");
-	JButton btnBilbodonosti = new JButton("Bilbo-Balmaseda");
-	JButton btnAtzera = new JButton("Atzera");
+	private JLabel textoAukeratuLinea = new JLabel("Aukeratu linea :");
+	private JButton btnBilbomungia = new JButton("Bilbo-Plentzia");
+	private JButton btnBilbogernika = new JButton("Bilbo-Muskiz");
+	private JButton btnBilbodonosti = new JButton("Bilbo-Balmaseda");
+	private JButton btnBilboPlentzia = new JButton("Bilbo-Durango");
+	private JButton btnAtzera = new JButton("Atzera");
 
 
 
@@ -86,7 +87,7 @@ public class Ventana3 extends JFrame {
 		btnAtzera.setBounds(515, 492, 120, 35);
 		getContentPane().add(btnAtzera);
 		
-		JButton btnBilboPlentzia = new JButton("Bilbo-Durango");
+		
 		btnBilboPlentzia.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
 				dispose();
