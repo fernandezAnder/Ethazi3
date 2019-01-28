@@ -40,6 +40,7 @@ public class Ventana3 extends JFrame {
 			public void actionPerformed(ActionEvent arg0) {
 				dispose();
 				String linea="L1";
+				
 				Metodoak.laugarrenLeihoa(linea);
 			}
 		});

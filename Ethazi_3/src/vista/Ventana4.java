@@ -17,9 +17,8 @@ import javax.swing.table.DefaultTableModel;
 
 import com.toedter.calendar.JDateChooser;
 
-import controlador.Metodoak;
-import controlador.Parada;
-import modelo.Consultas;
+import controlador.*;
+
 
 import java.awt.Dimension;
 import java.awt.Color;
@@ -49,7 +48,7 @@ public class Ventana4 extends JFrame {
 	JTextPane geltoki = new JTextPane();
 	
 	//BARIABLEAK
-	ArrayList <Parada> paradas= new ArrayList <Parada>();
+	
 	
 	private String hasiera_geltokia="";
 	private int hasiera_geltoki_kod=0;
@@ -68,8 +67,15 @@ public class Ventana4 extends JFrame {
 	private int cod_linea=0;
 	private int cod_bus=0;
 	private double prezioa;
+	private String ordua="";
+	private String nan="";
 	
-	public Ventana4(ArrayList<Parada> paradas,String linea) {
+	
+	public Ventana4(ArrayList<Parada> paradas,ArrayList<Autobus> buses,String linea) {
+		
+		
+		
+		
 		setBackground(SystemColor.control);
 		this.setBounds(275,100,700,600);
 		getContentPane().setLayout(null);
@@ -229,8 +235,15 @@ public class Ventana4 extends JFrame {
 					amaiera_geltoki_latit=paradas.get(Amaiera_geltoki.getSelectedIndex()).getLatitud();
 					amaiera_geltoki_longi=paradas.get(Amaiera_geltoki.getSelectedIndex()).getLongitud();
 				}
-
-				Consultas.billete(cod_billete,bidaia,cod_linea,cod_bus,hasiera_geltoki_kod,amaiera_geltoki_kod,lehen_data,null,prezioa);
+				
+				Double distantzia=Metodoak.distanciaCoord(hasiera_geltoki_latit, hasiera_geltoki_longi, amaiera_geltoki_latit, amaiera_geltoki_longi);
+				
+				
+				
+				
+				
+				Metodoak.billete(cod_billete, bidaia, cod_linea, cod_bus, hasiera_geltoki_kod, amaiera_geltoki_kod, lehen_data, ordua, nan, prezioa);
+						
 				Metodoak.bostgarrenLeihoa();
 			}
 		});

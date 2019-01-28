@@ -48,9 +48,10 @@ public class Metodoak {
 	public static void laugarrenLeihoa(String linea) {
 
 		ArrayList <Parada> paradas= new ArrayList <Parada>();
+		ArrayList <Autobus> bus= new ArrayList <Autobus>();
 		paradas= Consultas.paradastabla(linea);
-		
-		Ventana4 ventana4= new Ventana4(paradas,linea);
+		bus=Consultas.datosAutobus(linea);
+		Ventana4 ventana4= new Ventana4(paradas,bus,linea);
 		ventana4.setVisible(true);
 
 	}
@@ -62,6 +63,14 @@ public class Metodoak {
 		
 
 	}
+	public static Billete billete(int cod_billete,String bidaia,int cod_linea,int cod_bus,int
+			hasiera_geltoki_kod,int amaiera_geltoki_kod,Date lehen_data, 
+			String ordua, String nan, double prezioa) {
+		Billete billete= new Billete(cod_billete,bidaia,cod_linea,cod_bus,hasiera_geltoki_kod,amaiera_geltoki_kod,lehen_data,ordua,nan,prezioa);
+		return billete;
+		
+	}
+	
 	public static void seigarrenLeihoa() {
 
 		Ventana6 ventana6= new Ventana6();
@@ -88,6 +97,18 @@ public class Metodoak {
         double distancia = radioTierra * va2;  
    
         return distancia;  
-    }  
+    }
+	public static double prezioaKalkulatu(double distantzia,final double erregaia,double kontsumo_bus,int bidaiariak,final double onurak) {
+		double prezioa=0;
+		double erregai_kontsumoa=erregaia*kontsumo_bus;
+		double bidai_gastua=distantzia*erregai_kontsumoa;
+		double irabaziak= bidai_gastua*onurak;
+		double bidaia_totala=irabaziak+bidai_gastua;
+		prezioa=bidaia_totala/bidaiariak;
+		
+		
+		return prezioa;
+		
+	}
 }
 	

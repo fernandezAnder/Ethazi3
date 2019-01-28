@@ -36,14 +36,14 @@ public class Consultas {
 		return arraycliente;
 	}
 
-	public static ArrayList <Autobus> datosAutobus() {
+	public static ArrayList <Autobus> datosAutobus(String linea) {
 
 		ArrayList <Autobus> arraybus = new ArrayList<Autobus>();
 		PreparedStatement s=null;
 		Connection konexioa=Conexion.getConexion();
 		
 		try {
-			s = konexioa.prepareStatement("select * from autobus");
+			s = konexioa.prepareStatement("SELECT * FROM autobus, linea_autobus, linea WHERE autobus.Cod_bus=linea_autobus.Cod_bus AND linea_autobus.Cod_Linea=linea.Cod_Linea AND linea.Cod_Linea LIKE"+"'" +linea+"'");
 			ResultSet rs = s.executeQuery();
 			int cod_bus;
 			int plazas;
@@ -56,43 +56,10 @@ public class Consultas {
 				 	color=(rs.getString(4));
 				 	Autobus bus= new Autobus(cod_bus, plazas, consumo, color);
 			        arraybus.add(bus);
-				
+			        System.out.println(bus.getCod_bus()+" \t\t"+bus.getColor()+" \t\t"+bus.getConsumo_km()+" \t\t"+bus.getN_plazas());
 			}
 		}catch(Exception e) {e.getMessage();}
 		return arraybus;
-	}
-
-	public static ArrayList <Parada> mostrarParadas(String linea){
-
-		ArrayList <Parada> arrayparada = new ArrayList<Parada>();
-		PreparedStatement s=null;
-		Connection konexioa=Conexion.getConexion();
-		
-		linea="L2";
-		try {
-			
-			s = konexioa.prepareStatement("SELECT * FROM parada, linea_parada,linea WHERE parada.Cod_Parada=linea_parada.Cod_Parada and linea.Cod_Linea=linea_parada.Cod_Linea AND linea.Cod_Linea like"+"'" +linea+"'");
-			ResultSet rs = s.executeQuery();
-			
-			int paradanum;
-			String nombre;
-			String calle;
-			double latitud;
-			double longitud;
-			 while (rs.next()) {
-				 System.out.println(rs.getString(1));
-				 	paradanum=(rs.getInt(1));
-				 	nombre=(rs.getString(2));
-				 	calle=(rs.getString(3));
-				 	latitud=(rs.getDouble(4));
-				 	longitud=(rs.getDouble(5));
-				 	Parada parada= new Parada(paradanum, nombre, calle, longitud, latitud);
-			        arrayparada.add(parada);
-			        
-				
-			}
-		}catch(Exception e) {e.getMessage();}
-		return arrayparada;
 	}
 
 	public static ArrayList <Parada> paradastabla(String linea){
@@ -111,7 +78,7 @@ public class Consultas {
 			double latitud;
 			double longitud;
 			 while (rs.next()) {
-				 System.out.println(rs.getString(1));
+				 
 				 	paradanum=(rs.getInt(1));
 				 	nombre=(rs.getString(2));
 				 	calle=(rs.getString(3));
@@ -126,11 +93,6 @@ public class Consultas {
 		return arrayparada;
 	}
 	
-	public static Billete billete(int cod_billete,String bidaia,int cod_linea,int cod_bus,int hasiera_geltoki_kod,int amaiera_geltoki_kod,Date lehen_data,null,double prezioa) {
-		Billete billete= new Billete();
-		return billete;
-		
-	}
 	
 }
 
