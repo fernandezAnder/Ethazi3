@@ -82,6 +82,7 @@ public class Ventana5 extends JFrame {
 		
 		getContentPane().add(btnBalidatu);
 		
+		//TAULA
 		taula = new JTable();
 		taula.setAutoCreateRowSorter(true);
 		taula.setToolTipText("");
