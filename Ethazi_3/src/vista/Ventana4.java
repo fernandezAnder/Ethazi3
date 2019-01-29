@@ -237,10 +237,7 @@ public class Ventana4 extends JFrame {
 				
 				Double distantzia=Metodoak.distanciaCoord(hasiera_geltoki_latit, hasiera_geltoki_longi, amaiera_geltoki_latit, amaiera_geltoki_longi);
 				
-				
-				
-				
-				
+
 				Metodoak.billete(cod_billete, bidaia, cod_linea, cod_bus, hasiera_geltoki_kod, amaiera_geltoki_kod, lehen_data, ordua, nan, prezioa);
 						
 				Metodoak.bostgarrenLeihoa();
