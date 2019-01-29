@@ -40,8 +40,8 @@ public class Ventana3 extends JFrame {
 			public void actionPerformed(ActionEvent arg0) {
 				dispose();
 				String linea="L1";
-				
-				Metodoak.laugarrenLeihoa(linea);
+				int cod_bus=1001;
+				Metodoak.laugarrenLeihoa(linea,cod_bus);
 			}
 		});
 		btnBilbomungia.setBounds(282, 139, 198, 48);
@@ -53,7 +53,8 @@ public class Ventana3 extends JFrame {
 			public void actionPerformed(ActionEvent e) {
 				dispose();
 				String linea="L2";
-				Metodoak.laugarrenLeihoa(linea);
+				int cod_bus=2001;
+				Metodoak.laugarrenLeihoa(linea, cod_bus);
 			}
 		});
 		btnBilbogernika.setFont(new Font("Bookman Old Style", Font.PLAIN, 20));
@@ -66,7 +67,8 @@ public class Ventana3 extends JFrame {
 			public void mouseClicked(MouseEvent arg0) {
 				dispose();
 				String linea="L3";
-				Metodoak.laugarrenLeihoa(linea);
+				int cod_bus=3001;
+				Metodoak.laugarrenLeihoa(linea, cod_bus);
 			}
 		});
 
@@ -93,7 +95,8 @@ public class Ventana3 extends JFrame {
 			public void actionPerformed(ActionEvent arg0) {
 				dispose();
 				String linea="L4";
-				Metodoak.laugarrenLeihoa(linea);
+				int cod_bus=4001;
+				Metodoak.laugarrenLeihoa(linea, cod_bus);
 			}
 		});
 		btnBilboPlentzia.setFont(new Font("Bookman Old Style", Font.PLAIN, 20));

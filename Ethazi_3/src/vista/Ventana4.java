@@ -63,19 +63,15 @@ public class Ventana4 extends JFrame {
 	private Date lehen_data;
 	private Date bigarren_data;
 	private int cod_billete=0;
-	private String bidaia="";
+	private int bidaiakop=0;
 	private int cod_linea=0;
-	private int cod_bus=0;
 	private double prezioa;
 	private String ordua="";
 	private String nan="";
 	
 	
-	public Ventana4(ArrayList<Parada> paradas,ArrayList<Autobus> buses,String linea) {
-		
-		
-		
-		
+	public Ventana4(ArrayList<Parada> paradas,ArrayList<Autobus> buses,String linea, int cod_bus) {
+
 		setBackground(SystemColor.control);
 		this.setBounds(275,100,700,600);
 		getContentPane().setLayout(null);
@@ -237,12 +233,7 @@ public class Ventana4 extends JFrame {
 				}
 				
 				Double distantzia=Metodoak.distanciaCoord(hasiera_geltoki_latit, hasiera_geltoki_longi, amaiera_geltoki_latit, amaiera_geltoki_longi);
-				
-				
-				
-				
-				
-				Metodoak.billete(cod_billete, bidaia, cod_linea, cod_bus, hasiera_geltoki_kod, amaiera_geltoki_kod, lehen_data, ordua, nan, prezioa);
+				Metodoak.billete(cod_billete, bidaiakop, cod_linea, cod_bus, hasiera_geltoki_kod, amaiera_geltoki_kod, lehen_data, ordua, nan, prezioa);
 						
 				Metodoak.bostgarrenLeihoa();
 			}

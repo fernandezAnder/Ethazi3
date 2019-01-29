@@ -45,13 +45,19 @@ public class Metodoak {
 		ventana3.setVisible(true);
 
 	}
-	public static void laugarrenLeihoa(String linea) {
+	public static void laugarrenLeihoa(String linea, int cod_bus) {
 
 		ArrayList <Parada> paradas= new ArrayList <Parada>();
+		for (int i=0;i<paradas.size();i++) {
+	
+		}
 		ArrayList <Autobus> bus= new ArrayList <Autobus>();
+		
+		ArrayList <Double> distantzia= new ArrayList<Double>();
+		
 		paradas= Consultas.paradastabla(linea);
 		bus=Consultas.datosAutobus(linea);
-		Ventana4 ventana4= new Ventana4(paradas,bus,linea);
+		Ventana4 ventana4= new Ventana4(paradas,bus,linea,cod_bus);
 		ventana4.setVisible(true);
 
 	}
@@ -63,10 +69,10 @@ public class Metodoak {
 		
 
 	}
-	public static Billete billete(int cod_billete,String bidaia,int cod_linea,int cod_bus,int
+	public static Billete billete(int cod_billete,int bidaiakop,int cod_linea,int cod_bus,int
 			hasiera_geltoki_kod,int amaiera_geltoki_kod,Date lehen_data, 
 			String ordua, String nan, double prezioa) {
-		Billete billete= new Billete(cod_billete,bidaia,cod_linea,cod_bus,hasiera_geltoki_kod,amaiera_geltoki_kod,lehen_data,ordua,nan,prezioa);
+		Billete billete= new Billete(cod_billete,bidaiakop,cod_linea,cod_bus,hasiera_geltoki_kod,amaiera_geltoki_kod,lehen_data,ordua,nan,prezioa);
 		return billete;
 		
 	}

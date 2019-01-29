@@ -5,7 +5,7 @@ public class Billete {
 
 	
 	private int cod_billete;
-	private String n_trayecto;
+	private int n_trayecto;
 	private int cod_linea;
 	private int cod_bus;
 	private int cod_parada_inicio;
@@ -15,7 +15,7 @@ public class Billete {
 	private String dni;
 	private double precio;
 	
-	public Billete(int cod_billete, String n_trayecto, int cod_linea, int cod_bus, int cod_parada_inicio,
+	public Billete(int cod_billete, int n_trayecto, int cod_linea, int cod_bus, int cod_parada_inicio,
 			int cod_parada_fin, java.util.Date lehen_data, String hora, String dni, double precio) {
 		
 		this.cod_billete = cod_billete;
@@ -38,11 +38,11 @@ public class Billete {
 		this.cod_billete = cod_billete;
 	}
 
-	public String getN_trayecto() {
+	public int getN_trayecto() {
 		return n_trayecto;
 	}
 
-	public void setN_trayecto(String n_trayecto) {
+	public void setN_trayecto(int n_trayecto) {
 		this.n_trayecto = n_trayecto;
 	}
 
