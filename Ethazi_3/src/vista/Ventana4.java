@@ -70,7 +70,12 @@ public class Ventana4 extends JFrame {
 	private String nan="";
 	
 	
+
 	public Ventana4(ArrayList<Parada> paradas,ArrayList<Autobus> buses,String linea, int cod_bus) {
+
+
+	
+		
 
 		setBackground(SystemColor.control);
 		this.setBounds(275,100,700,600);
@@ -111,11 +116,11 @@ public class Ventana4 extends JFrame {
 		chckbxJoanEtorri.setMaximumSize(new Dimension(49, 23));
 		chckbxJoanEtorri.setBounds(277, 261, 61, 36);
 		getContentPane().add(chckbxJoanEtorri);
+		
+		//DATA JCALENDAR
 		bigarrendata.setBounds(158, 402, 117, 20);
 		bigarrendata.setVerifyInputWhenFocusTarget(false);
 		bigarrendata.setVisible(false);
-
-		//DATA JCALENDAR
 		bigarrendata.setDateFormatString("dd-MM-yyyy");
 		bigarrendata.getCalendarButton().addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
@@ -123,15 +128,15 @@ public class Ventana4 extends JFrame {
 		});
 		
 		getContentPane().add(bigarrendata);
-		lblItzuliData.setBounds(37, 394, 104, 28);
-
+		
 		//ITZULI DATA LABELA
-		//lblItzuliData.setRequestFocusEnabled(false);
+		//lblItzuliData.setRequestFocusEnabled(false);v
+		lblItzuliData.setBounds(37, 394, 104, 28);
 		lblItzuliData.setVisible(false);
 		lblItzuliData.setFont(new Font("Comic Sans MS", Font.BOLD, 20));
 		getContentPane().add(lblItzuliData);
 
-
+		//CHECKBOX JOAN ETORRI
 		chckbxJoanEtorri.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				if (chckbxJoanEtorri.isSelected()==false) {
@@ -172,11 +177,13 @@ public class Ventana4 extends JFrame {
 		getContentPane().add(atzera);
 		modelo.addColumn("PARADAS");
 
+		//LABEL DATA
 		lblData.setBounds(37, 325, 50, 32);
 		lblData.setRequestFocusEnabled(false);
 		lblData.setFont(new Font("Comic Sans MS", Font.BOLD, 22));
 		getContentPane().add(lblData);
 
+		//JCALENDAR LEHEN DATA
 		lehendata.setBounds(157, 337, 118, 20);
 		lehendata.setDateFormatString("dd-MM-yyyy");
 		getContentPane().add(lehendata);
@@ -233,6 +240,7 @@ public class Ventana4 extends JFrame {
 				}
 				
 				Double distantzia=Metodoak.distanciaCoord(hasiera_geltoki_latit, hasiera_geltoki_longi, amaiera_geltoki_latit, amaiera_geltoki_longi);
+
 				Metodoak.billete(cod_billete, bidaiakop, cod_linea, cod_bus, hasiera_geltoki_kod, amaiera_geltoki_kod, lehen_data, ordua, nan, prezioa);
 						
 				Metodoak.bostgarrenLeihoa();

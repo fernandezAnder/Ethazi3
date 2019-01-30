@@ -83,9 +83,7 @@ public class Ventana6 extends JFrame {
 		textAreaItzuliak.setComponentOrientation(ComponentOrientation.RIGHT_TO_LEFT);
 		textAreaItzuliak.setEditable(false);
 		textAreaItzuliak.setBounds(126, 214, 454, 199);
-		
-		
-		
+
 		getContentPane().add(textAreaItzuliak);
 		
 		//BOTOIA AMAITU
@@ -98,9 +96,6 @@ public class Ventana6 extends JFrame {
 		
 		btnAmaitu.setBounds(308, 470, 120, 37);
 		getContentPane().add(btnAmaitu);
-		
 
-
-		
 	}
 }
