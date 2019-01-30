@@ -25,8 +25,10 @@ public class Ventana5 extends JFrame {
 
 	private JLabel lblAukeratutakoBidaia = new JLabel("Aukeratutako Bidaia :");
 	private final JButton btnAtzera = new JButton("Atzera");
-	private final JButton btnBalidatu = new JButton("Balidatu");
 	private JButton btnEzeztatu = new JButton("Ezeztatu");
+	private JButton btnBalidatu = new JButton("Balidatu");
+	private int cod_bus=0;
+	private String linea="";
 	private JTable taula;
 
 	
@@ -66,7 +68,7 @@ public class Ventana5 extends JFrame {
 		btnAtzera.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
 				dispose();
-				//Metodoak.laugarrenLeihoa(linea, cod_bus);
+				Metodoak.laugarrenLeihoa(linea, cod_bus);
 				
 				
 			}
@@ -75,27 +77,25 @@ public class Ventana5 extends JFrame {
 		
 		getContentPane().add(btnAtzera);
 		
-		//BALIDATU BOTOIA
-		btnBalidatu.setFont(new Font("Comic Sans MS", Font.PLAIN, 18));
-		btnBalidatu.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent e) {
-				dispose();
-				Metodoak.seigarrenLeihoa();
-				
-				
-			}
-		});
-		btnBalidatu.setBounds(507, 471, 99, 35);
-		
-		
-		getContentPane().add(btnBalidatu);
-		
 		//TAULA
 		taula = new JTable();
 		taula.setAutoCreateRowSorter(true);
 		taula.setToolTipText("");
 		taula.setBounds(577, 109, -382, 230);
 		getContentPane().add(taula);
+		
+		
+		btnBalidatu.setFont(new Font("Comic Sans MS", Font.PLAIN, 18));
+		btnBalidatu.addActionListener(new ActionListener() {
+		public void actionPerformed(ActionEvent arg0) {
+			dispose();
+			Metodoak.seigarrenLeihoa();
+			
+			
+		}
+	});
+		btnBalidatu.setBounds(505, 471, 107, 35);
+		getContentPane().add(btnBalidatu);
 
 	}
 }
