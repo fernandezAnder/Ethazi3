@@ -37,10 +37,6 @@ public class Ventana5 extends JFrame {
 
 	public Ventana5(Billete billete) {
 		this.setBounds(275,100,700,600);
-
-
-		this.setBounds(275,100,781,600);
-
 		getContentPane().setLayout(null);
 		
 		//AUKERATUTAKO BOTOIA LABEL
@@ -91,11 +87,20 @@ public class Ventana5 extends JFrame {
 		getContentPane().add(btnBalidatu);
 		
 		//TAULA
-		taula = new JTable();
+		taula =  new JTable();
 		taula.setAutoCreateRowSorter(true);
 		taula.setToolTipText("");
 		taula.setBounds(577, 109, -382, 230);
 		getContentPane().add(taula);
-
+		
+		System.out.println("COD BILLETE: "+billete.getCod_billete());
+		System.out.println("COD BUS "+billete.getCod_bus());
+		System.out.println("COD LINEA "+billete.getCod_linea());
+		System.out.println("COD PARADA INICIO "+billete.getCod_parada_inicio());
+		System.out.println("COD PARADA FIN "+billete.getCod_parada_fin());
+		System.out.println("BIDAIA KOP "+billete.getN_trayecto());
+		System.out.println("NAN "+billete.getDni());
+		System.out.println("DATA "+billete.getFecha());
+		System.out.println("ORDUA "+billete.getHora());
 	}
 }

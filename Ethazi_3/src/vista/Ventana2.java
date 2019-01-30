@@ -130,7 +130,7 @@ public class Ventana2 extends JFrame {
 		Jarraitu.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				dispose();
-				Metodoak.hirugarrenLeihoa();
+				Metodoak.hirugarrenLeihoa(nan);
 			}
 		});
 		Jarraitu.setFont(new Font("Comic Sans MS", Font.BOLD, 15));

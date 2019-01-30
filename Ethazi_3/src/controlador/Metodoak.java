@@ -4,6 +4,7 @@ import vista.*;
 import java.math.BigInteger;
 import java.security.*;
 import java.util.ArrayList;
+import java.util.Calendar;
 import java.util.Collection;
 import java.util.Collections;
 import java.util.Date;
@@ -11,6 +12,8 @@ import java.util.Hashtable;
 
 public class Metodoak {
 
+	Calendar fecha = Calendar.getInstance();
+	
 	public static String ateraMD5(String input) {
 		try {
 			MessageDigest md = MessageDigest.getInstance("MD5");
@@ -42,40 +45,21 @@ public class Metodoak {
 
 
 	}
-	public static void hirugarrenLeihoa() {
+	public static void hirugarrenLeihoa(String nan) {
 
-		Ventana3 ventana3= new Ventana3();
+		Ventana3 ventana3= new Ventana3(nan);
 		ventana3.setVisible(true);
 
 	}
-	public static void laugarrenLeihoa(String linea, int cod_bus) {
+	public static void laugarrenLeihoa(String linea, int cod_bus, String nan) {
 
 		ArrayList <Parada> paradas= new ArrayList <Parada>();
-//		Hashtable<String,Double> ordenaketa=new Hashtable<String,Double>();
-//		ArrayList <Double> distantziaarray= new ArrayList<Double>();
-//		double termi_lati=43.2614;
-//		double termi_longi=-2.94974;
-//		double distantzia=0;
-//		for (int i=0;i<paradas.size();i++) {
-//			if(!"Termibus-Bilbao".equals(paradas.get(i).getNombre())) {
-//			distantzia= Metodoak.distanciaCoord(termi_lati, termi_longi, paradas.get(i).getLatitud(), paradas.get(i).getLongitud());
-//			distantziaarray.add(distantzia);
-//			ordenaketa.put(paradas.get(i).getNombre(), distantzia);
-//		}
-//		}
-//		Collections.sort(distantziaarray);
-//		ordenaketa.get(distantziaarray);
-//		for (int i=0;i<distantziaarray.size();i++) {
-//			System.out.println(distantziaarray.get(i));
-//		}
-		
-		
 		ArrayList <Autobus> bus= new ArrayList <Autobus>();
 		
 		
 		paradas= Consultas.paradastabla(linea);
 		bus=Consultas.datosAutobus(linea,cod_bus);
-		Ventana4 ventana4= new Ventana4(paradas,bus,linea,cod_bus);
+		Ventana4 ventana4= new Ventana4(paradas,bus,linea,cod_bus,nan);
 		ventana4.setVisible(true);
 
 	}
@@ -87,8 +71,8 @@ public class Metodoak {
 		
 
 	}
-	public static Billete billete(int cod_billete,int bidaiakop,int cod_linea,int cod_bus,int
-			hasiera_geltoki_kod,int amaiera_geltoki_kod,Date lehen_data, 
+	public static Billete billete(int cod_billete,int bidaiakop,String cod_linea,int cod_bus,int
+			hasiera_geltoki_kod,int amaiera_geltoki_kod,String lehen_data, 
 			String ordua, String nan, double prezioa) {
 		Billete billete= new Billete(cod_billete,bidaiakop,cod_linea,cod_bus,hasiera_geltoki_kod,amaiera_geltoki_kod,lehen_data,ordua,nan,prezioa);
 		return billete;
@@ -136,5 +120,59 @@ public class Metodoak {
 		return prezioa;
 		
 	}
+
+			
+			
+		
+		public static String orduaAtera () {
+			int hora,minutos = 0;
+			Calendar fecha = Calendar.getInstance();
+			
+			//ordua hartu eta gorde
+			hora =fecha.get(Calendar.HOUR_OF_DAY);
+			minutos = fecha.get(Calendar.MINUTE);
+			
+			String ordua = hora+":"+minutos;
+
+			if (hora<10) {
+				ordua = "0"+hora+":"+minutos;
+			}
+			if (minutos<10) {
+				ordua = hora+":"+"0"+minutos;
+			}
+			if(hora<10 && minutos<10) {
+				ordua = hora+":"+"0"+minutos;
+			}
+			System.out.println(ordua);
+			return ordua;
+		}
+		public static String dataAtera () {
+			int año,mes,dia = 0;
+			
+			Calendar fecha = Calendar.getInstance();
+
+			//data hartu eta gorde
+	        año = fecha.get(Calendar.YEAR);
+	        mes = fecha.get(Calendar.MONTH) + 1;
+	        dia = fecha.get(Calendar.DAY_OF_MONTH);
+	        
+			String data = dia+"/"+mes+"/"+año;
+	        
+	        if(dia<10) {
+				data = "0"+dia+"/"+mes+"/"+año;
+			}
+			if(mes<10) {
+				data = dia+"/"+"0"+mes+"/"+año;
+			}
+			if (dia<10 && mes<10) {
+				data = "0"+dia+"/"+"0"+mes+"/"+año;
+			}
+			System.out.println(data);
+			return data;
+		}
+
+
+
+
 }
 	

@@ -93,7 +93,26 @@ public class Consultas {
 		return arrayparada;
 	}
 	
-	
+	public static int lineaKodea(String linea) {
+		
+		PreparedStatement s=null;
+		Connection konexioa=Conexion.getConexion();
+		ResultSet rs = null;	
+		int cod_linea=0;
+		try {
+			
+			s = konexioa.prepareStatement("SELECT Cod_Linea FROM linea WHERE linea.Cod_Linea LIKE '"+linea+"'");
+			rs = s.executeQuery();
+		
+		
+			 while (rs.next()) {
+				 cod_linea=rs.getInt(0);
+
+
+			}
+		}catch(Exception e) {e.getMessage();}
+		return cod_linea;
+	}
 }
 
 

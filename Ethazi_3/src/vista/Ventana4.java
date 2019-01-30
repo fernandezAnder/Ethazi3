@@ -21,7 +21,7 @@ import javax.swing.table.DefaultTableModel;
 import com.toedter.calendar.JDateChooser;
 
 import controlador.*;
-
+import modelo.Consultas;
 
 import java.awt.Dimension;
 import java.awt.Color;
@@ -66,15 +66,13 @@ public class Ventana4 extends JFrame {
 	private Date lehen_data;
 	private Date bigarren_data;
 	private int cod_billete=0;
-	private int bidaiakop=0;
-	private int cod_linea=0;
+	private int bidaiakop=1;
+	private int cod_linea;
 	private double prezioa;
-	private String ordua="";
-	private String nan="";
-	
-	
+	private String ordua;
+	private String data;
 
-	public Ventana4(ArrayList<Parada> paradas,ArrayList<Autobus> buses,String linea, int cod_bus) {
+	public Ventana4(ArrayList<Parada> paradas,ArrayList<Autobus> buses,String linea, int cod_bus, String nan) {
 
 
 	
@@ -124,17 +122,11 @@ public class Ventana4 extends JFrame {
 		bigarrendata.setBounds(158, 402, 117, 20);
 		bigarrendata.setVerifyInputWhenFocusTarget(false);
 		bigarrendata.setVisible(false);
-		bigarrendata.setDateFormatString("dd-MM-yyyy");
-//		bigarrendata.getCalendarButton().addActionListener(new ActionListener() {
-//			public void actionPerformed(ActionEvent arg0) {
-//			}
-//		});
-		
+		bigarrendata.setDateFormatString("dd-MM-yyyy");	
 		getContentPane().add(bigarrendata);
 		bigarrendata.getDate();
 		bigarrendata.cleanup();
 		//ITZULI DATA LABELA
-		//lblItzuliData.setRequestFocusEnabled(false);v
 		lblItzuliData.setBounds(37, 394, 104, 28);
 		lblItzuliData.setVisible(false);
 		lblItzuliData.setFont(new Font("Comic Sans MS", Font.BOLD, 20));
@@ -149,6 +141,7 @@ public class Ventana4 extends JFrame {
 				}else {
 					lblItzuliData.setVisible(true);
 					bigarrendata.setVisible(true);
+					bidaiakop=2;
 				}
 
 			}
@@ -174,7 +167,7 @@ public class Ventana4 extends JFrame {
 			@Override
 			public void actionPerformed(ActionEvent arg0) {
 				dispose();
-				Metodoak.hirugarrenLeihoa();
+				Metodoak.hirugarrenLeihoa(nan);
 				Hashtable<String,Double> ordenaketa=new Hashtable<String,Double>();
 				ArrayList <Double> distantziaarray= new ArrayList<Double>();
 				double termi_lati=43.2614;
@@ -246,7 +239,7 @@ public class Ventana4 extends JFrame {
 			@Override
 			public void actionPerformed(ActionEvent arg0) {
 				dispose();
-				lehen_data=lehendata.getDate();
+				lehen_data = lehendata.getDate();
 				bigarren_data=bigarrendata.getDate();
 				cod_billete++;
 				for(int i=0;i<paradas.size();i++) {
@@ -267,8 +260,9 @@ public class Ventana4 extends JFrame {
 				prezioa=Metodoak.prezioaKalkulatu(distantzia, buses.get(i).getConsumo_km(),buses.get(i).getN_plazas());
 				
 				}
-				
-				Metodoak.bostgarrenLeihoa(Metodoak.billete(cod_billete, bidaiakop, cod_linea, cod_bus, hasiera_geltoki_kod, amaiera_geltoki_kod, lehen_data, ordua, nan, prezioa)
+				data= Metodoak.dataAtera();
+				ordua=Metodoak.orduaAtera();
+				Metodoak.bostgarrenLeihoa(Metodoak.billete(cod_billete, bidaiakop, linea, cod_bus, hasiera_geltoki_kod, amaiera_geltoki_kod, data, ordua, nan, prezioa)
 				);
 			}
 		});
