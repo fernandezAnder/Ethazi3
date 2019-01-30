@@ -4,7 +4,10 @@ import vista.*;
 import java.math.BigInteger;
 import java.security.*;
 import java.util.ArrayList;
+import java.util.Collection;
+import java.util.Collections;
 import java.util.Date;
+import java.util.Hashtable;
 
 public class Metodoak {
 
@@ -48,23 +51,38 @@ public class Metodoak {
 	public static void laugarrenLeihoa(String linea, int cod_bus) {
 
 		ArrayList <Parada> paradas= new ArrayList <Parada>();
-		for (int i=0;i<paradas.size();i++) {
-	
-		}
+//		Hashtable<String,Double> ordenaketa=new Hashtable<String,Double>();
+//		ArrayList <Double> distantziaarray= new ArrayList<Double>();
+//		double termi_lati=43.2614;
+//		double termi_longi=-2.94974;
+//		double distantzia=0;
+//		for (int i=0;i<paradas.size();i++) {
+//			if(!"Termibus-Bilbao".equals(paradas.get(i).getNombre())) {
+//			distantzia= Metodoak.distanciaCoord(termi_lati, termi_longi, paradas.get(i).getLatitud(), paradas.get(i).getLongitud());
+//			distantziaarray.add(distantzia);
+//			ordenaketa.put(paradas.get(i).getNombre(), distantzia);
+//		}
+//		}
+//		Collections.sort(distantziaarray);
+//		ordenaketa.get(distantziaarray);
+//		for (int i=0;i<distantziaarray.size();i++) {
+//			System.out.println(distantziaarray.get(i));
+//		}
+		
+		
 		ArrayList <Autobus> bus= new ArrayList <Autobus>();
 		
-		ArrayList <Double> distantzia= new ArrayList<Double>();
 		
 		paradas= Consultas.paradastabla(linea);
-		bus=Consultas.datosAutobus(linea);
+		bus=Consultas.datosAutobus(linea,cod_bus);
 		Ventana4 ventana4= new Ventana4(paradas,bus,linea,cod_bus);
 		ventana4.setVisible(true);
 
 	}
 
-	public static void bostgarrenLeihoa() {
+	public static void bostgarrenLeihoa(Billete billete) {
 		
-		Ventana5 ventana5= new Ventana5();
+		Ventana5 ventana5= new Ventana5(billete);
 		ventana5.setVisible(true);
 		
 
@@ -104,8 +122,10 @@ public class Metodoak {
    
         return distancia;  
     }
-	public static double prezioaKalkulatu(double distantzia,final double erregaia,double kontsumo_bus,int bidaiariak,final double onurak) {
+	public static double prezioaKalkulatu(double distantzia,double kontsumo_bus,int bidaiariak) {
 		double prezioa=0;
+		final double erregaia=0.80;
+		final double onurak=0.20;
 		double erregai_kontsumoa=erregaia*kontsumo_bus;
 		double bidai_gastua=distantzia*erregai_kontsumoa;
 		double irabaziak= bidai_gastua*onurak;

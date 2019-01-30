@@ -32,9 +32,15 @@ public class Ventana5 extends JFrame {
 	
 	/**
 	 * Create the panel.
+	 * @param billete 
 	 */
-	public Ventana5() {
+
+	public Ventana5(Billete billete) {
+		this.setBounds(275,100,700,600);
+
+
 		this.setBounds(275,100,781,600);
+
 		getContentPane().setLayout(null);
 		
 		//AUKERATUTAKO BOTOIA LABEL

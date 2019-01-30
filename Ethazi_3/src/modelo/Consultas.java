@@ -36,16 +36,16 @@ public class Consultas {
 		return arraycliente;
 	}
 
-	public static ArrayList <Autobus> datosAutobus(String linea) {
+	public static ArrayList <Autobus> datosAutobus(String linea,int cod_bus) {
 
 		ArrayList <Autobus> arraybus = new ArrayList<Autobus>();
 		PreparedStatement s=null;
 		Connection konexioa=Conexion.getConexion();
 		
 		try {
-			s = konexioa.prepareStatement("SELECT * FROM autobus, linea_autobus, linea WHERE autobus.Cod_bus=linea_autobus.Cod_bus AND linea_autobus.Cod_Linea=linea.Cod_Linea AND linea.Cod_Linea LIKE"+"'" +linea+"'");
+			s = konexioa.prepareStatement("SELECT * FROM autobus, linea_autobus, linea WHERE autobus.Cod_bus=linea_autobus.Cod_bus AND linea_autobus.Cod_Linea=linea.Cod_Linea AND linea.Cod_Linea LIKE"+"'" +linea+"' AND autobus.Cod_bus ='"+cod_bus+"'");
 			ResultSet rs = s.executeQuery();
-			int cod_bus;
+			
 			int plazas;
 			double consumo;
 			String color;
