@@ -14,25 +14,39 @@ import javax.swing.JTextField;
 import javax.swing.SwingConstants;
 
 import controlador.*;
+import com.toedter.calendar.JCalendar;
+import com.toedter.components.JLocaleChooser;
+import com.toedter.calendar.JDateChooser;
 
 public class Ventana2b extends JFrame {
 
-	JTextField textNAN;
-	JTextField textLetra;
-	JPasswordField Pasahitza;
-	JLabel lblTxatelaErregistroa = new JLabel("Txatela Erregistroa");
-	JLabel lblNan = new JLabel("NAN");
-	JLabel lblLetra = new JLabel("Letra");
-	JLabel lblPasahitza = new JLabel("Pasahitza");
-	JButton btnEzeztatu = new JButton("Ezeztatu");
-	JButton Ezeztatu = new JButton("Atzera");
-	JButton Jarraitu = new JButton("Jarraitu");
-	JButton Balidatu = new JButton("Balidatu");
-	String nan="";
-	String letra="";
-	String zenbakia="";
-	String pasahitza="";
+	private JTextField textNAN;
+	private JTextField textLetra;
+	private JPasswordField Pasahitza;
+	private JLabel lblTxatelaErregistroa = new JLabel("Txatela Erregistroa");
+	private JLabel lblNan = new JLabel("NAN");
+	private JLabel lblLetra = new JLabel("Letra");
+	private JLabel lblPasahitza = new JLabel("Pasahitza");
+	private JButton btnEzeztatu = new JButton("Ezeztatu");
+	private JButton Ezeztatu = new JButton("Atzera");
+	private JButton Jarraitu = new JButton("Jarraitu");
+	private JButton Balidatu = new JButton("Balidatu");
+	private JTextField izena;
+	private JTextField abizenatextfield;
+	private final JTextField sexuatextfield = new JTextField();
+	private JLabel lblSexua = new JLabel("Sexua");
+	private JLabel lblIzena = new JLabel("Izena");
+	private final JTextField izenatextField = new JTextField();
+	private JLabel lblJaiotzeData = new JLabel("Jaiotze data ");
+	private JDateChooser jaiotzedata = new JDateChooser();
+	private JLabel lblAbizena = new JLabel("Abizena");
+	
 
+	private String nan="";
+	private String letra="";
+	private String zenbakia="";
+	private String pasahitza="";
+	
 	public Ventana2b(ArrayList<Cliente> clientes) {
 		this.setBounds(275,100,700,600);
 		getContentPane().setLayout(null);
@@ -44,7 +58,7 @@ public class Ventana2b extends JFrame {
 
 		//LABEL NAN
 		lblNan.setFont(new Font("Comic Sans MS", Font.BOLD, 20));
-		lblNan.setBounds(165, 128, 47, 28);
+		lblNan.setBounds(146, 274, 47, 28);
 		getContentPane().add(lblNan);
 
 		//TEXT NAN
@@ -66,7 +80,7 @@ public class Ventana2b extends JFrame {
 			}
 		});
 		zenbakia=textNAN.getText();
-		textNAN.setBounds(241, 128, 109, 28);
+		textNAN.setBounds(238, 276, 109, 28);
 		getContentPane().add(textNAN);
 		textNAN.setColumns(10);
 
@@ -97,19 +111,19 @@ public class Ventana2b extends JFrame {
 		});
 		letra=textLetra.getText();
 		textLetra.setColumns(10);
-		textLetra.setBounds(422, 128, 32, 28);
+		textLetra.setBounds(484, 276, 32, 28);
 		getContentPane().add(textLetra);
 
 
 
 		//LETRA LABEL
 		lblLetra.setFont(new Font("Comic Sans MS", Font.BOLD, 20));
-		lblLetra.setBounds(360, 128, 52, 28);
+		lblLetra.setBounds(402, 274, 52, 28);
 		getContentPane().add(lblLetra);
 
 		//LABEL PASAHITZA
 		lblPasahitza.setFont(new Font("Comic Sans MS", Font.BOLD, 20));
-		lblPasahitza.setBounds(165, 212, 92, 28);
+		lblPasahitza.setBounds(146, 336, 92, 28);
 		getContentPane().add(lblPasahitza);
 
 		//EZEZTATU BOTOIA
@@ -122,7 +136,7 @@ public class Ventana2b extends JFrame {
 
 			}
 		});
-		Ezeztatu.setBounds(241, 343, 109, 44);
+		Ezeztatu.setBounds(165, 452, 109, 44);
 		getContentPane().add(Ezeztatu);
 
 		//JARRAITU BOTOIA
@@ -134,7 +148,7 @@ public class Ventana2b extends JFrame {
 			}
 		});
 		Jarraitu.setFont(new Font("Comic Sans MS", Font.BOLD, 15));
-		Jarraitu.setBounds(424, 343, 115, 44);
+		Jarraitu.setBounds(407, 437, 115, 44);
 		getContentPane().add(Jarraitu);
 
 		
@@ -142,7 +156,7 @@ public class Ventana2b extends JFrame {
 		//PASAHITZA TEXTUA
 		Pasahitza = new JPasswordField();
 		Pasahitza.setFont(new Font("Tahoma", Font.PLAIN, 16));
-		Pasahitza.setBounds(302, 212, 170, 28);
+		Pasahitza.setBounds(297, 338, 170, 28);
 		getContentPane().add(Pasahitza);
 
 		//DNI ETA PASAHITZA BALIDATZEKO BOTOIA
@@ -176,9 +190,62 @@ public class Ventana2b extends JFrame {
 						}
 					}
 				});
+				
+				
 				Balidatu.setFont(new Font("Comic Sans MS", Font.BOLD, 15));
-				Balidatu.setBounds(529, 196, 115, 44);
+				Balidatu.setBounds(539, 288, 115, 44);
 				getContentPane().add(Balidatu);
+				
+				//LABEL IZENA
+				lblIzena.setFont(new Font("Comic Sans MS", Font.BOLD, 20));
+				lblIzena.setBounds(92, 125, 63, 28);
+				getContentPane().add(lblIzena);
+				
+				//TEXT IZENA
+				izena.setFont(new Font("Tahoma", Font.PLAIN, 16));
+				izena.setColumns(10);
+				izena.setBounds(192, 127, 109, 28);
+				getContentPane().add(izena);
+				
+				//LABEL ABIZENA
+				lblAbizena.setFont(new Font("Comic Sans MS", Font.BOLD, 20));
+				lblAbizena.setBounds(80, 180, 92, 28);
+				getContentPane().add(lblAbizena);
+				
+				//LABEL TEXT
+				abizenatextfield = new JTextField();
+				abizenatextfield.setFont(new Font("Tahoma", Font.PLAIN, 16));
+				abizenatextfield.setColumns(10);
+				abizenatextfield.setBounds(192, 182, 109, 28);
+				getContentPane().add(abizenatextfield);
+				
+				//LABEL JAIOYTZE DATA
+				lblJaiotzeData.setFont(new Font("Comic Sans MS", Font.BOLD, 20));
+				lblJaiotzeData.setBounds(359, 125, 133, 28);
+				getContentPane().add(lblJaiotzeData);
+				
+				//JCALENDAR JAIOTZE DATA
+				jaiotzedata.setDateFormatString("yyyy-MM-dd");
+				jaiotzedata.setBounds(504, 131, 105, 22);
+				getContentPane().add(jaiotzedata);
+				
+				//LABEL SEXUA
+				lblSexua.setFont(new Font("Comic Sans MS", Font.BOLD, 20));
+				lblSexua.setBounds(359, 189, 71, 28);
+				getContentPane().add(lblSexua);
+				
+				//SEXUA TEXT
+				sexuatextfield.setHorizontalAlignment(SwingConstants.CENTER);
+				sexuatextfield.setFont(new Font("Tahoma", Font.PLAIN, 16));
+				sexuatextfield.setColumns(10);
+				sexuatextfield.setBounds(442, 186, 32, 28);
+				getContentPane().add(sexuatextfield);
+				
+				//IZENA TEXT
+				izenatextField.setFont(new Font("Tahoma", Font.PLAIN, 16));
+				izenatextField.setColumns(10);
+				izenatextField.setBounds(192, 131, 109, 28);
+				getContentPane().add(izenatextField);
 
 		
 	}
