@@ -32,23 +32,23 @@ public class Ventana4 extends JFrame {
 	/**
 	 * LEHIOAN SORTUTAKO ELEMENTUAK.
 	 */
-	JLabel lblGeltokiak = new JLabel("GELTOKIAK");
-	JButton jarraitu = new JButton("Jarraitu");
-	JButton ezeztatu = new JButton("Ezeztatu");
-	JButton atzera = new JButton("Atzera");
-	JLabel lblXLinearenInformazioa = new JLabel("X Linearen Informazioa");
-	JLabel lblJatorriGeltokia = new JLabel("Jatorri Geltokia");
-	JLabel lblHelmugaGeltokia = new JLabel("Helmuga Geltokia");
-	JLabel lblJoanEtaEtorri = new JLabel("Joan eta etorri?");
-	JCheckBox chckbxJoanEtorri = new JCheckBox("Bai");
-	JDateChooser lehendata = new JDateChooser();
-	JDateChooser bigarrendata = new JDateChooser();
-	JLabel lblItzuliData = new JLabel("Itzuli data");
-	DefaultTableModel modelo = new DefaultTableModel();
-	JLabel lblData = new JLabel("Data");
-	JComboBox Hasiera_geltoki = new JComboBox();
-	JComboBox Amaiera_geltoki = new JComboBox();
-	JTextPane geltoki = new JTextPane();
+	private JLabel lblGeltokiak = new JLabel("GELTOKIAK");
+	private JButton jarraitu = new JButton("Jarraitu");
+	private JButton ezeztatu = new JButton("Ezeztatu");
+	private JButton atzera = new JButton("Atzera");
+	private JLabel lblXLinearenInformazioa = new JLabel("X Linearen Informazioa");
+	private JLabel lblJatorriGeltokia = new JLabel("Jatorri Geltokia");
+	private JLabel lblHelmugaGeltokia = new JLabel("Helmuga Geltokia");
+	private JLabel lblJoanEtaEtorri = new JLabel("Joan eta etorri?");
+	private JCheckBox chckbxJoanEtorri = new JCheckBox("Bai");
+	private JDateChooser lehendata = new JDateChooser();
+	private JDateChooser bigarrendata = new JDateChooser();
+	private JLabel lblItzuliData = new JLabel("Itzuli data");
+	private DefaultTableModel modelo = new DefaultTableModel();
+	private JLabel lblData = new JLabel("Data");
+	private JComboBox Hasiera_geltoki = new JComboBox();
+	private JComboBox Amaiera_geltoki = new JComboBox();
+	private JTextPane geltoki = new JTextPane();
 	
 	//BARIABLEAK
 	
