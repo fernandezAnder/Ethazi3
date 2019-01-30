@@ -19,12 +19,17 @@ import javax.swing.JTable;
 import javax.swing.border.BevelBorder;
 
 import controlador.Billete;
+import controlador.Metodoak;
+
+import java.awt.event.MouseAdapter;
+import java.awt.event.MouseEvent;
+import java.awt.Button;
+import java.awt.Canvas;
 
 public class Ventana5 extends JFrame {
 
 	private JLabel lblAukeratutakoBidaia = new JLabel("Aukeratutako Bidaia :");
 	private final JButton btnAtzera = new JButton("Atzera");
-	private final JButton btnBalidatu = new JButton("Balidatu");
 	private JButton btnEzeztatu = new JButton("Ezeztatu");
 	private JTable taula;
 
@@ -68,26 +73,22 @@ public class Ventana5 extends JFrame {
 		
 		getContentPane().add(btnAtzera);
 		
-		//BALIDATU BOTOIA
-		btnBalidatu.setFont(new Font("Comic Sans MS", Font.PLAIN, 18));
-		btnBalidatu.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent e) {
-				
-				
-				
-			}
-		});
-		btnBalidatu.setBounds(507, 471, 99, 35);
-		
-		
-		getContentPane().add(btnBalidatu);
-		
 		//TAULA
 		taula = new JTable();
 		taula.setAutoCreateRowSorter(true);
 		taula.setToolTipText("");
 		taula.setBounds(577, 109, -382, 230);
 		getContentPane().add(taula);
+		
+		JButton btnBalidatu = new JButton("Balidatu");
+		btnBalidatu.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				dispose();
+				Metodoak.seigarrenLeihoa();
+			}
+		});
+		btnBalidatu.setBounds(61, 192, 97, 25);
+		getContentPane().add(btnBalidatu);
 
 	}
 }
