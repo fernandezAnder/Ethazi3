@@ -5,7 +5,9 @@ import java.awt.SystemColor;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.Date;
+import java.util.Hashtable;
 import java.sql.*;
 import javax.swing.JButton;
 import javax.swing.JCheckBox;
@@ -13,6 +15,7 @@ import javax.swing.JComboBox;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JTextPane;
+import javax.swing.SingleSelectionModel;
 import javax.swing.table.DefaultTableModel;
 
 import com.toedter.calendar.JDateChooser;
@@ -38,11 +41,11 @@ public class Ventana4 extends JFrame {
 	JLabel lblHelmugaGeltokia = new JLabel("Helmuga Geltokia");
 	JLabel lblJoanEtaEtorri = new JLabel("Joan eta etorri?");
 	JCheckBox chckbxJoanEtorri = new JCheckBox("Bai");
+	JDateChooser lehendata = new JDateChooser();
 	JDateChooser bigarrendata = new JDateChooser();
 	JLabel lblItzuliData = new JLabel("Itzuli data");
 	DefaultTableModel modelo = new DefaultTableModel();
 	JLabel lblData = new JLabel("Data");
-	JDateChooser lehendata = new JDateChooser();
 	JComboBox Hasiera_geltoki = new JComboBox();
 	JComboBox Amaiera_geltoki = new JComboBox();
 	JTextPane geltoki = new JTextPane();
@@ -122,10 +125,10 @@ public class Ventana4 extends JFrame {
 		bigarrendata.setVerifyInputWhenFocusTarget(false);
 		bigarrendata.setVisible(false);
 		bigarrendata.setDateFormatString("dd-MM-yyyy");
-		bigarrendata.getCalendarButton().addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent arg0) {
-			}
-		});
+//		bigarrendata.getCalendarButton().addActionListener(new ActionListener() {
+//			public void actionPerformed(ActionEvent arg0) {
+//			}
+//		});
 		
 		getContentPane().add(bigarrendata);
 		
@@ -171,6 +174,25 @@ public class Ventana4 extends JFrame {
 			public void actionPerformed(ActionEvent arg0) {
 				dispose();
 				Metodoak.hirugarrenLeihoa();
+				Hashtable<String,Double> ordenaketa=new Hashtable<String,Double>();
+				ArrayList <Double> distantziaarray= new ArrayList<Double>();
+				double termi_lati=43.2614;
+				double termi_longi=-2.94974;
+				double distantzia=0;
+				for (int i=0;i<paradas.size();i++) {
+					if(!"Termibus-Bilbao".equals(paradas.get(i).getNombre())) {
+					distantzia= Metodoak.distanciaCoord(termi_lati, termi_longi, paradas.get(i).getLatitud(), paradas.get(i).getLongitud());
+					
+					distantziaarray.add(distantzia);
+					ordenaketa.put(paradas.get(i).getNombre(), distantzia);
+				}
+				}
+				Collections.sort(distantziaarray);
+				
+				for (int i=0;i<distantziaarray.size();i++) {
+					
+				}
+				ordenaketa.get(paradas);
 			}
 		});
 		atzera.setFont(new Font("Comic Sans MS", Font.PLAIN, 18));
@@ -240,10 +262,13 @@ public class Ventana4 extends JFrame {
 				}
 				
 				Double distantzia=Metodoak.distanciaCoord(hasiera_geltoki_latit, hasiera_geltoki_longi, amaiera_geltoki_latit, amaiera_geltoki_longi);
-
-				Metodoak.billete(cod_billete, bidaiakop, cod_linea, cod_bus, hasiera_geltoki_kod, amaiera_geltoki_kod, lehen_data, ordua, nan, prezioa);
-						
-				Metodoak.bostgarrenLeihoa();
+				for (int i=0;i<buses.size();i++) {
+				prezioa=Metodoak.prezioaKalkulatu(distantzia, buses.get(i).getConsumo_km(),buses.get(i).getN_plazas());
+				
+				}
+				
+				Metodoak.bostgarrenLeihoa(Metodoak.billete(cod_billete, bidaiakop, cod_linea, cod_bus, hasiera_geltoki_kod, amaiera_geltoki_kod, lehen_data, ordua, nan, prezioa)
+				);
 			}
 		});
 		getContentPane().add(jarraitu);
