@@ -128,7 +128,8 @@ public class Ventana4 extends JFrame {
 		});
 		
 		getContentPane().add(bigarrendata);
-		
+		bigarrendata.getDate();
+		bigarrendata.cleanup();
 		//ITZULI DATA LABELA
 		//lblItzuliData.setRequestFocusEnabled(false);v
 		lblItzuliData.setBounds(37, 394, 104, 28);

@@ -19,6 +19,7 @@ import javax.swing.JTable;
 import javax.swing.border.BevelBorder;
 
 import controlador.Billete;
+import controlador.Metodoak;
 
 public class Ventana5 extends JFrame {
 
@@ -33,7 +34,7 @@ public class Ventana5 extends JFrame {
 	 * Create the panel.
 	 */
 	public Ventana5() {
-		this.setBounds(275,100,700,600);
+		this.setBounds(275,100,781,600);
 		getContentPane().setLayout(null);
 		
 		//AUKERATUTAKO BOTOIA LABEL
@@ -47,9 +48,8 @@ public class Ventana5 extends JFrame {
 		btnEzeztatu.addActionListener(new ActionListener() {
 			@Override
 			public void actionPerformed(ActionEvent arg0) {
-				
-   			 
-				
+				dispose();
+				Metodoak.lehenengoLeihoa();	
 			}
 		});
 		btnEzeztatu.setBounds(335, 471, 107, 35);
@@ -59,7 +59,8 @@ public class Ventana5 extends JFrame {
 		btnAtzera.setFont(new Font("Comic Sans MS", Font.PLAIN, 18));
 		btnAtzera.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
-				
+				dispose();
+				//Metodoak.laugarrenLeihoa(linea, cod_bus);
 				
 				
 			}
@@ -72,7 +73,8 @@ public class Ventana5 extends JFrame {
 		btnBalidatu.setFont(new Font("Comic Sans MS", Font.PLAIN, 18));
 		btnBalidatu.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				
+				dispose();
+				Metodoak.seigarrenLeihoa();
 				
 				
 			}
