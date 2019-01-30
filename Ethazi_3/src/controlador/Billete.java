@@ -5,18 +5,18 @@ public class Billete {
 
 	
 	private int cod_billete;
-	private String n_trayecto;
+	private int n_trayecto;
 	private int cod_linea;
 	private int cod_bus;
 	private int cod_parada_inicio;
 	private int cod_parada_fin;
-	private Date fecha;
+	private java.util.Date fecha;
 	private String hora;
 	private String dni;
 	private double precio;
 	
-	public Billete(int cod_billete, String n_trayecto, int cod_linea, int cod_bus, int cod_parada_inicio,
-			int cod_parada_fin, Date fecha, String hora, String dni, double precio) {
+	public Billete(int cod_billete, int n_trayecto, int cod_linea, int cod_bus, int cod_parada_inicio,
+			int cod_parada_fin, java.util.Date lehen_data, String hora, String dni, double precio) {
 		
 		this.cod_billete = cod_billete;
 		this.n_trayecto = n_trayecto;
@@ -24,7 +24,7 @@ public class Billete {
 		this.cod_bus = cod_bus;
 		this.cod_parada_inicio = cod_parada_inicio;
 		this.cod_parada_fin = cod_parada_fin;
-		this.fecha = fecha;
+		this.fecha = lehen_data;
 		this.hora = hora;
 		this.dni = dni;
 		this.precio = precio;
@@ -38,11 +38,11 @@ public class Billete {
 		this.cod_billete = cod_billete;
 	}
 
-	public String getN_trayecto() {
+	public int getN_trayecto() {
 		return n_trayecto;
 	}
 
-	public void setN_trayecto(String n_trayecto) {
+	public void setN_trayecto(int n_trayecto) {
 		this.n_trayecto = n_trayecto;
 	}
 
@@ -78,11 +78,11 @@ public class Billete {
 		this.cod_parada_fin = cod_parada_fin;
 	}
 
-	public Date getFecha() {
+	public java.util.Date getFecha() {
 		return fecha;
 	}
 
-	public void setFecha(Date fecha) {
+	public void setFecha(java.util.Date fecha) {
 		this.fecha = fecha;
 	}
 

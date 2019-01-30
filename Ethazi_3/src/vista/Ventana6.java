@@ -83,16 +83,7 @@ public class Ventana6 extends JFrame {
 		textAreaItzuliak.setComponentOrientation(ComponentOrientation.RIGHT_TO_LEFT);
 		textAreaItzuliak.setEditable(false);
 		textAreaItzuliak.setBounds(126, 214, 454, 199);
-		
-		ArrayList <Parada> paradas= new ArrayList <Parada>();
-		String linea="L1";
-		paradas=Consultas.mostrarParadas(linea);
-		String pantailaratu;
-		for (Parada emaitza : paradas) {
-			pantailaratu= emaitza.toString()+"\n";
-		    textAreaItzuliak.setText(pantailaratu);
-		}
-		
+
 		getContentPane().add(textAreaItzuliak);
 		
 		//BOTOIA AMAITU
@@ -105,14 +96,6 @@ public class Ventana6 extends JFrame {
 		
 		btnAmaitu.setBounds(308, 470, 120, 37);
 		getContentPane().add(btnAmaitu);
-		
-		// SCROLLBAR
-//		JScrollPane scrollBar = new JScrollPane(textArea, JScrollPane.VERTICAL_SCROLLBAR_AS_NEEDED, JScrollPane.HORIZONTAL_SCROLLBAR_AS_NEEDED);
-//		scrollBar.setBounds(409, 139, 17, 109);
-//		add(scrollBar);
-//
-//		textArea.add(scrollBar);
 
-		
 	}
 }

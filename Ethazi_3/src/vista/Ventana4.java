@@ -17,9 +17,8 @@ import javax.swing.table.DefaultTableModel;
 
 import com.toedter.calendar.JDateChooser;
 
-import controlador.Metodoak;
-import controlador.Parada;
-import modelo.Consultas;
+import controlador.*;
+
 
 import java.awt.Dimension;
 import java.awt.Color;
@@ -49,7 +48,7 @@ public class Ventana4 extends JFrame {
 	JTextPane geltoki = new JTextPane();
 	
 	//BARIABLEAK
-	ArrayList <Parada> paradas= new ArrayList <Parada>();
+	
 	
 	private String hasiera_geltokia="";
 	private int hasiera_geltoki_kod=0;
@@ -64,12 +63,20 @@ public class Ventana4 extends JFrame {
 	private Date lehen_data;
 	private Date bigarren_data;
 	private int cod_billete=0;
-	private String bidaia="";
+	private int bidaiakop=0;
 	private int cod_linea=0;
-	private int cod_bus=0;
 	private double prezioa;
+	private String ordua="";
+	private String nan="";
 	
-	public Ventana4(ArrayList<Parada> paradas,String linea) {
+	
+
+	public Ventana4(ArrayList<Parada> paradas,ArrayList<Autobus> buses,String linea, int cod_bus) {
+
+
+	
+		
+
 		setBackground(SystemColor.control);
 		this.setBounds(275,100,700,600);
 		getContentPane().setLayout(null);
@@ -109,11 +116,11 @@ public class Ventana4 extends JFrame {
 		chckbxJoanEtorri.setMaximumSize(new Dimension(49, 23));
 		chckbxJoanEtorri.setBounds(277, 261, 61, 36);
 		getContentPane().add(chckbxJoanEtorri);
+		
+		//DATA JCALENDAR
 		bigarrendata.setBounds(158, 402, 117, 20);
 		bigarrendata.setVerifyInputWhenFocusTarget(false);
 		bigarrendata.setVisible(false);
-
-		//DATA JCALENDAR
 		bigarrendata.setDateFormatString("dd-MM-yyyy");
 		bigarrendata.getCalendarButton().addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
@@ -121,15 +128,15 @@ public class Ventana4 extends JFrame {
 		});
 		
 		getContentPane().add(bigarrendata);
-		lblItzuliData.setBounds(37, 394, 104, 28);
-
+		
 		//ITZULI DATA LABELA
-		//lblItzuliData.setRequestFocusEnabled(false);
+		//lblItzuliData.setRequestFocusEnabled(false);v
+		lblItzuliData.setBounds(37, 394, 104, 28);
 		lblItzuliData.setVisible(false);
 		lblItzuliData.setFont(new Font("Comic Sans MS", Font.BOLD, 20));
 		getContentPane().add(lblItzuliData);
 
-
+		//CHECKBOX JOAN ETORRI
 		chckbxJoanEtorri.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				if (chckbxJoanEtorri.isSelected()==false) {
@@ -170,11 +177,13 @@ public class Ventana4 extends JFrame {
 		getContentPane().add(atzera);
 		modelo.addColumn("PARADAS");
 
+		//LABEL DATA
 		lblData.setBounds(37, 325, 50, 32);
 		lblData.setRequestFocusEnabled(false);
 		lblData.setFont(new Font("Comic Sans MS", Font.BOLD, 22));
 		getContentPane().add(lblData);
 
+		//JCALENDAR LEHEN DATA
 		lehendata.setBounds(157, 337, 118, 20);
 		lehendata.setDateFormatString("dd-MM-yyyy");
 		getContentPane().add(lehendata);
@@ -229,8 +238,11 @@ public class Ventana4 extends JFrame {
 					amaiera_geltoki_latit=paradas.get(Amaiera_geltoki.getSelectedIndex()).getLatitud();
 					amaiera_geltoki_longi=paradas.get(Amaiera_geltoki.getSelectedIndex()).getLongitud();
 				}
+				
+				Double distantzia=Metodoak.distanciaCoord(hasiera_geltoki_latit, hasiera_geltoki_longi, amaiera_geltoki_latit, amaiera_geltoki_longi);
 
-				Consultas.billete(cod_billete,bidaia,cod_linea,cod_bus,hasiera_geltoki_kod,amaiera_geltoki_kod,lehen_data,null,prezioa);
+				Metodoak.billete(cod_billete, bidaiakop, cod_linea, cod_bus, hasiera_geltoki_kod, amaiera_geltoki_kod, lehen_data, ordua, nan, prezioa);
+						
 				Metodoak.bostgarrenLeihoa();
 			}
 		});
