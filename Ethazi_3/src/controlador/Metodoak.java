@@ -81,7 +81,7 @@ public class Metodoak {
 	
 	public static void seigarrenLeihoa(Billete billete) {
 
-		Metodoak.igoDatuak(billete);
+		//Metodoak.igoDatuak(billete);
 		Ventana6 ventana6= new Ventana6(billete);
 		ventana6.setVisible(true);
 
