@@ -44,16 +44,16 @@ public class Ventana6 extends JFrame {
 		
 		//TEXTUA SARTZEKO DIRUA
 		
-		textSartzekoDirua.addKeyListener(new KeyAdapter() {
-			@Override
-			public void keyTyped(java.awt.event.KeyEvent evt) {
-				char validar =evt.getKeyChar();
-				if(Character.isLetter(validar)) {
-					getToolkit().beep();
-					evt.consume();
-					}
-			}
-		});
+		//textSartzekoDirua.addKeyListener(new KeyAdapter() {
+			//@Override
+			//public void keyTyped(java.awt.event.KeyEvent evt) {
+				//char validar =evt.getKeyChar();
+				//if(Character.isLetter(validar)) {
+				//	getToolkit().beep();
+				//	evt.consume();
+				//	}
+			//}
+		//});
 		textSartzekoDirua.setFont(new Font("Bookman Old Style", Font.PLAIN, 11));
 		textSartzekoDirua.setBounds(266, 73, 162, 34);
 		getContentPane().add(textSartzekoDirua);

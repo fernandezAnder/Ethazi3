@@ -27,8 +27,7 @@ public class Ventana5 extends JFrame {
 	private final JButton btnAtzera = new JButton("Atzera");
 	private JButton btnEzeztatu = new JButton("Ezeztatu");
 	private JButton btnBalidatu = new JButton("Balidatu");
-	private int cod_bus=0;
-	private String linea="";
+	private String nan="";
 	private JTable taula;
 
 	
@@ -64,7 +63,7 @@ public class Ventana5 extends JFrame {
 		btnAtzera.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
 				dispose();
-				Metodoak.laugarrenLeihoa(linea, cod_bus, linea);
+				Metodoak.hirugarrenLeihoa(nan);
 				
 				
 			}
