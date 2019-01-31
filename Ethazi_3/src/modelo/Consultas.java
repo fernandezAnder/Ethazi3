@@ -98,7 +98,7 @@ public class Consultas {
 	
 	public static void datubaseraIgo(Billete billete) {
 		
-		PreparedStatement s=null;
+		
 		Connection konexioa=Conexion.getConexion();
 		ResultSet rs = null;
 //		
@@ -112,7 +112,8 @@ public class Consultas {
 //				String nan=billete.getDni();
 //				double prezioa=billete.getPrecio();
 		try {
-			s = konexioa.prepareStatement("INSERT INTO 'billete' ('Cod_Billete','NTrayecto','Cod_Linea','Cod_Bus','Cod_Parada_Inicio','Cod_Parada_Fin','Fecha','Hora','DNI','Precio') VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)");
+			PreparedStatement s = konexioa.prepareStatement("INSERT INTO `billete` (`Cod_Billete`, `NTrayecto`, `Cod_Linea`, `Cod_Bus`, `Cod_Parada_Inicio`, `Cod_Parada_Fin`, `Fecha`, `Hora`, `DNI`, `Precio`)"
+					+ " VALUES(?, ?, ?, ?, ?, ?, ?, ?, ?, ?)");
 			s.setInt(1,billete.getCod_billete());
 			s.setInt(2,billete.getN_trayecto());
 			s.setString(3,billete.getCod_linea());
@@ -124,16 +125,16 @@ public class Consultas {
 			s.setString(9,billete.getDni()); 
 			s.setDouble(10,billete.getPrecio());
 			
-			System.out.println(billete.getCod_billete());
-			System.out.println(bidaiakop);
-			System.out.println(cod_linea);
-			System.out.println(cod_bus);
-			System.out.println(cod_parada_inicio);
-			System.out.println(cod_parada_fin);
-			//System.out.println(data);
-			System.out.println(ordua);
-			System.out.println(nan); 
-			System.out.println(prezioa);
+//			System.out.println(billete.getCod_billete());
+//			System.out.println(bidaiakop);
+//			System.out.println(cod_linea);
+//			System.out.println(cod_bus);
+//			System.out.println(cod_parada_inicio);
+//			System.out.println(cod_parada_fin);
+//			//System.out.println(data);
+//			System.out.println(ordua);
+//			System.out.println(nan); 
+//			System.out.println(prezioa);
 
 			s.executeUpdate();
 			s.close();
