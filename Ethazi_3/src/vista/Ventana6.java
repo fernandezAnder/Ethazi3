@@ -1,6 +1,6 @@
 package vista;
 
-import javax.swing.JPanel; 
+import javax.swing.JPanel;  
 import javax.swing.JLabel;
 import java.awt.Font;
 import javax.swing.JTextField;
@@ -8,25 +8,21 @@ import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JTextArea;
 import java.awt.event.ActionListener;
-import java.util.ArrayList;
 import java.awt.event.ActionEvent;
 import java.awt.Color;
 import java.awt.ComponentOrientation;
-import modelo.*;
-import controlador.*;
-import java.awt.event.KeyAdapter;
-import java.awt.event.KeyEvent;
-import javax.swing.JTextPane;
 
-import vista.Frame;
+import java.awt.event.KeyAdapter;
+
+
 import controlador.Metodoak;
 public class Ventana6 extends JFrame {
-	private JTextField textSartzekoDirua;
+	//private JTextField textSartzekoDirua;
 	private JLabel lblOrdainketa = new JLabel("Ordainketa :");
 	private JLabel lblSartuDirua = new JLabel("Sartu Dirua :");
 	private JLabel lblItzuliak = new JLabel("Itzuliak :");
 	private static JTextArea Itzuliak = new JTextArea();
-	private JButton btnAmaitu = new JButton("Amaitu");
+	private static JButton btnAmaitu = new JButton("Amaitu");
 	private static JTextField dirua;
 	private static JButton btnEzeztatu = new JButton("Ezeztatu");
 	private static JButton btnAtzera = new JButton("Atzera");
@@ -99,8 +95,8 @@ public class Ventana6 extends JFrame {
 		btnEzeztatu.setFont(new Font("Bookman Old Style", Font.PLAIN, 20));
 		btnEzeztatu.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				dispose();
-				Metodoak.hirugarrenLeihoa();
+//				dispose();
+//				Metodoak.hirugarrenLeihoa();
 			}
 		});
 		btnEzeztatu.setBounds(288, 468, 136, 33);
@@ -108,8 +104,8 @@ public class Ventana6 extends JFrame {
 		
 		btnAtzera.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				dispose();
-				Metodoak.bostgarrenLeihoa();
+//				dispose();
+//				Metodoak.bostgarrenLeihoa();
 			}
 		});
 		btnAtzera.setFont(new Font("Bookman Old Style", Font.PLAIN, 20));
@@ -117,45 +113,56 @@ public class Ventana6 extends JFrame {
 		getContentPane().add(btnAtzera);
 		btnOrdaindu.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				double prezioa=10;
-				 String ordaindu=(String) dirua.getText();//Sartutako diru kantitatea testu moduan gordeko da
-				 //KONPROBATU LETRA
-				 boolean letra=Metodoak.konprobatuLetra(ordaindu);
-				 String mezua="";
-				 if (letra==false) {
-					double zbk= Double.parseDouble(ordaindu);//Zenbaki formatura pasatzen da
-					
-					//KONPROBATU ZENBAKI NEGATIBOA
-					boolean zenbakia=Metodoak.konprobatuNegatibo(zbk);
-					if (zenbakia==true){
-						
-						//KONPROBATU DIRU FALTA	   					
-						boolean diru_falta=Metodoak.diruFalta(zbk, prezioa);
-						double preziototala = (double)(prezioa-zbk);
-						if (diru_falta==true){
-							mezua=(preziototala)+" € falta zaizkizu";
-							System.out.println(mezua);
-							Ventana6.Itzuliak.setText(mezua);
-						}else {
-							if (diru_falta==false) {
-								mezua = "Hauek dira zure kanbioak";
-								mezua=(preziototala)+" € falta zaizkizu";
-								System.out.println(mezua);
-								Ventana6.Itzuliak.setText(mezua);
-								String kanbioak=Metodoak.kanbioMetodoa(preziototala);
-								Ventana6.Itzuliak.setText(kanbioak);
-								Ventana6.btnEzeztatu.setEnabled(false);
-								Ventana6.btnAtzera.setEnabled(false);
-							}else if(preziototala==0) {
-								mezua="Eskerrik asko erosteagatik";
-								
-							}
-						}
-					}
-					 
-				}
-				Ventana6.dirua.setText("");
-			}
+				double preziototala;
+				double prezioa = 5;
+				String ordaindu=(String) dirua.getText();//Sartutako diru kantitatea testu moduan gordeko da
+	   			 //KONPROBATU LETRA
+	   			 boolean letra=Metodoak.konprobatuLetra(ordaindu);
+	   			 String mezua="";
+	   			 System.out.println("0");
+	   			 if (letra==false) {
+	   				double zbk= Double.parseDouble(ordaindu);//Zenbaki formatura pasatzen da
+		   			 System.out.println("1");
+
+	   				//KONPROBATU ZENBAKI NEGATIBOA
+	   				boolean zenbakia=Metodoak.konprobatuNegatibo(zbk);
+	   				if (zenbakia==true){
+			   			 System.out.println("2");
+	   					//KONPROBATU DIRU FALTA
+	   					preziototala = prezioa-zbk;
+	   					
+	   					boolean diru_falta=Metodoak.diruFalta(zbk, prezioa);
+		   				if (diru_falta==true){
+		   					prezioa = prezioa - zbk;
+		   					mezua=(prezioa+" € falta zaizkizu");
+		   					System.out.println(mezua);
+		   					Ventana6.Itzuliak.setText(mezua);
+				   			 System.out.println("3");
+
+		   				}else {
+		   					if (preziototala<0) {
+		   						
+			   					preziototala=preziototala*(-1);
+			   					System.out.println(preziototala);
+			   					String kanbioak=Metodoak.kanbioMetodoa(preziototala);
+			   					Ventana6.Itzuliak.setText(kanbioak);
+			   					Ventana6.btnAmaitu.setEnabled(false);
+			   					Ventana6.btnEzeztatu.setEnabled(false);
+					   			 System.out.println("4");
+
+		   					}else if(preziototala==0) {
+		   						mezua="Eskerrik asko erosteagatik";
+			   					Ventana6.Itzuliak.setText(mezua);
+			   					Ventana6.btnAmaitu.setEnabled(false);
+			   					Ventana6.btnEzeztatu.setEnabled(false);
+					   			 System.out.println("5");
+		   					}
+		   				}
+	   				}
+	   				 
+	   			}
+	   			Ventana6.dirua.setText("");	
+	   		 }
 		});
 		btnOrdaindu.setFont(new Font("Bookman Old Style", Font.PLAIN, 20));
 		btnOrdaindu.setBounds(494, 74, 141, 27);
