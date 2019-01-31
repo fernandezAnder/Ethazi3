@@ -4,6 +4,8 @@ import vista.*;
 import java.math.BigInteger;
 import java.security.*;
 import java.text.DecimalFormat;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.Collection;
@@ -82,7 +84,7 @@ public class Metodoak {
 	
 	public static void seigarrenLeihoa(Billete billete) {
 
-		//Metodoak.igoDatuak(billete);
+		Metodoak.igoDatuak(billete);
 		Ventana6 ventana6= new Ventana6(billete);
 		ventana6.setVisible(true);
 
@@ -292,6 +294,19 @@ public class Metodoak {
 			return data;
 		}
 
+	    public static java.sql.Date bihurtuData(String fecha)
+	    {
+	        SimpleDateFormat formato = new SimpleDateFormat("dd/MM/yyyy");
+	        Date fechaDate = null;
+	        try {
+	            fechaDate = formato.parse(fecha);
+	        } 
+	        catch (ParseException ex) 
+	        {
+	            System.out.println(ex);
+	        }
+	        return (java.sql.Date) fechaDate;
+	    }
 
 
 

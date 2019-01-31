@@ -1,6 +1,7 @@
 package modelo;
 import java.sql.*;
 import java.sql.Date;
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 
 import controlador.*;
@@ -94,16 +95,29 @@ public class Consultas {
 	}
 	
 	public static void datubaseraIgo(Billete billete) {
+		
 		PreparedStatement s=null;
 		Connection konexioa=Conexion.getConexion();
-		ResultSet rs = null;		
+		ResultSet rs = null;
+		
+				int bidaiakop=billete.getN_trayecto();
+				String cod_linea=billete.getCod_linea();
+				int cod_bus=billete.getCod_bus();
+				int cod_parada_inicio=billete.getCod_parada_inicio();
+				int cod_parada_fin=billete.getCod_parada_fin();
+				Date data= Metodoak.bihurtuData(billete.getFecha());
+				//Time ordua= hora.valueOf("HH:mm");
+				String nan=billete.getDni();
+				double prezioa=billete.getPrecio();
 		try {
+			s = konexioa.prepareStatement("INSERT INTO billete VALUES (?,?,?,?,?,?,?,?,?)");
 			
-			s = konexioa.prepareStatement("INSERT INTO billete VALUES"
-					+ " ("+billete.getN_trayecto()+","+billete.getCod_linea()
-					+","+billete.getCod_bus()+","+billete.getCod_parada_inicio()
-					+","+billete.getCod_parada_fin()+","+billete.getFecha()+","
-					+billete.getHora()+","+billete.getDni()+","+billete.getPrecio()+" )");
+			
+//			s = konexioa.prepareStatement("INSERT INTO billete VALUES"
+//					+ " ("+billete.getN_trayecto()+","+billete.getCod_linea()
+//					+","+billete.getCod_bus()+","+billete.getCod_parada_inicio()
+//					+","+billete.getCod_parada_fin()+","+billete.getFecha()+","
+//					+billete.getHora()+","+billete.getDni()+","+billete.getPrecio()+" )");
 			s.executeUpdate();
 			 
 		}catch(Exception e) {e.getMessage();}
