@@ -97,8 +97,8 @@ public class Ventana6 extends JFrame {
 		btnEzeztatu.setFont(new Font("Bookman Old Style", Font.PLAIN, 20));
 		btnEzeztatu.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-//				dispose();
-//				Metodoak.hirugarrenLeihoa();
+				dispose();
+				Metodoak.hirugarrenLeihoa(getTitle());
 			}
 		});
 		btnEzeztatu.setBounds(288, 468, 136, 33);
@@ -106,8 +106,8 @@ public class Ventana6 extends JFrame {
 		
 		btnAtzera.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-//				dispose();
-//				Metodoak.bostgarrenLeihoa();
+				dispose();
+				Metodoak.bostgarrenLeihoa(billete);
 			}
 		});
 		btnAtzera.setFont(new Font("Bookman Old Style", Font.PLAIN, 20));
