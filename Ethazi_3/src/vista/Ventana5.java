@@ -113,5 +113,6 @@ public class Ventana5 extends JFrame {
 		System.out.println("NAN "+billete.getDni());
 		System.out.println("DATA "+billete.getFecha());
 		System.out.println("ORDUA "+billete.getHora());
+		System.out.println("PREZIOA "+billete.getPrecio());
 	}
 }
