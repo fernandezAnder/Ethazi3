@@ -13,6 +13,7 @@ import java.awt.Color;
 import java.awt.ComponentOrientation;
 
 import java.awt.event.KeyAdapter;
+import java.util.ArrayList;
 
 import controlador.Billete;
 import controlador.Metodoak;
@@ -28,7 +29,11 @@ public class Ventana6 extends JFrame {
 	private final JButton btnOrdaindu = new JButton("Ordaindu");
 	private static JTextArea Itzuliak = new JTextArea();
 	private double preziototala=0;
-
+	private ArrayList<Double> preziotot = new ArrayList<Double>();
+	private double prezioa = 5;
+	private double prezioBerria=0;
+	private double prezio2 = 0;
+	
 	/**
 	 * Create the panel.
 	 * @param billete 
@@ -109,7 +114,8 @@ public class Ventana6 extends JFrame {
 		//ORDAINDU BOTOIA
 		btnOrdaindu.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				double prezioa = 5;
+				preziotot.add(prezioa);
+				
 				String ordaindu=(String) dirua.getText();//Sartutako diru kantitatea testu moduan gordeko da
 				
 				//KONPROBATU LETRA
@@ -123,17 +129,22 @@ public class Ventana6 extends JFrame {
 	   				//KONPROBATU ZENBAKI NEGATIBOA
 	   				boolean zenbakia=Metodoak.konprobatuNegatibo(zbk);
 	   				if (zenbakia==true){ 
-	   					preziototala = prezioa-zbk;
-	   					boolean diru_falta=Metodoak.diruFalta(zbk, prezioa);
+	   					System.out.println(preziotot.get(preziotot.size()-1));
+	   					prezio2 = preziotot.get(preziotot.size()-1);
+	   					preziototala = (double)prezio2-zbk;
+	   					boolean diru_falta=Metodoak.diruFalta(zbk, preziotot.get(preziotot.size()-1));
 	   					//KONPROBATU DIRU FALTA
 		   				if (diru_falta==true){
-		   					prezioa = prezioa - zbk;
-		   					mezua=(prezioa+" € falta zaizkizu");
+		   					prezioBerria = preziotot.get(preziotot.size()-1);
+		   					prezioBerria = prezioBerria - zbk;
+		   					preziotot.add(preziotot.size(),prezioBerria);
+
+		   					mezua=(preziotot.get(preziotot.size()-1)+" € falta zaizkizu");
 		   					System.out.println(mezua);
 		   					Ventana6.Itzuliak.setText(mezua);	
 		   					ordaindu = dirua.getText();
 		   					zbk= Double.parseDouble(ordaindu);
-		   					diru_falta=Metodoak.diruFalta(zbk, prezioa);
+		   					diru_falta=Metodoak.diruFalta(zbk, preziotot.get(preziotot.size()-1));
 
 
 		   				}else {
