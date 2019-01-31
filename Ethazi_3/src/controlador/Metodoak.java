@@ -294,18 +294,18 @@ public class Metodoak {
 			return data;
 		}
 
-	    public static java.sql.Date bihurtuData(String fecha)
+	    public static java.sql.Date ateraData()
 	    {
-	        SimpleDateFormat formato = new SimpleDateFormat("dd/MM/yyyy");
-	        Date fechaDate = null;
-	        try {
-	            fechaDate = formato.parse(fecha);
-	        } 
-	        catch (ParseException ex) 
-	        {
-	            System.out.println(ex);
-	        }
-	        return (java.sql.Date) fechaDate;
+	    	Date fecha2 = new Date();
+			java.sql.Date data = new java.sql.Date(fecha2.getTime());
+	        return (java.sql.Date) data ;
+	    }
+
+	    public static java.sql.Time ateraOrdua()
+	    {
+	    	Date fecha2 = new Date();
+			java.sql.Time ordua = new java.sql.Time(fecha2.getTime());
+	        return (java.sql.Time) ordua ;
 	    }
 
 

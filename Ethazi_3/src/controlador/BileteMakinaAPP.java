@@ -13,18 +13,6 @@ public class BileteMakinaAPP {
 		Conexion base1 = new Conexion(baseDatos);
 		
 		Metodoak.lehenengoLeihoa();
-		
-//		ArrayList <Autobus> buses= new ArrayList <Autobus>();
-
-//		
-//		//buses =Consultas.datosAutobus();
-//		//clientes=Consultas.datosCliente();
-//		String linea="L1";
-//		paradas=Consultas.mostrarParadas(linea);		
-		
-		
-		
-		
 	}
 
 }
