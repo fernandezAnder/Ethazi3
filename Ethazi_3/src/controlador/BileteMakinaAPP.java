@@ -13,6 +13,7 @@ public class BileteMakinaAPP {
 		Conexion base1 = new Conexion(baseDatos);
 		
 		Metodoak.lehenengoLeihoa();
+		
 	}
 
 }
