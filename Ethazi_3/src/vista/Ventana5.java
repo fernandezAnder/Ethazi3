@@ -20,6 +20,10 @@ import javax.swing.border.BevelBorder;
 
 import controlador.Billete;
 import controlador.Metodoak;
+import java.awt.event.MouseAdapter;
+import java.awt.event.MouseEvent;
+import java.awt.Button;
+import java.awt.Canvas;
 
 public class Ventana5 extends JFrame {
 
@@ -27,8 +31,7 @@ public class Ventana5 extends JFrame {
 	private final JButton btnAtzera = new JButton("Atzera");
 	private JButton btnEzeztatu = new JButton("Ezeztatu");
 	private JButton btnBalidatu = new JButton("Balidatu");
-	private int cod_bus=0;
-	private String linea="";
+	private String nan="";
 	private JTable taula;
 
 	
@@ -64,7 +67,7 @@ public class Ventana5 extends JFrame {
 		btnAtzera.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
 				dispose();
-				Metodoak.laugarrenLeihoa(linea, cod_bus, linea);
+				Metodoak.hirugarrenLeihoa(nan);
 				
 				
 			}
@@ -80,6 +83,14 @@ public class Ventana5 extends JFrame {
 		taula.setBounds(577, 109, -382, 230);
 		getContentPane().add(taula);
 		
+		JButton btnBalidatu = new JButton("Balidatu");
+		btnBalidatu.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				dispose();
+				Metodoak.seigarrenLeihoa();
+			}
+		});
+		btnBalidatu.setBounds(61, 192, 97, 25);
 		btnBalidatu.setFont(new Font("Comic Sans MS", Font.PLAIN, 18));
 		btnBalidatu.addActionListener(new ActionListener() {
 		public void actionPerformed(ActionEvent arg0) {

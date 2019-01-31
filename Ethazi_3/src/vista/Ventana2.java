@@ -17,21 +17,21 @@ import controlador.*;
 
 public class Ventana2 extends JFrame {
 
-	JTextField textNAN;
-	JTextField textLetra;
-	JPasswordField Pasahitza;
-	JLabel lblTxatelaErregistroa = new JLabel("Txatela Erregistroa");
-	JLabel lblNan = new JLabel("NAN");
-	JLabel lblLetra = new JLabel("Letra");
-	JLabel lblPasahitza = new JLabel("Pasahitza");
-	JButton btnEzeztatu = new JButton("Ezeztatu");
-	JButton Ezeztatu = new JButton("Atzera");
-	JButton Jarraitu = new JButton("Jarraitu");
-	JButton Balidatu = new JButton("Balidatu");
-	String nan="";
-	String letra="";
-	String zenbakia="";
-	String pasahitza="";
+	private JTextField textNAN;
+	private JTextField textLetra;
+	private JPasswordField Pasahitza;
+	private JLabel lblTxatelaErregistroa = new JLabel("Txatela Erregistroa");
+	private JLabel lblNan = new JLabel("NAN");
+	private JLabel lblLetra = new JLabel("Letra");
+	private JLabel lblPasahitza = new JLabel("Pasahitza");
+	private JButton btnEzeztatu = new JButton("Ezeztatu");
+	private JButton Ezeztatu = new JButton("Atzera");
+	private JButton Jarraitu = new JButton("Jarraitu");
+	private JButton Balidatu = new JButton("Balidatu");
+	private String nan="";
+	private String letra="";
+	private String zenbakia="";
+	private String pasahitza="";
 
 	public Ventana2(ArrayList<Cliente> clientes) {
 		this.setBounds(275,100,700,600);
