@@ -49,10 +49,10 @@ public class Ventana4 extends JFrame {
 	private JComboBox Hasiera_geltoki = new JComboBox();
 	private JComboBox Amaiera_geltoki = new JComboBox();
 	private JTextPane geltoki = new JTextPane();
-	
+
 	//BARIABLEAK
-	
-	
+
+
 	private String hasiera_geltokia="";
 	private int hasiera_geltoki_kod=0;
 	//Hasiera geltoki kooordenatuak
@@ -71,12 +71,13 @@ public class Ventana4 extends JFrame {
 	private double prezioa;
 	private String ordua;
 	private String data;
+	private boolean biderketa=false;
 
 	public Ventana4(ArrayList<Parada> paradas,ArrayList<Autobus> buses,String linea, int cod_bus, String nan) {
 
 
-	
-		
+
+
 
 		setBackground(SystemColor.control);
 		this.setBounds(275,100,700,600);
@@ -105,7 +106,7 @@ public class Ventana4 extends JFrame {
 		lblHelmugaGeltokia.setBounds(37, 193, 208, 36);
 		lblHelmugaGeltokia.setRequestFocusEnabled(false);
 		lblHelmugaGeltokia.setFont(new Font("Comic Sans MS", Font.BOLD, 25));
-		
+
 		getContentPane().add(lblHelmugaGeltokia);
 
 		//JOAN ETORRI LABELA
@@ -117,7 +118,7 @@ public class Ventana4 extends JFrame {
 		chckbxJoanEtorri.setMaximumSize(new Dimension(49, 23));
 		chckbxJoanEtorri.setBounds(277, 261, 61, 36);
 		getContentPane().add(chckbxJoanEtorri);
-		
+
 		//DATA JCALENDAR
 		bigarrendata.setBounds(158, 402, 117, 20);
 		bigarrendata.setVerifyInputWhenFocusTarget(false);
@@ -142,13 +143,15 @@ public class Ventana4 extends JFrame {
 					lblItzuliData.setVisible(true);
 					bigarrendata.setVisible(true);
 					bidaiakop=2;
+					biderketa=true;
+
 				}
 
 			}
 		});
 		jarraitu.setBounds(491, 490, 131, 35);
 
-		
+
 
 		//EZEZTATU BOTOIA
 		ezeztatu.setFont(new Font("Comic Sans MS", Font.PLAIN, 18));
@@ -175,16 +178,16 @@ public class Ventana4 extends JFrame {
 				double distantzia=0;
 				for (int i=0;i<paradas.size();i++) {
 					if(!"Termibus-Bilbao".equals(paradas.get(i).getNombre())) {
-					distantzia= Metodoak.distanciaCoord(termi_lati, termi_longi, paradas.get(i).getLatitud(), paradas.get(i).getLongitud());
-					
-					distantziaarray.add(distantzia);
-					ordenaketa.put(paradas.get(i).getNombre(), distantzia);
-				}
+						distantzia= Metodoak.distanciaCoord(termi_lati, termi_longi, paradas.get(i).getLatitud(), paradas.get(i).getLongitud());
+
+						distantziaarray.add(distantzia);
+						ordenaketa.put(paradas.get(i).getNombre(), distantzia);
+					}
 				}
 				Collections.sort(distantziaarray);
-				
+
 				for (int i=0;i<distantziaarray.size();i++) {
-					
+
 				}
 				ordenaketa.get(paradas);
 			}
@@ -219,7 +222,7 @@ public class Ventana4 extends JFrame {
 		Hasiera_geltoki.setBounds(258, 129, 175, 34);
 		for (int i=0;i<paradas.size();i++) {
 			Hasiera_geltoki.addItem(paradas.get(i).getNombre());
-			
+
 		}
 
 		getContentPane().add(Hasiera_geltoki);
@@ -229,8 +232,8 @@ public class Ventana4 extends JFrame {
 		Amaiera_geltoki.setBounds(258, 193, 175, 34);
 		for (int i=0;i<paradas.size();i++) {
 			Amaiera_geltoki.addItem(paradas.get(i).getNombre());
-	
-			}
+
+		}
 		getContentPane().add(Amaiera_geltoki);
 
 		//JARRAITU BOTOIA
@@ -254,16 +257,19 @@ public class Ventana4 extends JFrame {
 					amaiera_geltoki_latit=paradas.get(Amaiera_geltoki.getSelectedIndex()).getLatitud();
 					amaiera_geltoki_longi=paradas.get(Amaiera_geltoki.getSelectedIndex()).getLongitud();
 				}
-				
+
 				Double distantzia=Metodoak.distanciaCoord(hasiera_geltoki_latit, hasiera_geltoki_longi, amaiera_geltoki_latit, amaiera_geltoki_longi);
 				for (int i=0;i<buses.size();i++) {
-				prezioa=Metodoak.prezioaKalkulatu(distantzia, buses.get(i).getConsumo_km(),buses.get(i).getN_plazas());
-				
+					prezioa=Metodoak.prezioaKalkulatu(distantzia, buses.get(i).getConsumo_km(),buses.get(i).getN_plazas());
+
 				}
+				if (biderketa==true)
+					prezioa=prezioa*2;
+				
 				data= Metodoak.dataAtera();
 				ordua=Metodoak.orduaAtera();
 				Metodoak.bostgarrenLeihoa(Metodoak.billete(cod_billete, bidaiakop, linea, cod_bus, hasiera_geltoki_kod, amaiera_geltoki_kod, data, ordua, nan, prezioa)
-				);
+						);
 			}
 		});
 		getContentPane().add(jarraitu);

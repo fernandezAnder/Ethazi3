@@ -93,26 +93,24 @@ public class Consultas {
 		return arrayparada;
 	}
 	
-	public static int lineaKodea(String linea) {
-		
+	public static void datubaseraIgo(Billete billete) {
 		PreparedStatement s=null;
 		Connection konexioa=Conexion.getConexion();
-		ResultSet rs = null;	
-		int cod_linea=0;
+		ResultSet rs = null;		
 		try {
 			
-			s = konexioa.prepareStatement("SELECT Cod_Linea FROM linea WHERE linea.Cod_Linea LIKE '"+linea+"'");
-			rs = s.executeQuery();
-		
-		
-			 while (rs.next()) {
-				 cod_linea=rs.getInt(0);
-
-
-			}
+			s = konexioa.prepareStatement("INSERT INTO billete VALUES"
+					+ " ("+billete.getN_trayecto()+","+billete.getCod_linea()
+					+","+billete.getCod_bus()+","+billete.getCod_parada_inicio()
+					+","+billete.getCod_parada_fin()+","+billete.getFecha()+","
+					+billete.getHora()+","+billete.getDni()+","+billete.getPrecio()+" )");
+			s.executeUpdate();
+			 
 		}catch(Exception e) {e.getMessage();}
-		return cod_linea;
 	}
-}
+		
+		
+	}
+
 
 

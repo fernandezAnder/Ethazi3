@@ -84,7 +84,7 @@ public class Ventana5 extends JFrame {
 		btnBalidatu.addActionListener(new ActionListener() {
 		public void actionPerformed(ActionEvent arg0) {
 			dispose();
-			Metodoak.seigarrenLeihoa();
+			Metodoak.seigarrenLeihoa(billete);
 			
 			
 		}
@@ -92,15 +92,15 @@ public class Ventana5 extends JFrame {
 		btnBalidatu.setBounds(505, 471, 107, 35);
 		getContentPane().add(btnBalidatu);
 
-		System.out.println("COD BILLETE: "+billete.getCod_billete());
-		System.out.println("COD BUS "+billete.getCod_bus());
-		System.out.println("COD LINEA "+billete.getCod_linea());
-		System.out.println("COD PARADA INICIO "+billete.getCod_parada_inicio());
-		System.out.println("COD PARADA FIN "+billete.getCod_parada_fin());
-		System.out.println("BIDAIA KOP "+billete.getN_trayecto());
-		System.out.println("NAN "+billete.getDni());
-		System.out.println("DATA "+billete.getFecha());
-		System.out.println("ORDUA "+billete.getHora());
-		System.out.println("PREZIOA "+billete.getPrecio());
+//		System.out.println("COD BILLETE: "+billete.getCod_billete());
+//		System.out.println("COD BUS "+billete.getCod_bus());
+//		System.out.println("COD LINEA "+billete.getCod_linea());
+//		System.out.println("COD PARADA INICIO "+billete.getCod_parada_inicio());
+//		System.out.println("COD PARADA FIN "+billete.getCod_parada_fin());
+//		System.out.println("BIDAIA KOP "+billete.getN_trayecto());
+//		System.out.println("NAN "+billete.getDni());
+//		System.out.println("DATA "+billete.getFecha());
+//		System.out.println("ORDUA "+billete.getHora());
+//		System.out.println("PREZIOA "+billete.getPrecio());
 	}
 }
