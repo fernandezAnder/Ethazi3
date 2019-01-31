@@ -53,11 +53,15 @@ public class Ventana6 extends JFrame {
 		//LABEL ITZULIAK
 		lblItzuliak.setFont(new Font("Bookman Old Style", Font.PLAIN, 24));
 		getContentPane().add(lblItzuliak);
-		Itzuliak.setBounds(126, 214, 454, 199);
+		Itzuliak.setSelectedTextColor(Color.BLACK);
+		Itzuliak.setText("shglkfgblkdthl");
+		Itzuliak.setFont(new Font("Monospaced", Font.PLAIN, 16));
+		Itzuliak.setToolTipText("");
+		Itzuliak.setBounds(126, 215, 454, 199);
 		Itzuliak.setForeground(Color.WHITE);
 		
 		//TEXTAREA ITZULIAK
-		Itzuliak.setComponentOrientation(ComponentOrientation.RIGHT_TO_LEFT);
+		Itzuliak.setComponentOrientation(ComponentOrientation.LEFT_TO_RIGHT);
 		Itzuliak.setEditable(false);
 
 		getContentPane().add(Itzuliak);
@@ -113,32 +117,35 @@ public class Ventana6 extends JFrame {
 		btnAtzera.setFont(new Font("Bookman Old Style", Font.PLAIN, 20));
 		btnAtzera.setBounds(126, 468, 136, 33);
 		getContentPane().add(btnAtzera);
+		
+		//ORDAINDU BOTOIA
 		btnOrdaindu.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				double prezioa = 5;
 				String ordaindu=(String) dirua.getText();//Sartutako diru kantitatea testu moduan gordeko da
-	   			 //KONPROBATU LETRA
+				
+				//KONPROBATU LETRA
 	   			 boolean letra=Metodoak.konprobatuLetra(ordaindu);
 	   			 String mezua="";
-	   			 System.out.println("0");
+	   			 
 	   			 if (letra==false) {
 	   				double zbk= Double.parseDouble(ordaindu);//Zenbaki formatura pasatzen da
-		   			 System.out.println("1");
+		   			 
 
 	   				//KONPROBATU ZENBAKI NEGATIBOA
 	   				boolean zenbakia=Metodoak.konprobatuNegatibo(zbk);
 	   				if (zenbakia==true){
-			   			 System.out.println("2");
+			   			 
 	   					//KONPROBATU DIRU FALTA
-	   					preziototala = prezioa-zbk;
+//	   					preziototala = prezioa-zbk;
 	   					
 	   					boolean diru_falta=Metodoak.diruFalta(zbk, prezioa);
 		   				if (diru_falta==true){
 		   					prezioa = prezioa - zbk;
-		   					mezua=((prezioa)+" € falta zaizkizu");
+		   					mezua=(prezioa+" € falta zaizkizu");
 		   					System.out.println(mezua);
 		   					Ventana6.Itzuliak.setText(mezua);
-				   			 System.out.println("3");
+				   			 
 
 		   				}else {
 		   					if (preziototala<0) {
@@ -147,7 +154,7 @@ public class Ventana6 extends JFrame {
 			   					System.out.println(preziototala);
 			   					String kanbioak=Metodoak.kanbioMetodoa(preziototala);
 			   					Ventana6.Itzuliak.setText(kanbioak);
-			   					Ventana6.btnAmaitu.setEnabled(false);
+			   					Ventana6.btnAmaitu.setEnabled(true);
 			   					Ventana6.btnEzeztatu.setEnabled(false);
 					   			 System.out.println("4");
 

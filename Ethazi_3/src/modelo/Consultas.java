@@ -125,17 +125,6 @@ public class Consultas {
 			s.setString(9,billete.getDni()); 
 			s.setDouble(10,billete.getPrecio());
 			
-//			System.out.println(billete.getCod_billete());
-//			System.out.println(bidaiakop);
-//			System.out.println(cod_linea);
-//			System.out.println(cod_bus);
-//			System.out.println(cod_parada_inicio);
-//			System.out.println(cod_parada_fin);
-//			//System.out.println(data);
-//			System.out.println(ordua);
-//			System.out.println(nan); 
-//			System.out.println(prezioa);
-
 			s.executeUpdate();
 			s.close();
 			 
