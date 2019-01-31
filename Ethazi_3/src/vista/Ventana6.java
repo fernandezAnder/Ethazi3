@@ -14,7 +14,7 @@ import java.awt.ComponentOrientation;
 
 import java.awt.event.KeyAdapter;
 
-
+import controlador.Billete;
 import controlador.Metodoak;
 public class Ventana6 extends JFrame {
 	//private JTextField textSartzekoDirua;
@@ -31,8 +31,9 @@ public class Ventana6 extends JFrame {
 
 	/**
 	 * Create the panel.
+	 * @param billete 
 	 */
-	public Ventana6() {
+	public Ventana6(Billete billete) {
 		this.setBounds(275,100,700,600);
 		getContentPane().setLayout(null);
 		lblOrdainketa.setBounds(104, 11, 162, 34);
