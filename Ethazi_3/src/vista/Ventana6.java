@@ -21,14 +21,13 @@ public class Ventana6 extends JFrame {
 	private JLabel lblOrdainketa = new JLabel("Ordainketa :");
 	private JLabel lblSartuDirua = new JLabel("Sartu Dirua :");
 	private JLabel lblItzuliak = new JLabel("Itzuliak :");
-	private static JTextArea Itzuliak = new JTextArea();
 	private static JButton btnAmaitu = new JButton("Amaitu");
 	private static JTextField dirua;
 	private static JButton btnEzeztatu = new JButton("Ezeztatu");
 	private static JButton btnAtzera = new JButton("Atzera");
 	private final JButton btnOrdaindu = new JButton("Ordaindu");
-	private double preziototala;
-
+	private static JTextArea Itzuliak = new JTextArea();
+	private double preziototala=0;
 
 	/**
 	 * Create the panel.
@@ -53,18 +52,6 @@ public class Ventana6 extends JFrame {
 		//LABEL ITZULIAK
 		lblItzuliak.setFont(new Font("Bookman Old Style", Font.PLAIN, 24));
 		getContentPane().add(lblItzuliak);
-		Itzuliak.setSelectedTextColor(Color.BLACK);
-		Itzuliak.setText("shglkfgblkdthl");
-		Itzuliak.setFont(new Font("Monospaced", Font.PLAIN, 16));
-		Itzuliak.setToolTipText("");
-		Itzuliak.setBounds(126, 215, 454, 199);
-		Itzuliak.setForeground(Color.WHITE);
-		
-		//TEXTAREA ITZULIAK
-		Itzuliak.setComponentOrientation(ComponentOrientation.LEFT_TO_RIGHT);
-		Itzuliak.setEditable(false);
-
-		getContentPane().add(Itzuliak);
 		btnAmaitu.setBounds(460, 466, 120, 37);
 		
 		//BOTOIA AMAITU
@@ -79,6 +66,7 @@ public class Ventana6 extends JFrame {
 		
 		//TEXTUA SARTZEKO DIRUA
 		dirua = new JTextField();
+		dirua.setBounds(308, 76, 136, 26);
 		dirua.addKeyListener(new KeyAdapter() {
 			@Override
 			public void keyTyped(java.awt.event.KeyEvent evt) {
@@ -94,9 +82,9 @@ public class Ventana6 extends JFrame {
 				}
 			}
 		});
-		dirua.setBounds(308, 76, 136, 26);
 		getContentPane().add(dirua);
 		dirua.setColumns(10);
+		btnEzeztatu.setBounds(288, 468, 136, 33);
 		
 		btnEzeztatu.setFont(new Font("Bookman Old Style", Font.PLAIN, 20));
 		btnEzeztatu.addActionListener(new ActionListener() {
@@ -105,8 +93,8 @@ public class Ventana6 extends JFrame {
 //				Metodoak.hirugarrenLeihoa();
 			}
 		});
-		btnEzeztatu.setBounds(288, 468, 136, 33);
 		getContentPane().add(btnEzeztatu);
+		btnAtzera.setBounds(126, 468, 136, 33);
 		
 		btnAtzera.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
@@ -115,8 +103,8 @@ public class Ventana6 extends JFrame {
 			}
 		});
 		btnAtzera.setFont(new Font("Bookman Old Style", Font.PLAIN, 20));
-		btnAtzera.setBounds(126, 468, 136, 33);
 		getContentPane().add(btnAtzera);
+		btnOrdaindu.setBounds(494, 74, 141, 27);
 		
 		//ORDAINDU BOTOIA
 		btnOrdaindu.addActionListener(new ActionListener() {
@@ -134,18 +122,19 @@ public class Ventana6 extends JFrame {
 
 	   				//KONPROBATU ZENBAKI NEGATIBOA
 	   				boolean zenbakia=Metodoak.konprobatuNegatibo(zbk);
-	   				if (zenbakia==true){
-			   			 
-	   					//KONPROBATU DIRU FALTA
-//	   					preziototala = prezioa-zbk;
-	   					
+	   				if (zenbakia==true){ 
+	   					preziototala = prezioa-zbk;
 	   					boolean diru_falta=Metodoak.diruFalta(zbk, prezioa);
+	   					//KONPROBATU DIRU FALTA
 		   				if (diru_falta==true){
 		   					prezioa = prezioa - zbk;
 		   					mezua=(prezioa+" € falta zaizkizu");
 		   					System.out.println(mezua);
-		   					Ventana6.Itzuliak.setText(mezua);
-				   			 
+		   					Ventana6.Itzuliak.setText(mezua);	
+		   					ordaindu = dirua.getText();
+		   					zbk= Double.parseDouble(ordaindu);
+		   					diru_falta=Metodoak.diruFalta(zbk, prezioa);
+
 
 		   				}else {
 		   					if (preziototala<0) {
@@ -156,14 +145,13 @@ public class Ventana6 extends JFrame {
 			   					Ventana6.Itzuliak.setText(kanbioak);
 			   					Ventana6.btnAmaitu.setEnabled(true);
 			   					Ventana6.btnEzeztatu.setEnabled(false);
-					   			 System.out.println("4");
 
 		   					}else if(preziototala==0) {
 		   						mezua="Eskerrik asko erosteagatik";
 			   					Ventana6.Itzuliak.setText(mezua);
 			   					Ventana6.btnAmaitu.setEnabled(false);
 			   					Ventana6.btnEzeztatu.setEnabled(false);
-					   			 System.out.println("5");
+			   					
 		   					}
 		   				}
 	   				}
@@ -173,9 +161,11 @@ public class Ventana6 extends JFrame {
 	   		 }
 		});
 		btnOrdaindu.setFont(new Font("Bookman Old Style", Font.PLAIN, 20));
-		btnOrdaindu.setBounds(494, 74, 141, 27);
 		
 		getContentPane().add(btnOrdaindu);
+		
+		Itzuliak.setBounds(120, 216, 491, 223);
+		getContentPane().add(Itzuliak);
 
 	}
 }
