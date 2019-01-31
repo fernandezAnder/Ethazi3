@@ -26,7 +26,7 @@ public class Ventana6 extends JFrame {
 	private static JTextField dirua;
 	private static JButton btnEzeztatu = new JButton("Ezeztatu");
 	private static JButton btnAtzera = new JButton("Atzera");
-	private final JButton btnOrdaindu = new JButton("Ordaindu");
+	private final static JButton btnOrdaindu = new JButton("Ordaindu");
 	private static JTextArea Itzuliak = new JTextArea();
 	private double preziototala=0;
 	private ArrayList<Double> preziotot = new ArrayList<Double>();
@@ -110,11 +110,13 @@ public class Ventana6 extends JFrame {
 		btnAtzera.setFont(new Font("Bookman Old Style", Font.PLAIN, 20));
 		getContentPane().add(btnAtzera);
 		btnOrdaindu.setBounds(494, 74, 141, 27);
-		
+		//Arraylistari prezioa sartu
+		preziotot.add(prezioa);
 		//ORDAINDU BOTOIA
 		btnOrdaindu.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				preziotot.add(prezioa);
+				//Prezioa Arraylistean sartzen da
+				
 				
 				String ordaindu=(String) dirua.getText();//Sartutako diru kantitatea testu moduan gordeko da
 				
@@ -130,21 +132,23 @@ public class Ventana6 extends JFrame {
 	   				boolean zenbakia=Metodoak.konprobatuNegatibo(zbk);
 	   				if (zenbakia==true){ 
 	   					System.out.println(preziotot.get(preziotot.size()-1));
+	   					
 	   					prezio2 = preziotot.get(preziotot.size()-1);
 	   					preziototala = (double)prezio2-zbk;
-	   					boolean diru_falta=Metodoak.diruFalta(zbk, preziotot.get(preziotot.size()-1));
+	   					boolean diru_falta=Metodoak.diruFalta(zbk, prezio2);
 	   					//KONPROBATU DIRU FALTA
 		   				if (diru_falta==true){
-		   					prezioBerria = preziotot.get(preziotot.size()-1);
-		   					prezioBerria = prezioBerria - zbk;
-		   					preziotot.add(preziotot.size(),prezioBerria);
+		   					preziotot.add(preziototala);
+		   					
 
 		   					mezua=(preziotot.get(preziotot.size()-1)+" € falta zaizkizu");
 		   					System.out.println(mezua);
 		   					Ventana6.Itzuliak.setText(mezua);	
-		   					ordaindu = dirua.getText();
-		   					zbk= Double.parseDouble(ordaindu);
-		   					diru_falta=Metodoak.diruFalta(zbk, preziotot.get(preziotot.size()-1));
+		   					Ventana6.btnAtzera.setEnabled(false);
+		   					Ventana6.btnAmaitu.setEnabled(false);
+//		   					ordaindu = dirua.getText();
+//		   					zbk= Double.parseDouble(ordaindu);
+//		   					diru_falta=Metodoak.diruFalta(zbk, preziotot.get(preziotot.size()-1));
 
 
 		   				}else {
@@ -156,12 +160,16 @@ public class Ventana6 extends JFrame {
 			   					Ventana6.Itzuliak.setText(kanbioak);
 			   					Ventana6.btnAmaitu.setEnabled(true);
 			   					Ventana6.btnEzeztatu.setEnabled(false);
+			   					Ventana6.btnAtzera.setEnabled(false);
+			   					Ventana6.btnOrdaindu.setEnabled(false);
 
 		   					}else if(preziototala==0) {
 		   						mezua="Eskerrik asko erosteagatik";
 			   					Ventana6.Itzuliak.setText(mezua);
-			   					Ventana6.btnAmaitu.setEnabled(false);
+			   					Ventana6.btnAmaitu.setEnabled(true);
 			   					Ventana6.btnEzeztatu.setEnabled(false);
+			   					Ventana6.btnAtzera.setEnabled(false);
+			   					Ventana6.btnOrdaindu.setEnabled(false);
 			   					
 		   					}
 		   				}
