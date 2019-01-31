@@ -33,7 +33,6 @@ public class Ventana5 extends JFrame {
 	private JButton btnBalidatu = new JButton("Balidatu");
 	private String nan="";
 	private JTable taula;
-
 	
 	/**
 	 * Create the panel.
@@ -68,8 +67,6 @@ public class Ventana5 extends JFrame {
 			public void actionPerformed(ActionEvent arg0) {
 				dispose();
 				Metodoak.hirugarrenLeihoa(nan);
-				
-				
 			}
 		});
 		btnAtzera.setBounds(187, 471, 91, 35);
@@ -83,21 +80,12 @@ public class Ventana5 extends JFrame {
 		taula.setBounds(577, 109, -382, 230);
 		getContentPane().add(taula);
 		
-		JButton btnBalidatu = new JButton("Balidatu");
-		btnBalidatu.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent e) {
-				dispose();
-				Metodoak.seigarrenLeihoa(billete);
-			}
-		});
 		btnBalidatu.setBounds(61, 192, 97, 25);
 		btnBalidatu.setFont(new Font("Comic Sans MS", Font.PLAIN, 18));
 		btnBalidatu.addActionListener(new ActionListener() {
 		public void actionPerformed(ActionEvent arg0) {
 			dispose();
 			Metodoak.seigarrenLeihoa(billete);
-			
-			
 		}
 	});
 		btnBalidatu.setBounds(505, 471, 107, 35);

@@ -27,6 +27,7 @@ public class Ventana6 extends JFrame {
 	private static JButton btnEzeztatu = new JButton("Ezeztatu");
 	private static JButton btnAtzera = new JButton("Atzera");
 	private final JButton btnOrdaindu = new JButton("Ordaindu");
+	private double preziototala;
 
 
 	/**
@@ -114,7 +115,6 @@ public class Ventana6 extends JFrame {
 		getContentPane().add(btnAtzera);
 		btnOrdaindu.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				double preziototala;
 				double prezioa = 5;
 				String ordaindu=(String) dirua.getText();//Sartutako diru kantitatea testu moduan gordeko da
 	   			 //KONPROBATU LETRA
@@ -135,7 +135,7 @@ public class Ventana6 extends JFrame {
 	   					boolean diru_falta=Metodoak.diruFalta(zbk, prezioa);
 		   				if (diru_falta==true){
 		   					prezioa = prezioa - zbk;
-		   					mezua=(prezioa+" € falta zaizkizu");
+		   					mezua=((prezioa)+" € falta zaizkizu");
 		   					System.out.println(mezua);
 		   					Ventana6.Itzuliak.setText(mezua);
 				   			 System.out.println("3");
