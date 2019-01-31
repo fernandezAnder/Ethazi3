@@ -1,8 +1,10 @@
 package modelo;
 import java.sql.*;
-import java.sql.Date;
+
 import java.text.SimpleDateFormat;
+import java.time.LocalDate;
 import java.util.ArrayList;
+import java.sql.Date;
 
 import controlador.*;
 public class Consultas {
@@ -19,7 +21,7 @@ public class Consultas {
 			String dni;
 			String nombre;
 			String apellidos;
-			Date fecha_nac;
+			java.sql.Date fecha_nac;
 			String sexo;
 			String contraseña;
 			 while (rs.next()) {
@@ -96,29 +98,46 @@ public class Consultas {
 	
 	public static void datubaseraIgo(Billete billete) {
 		
-		PreparedStatement s=null;
+		
 		Connection konexioa=Conexion.getConexion();
 		ResultSet rs = null;
-		
-				int bidaiakop=billete.getN_trayecto();
-				String cod_linea=billete.getCod_linea();
-				int cod_bus=billete.getCod_bus();
-				int cod_parada_inicio=billete.getCod_parada_inicio();
-				int cod_parada_fin=billete.getCod_parada_fin();
-				Date data= Metodoak.bihurtuData(billete.getFecha());
-				//Time ordua= hora.valueOf("HH:mm");
-				String nan=billete.getDni();
-				double prezioa=billete.getPrecio();
+//		
+//				int bidaiakop=billete.getN_trayecto();
+//				String cod_linea=billete.getCod_linea();
+//				int cod_bus=billete.getCod_bus();
+//				int cod_parada_inicio=billete.getCod_parada_inicio();
+//				int cod_parada_fin=billete.getCod_parada_fin();
+//				//java.sql.Date data= java.sql.);
+//				Timestamp ordua=new Timestamp(System.currentTimeMillis());
+//				String nan=billete.getDni();
+//				double prezioa=billete.getPrecio();
 		try {
-			s = konexioa.prepareStatement("INSERT INTO billete VALUES (?,?,?,?,?,?,?,?,?)");
+			PreparedStatement s = konexioa.prepareStatement("INSERT INTO `billete` (`Cod_Billete`, `NTrayecto`, `Cod_Linea`, `Cod_Bus`, `Cod_Parada_Inicio`, `Cod_Parada_Fin`, `Fecha`, `Hora`, `DNI`, `Precio`)"
+					+ " VALUES(?, ?, ?, ?, ?, ?, ?, ?, ?, ?)");
+			s.setInt(1,billete.getCod_billete());
+			s.setInt(2,billete.getN_trayecto());
+			s.setString(3,billete.getCod_linea());
+			s.setInt(4,billete.getCod_bus());
+			s.setInt(5,billete.getCod_parada_inicio());
+			s.setInt(6,billete.getCod_parada_fin());
+			s.setDate(7,Date.valueOf(LocalDate.now()));
+			s.setTimestamp(8,new Timestamp(System.currentTimeMillis()));
+			s.setString(9,billete.getDni()); 
+			s.setDouble(10,billete.getPrecio());
 			
-			
-//			s = konexioa.prepareStatement("INSERT INTO billete VALUES"
-//					+ " ("+billete.getN_trayecto()+","+billete.getCod_linea()
-//					+","+billete.getCod_bus()+","+billete.getCod_parada_inicio()
-//					+","+billete.getCod_parada_fin()+","+billete.getFecha()+","
-//					+billete.getHora()+","+billete.getDni()+","+billete.getPrecio()+" )");
+//			System.out.println(billete.getCod_billete());
+//			System.out.println(bidaiakop);
+//			System.out.println(cod_linea);
+//			System.out.println(cod_bus);
+//			System.out.println(cod_parada_inicio);
+//			System.out.println(cod_parada_fin);
+//			//System.out.println(data);
+//			System.out.println(ordua);
+//			System.out.println(nan); 
+//			System.out.println(prezioa);
+
 			s.executeUpdate();
+			s.close();
 			 
 		}catch(Exception e) {e.getMessage();}
 	}
