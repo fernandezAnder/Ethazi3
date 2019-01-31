@@ -27,8 +27,9 @@ public class Ventana6 extends JFrame {
 
 	/**
 	 * Create the panel.
+	 * @param billete 
 	 */
-	public Ventana6() {
+	public Ventana6(Billete billete) {
 		this.setBounds(275,100,700,600);
 		getContentPane().setLayout(null);
 		

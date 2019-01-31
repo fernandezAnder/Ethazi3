@@ -79,12 +79,18 @@ public class Metodoak {
 		
 	}
 	
-	public static void seigarrenLeihoa() {
+	public static void seigarrenLeihoa(Billete billete) {
 
-		Ventana6 ventana6= new Ventana6();
+		Metodoak.igoDatuak(billete);
+		Ventana6 ventana6= new Ventana6(billete);
 		ventana6.setVisible(true);
 
 	}
+	
+	public static void igoDatuak(Billete billete) {
+		Consultas.datubaseraIgo(billete);
+	}
+	
 	public static void zazpigarrenLeihoa() {
 
 		Ventana7 ventana7= new Ventana7();
@@ -121,9 +127,6 @@ public class Metodoak {
 		
 	}
 
-			
-			
-		
 		public static String orduaAtera () {
 			int hora,minutos = 0;
 			Calendar fecha = Calendar.getInstance();
