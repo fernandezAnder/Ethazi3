@@ -87,7 +87,7 @@ public class Ventana5 extends JFrame {
 		btnBalidatu.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				dispose();
-				Metodoak.seigarrenLeihoa();
+				Metodoak.seigarrenLeihoa(billete);
 			}
 		});
 		btnBalidatu.setBounds(61, 192, 97, 25);
