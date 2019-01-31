@@ -5,7 +5,9 @@ import java.awt.SystemColor;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.Date;
+import java.util.Hashtable;
 import java.sql.*;
 import javax.swing.JButton;
 import javax.swing.JCheckBox;
@@ -13,12 +15,13 @@ import javax.swing.JComboBox;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JTextPane;
+import javax.swing.SingleSelectionModel;
 import javax.swing.table.DefaultTableModel;
 
 import com.toedter.calendar.JDateChooser;
 
 import controlador.*;
-
+import modelo.Consultas;
 
 import java.awt.Dimension;
 import java.awt.Color;
@@ -29,23 +32,23 @@ public class Ventana4 extends JFrame {
 	/**
 	 * LEHIOAN SORTUTAKO ELEMENTUAK.
 	 */
-	JLabel lblGeltokiak = new JLabel("GELTOKIAK");
-	JButton jarraitu = new JButton("Jarraitu");
-	JButton ezeztatu = new JButton("Ezeztatu");
-	JButton atzera = new JButton("Atzera");
-	JLabel lblXLinearenInformazioa = new JLabel("X Linearen Informazioa");
-	JLabel lblJatorriGeltokia = new JLabel("Jatorri Geltokia");
-	JLabel lblHelmugaGeltokia = new JLabel("Helmuga Geltokia");
-	JLabel lblJoanEtaEtorri = new JLabel("Joan eta etorri?");
-	JCheckBox chckbxJoanEtorri = new JCheckBox("Bai");
-	JDateChooser bigarrendata = new JDateChooser();
-	JLabel lblItzuliData = new JLabel("Itzuli data");
-	DefaultTableModel modelo = new DefaultTableModel();
-	JLabel lblData = new JLabel("Data");
-	JDateChooser lehendata = new JDateChooser();
-	JComboBox Hasiera_geltoki = new JComboBox();
-	JComboBox Amaiera_geltoki = new JComboBox();
-	JTextPane geltoki = new JTextPane();
+	private JLabel lblGeltokiak = new JLabel("GELTOKIAK");
+	private JButton jarraitu = new JButton("Jarraitu");
+	private JButton ezeztatu = new JButton("Ezeztatu");
+	private JButton atzera = new JButton("Atzera");
+	private JLabel lblXLinearenInformazioa = new JLabel("X Linearen Informazioa");
+	private JLabel lblJatorriGeltokia = new JLabel("Jatorri Geltokia");
+	private JLabel lblHelmugaGeltokia = new JLabel("Helmuga Geltokia");
+	private JLabel lblJoanEtaEtorri = new JLabel("Joan eta etorri?");
+	private JCheckBox chckbxJoanEtorri = new JCheckBox("Bai");
+	private JDateChooser lehendata = new JDateChooser();
+	private JDateChooser bigarrendata = new JDateChooser();
+	private JLabel lblItzuliData = new JLabel("Itzuli data");
+	private DefaultTableModel modelo = new DefaultTableModel();
+	private JLabel lblData = new JLabel("Data");
+	private JComboBox Hasiera_geltoki = new JComboBox();
+	private JComboBox Amaiera_geltoki = new JComboBox();
+	private JTextPane geltoki = new JTextPane();
 	
 	//BARIABLEAK
 	
@@ -63,15 +66,13 @@ public class Ventana4 extends JFrame {
 	private Date lehen_data;
 	private Date bigarren_data;
 	private int cod_billete=0;
-	private int bidaiakop=0;
-	private int cod_linea=0;
+	private int bidaiakop=1;
+	private int cod_linea;
 	private double prezioa;
-	private String ordua="";
-	private String nan="";
-	
-	
+	private String ordua;
+	private String data;
 
-	public Ventana4(ArrayList<Parada> paradas,ArrayList<Autobus> buses,String linea, int cod_bus) {
+	public Ventana4(ArrayList<Parada> paradas,ArrayList<Autobus> buses,String linea, int cod_bus, String nan) {
 
 
 	
@@ -121,16 +122,11 @@ public class Ventana4 extends JFrame {
 		bigarrendata.setBounds(158, 402, 117, 20);
 		bigarrendata.setVerifyInputWhenFocusTarget(false);
 		bigarrendata.setVisible(false);
-		bigarrendata.setDateFormatString("dd-MM-yyyy");
-		bigarrendata.getCalendarButton().addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent arg0) {
-			}
-		});
-		
+		bigarrendata.setDateFormatString("dd-MM-yyyy");	
 		getContentPane().add(bigarrendata);
-		
+		bigarrendata.getDate();
+		bigarrendata.cleanup();
 		//ITZULI DATA LABELA
-		//lblItzuliData.setRequestFocusEnabled(false);v
 		lblItzuliData.setBounds(37, 394, 104, 28);
 		lblItzuliData.setVisible(false);
 		lblItzuliData.setFont(new Font("Comic Sans MS", Font.BOLD, 20));
@@ -145,6 +141,7 @@ public class Ventana4 extends JFrame {
 				}else {
 					lblItzuliData.setVisible(true);
 					bigarrendata.setVisible(true);
+					bidaiakop=2;
 				}
 
 			}
@@ -170,7 +167,26 @@ public class Ventana4 extends JFrame {
 			@Override
 			public void actionPerformed(ActionEvent arg0) {
 				dispose();
-				Metodoak.hirugarrenLeihoa();
+				Metodoak.hirugarrenLeihoa(nan);
+				Hashtable<String,Double> ordenaketa=new Hashtable<String,Double>();
+				ArrayList <Double> distantziaarray= new ArrayList<Double>();
+				double termi_lati=43.2614;
+				double termi_longi=-2.94974;
+				double distantzia=0;
+				for (int i=0;i<paradas.size();i++) {
+					if(!"Termibus-Bilbao".equals(paradas.get(i).getNombre())) {
+					distantzia= Metodoak.distanciaCoord(termi_lati, termi_longi, paradas.get(i).getLatitud(), paradas.get(i).getLongitud());
+					
+					distantziaarray.add(distantzia);
+					ordenaketa.put(paradas.get(i).getNombre(), distantzia);
+				}
+				}
+				Collections.sort(distantziaarray);
+				
+				for (int i=0;i<distantziaarray.size();i++) {
+					
+				}
+				ordenaketa.get(paradas);
 			}
 		});
 		atzera.setFont(new Font("Comic Sans MS", Font.PLAIN, 18));
@@ -223,7 +239,7 @@ public class Ventana4 extends JFrame {
 			@Override
 			public void actionPerformed(ActionEvent arg0) {
 				dispose();
-				lehen_data=lehendata.getDate();
+				lehen_data = lehendata.getDate();
 				bigarren_data=bigarrendata.getDate();
 				cod_billete++;
 				for(int i=0;i<paradas.size();i++) {
@@ -240,10 +256,14 @@ public class Ventana4 extends JFrame {
 				}
 				
 				Double distantzia=Metodoak.distanciaCoord(hasiera_geltoki_latit, hasiera_geltoki_longi, amaiera_geltoki_latit, amaiera_geltoki_longi);
-
-				Metodoak.billete(cod_billete, bidaiakop, cod_linea, cod_bus, hasiera_geltoki_kod, amaiera_geltoki_kod, lehen_data, ordua, nan, prezioa);
-						
-				Metodoak.bostgarrenLeihoa();
+				for (int i=0;i<buses.size();i++) {
+				prezioa=Metodoak.prezioaKalkulatu(distantzia, buses.get(i).getConsumo_km(),buses.get(i).getN_plazas());
+				
+				}
+				data= Metodoak.dataAtera();
+				ordua=Metodoak.orduaAtera();
+				Metodoak.bostgarrenLeihoa(Metodoak.billete(cod_billete, bidaiakop, linea, cod_bus, hasiera_geltoki_kod, amaiera_geltoki_kod, data, ordua, nan, prezioa)
+				);
 			}
 		});
 		getContentPane().add(jarraitu);

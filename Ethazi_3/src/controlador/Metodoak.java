@@ -5,10 +5,16 @@ import java.math.BigInteger;
 import java.security.*;
 import java.text.DecimalFormat;
 import java.util.ArrayList;
+import java.util.Calendar;
+import java.util.Collection;
+import java.util.Collections;
 import java.util.Date;
+import java.util.Hashtable;
 
 public class Metodoak {
 
+	Calendar fecha = Calendar.getInstance();
+	
 	public static String ateraMD5(String input) {
 		try {
 			MessageDigest md = MessageDigest.getInstance("MD5");
@@ -40,38 +46,34 @@ public class Metodoak {
 
 
 	}
-	public static void hirugarrenLeihoa() {
+	public static void hirugarrenLeihoa(String nan) {
 
-		Ventana3 ventana3= new Ventana3();
+		Ventana3 ventana3= new Ventana3(nan);
 		ventana3.setVisible(true);
 
 	}
-	public static void laugarrenLeihoa(String linea, int cod_bus) {
+	public static void laugarrenLeihoa(String linea, int cod_bus, String nan) {
 
 		ArrayList <Parada> paradas= new ArrayList <Parada>();
-		for (int i=0;i<paradas.size();i++) {
-	
-		}
 		ArrayList <Autobus> bus= new ArrayList <Autobus>();
 		
-		ArrayList <Double> distantzia= new ArrayList<Double>();
 		
 		paradas= Consultas.paradastabla(linea);
-		bus=Consultas.datosAutobus(linea);
-		Ventana4 ventana4= new Ventana4(paradas,bus,linea,cod_bus);
+		bus=Consultas.datosAutobus(linea,cod_bus);
+		Ventana4 ventana4= new Ventana4(paradas,bus,linea,cod_bus,nan);
 		ventana4.setVisible(true);
 
 	}
 
-	public static void bostgarrenLeihoa() {
+	public static void bostgarrenLeihoa(Billete billete) {
 		
-		Ventana5 ventana5= new Ventana5();
+		Ventana5 ventana5= new Ventana5(billete);
 		ventana5.setVisible(true);
 		
 
 	}
-	public static Billete billete(int cod_billete,int bidaiakop,int cod_linea,int cod_bus,int
-			hasiera_geltoki_kod,int amaiera_geltoki_kod,Date lehen_data, 
+	public static Billete billete(int cod_billete,int bidaiakop,String cod_linea,int cod_bus,int
+			hasiera_geltoki_kod,int amaiera_geltoki_kod,String lehen_data, 
 			String ordua, String nan, double prezioa) {
 		Billete billete= new Billete(cod_billete,bidaiakop,cod_linea,cod_bus,hasiera_geltoki_kod,amaiera_geltoki_kod,lehen_data,ordua,nan,prezioa);
 		return billete;
@@ -105,8 +107,10 @@ public class Metodoak {
    
         return distancia;  
     }
-	public static double prezioaKalkulatu(double distantzia,final double erregaia,double kontsumo_bus,int bidaiariak,final double onurak) {
+	public static double prezioaKalkulatu(double distantzia,double kontsumo_bus,int bidaiariak) {
 		double prezioa=0;
+		final double erregaia=0.80;
+		final double onurak=0.20;
 		double erregai_kontsumoa=erregaia*kontsumo_bus;
 		double bidai_gastua=distantzia*erregai_kontsumoa;
 		double irabaziak= bidai_gastua*onurak;
@@ -232,6 +236,58 @@ public class Metodoak {
 		}
 		return diru_falta;
 	}
-	
+			
+			
+		
+		public static String orduaAtera () {
+			int hora,minutos = 0;
+			Calendar fecha = Calendar.getInstance();
+			
+			//ordua hartu eta gorde
+			hora =fecha.get(Calendar.HOUR_OF_DAY);
+			minutos = fecha.get(Calendar.MINUTE);
+			
+			String ordua = hora+":"+minutos;
+
+			if (hora<10) {
+				ordua = "0"+hora+":"+minutos;
+			}
+			if (minutos<10) {
+				ordua = hora+":"+"0"+minutos;
+			}
+			if(hora<10 && minutos<10) {
+				ordua = hora+":"+"0"+minutos;
+			}
+			System.out.println(ordua);
+			return ordua;
+		}
+		public static String dataAtera () {
+			int año,mes,dia = 0;
+			
+			Calendar fecha = Calendar.getInstance();
+
+			//data hartu eta gorde
+	        año = fecha.get(Calendar.YEAR);
+	        mes = fecha.get(Calendar.MONTH) + 1;
+	        dia = fecha.get(Calendar.DAY_OF_MONTH);
+	        
+			String data = dia+"/"+mes+"/"+año;
+	        
+	        if(dia<10) {
+				data = "0"+dia+"/"+mes+"/"+año;
+			}
+			if(mes<10) {
+				data = dia+"/"+"0"+mes+"/"+año;
+			}
+			if (dia<10 && mes<10) {
+				data = "0"+dia+"/"+"0"+mes+"/"+año;
+			}
+			System.out.println(data);
+			return data;
+		}
+
+
+
+
 }
 	
