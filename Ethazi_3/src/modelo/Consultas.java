@@ -101,16 +101,7 @@ public class Consultas {
 		
 		Connection konexioa=Conexion.getConexion();
 		ResultSet rs = null;
-//		
-//				int bidaiakop=billete.getN_trayecto();
-//				String cod_linea=billete.getCod_linea();
-//				int cod_bus=billete.getCod_bus();
-//				int cod_parada_inicio=billete.getCod_parada_inicio();
-//				int cod_parada_fin=billete.getCod_parada_fin();
-//				//java.sql.Date data= java.sql.);
-//				Timestamp ordua=new Timestamp(System.currentTimeMillis());
-//				String nan=billete.getDni();
-//				double prezioa=billete.getPrecio();
+		
 		try {
 			PreparedStatement s = konexioa.prepareStatement("INSERT INTO `billete` (`Cod_Billete`, `NTrayecto`, `Cod_Linea`, `Cod_Bus`, `Cod_Parada_Inicio`, `Cod_Parada_Fin`, `Fecha`, `Hora`, `DNI`, `Precio`)"
 					+ " VALUES(?, ?, ?, ?, ?, ?, ?, ?, ?, ?)");
