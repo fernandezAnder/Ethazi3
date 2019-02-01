@@ -25,7 +25,7 @@ public class Ventana2 extends JFrame {
 	private JLabel lblLetra = new JLabel("Letra");
 	private JLabel lblPasahitza = new JLabel("Pasahitza");
 	private JButton btnEzeztatu = new JButton("Ezeztatu");
-	private JButton Ezeztatu = new JButton("Atzera");
+	private JButton Atzera = new JButton("Atzera");
 	private JButton Jarraitu = new JButton("Jarraitu");
 	private JButton Balidatu = new JButton("Balidatu");
 	private String nan="";
@@ -113,8 +113,8 @@ public class Ventana2 extends JFrame {
 		getContentPane().add(lblPasahitza);
 
 		//EZEZTATU BOTOIA
-		Ezeztatu.setFont(new Font("Comic Sans MS", Font.BOLD, 15));
-		Ezeztatu.addActionListener(new ActionListener() {
+		Atzera.setFont(new Font("Comic Sans MS", Font.BOLD, 15));
+		Atzera.addActionListener(new ActionListener() {
 			@Override
 			public void actionPerformed(ActionEvent arg0) {
 				dispose();
@@ -122,8 +122,8 @@ public class Ventana2 extends JFrame {
 
 			}
 		});
-		Ezeztatu.setBounds(241, 343, 109, 44);
-		getContentPane().add(Ezeztatu);
+		Atzera.setBounds(241, 343, 109, 44);
+		getContentPane().add(Atzera);
 
 		//JARRAITU BOTOIA
 		Jarraitu.setEnabled(false);
@@ -179,6 +179,17 @@ public class Ventana2 extends JFrame {
 				Balidatu.setFont(new Font("Comic Sans MS", Font.BOLD, 15));
 				Balidatu.setBounds(529, 196, 115, 44);
 				getContentPane().add(Balidatu);
+				
+				JButton btnKontuBerria = new JButton("Kontu Berria");
+				btnKontuBerria.addActionListener(new ActionListener() {
+					public void actionPerformed(ActionEvent arg0) {
+						dispose();
+						Metodoak.bigarrenLeihoaB();
+					}
+				});
+				btnKontuBerria.setFont(new Font("Bookman Old Style", Font.BOLD, 20));
+				btnKontuBerria.setBounds(302, 433, 170, 44);
+				getContentPane().add(btnKontuBerria);
 
 		
 	}

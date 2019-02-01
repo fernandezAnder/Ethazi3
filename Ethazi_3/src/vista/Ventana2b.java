@@ -171,23 +171,23 @@ public class Ventana2b extends JFrame {
 						nan=zenbakia+letra;
 						pasahitza=Pasahitza.getText();
 						
-						for (int i=0;i<clientes.size();i++) {
-							System.out.println(clientes.get(i).getDni());
-							//System.out.println(nan);
-						}
+//						for (int i=0;i<clientes.size();i++) {
+//							System.out.println(clientes.get(i).getDni());
+//							//System.out.println(nan);
+//						}
 
-						for (int i=0;i<clientes.size();i++) {
-							if (clientes.get(i).getDni().equals(nan)) {
-								System.out.println(nan);
-								
-								if (clientes.get(i).getContraseña().equals(Metodoak.ateraMD5(pasahitza))) {
-									System.out.println(pasahitza);
-									Jarraitu.setEnabled(true);
-									Balidatu.setEnabled(false);
-									
-								}
-							}
-						}
+//						for (int i=0;i<clientes.size();i++) {
+//							if (clientes.get(i).getDni().equals(nan)) {
+//								System.out.println(nan);
+//								
+//								if (clientes.get(i).getContraseña().equals(Metodoak.ateraMD5(pasahitza))) {
+//									System.out.println(pasahitza);
+//									Jarraitu.setEnabled(true);
+//									Balidatu.setEnabled(false);
+//									
+//								}
+//							}
+//						}
 					}
 				});
 				
@@ -249,5 +249,7 @@ public class Ventana2b extends JFrame {
 
 		
 	}
+
+	
 }
 

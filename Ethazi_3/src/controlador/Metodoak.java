@@ -48,6 +48,10 @@ public class Metodoak {
 
 
 	}
+	public static void bigarrenLeihoaB() {
+		Ventana2b ventana2b= new Ventana2b(null);
+		ventana2b.setVisible(true);
+	}
 	public static void hirugarrenLeihoa(String nan) {
 
 		Ventana3 ventana3= new Ventana3(nan);
@@ -79,6 +83,13 @@ public class Metodoak {
 			String ordua, String nan, double prezioa) {
 		Billete billete= new Billete(cod_billete,bidaiakop,cod_linea,cod_bus,hasiera_geltoki_kod,amaiera_geltoki_kod,lehen_data,ordua,nan,prezioa);
 		return billete;
+		
+	}
+	
+	public static Cliente cliente(String dni,String nombre,String apellido,java.sql.Date fecha_nac,String
+			sexo,String contraseña) {
+		Cliente cliente= new Cliente(dni,nombre,apellido,fecha_nac,sexo,contraseña);
+		return cliente;
 		
 	}
 	
@@ -294,7 +305,7 @@ public class Metodoak {
 			return data;
 		}
 
-	    public static java.sql.Date ateraData()
+	    public static java.sql.Date ateraData(java.sql.Date date)
 	    {
 	    	Date fecha2 = new Date();
 			java.sql.Date data = new java.sql.Date(fecha2.getTime());

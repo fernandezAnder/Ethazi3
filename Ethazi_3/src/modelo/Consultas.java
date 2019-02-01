@@ -101,16 +101,8 @@ public class Consultas {
 		
 		Connection konexioa=Conexion.getConexion();
 		ResultSet rs = null;
-//		
-//				int bidaiakop=billete.getN_trayecto();
-//				String cod_linea=billete.getCod_linea();
-//				int cod_bus=billete.getCod_bus();
-//				int cod_parada_inicio=billete.getCod_parada_inicio();
-//				int cod_parada_fin=billete.getCod_parada_fin();
-//				//java.sql.Date data= java.sql.);
-//				Timestamp ordua=new Timestamp(System.currentTimeMillis());
-//				String nan=billete.getDni();
-//				double prezioa=billete.getPrecio();
+
+		
 		try {
 			PreparedStatement s = konexioa.prepareStatement("INSERT INTO `billete` (`Cod_Billete`, `NTrayecto`, `Cod_Linea`, `Cod_Bus`, `Cod_Parada_Inicio`, `Cod_Parada_Fin`, `Fecha`, `Hora`, `DNI`, `Precio`)"
 					+ " VALUES(?, ?, ?, ?, ?, ?, ?, ?, ?, ?)");
@@ -130,6 +122,29 @@ public class Consultas {
 			 
 		}catch(Exception e) {e.getMessage();}
 	}
+		public static void ClienteIgo(Cliente cliente) {
+		
+		
+			Connection konexioa=Conexion.getConexion();
+			ResultSet rs = null;
+
+			
+		try {
+			PreparedStatement s = konexioa.prepareStatement("INSERT INTO `cliente` (`DNI`, `Nombre`, `Apellidos`, `Fecha_nac`, `Sexo`, `Contraseña`)"
+					+ " VALUES(?, ?, ?, ?, ?, ?)");
+			s.setString(1,cliente.getDni());
+			s.setString(2,cliente.getNombre());
+			s.setString(3,cliente.getApellido());
+			s.setDate(4,Metodoak.ateraData(cliente.getFecha_nac()));
+			s.setString(5,cliente.getSexo());
+			s.setString(6,cliente.getContraseña());
+			
+			s.executeUpdate();
+			s.close();
+			 
+		}catch(Exception e) {e.getMessage();}
+	}
+	
 		
 		
 	}
