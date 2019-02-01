@@ -65,20 +65,16 @@ public class Ventana4 extends JFrame {
 	private int amaiera_geltoki_kod=0;
 	private Date lehen_data;
 	private Date bigarren_data;
-	private int cod_billete=0;
 	private int bidaiakop=1;
 	private int cod_linea;
 	private double prezioa;
 	private String ordua;
 	private String data;
 	private boolean biderketa=false;
-
+	private int cod_billete;
 	public Ventana4(ArrayList<Parada> paradas,ArrayList<Autobus> buses,String linea, int cod_bus, String nan) {
 
-
-
-
-
+		cod_billete++;
 		setBackground(SystemColor.control);
 		this.setBounds(275,100,700,600);
 		getContentPane().setLayout(null);
@@ -244,7 +240,7 @@ public class Ventana4 extends JFrame {
 				dispose();
 				lehen_data = lehendata.getDate();
 				bigarren_data=bigarrendata.getDate();
-				cod_billete++;
+				
 				for(int i=0;i<paradas.size();i++) {
 					//Hasiera geltoki bariableak
 					hasiera_geltokia=paradas.get(Hasiera_geltoki.getSelectedIndex()).getNombre();
@@ -268,7 +264,7 @@ public class Ventana4 extends JFrame {
 				
 				data= Metodoak.dataAtera();
 				ordua=Metodoak.orduaAtera();
-				Metodoak.bostgarrenLeihoa(Metodoak.billete(cod_billete, bidaiakop, linea, cod_bus, hasiera_geltoki_kod, amaiera_geltoki_kod, data, ordua, nan, prezioa)
+				Metodoak.bostgarrenLeihoa(Metodoak.billete(/*cod_billete,*/ bidaiakop, linea, cod_bus, hasiera_geltoki_kod, amaiera_geltoki_kod, data, ordua, nan, prezioa)
 						);
 			}
 		});

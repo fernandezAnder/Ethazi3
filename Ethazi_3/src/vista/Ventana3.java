@@ -21,7 +21,7 @@ public class Ventana3 extends JFrame {
 	private JButton btnBilbodonosti = new JButton("Bilbo-Balmaseda");
 	private JButton btnBilboPlentzia = new JButton("Bilbo-Durango");
 	private JButton btnAtzera = new JButton("Atzera");
-
+	private int cod_billete=0;
 
 
 	public Ventana3(String nan) {

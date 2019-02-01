@@ -101,7 +101,6 @@ public class Consultas {
 		
 		Connection konexioa=Conexion.getConexion();
 		ResultSet rs = null;
-
 		
 		try {
 			PreparedStatement s = konexioa.prepareStatement("INSERT INTO `billete` (`Cod_Billete`, `NTrayecto`, `Cod_Linea`, `Cod_Bus`, `Cod_Parada_Inicio`, `Cod_Parada_Fin`, `Fecha`, `Hora`, `DNI`, `Precio`)"

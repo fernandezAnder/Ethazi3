@@ -17,6 +17,7 @@ import java.util.ArrayList;
 import java.awt.event.ActionEvent;
 import javax.swing.JTable;
 import javax.swing.border.BevelBorder;
+import javax.swing.table.DefaultTableModel;
 
 import controlador.Billete;
 import controlador.Metodoak;
@@ -24,72 +25,34 @@ import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
 import java.awt.Button;
 import java.awt.Canvas;
+import java.awt.Color;
+import javax.swing.ListSelectionModel;
+import java.awt.Rectangle;
 
 public class Ventana5 extends JFrame {
-
-	private JLabel lblAukeratutakoBidaia = new JLabel("Aukeratutako Bidaia :");
-	private final JButton btnAtzera = new JButton("Atzera");
-	private JButton btnEzeztatu = new JButton("Ezeztatu");
-	private JButton btnBalidatu = new JButton("Balidatu");
 	private String nan="";
-	private JTable taula;
+	private final JTable table = new JTable();
 	
-	/**
-	 * Create the panel.
-	 * @param billete 
-	 */
+	
 
 	public Ventana5(Billete billete) {
+		int cod_billete=billete.getCod_billete();
 		this.setBounds(275,100,700,600);
 		getContentPane().setLayout(null);
-		
-		//AUKERATUTAKO BOTOIA LABEL
-		lblAukeratutakoBidaia.setBounds(286, 11, 253, 34);
-		lblAukeratutakoBidaia.setFont(new Font("Comic Sans MS", Font.BOLD, 24));
-		getContentPane().add(lblAukeratutakoBidaia);
-		btnEzeztatu.setFont(new Font("Bookman Old Style", Font.PLAIN, 20));
-		
-		//EZEZTATU BOTOIA
-		btnEzeztatu.setFont(new Font("Comic Sans MS", Font.PLAIN, 18));
-		btnEzeztatu.addActionListener(new ActionListener() {
-			@Override
-			public void actionPerformed(ActionEvent arg0) {
-				dispose();
-				Metodoak.lehenengoLeihoa();	
+		table.setModel(new DefaultTableModel(
+			new Object[][] {
+				{null, null},
+			},
+			new String[] {
+				"New column", "New column"
 			}
-		});
-		btnEzeztatu.setBounds(335, 471, 107, 35);
-		getContentPane().add(btnEzeztatu);
+		));
+		table.getColumnModel().getColumn(1).setPreferredWidth(78);
+		table.setBounds(117, 81, 490, 410);
 		
-		//ATZERA BOTOIA
-		btnAtzera.setFont(new Font("Comic Sans MS", Font.PLAIN, 18));
-		btnAtzera.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent arg0) {
-				dispose();
-				Metodoak.hirugarrenLeihoa(nan);
-			}
-		});
-		btnAtzera.setBounds(187, 471, 91, 35);
-		
-		getContentPane().add(btnAtzera);
-		
-		//TAULA
-		taula =  new JTable();
-		taula.setAutoCreateRowSorter(true);
-		taula.setToolTipText("");
-		taula.setBounds(577, 109, -382, 230);
-		getContentPane().add(taula);
-		
-		btnBalidatu.setBounds(61, 192, 97, 25);
-		btnBalidatu.setFont(new Font("Comic Sans MS", Font.PLAIN, 18));
-		btnBalidatu.addActionListener(new ActionListener() {
-		public void actionPerformed(ActionEvent arg0) {
-			dispose();
-			Metodoak.seigarrenLeihoa(billete);
-		}
-	});
-		btnBalidatu.setBounds(505, 471, 107, 35);
-		getContentPane().add(btnBalidatu);
+		getContentPane().add(table);
+		cod_billete++;
+		billete.setCod_billete(cod_billete);
 		
 	}
 }

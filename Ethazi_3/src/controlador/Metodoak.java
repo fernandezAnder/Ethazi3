@@ -78,10 +78,10 @@ public class Metodoak {
 		
 
 	}
-	public static Billete billete(int cod_billete,int bidaiakop,String cod_linea,int cod_bus,int
+	public static Billete billete(/*int cod_billete,*/int bidaiakop,String cod_linea,int cod_bus,int
 			hasiera_geltoki_kod,int amaiera_geltoki_kod,String lehen_data, 
 			String ordua, String nan, double prezioa) {
-		Billete billete= new Billete(cod_billete,bidaiakop,cod_linea,cod_bus,hasiera_geltoki_kod,amaiera_geltoki_kod,lehen_data,ordua,nan,prezioa);
+		Billete billete= new Billete(/*cod_billete,*/bidaiakop,cod_linea,cod_bus,hasiera_geltoki_kod,amaiera_geltoki_kod,lehen_data,ordua,nan,prezioa);
 		return billete;
 		
 	}
