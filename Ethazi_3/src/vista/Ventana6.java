@@ -94,17 +94,17 @@ public class Ventana6 extends JFrame {
 		btnEzeztatu.setFont(new Font("Bookman Old Style", Font.PLAIN, 20));
 		btnEzeztatu.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-//				dispose();
-//				Metodoak.hirugarrenLeihoa();
+				dispose();
+				Metodoak.lehenengoLeihoa();
 			}
 		});
 		getContentPane().add(btnEzeztatu);
 		btnAtzera.setBounds(126, 468, 136, 33);
-		
+		String nan = billete.getDni();
 		btnAtzera.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				dispose();
-				Metodoak.bostgarrenLeihoa(billete);
+				Metodoak.hirugarrenLeihoa(nan);
 			}
 		});
 		btnAtzera.setFont(new Font("Bookman Old Style", Font.PLAIN, 20));

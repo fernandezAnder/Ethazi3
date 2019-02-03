@@ -20,7 +20,7 @@ public class Ventana2 extends JFrame {
 	private JTextField textNAN;
 	private JTextField textLetra;
 	private JPasswordField Pasahitza;
-	private JLabel lblTxatelaErregistroa = new JLabel("Txatela Erregistroa");
+	private JLabel lblTxatelaErregistroa = new JLabel("Txatel Logina");
 	private JLabel lblNan = new JLabel("NAN");
 	private JLabel lblLetra = new JLabel("Letra");
 	private JLabel lblPasahitza = new JLabel("Pasahitza");
@@ -180,7 +180,7 @@ public class Ventana2 extends JFrame {
 				Balidatu.setBounds(529, 196, 115, 44);
 				getContentPane().add(Balidatu);
 				
-				JButton btnKontuBerria = new JButton("Kontu Berria");
+				JButton btnKontuBerria = new JButton("Erregistratu");
 				btnKontuBerria.addActionListener(new ActionListener() {
 					public void actionPerformed(ActionEvent arg0) {
 						dispose();

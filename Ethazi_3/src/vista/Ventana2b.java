@@ -17,6 +17,9 @@ import controlador.*;
 import com.toedter.calendar.JCalendar;
 import com.toedter.components.JLocaleChooser;
 import com.toedter.calendar.JDateChooser;
+import javax.swing.JSpinner;
+import javax.swing.JComboBox;
+import javax.swing.DefaultComboBoxModel;
 
 public class Ventana2b extends JFrame {
 
@@ -33,8 +36,7 @@ public class Ventana2b extends JFrame {
 	private JButton Balidatu = new JButton("Balidatu");
 	private JTextField izena;
 	private JTextField abizenatextfield;
-	private final JTextField sexuatextfield = new JTextField();
-	private JLabel lblSexua = new JLabel("Sexua");
+	private JLabel lblSexua = new JLabel("Sexua*");
 	private JLabel lblIzena = new JLabel("Izena");
 	private final JTextField izenatextField = new JTextField();
 	private JLabel lblJaiotzeData = new JLabel("Jaiotze data ");
@@ -58,7 +60,7 @@ public class Ventana2b extends JFrame {
 
 		//LABEL NAN
 		lblNan.setFont(new Font("Comic Sans MS", Font.BOLD, 20));
-		lblNan.setBounds(146, 274, 47, 28);
+		lblNan.setBounds(108, 274, 47, 28);
 		getContentPane().add(lblNan);
 
 		//TEXT NAN
@@ -80,7 +82,7 @@ public class Ventana2b extends JFrame {
 			}
 		});
 		zenbakia=textNAN.getText();
-		textNAN.setBounds(238, 276, 109, 28);
+		textNAN.setBounds(192, 276, 109, 28);
 		getContentPane().add(textNAN);
 		textNAN.setColumns(10);
 
@@ -111,19 +113,19 @@ public class Ventana2b extends JFrame {
 		});
 		letra=textLetra.getText();
 		textLetra.setColumns(10);
-		textLetra.setBounds(484, 276, 32, 28);
+		textLetra.setBounds(440, 276, 32, 28);
 		getContentPane().add(textLetra);
 
 
 
 		//LETRA LABEL
 		lblLetra.setFont(new Font("Comic Sans MS", Font.BOLD, 20));
-		lblLetra.setBounds(402, 274, 52, 28);
+		lblLetra.setBounds(359, 274, 52, 28);
 		getContentPane().add(lblLetra);
 
 		//LABEL PASAHITZA
 		lblPasahitza.setFont(new Font("Comic Sans MS", Font.BOLD, 20));
-		lblPasahitza.setBounds(146, 336, 92, 28);
+		lblPasahitza.setBounds(63, 336, 92, 28);
 		getContentPane().add(lblPasahitza);
 
 		//EZEZTATU BOTOIA
@@ -148,7 +150,7 @@ public class Ventana2b extends JFrame {
 			}
 		});
 		Jarraitu.setFont(new Font("Comic Sans MS", Font.BOLD, 15));
-		Jarraitu.setBounds(407, 437, 115, 44);
+		Jarraitu.setBounds(462, 452, 115, 44);
 		getContentPane().add(Jarraitu);
 
 		
@@ -156,7 +158,7 @@ public class Ventana2b extends JFrame {
 		//PASAHITZA TEXTUA
 		Pasahitza = new JPasswordField();
 		Pasahitza.setFont(new Font("Tahoma", Font.PLAIN, 16));
-		Pasahitza.setBounds(297, 338, 170, 28);
+		Pasahitza.setBounds(192, 338, 170, 28);
 		getContentPane().add(Pasahitza);
 
 		//DNI ETA PASAHITZA BALIDATZEKO BOTOIA
@@ -193,7 +195,7 @@ public class Ventana2b extends JFrame {
 				
 				
 				Balidatu.setFont(new Font("Comic Sans MS", Font.BOLD, 15));
-				Balidatu.setBounds(539, 288, 115, 44);
+				Balidatu.setBounds(315, 452, 115, 44);
 				getContentPane().add(Balidatu);
 				
 				//LABEL IZENA
@@ -226,30 +228,45 @@ public class Ventana2b extends JFrame {
 				
 				//JCALENDAR JAIOTZE DATA
 				jaiotzedata.setDateFormatString("yyyy-MM-dd");
-				jaiotzedata.setBounds(504, 131, 105, 22);
+				jaiotzedata.setBounds(502, 131, 105, 22);
 				getContentPane().add(jaiotzedata);
 				
 				//LABEL SEXUA
-				lblSexua.setFont(new Font("Comic Sans MS", Font.BOLD, 20));
-				lblSexua.setBounds(359, 189, 71, 28);
+				lblSexua.setFont(new Font("Arial", Font.BOLD, 20));
+				lblSexua.setBounds(359, 180, 78, 28);
 				getContentPane().add(lblSexua);
-				
-				//SEXUA TEXT
-				sexuatextfield.setHorizontalAlignment(SwingConstants.CENTER);
-				sexuatextfield.setFont(new Font("Tahoma", Font.PLAIN, 16));
-				sexuatextfield.setColumns(10);
-				sexuatextfield.setBounds(442, 186, 32, 28);
-				getContentPane().add(sexuatextfield);
 				
 				//IZENA TEXT
 				izenatextField.setFont(new Font("Tahoma", Font.PLAIN, 16));
 				izenatextField.setColumns(10);
-				izenatextField.setBounds(192, 131, 109, 28);
+				izenatextField.setBounds(192, 127, 109, 28);
 				getContentPane().add(izenatextField);
+				
+				JLabel lblDatuPertsonalak = new JLabel("Datu Pertsonalak  ----------------------------------------------------------------------------------------------------------------------------------");
+				lblDatuPertsonalak.setBounds(22, 92, 632, 22);
+				getContentPane().add(lblDatuPertsonalak);
+				
+				JLabel lblErabiltzaileDatuak = new JLabel("Erabiltzaile Datuak  ----------------------------------------------------------------------------------------------------------------------------------");
+				lblErabiltzaileDatuak.setBounds(22, 241, 632, 22);
+				getContentPane().add(lblErabiltzaileDatuak);
+				
+				JLabel lblNewLabel = new JLabel("* V = Mutila");
+				lblNewLabel.setToolTipText("");
+				lblNewLabel.setBounds(533, 180, 63, 22);
+				getContentPane().add(lblNewLabel);
+				
+				JLabel lblMNeska = new JLabel("   M = Neska");
+				lblMNeska.setToolTipText("");
+				lblMNeska.setBounds(533, 200, 63, 22);
+				getContentPane().add(lblMNeska);
+				
+				JComboBox comboBox = new JComboBox();
+				comboBox.setFont(new Font("Arial", Font.PLAIN, 18));
+				comboBox.setModel(new DefaultComboBoxModel(new String[] {"V", "M"}));
+				comboBox.setBounds(440, 186, 40, 20);
+				getContentPane().add(comboBox);
 
 		
 	}
-
-	
 }
 

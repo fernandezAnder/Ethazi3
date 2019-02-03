@@ -3,7 +3,7 @@ import java.sql.*;
 import java.sql.Date;
 public class Billete {
 
-	
+	private static int kontagailua=1;
 	private int cod_billete=0;
 	private int n_trayecto;
 	private String cod_linea;
@@ -15,10 +15,10 @@ public class Billete {
 	private String dni;
 	private double precio;
 	
-	public Billete(/*int cod_billete,*/ int n_trayecto, String cod_linea, int cod_bus, int cod_parada_inicio,
+	public Billete( int n_trayecto, String cod_linea, int cod_bus, int cod_parada_inicio,
 			int cod_parada_fin, String lehen_data, String hora, String dni, double precio) {
 		
-		this.cod_billete = cod_billete++;
+		this.cod_billete = kontagailua++;
 		this.n_trayecto = n_trayecto;
 		this.cod_linea = cod_linea;
 		this.cod_bus = cod_bus;

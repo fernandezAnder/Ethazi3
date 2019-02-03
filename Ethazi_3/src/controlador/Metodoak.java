@@ -71,9 +71,9 @@ public class Metodoak {
 
 	}
 
-	public static void bostgarrenLeihoa(Billete billete) {
+	public static void bostgarrenLeihoa(Billete billete, Tiket t1) {
 		
-		Ventana5 ventana5= new Ventana5(billete);
+		Ventana5 ventana5= new Ventana5(billete,t1);
 		ventana5.setVisible(true);
 		
 
@@ -319,7 +319,10 @@ public class Metodoak {
 	        return (java.sql.Time) ordua ;
 	    }
 
-
+	    public static double Redondear(double numero)
+	    {
+	          return Math.rint(numero*100)/100;
+	    }
 
 }
 	

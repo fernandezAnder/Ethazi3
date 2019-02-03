@@ -9,6 +9,8 @@ import java.util.Collections;
 import java.util.Date;
 import java.util.Hashtable;
 import java.sql.*;
+import java.text.DecimalFormat;
+
 import javax.swing.JButton;
 import javax.swing.JCheckBox;
 import javax.swing.JComboBox;
@@ -72,6 +74,9 @@ public class Ventana4 extends JFrame {
 	private String data;
 	private boolean biderketa=false;
 	private int cod_billete;
+	private double prezio2;
+	DecimalFormat dezimal = new DecimalFormat("#.00");
+
 	public Ventana4(ArrayList<Parada> paradas,ArrayList<Autobus> buses,String linea, int cod_bus, String nan) {
 
 		cod_billete++;
@@ -257,15 +262,14 @@ public class Ventana4 extends JFrame {
 				Double distantzia=Metodoak.distanciaCoord(hasiera_geltoki_latit, hasiera_geltoki_longi, amaiera_geltoki_latit, amaiera_geltoki_longi);
 				for (int i=0;i<buses.size();i++) {
 					prezioa=Metodoak.prezioaKalkulatu(distantzia, buses.get(i).getConsumo_km(),buses.get(i).getN_plazas());
-
+					prezio2=Metodoak.Redondear(prezioa);
 				}
 				if (biderketa==true)
-					prezioa=prezioa*2;
-				
+					prezio2=prezio2*2;
+				Tiket t1 = new Tiket(bidaiakop, linea, cod_bus, hasiera_geltokia, amaiera_geltokia, lehen_data, bigarren_data, prezio2);
 				data= Metodoak.dataAtera();
 				ordua=Metodoak.orduaAtera();
-				Metodoak.bostgarrenLeihoa(Metodoak.billete(/*cod_billete,*/ bidaiakop, linea, cod_bus, hasiera_geltoki_kod, amaiera_geltoki_kod, data, ordua, nan, prezioa)
-						);
+				Metodoak.bostgarrenLeihoa(Metodoak.billete(/*cod_billete,*/ bidaiakop, linea, cod_bus, hasiera_geltoki_kod, amaiera_geltoki_kod, data, ordua, nan, prezio2),t1);
 			}
 		});
 		getContentPane().add(jarraitu);
