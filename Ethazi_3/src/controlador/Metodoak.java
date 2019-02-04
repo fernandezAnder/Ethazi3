@@ -291,20 +291,39 @@ public class Metodoak {
 		mes = fecha.get(Calendar.MONTH) + 1;
 		dia = fecha.get(Calendar.DAY_OF_MONTH);
 
-		String data = dia+"/"+mes+"/"+año;
+		String data = dia+"-"+mes+"-"+año;
 
 		if(dia<10) {
-			data = "0"+dia+"/"+mes+"/"+año;
+			data = "0"+dia+"-"+mes+"-"+año;
 		}
 		if(mes<10) {
-			data = dia+"/"+"0"+mes+"/"+año;
+			data = dia+"-"+"0"+mes+"-"+año;
 		}
 		if (dia<10 && mes<10) {
-			data = "0"+dia+"/"+"0"+mes+"/"+año;
+			data = "0"+dia+"-"+"0"+mes+"-"+año;
 		}
 		System.out.println(data);
 		return data;
 	}
+//	public static String dataSpinners (int spinner_Hilabetea,int spinner_Eguna) {
+//		Calendar fecha = Calendar.getInstance();
+//		String data="";
+//		String dia="";
+//		String mes="";
+//		
+//		if(spinner_Eguna<10) {
+//			dia = "0"+dia+"-"+mes;
+//		}
+//		if(spinner_Hilabetea<10) {
+//			mes = "0"+spinner_Hilabetea;
+//		}
+//		if (spinner_Eguna<10 && spinner_Hilabetea<10) {
+//			data = "0"+dia+"-"+"0"+mes;
+//		}
+//		
+//		System.out.println(data);
+//		return data;
+//	}
 
 	public static java.sql.Date ateraData(java.sql.Date date)
 	{

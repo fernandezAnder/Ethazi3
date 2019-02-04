@@ -52,9 +52,9 @@ public class Ventana2b extends JFrame {
 	private JLabel lblDatuPertsonalak = new JLabel("Datu Pertsonalak  ----------------------------------------------------------------------------------------------------------------------------------");
 	private JLabel label = new JLabel("-");
 	private JLabel label_1_marra = new JLabel("-");
-	private JSpinner spinner_Urtea = new JSpinner(new SpinnerNumberModel(Calendar.YEAR,1900,Calendar.YEAR,1));
-	private JSpinner spinner_Hilabetea = new JSpinner(new SpinnerNumberModel((Calendar.MONTH)+1,1,12,1));
-	private JSpinner spinner_Eguna = new JSpinner(new SpinnerNumberModel((Calendar.DAY_OF_MONTH),1900,31,1));
+	private JSpinner spinner_Urtea = new JSpinner(new SpinnerNumberModel(2019,1900,2019,1));
+	private JSpinner spinner_Hilabetea = new JSpinner(new SpinnerNumberModel((int)((Calendar.MONTH)-1),1,12,1));
+	private JSpinner spinner_Eguna = new JSpinner(new SpinnerNumberModel((int)((Calendar.DAY_OF_MONTH)-1),1,31,1));
 
 	
 
@@ -66,6 +66,7 @@ public class Ventana2b extends JFrame {
 	private String abizena="";
 	private String jaio_data;
 	private String sexua;
+
 
 
 	public Ventana2b() {
@@ -293,6 +294,35 @@ public class Ventana2b extends JFrame {
 				
 				spinner_Eguna.setBounds(593, 131, 50, 22);
 				getContentPane().add(spinner_Eguna);
+
+				int a = (Integer) spinner_Urtea.getValue(); 
+				int b = (Integer) spinner_Hilabetea.getValue(); 
+				int c = (Integer) spinner_Eguna.getValue();
+				
+				//Inizializatu behar izango da
+				String SpinnerHilabetea = "";
+				String SpinnerEguna = "";
+				
+				if(b<10) {
+					SpinnerHilabetea = "0"+b;
+				}else {
+					SpinnerHilabetea = Integer.toString(b);
+				}
+				if(c<10) {
+					SpinnerEguna = "0"+c;
+				}else {
+					SpinnerEguna = Integer.toString(c);
+				}
+				
+				String SpinnerUrtea = Integer.toString(a);
+
+				String Data = SpinnerUrtea+"-"+SpinnerHilabetea+"-"+SpinnerEguna;
+				
+				System.out.println(Calendar.YEAR);
+				System.out.println(SpinnerUrtea);
+				System.out.println(SpinnerHilabetea);
+				System.out.println(SpinnerEguna);
+				System.out.println(Data);
 
 	}
 }
