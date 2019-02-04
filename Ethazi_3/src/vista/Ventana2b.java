@@ -42,7 +42,6 @@ public class Ventana2b extends JFrame {
 	private JLabel lblIzena = new JLabel("Izena");
 	private final JTextField izenatextField = new JTextField();
 	private JLabel lblJaiotzeData = new JLabel("Jaiotze data ");
-	private JDateChooser jaiotzedata = new JDateChooser();
 	private JLabel lblAbizena = new JLabel("Abizena");
 	private JComboBox AukeratuSexua = new JComboBox();
 	private JLabel lblMNeska = new JLabel("   M = Neska");
@@ -59,6 +58,9 @@ public class Ventana2b extends JFrame {
 	private String abizena="";
 	private Date jaio_data;
 	private String sexua;
+	private JTextField textFieldUrtea;
+	private JTextField textField;
+	private JTextField textField_1;
 
 
 	public Ventana2b() {
@@ -183,11 +185,6 @@ public class Ventana2b extends JFrame {
 		lblJaiotzeData.setBounds(359, 125, 133, 28);
 		getContentPane().add(lblJaiotzeData);
 
-		//JCALENDAR JAIOTZE DATA
-		jaiotzedata.setDateFormatString("yyyy-MM-dd");
-		jaiotzedata.setBounds(502, 131, 105, 22);
-		getContentPane().add(jaiotzedata);
-
 		//LABEL SEXUA
 		lblSexua.setFont(new Font("Arial", Font.BOLD, 20));
 		lblSexua.setBounds(359, 180, 78, 28);
@@ -276,6 +273,31 @@ public class Ventana2b extends JFrame {
 				Jarraitu.setFont(new Font("Comic Sans MS", Font.BOLD, 15));
 				Jarraitu.setBounds(462, 452, 115, 44);
 				getContentPane().add(Jarraitu);
+				
+				textFieldUrtea = new JTextField();
+				textFieldUrtea.setBounds(491, 131, 40, 22);
+				getContentPane().add(textFieldUrtea);
+				textFieldUrtea.setColumns(10);
+				
+				textField = new JTextField();
+				textField.setBounds(554, 131, 40, 22);
+				getContentPane().add(textField);
+				textField.setColumns(10);
+				
+				textField_1 = new JTextField();
+				textField_1.setBounds(606, 131, 64, 22);
+				getContentPane().add(textField_1);
+				textField_1.setColumns(10);
+				
+				JLabel label = new JLabel("-");
+				label.setFont(new Font("Bookman Old Style", Font.PLAIN, 40));
+				label.setBounds(533, 125, 17, 28);
+				getContentPane().add(label);
+				
+				JLabel label_1_marra = new JLabel("-");
+				label_1_marra.setFont(new Font("Bookman Old Style", Font.PLAIN, 40));
+				label_1_marra.setBounds(591, 125, 17, 28);
+				getContentPane().add(label_1_marra);
 
 	}
 }
