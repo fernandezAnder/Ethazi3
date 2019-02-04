@@ -5,6 +5,7 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.event.KeyAdapter;
 import java.util.ArrayList;
+import java.util.Calendar;
 import java.util.Date;
 
 import javax.swing.JButton;
@@ -12,6 +13,7 @@ import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JPasswordField;
 import javax.swing.JTextField;
+import javax.swing.SpinnerNumberModel;
 import javax.swing.SwingConstants;
 
 import controlador.*;
@@ -48,7 +50,13 @@ public class Ventana2b extends JFrame {
 	private JLabel lblNewLabel = new JLabel("* V = Mutila");
 	private JLabel lblErabiltzaileDatuak = new JLabel("Erabiltzaile Datuak  ----------------------------------------------------------------------------------------------------------------------------------");
 	private JLabel lblDatuPertsonalak = new JLabel("Datu Pertsonalak  ----------------------------------------------------------------------------------------------------------------------------------");
+	private JLabel label = new JLabel("-");
+	private JLabel label_1_marra = new JLabel("-");
+	private JSpinner spinner_Urtea = new JSpinner(new SpinnerNumberModel(Calendar.YEAR,1900,Calendar.YEAR,1));
+	private JSpinner spinner_Hilabetea = new JSpinner(new SpinnerNumberModel((Calendar.MONTH)+1,1,12,1));
+	private JSpinner spinner_Eguna = new JSpinner(new SpinnerNumberModel((Calendar.DAY_OF_MONTH),1900,31,1));
 
+	
 
 	private String nan="";
 	private String letra="";
@@ -58,9 +66,6 @@ public class Ventana2b extends JFrame {
 	private String abizena="";
 	private String jaio_data;
 	private String sexua;
-	private JTextField textFieldUrtea;
-	private JTextField textField;
-	private JTextField textField_1;
 
 
 	public Ventana2b() {
@@ -182,7 +187,7 @@ public class Ventana2b extends JFrame {
 
 		//LABEL JAIOYTZE DATA
 		lblJaiotzeData.setFont(new Font("Comic Sans MS", Font.BOLD, 20));
-		lblJaiotzeData.setBounds(359, 125, 133, 28);
+		lblJaiotzeData.setBounds(326, 125, 133, 28);
 		getContentPane().add(lblJaiotzeData);
 
 		//LABEL SEXUA
@@ -241,12 +246,6 @@ public class Ventana2b extends JFrame {
 				pasahitza=Metodoak.ateraMD5(pasahitza);
 			
 				Cliente2 cliente = new Cliente2(nan, izena2, abizena, jaio_data, sexua, pasahitza);
-				System.out.println("nan "+nan);
-				System.out.println("izena "+izena2);
-				System.out.println("abizena "+abizena);
-				System.out.println("jaio data "+jaio_data);
-				System.out.println("sexua "+sexua);
-				System.out.println("pasahitza "+pasahitza);
 				
 				
 				Metodoak.bezeroaIgo(cliente);
@@ -278,30 +277,22 @@ public class Ventana2b extends JFrame {
 				Jarraitu.setBounds(462, 452, 115, 44);
 				getContentPane().add(Jarraitu);
 				
-				textFieldUrtea = new JTextField();
-				textFieldUrtea.setBounds(491, 131, 40, 22);
-				getContentPane().add(textFieldUrtea);
-				textFieldUrtea.setColumns(10);
-				
-				textField = new JTextField();
-				textField.setBounds(554, 131, 40, 22);
-				getContentPane().add(textField);
-				textField.setColumns(10);
-				
-				textField_1 = new JTextField();
-				textField_1.setBounds(606, 131, 64, 22);
-				getContentPane().add(textField_1);
-				textField_1.setColumns(10);
-				
-				JLabel label = new JLabel("-");
 				label.setFont(new Font("Bookman Old Style", Font.PLAIN, 40));
-				label.setBounds(533, 125, 17, 28);
+				label.setBounds(518, 125, 32, 28);
 				getContentPane().add(label);
 				
-				JLabel label_1_marra = new JLabel("-");
 				label_1_marra.setFont(new Font("Bookman Old Style", Font.PLAIN, 40));
-				label_1_marra.setBounds(591, 125, 17, 28);
+				label_1_marra.setBounds(575, 125, 17, 28);
 				getContentPane().add(label_1_marra);
+				
+				spinner_Urtea.setBounds(462, 131, 59, 22);
+				getContentPane().add(spinner_Urtea);
+				
+				spinner_Hilabetea.setBounds(533, 131, 40, 22);
+				getContentPane().add(spinner_Hilabetea);
+				
+				spinner_Eguna.setBounds(593, 131, 50, 22);
+				getContentPane().add(spinner_Eguna);
 
 	}
 }
