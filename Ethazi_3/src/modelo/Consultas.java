@@ -121,7 +121,7 @@ public class Consultas {
 			 
 		}catch(Exception e) {e.getMessage();}
 	}
-		public static void bezeroIgo(Cliente cliente) {
+		public static void bezeroIgo(Cliente2 cliente) {
 		
 		
 			Connection konexioa=Conexion.getConexion();
@@ -134,7 +134,7 @@ public class Consultas {
 			s.setString(1,cliente.getDni());
 			s.setString(2,cliente.getNombre());
 			s.setString(3,cliente.getApellido());
-			s.setDate(4,(Date) cliente.getFecha_nac());
+			s.setString(4,cliente.getFecha_nac());
 			s.setString(5,cliente.getSexo());
 			s.setString(6,cliente.getContraseña());
 			
