@@ -323,6 +323,9 @@ public class Metodoak {
 	    {
 	          return Math.rint(numero*100)/100;
 	    }
-
+	    
+	    public static void bezeroaIgo(Cliente2 cliente) {
+	    	Consultas.bezeroIgo(cliente);
+	    }
 }
 	

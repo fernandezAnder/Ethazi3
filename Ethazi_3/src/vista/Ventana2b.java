@@ -57,7 +57,7 @@ public class Ventana2b extends JFrame {
 	private String pasahitza="";
 	private String izena2="";
 	private String abizena="";
-	private Date jaio_data;
+	private String jaio_data;
 	private String sexua;
 
 
@@ -233,7 +233,7 @@ public class Ventana2b extends JFrame {
 				nan=zenbakia+letra;
 				izena2=izena.getText();
 				abizena=abizenatextfield.getText();
-				jaio_data= jaiotzedata;
+				jaio_data= "1998-01-04";
 				int sexuzbk;
 				sexuzbk=AukeratuSexua.getSelectedIndex();
 				if (sexuzbk==0)
@@ -241,14 +241,18 @@ public class Ventana2b extends JFrame {
 				else
 					sexua="M";
 				pasahitza=Pasahitza.getText();
-				System.out.println(sexua);
-				Cliente cliente = new Cliente(nan, izena2, abizena, jaio_data, sexua, pasahitza);
+				pasahitza=Metodoak.ateraMD5(pasahitza);
+			
+				Cliente2 cliente = new Cliente2(nan, izena2, abizena, jaio_data, sexua, pasahitza);
 				System.out.println("nan "+nan);
 				System.out.println("izena "+izena2);
 				System.out.println("abizena "+abizena);
 				System.out.println("jaio data "+jaio_data);
 				System.out.println("sexua "+sexua);
 				System.out.println("pasahitza "+pasahitza);
+				
+				
+				Metodoak.bezeroaIgo(cliente);
 			}
 		});
 		
