@@ -1,5 +1,6 @@
 package modelo;
-import java.io.*;
+import java.io.BufferedReader;
+import java.io.FileReader;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.SQLException;
@@ -9,7 +10,7 @@ public class Conexion {
     private String  usuario;
     private String  clave;
     private int puerto          = 3306;
-    private String  servidor;
+    private String  servidor="";
     private static Connection conexion  = null;
  
     //CONSTRUCTOR

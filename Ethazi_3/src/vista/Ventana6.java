@@ -1,19 +1,16 @@
 package vista;
 
-import javax.swing.JPanel;  
-import javax.swing.JLabel;
 import java.awt.Font;
-import javax.swing.JTextField;
-import javax.swing.JButton;
-import javax.swing.JFrame;
-import javax.swing.JTextArea;
-import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
-import java.awt.Color;
-import java.awt.ComponentOrientation;
-
+import java.awt.event.ActionListener;
 import java.awt.event.KeyAdapter;
 import java.util.ArrayList;
+
+import javax.swing.JButton;
+import javax.swing.JFrame;
+import javax.swing.JLabel;
+import javax.swing.JTextArea;
+import javax.swing.JTextField;
 
 import controlador.Billete;
 import controlador.Metodoak;
@@ -36,10 +33,7 @@ public class Ventana6 extends JFrame {
 	private double prezioBerria=0;
 	private double prezio2 = 0;
 
-	/**
-	 * Create the panel.
-	 * @param billete 
-	 */
+	
 	public Ventana6(Billete billete, Tiket t1) {
 		prezioa=billete.getPrecio();
 		this.setBounds(275,100,700,600);

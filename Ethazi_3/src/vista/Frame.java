@@ -1,10 +1,8 @@
 package vista;
 
 import java.awt.GridBagConstraints;
-import java.awt.event.MouseAdapter;
-import java.awt.event.MouseEvent;
+
 import javax.swing.JFrame;
-import modelo.*;
 public class Frame extends JFrame {
 
 

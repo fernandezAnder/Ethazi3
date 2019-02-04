@@ -1,12 +1,18 @@
 package modelo;
-import java.sql.*;
-
-import java.text.SimpleDateFormat;
+import java.sql.Connection;
+import java.sql.Date;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.Timestamp;
 import java.time.LocalDate;
 import java.util.ArrayList;
 //import java.sql.Date;
 
-import controlador.*;
+import controlador.Autobus;
+import controlador.Billete;
+import controlador.Cliente;
+import controlador.Cliente2;
+import controlador.Parada;
 public class Consultas {
 
 	public static ArrayList <Cliente> datosCliente() {
@@ -100,7 +106,7 @@ public class Consultas {
 		
 		
 		Connection konexioa=Conexion.getConexion();
-		ResultSet rs = null;
+		
 		
 		try {
 			PreparedStatement s = konexioa.prepareStatement("INSERT INTO `billete` (`Cod_Billete`, `NTrayecto`, `Cod_Linea`, `Cod_Bus`, `Cod_Parada_Inicio`, `Cod_Parada_Fin`, `Fecha`, `Hora`, `DNI`, `Precio`)"
@@ -125,7 +131,7 @@ public class Consultas {
 		
 		
 			Connection konexioa=Conexion.getConexion();
-			ResultSet rs = null;
+			
 
 			
 		try {

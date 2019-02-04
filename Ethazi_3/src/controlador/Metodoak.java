@@ -1,20 +1,22 @@
 package controlador;
-import modelo.*;
-import vista.*;
-
-import java.io.File;
 import java.io.FileWriter;
 import java.math.BigInteger;
-import java.security.*;
+import java.security.MessageDigest;
+import java.security.NoSuchAlgorithmException;
 import java.text.DecimalFormat;
-import java.text.ParseException;
-import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Calendar;
-import java.util.Collection;
-import java.util.Collections;
 import java.util.Date;
-import java.util.Hashtable;
+
+import modelo.Consultas;
+import vista.Ventana1;
+import vista.Ventana2;
+import vista.Ventana2b;
+import vista.Ventana3;
+import vista.Ventana4;
+import vista.Ventana5;
+import vista.Ventana6;
+import vista.Ventana7;
 
 public class Metodoak {
 

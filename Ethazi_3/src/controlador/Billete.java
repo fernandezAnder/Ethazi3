@@ -1,6 +1,5 @@
 package controlador;
-import java.sql.*;
-import java.sql.Date;
+
 public class Billete {
 
 	private static int kontagailua=1;

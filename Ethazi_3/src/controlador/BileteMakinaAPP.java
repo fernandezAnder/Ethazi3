@@ -1,7 +1,5 @@
 package controlador;
-import modelo.*;
-import vista.*;
-import java.util.ArrayList;
+import modelo.Conexion;
 
 
 public class BileteMakinaAPP {

@@ -1,39 +1,16 @@
 package vista;
 
-import javax.swing.JPanel; 
-import javax.swing.JLabel;
-
-import java.awt.ComponentOrientation;
-import java.awt.Font;
-import javax.swing.JTextPane;
-
-
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 
 import javax.swing.JButton;
 import javax.swing.JFrame;
-
-import java.awt.event.ActionListener;
-import java.util.ArrayList;
-import java.awt.event.ActionEvent;
-import javax.swing.JTable;
-import javax.swing.border.BevelBorder;
-import javax.swing.table.DefaultTableModel;
+import javax.swing.JLabel;
+import javax.swing.JTextArea;
 
 import controlador.Billete;
 import controlador.Metodoak;
 import controlador.Tiket;
-
-import java.awt.event.MouseAdapter;
-import java.awt.event.MouseEvent;
-import java.awt.Button;
-import java.awt.Canvas;
-import java.awt.Color;
-import javax.swing.ListSelectionModel;
-import java.awt.Rectangle;
-import java.awt.GridLayout;
-import javax.swing.GroupLayout;
-import javax.swing.GroupLayout.Alignment;
-import javax.swing.JTextArea;
 
 public class Ventana5 extends JFrame {
 	private String nan="";

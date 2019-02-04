@@ -1,15 +1,16 @@
 package vista;
 
+import java.awt.Color;
+import java.awt.Dimension;
 import java.awt.Font;
 import java.awt.SystemColor;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.text.DecimalFormat;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Date;
 import java.util.Hashtable;
-import java.sql.*;
-import java.text.DecimalFormat;
 
 import javax.swing.JButton;
 import javax.swing.JCheckBox;
@@ -17,16 +18,14 @@ import javax.swing.JComboBox;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JTextPane;
-import javax.swing.SingleSelectionModel;
 import javax.swing.table.DefaultTableModel;
 
 import com.toedter.calendar.JDateChooser;
 
-import controlador.*;
-import modelo.Consultas;
-
-import java.awt.Dimension;
-import java.awt.Color;
+import controlador.Autobus;
+import controlador.Metodoak;
+import controlador.Parada;
+import controlador.Tiket;
 public class Ventana4 extends JFrame {
 
 
