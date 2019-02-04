@@ -7,7 +7,7 @@ import java.awt.ComponentOrientation;
 import java.awt.Font;
 import javax.swing.JTextPane;
 
-import modelo.Consultas;
+
 
 import javax.swing.JButton;
 import javax.swing.JFrame;
@@ -68,7 +68,7 @@ public class Ventana5 extends JFrame {
 		btnBalidatu.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				dispose();
-				Metodoak.seigarrenLeihoa(billete);
+				Metodoak.seigarrenLeihoa(billete, t1);
 			}
 		});
 		btnBalidatu.setBounds(356, 472, 89, 23);
