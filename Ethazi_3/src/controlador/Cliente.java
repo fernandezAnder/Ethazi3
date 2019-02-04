@@ -1,6 +1,8 @@
 package controlador;
 
-import java.sql.Date;
+import java.util.Date;
+
+//import java.sql.Date;
 
 public class Cliente {
 
@@ -11,7 +13,7 @@ public class Cliente {
 	private String sexo;
 	private String contraseña;
 	
-	public Cliente(String dni, String nombre, String apellido, Date fecha_nac, String sexo, String contraseña) {
+	public Cliente(String dni, String nombre, String apellido,Date fecha_nac, String sexo, String contraseña) {
 		
 		this.dni = dni;
 		this.nombre = nombre;

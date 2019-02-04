@@ -4,7 +4,7 @@ import java.sql.*;
 import java.text.SimpleDateFormat;
 import java.time.LocalDate;
 import java.util.ArrayList;
-import java.sql.Date;
+//import java.sql.Date;
 
 import controlador.*;
 public class Consultas {
@@ -121,7 +121,7 @@ public class Consultas {
 			 
 		}catch(Exception e) {e.getMessage();}
 	}
-		public static void ClienteIgo(Cliente cliente) {
+		public static void bezeroIgo(Cliente cliente) {
 		
 		
 			Connection konexioa=Conexion.getConexion();
@@ -134,7 +134,7 @@ public class Consultas {
 			s.setString(1,cliente.getDni());
 			s.setString(2,cliente.getNombre());
 			s.setString(3,cliente.getApellido());
-			s.setDate(4,Metodoak.ateraData(cliente.getFecha_nac()));
+			s.setDate(4,(Date) cliente.getFecha_nac());
 			s.setString(5,cliente.getSexo());
 			s.setString(6,cliente.getContraseña());
 			

@@ -49,7 +49,7 @@ public class Metodoak {
 
 	}
 	public static void bigarrenLeihoaB() {
-		Ventana2b ventana2b= new Ventana2b(null);
+		Ventana2b ventana2b= new Ventana2b();
 		ventana2b.setVisible(true);
 	}
 	public static void hirugarrenLeihoa(String nan) {

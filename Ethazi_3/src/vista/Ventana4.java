@@ -269,7 +269,7 @@ public class Ventana4 extends JFrame {
 				Tiket t1 = new Tiket(bidaiakop, linea, cod_bus, hasiera_geltokia, amaiera_geltokia, lehen_data, bigarren_data, prezio2);
 				data= Metodoak.dataAtera();
 				ordua=Metodoak.orduaAtera();
-				Metodoak.bostgarrenLeihoa(Metodoak.billete(/*cod_billete,*/ bidaiakop, linea, cod_bus, hasiera_geltoki_kod, amaiera_geltoki_kod, data, ordua, nan, prezio2),t1);
+				Metodoak.bostgarrenLeihoa(Metodoak.billete(bidaiakop, linea, cod_bus, hasiera_geltoki_kod, amaiera_geltoki_kod, data, ordua, nan, prezio2),t1);
 			}
 		});
 		getContentPane().add(jarraitu);
