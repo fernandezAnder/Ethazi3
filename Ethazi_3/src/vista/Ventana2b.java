@@ -66,6 +66,9 @@ public class Ventana2b extends JFrame {
 	private String abizena="";
 	private String jaio_data;
 	private String sexua;
+	private final int a=0; 
+	private final int b=0; 
+	private final int c=0;
 
 
 
@@ -224,34 +227,6 @@ public class Ventana2b extends JFrame {
 		AukeratuSexua.setBounds(440, 186, 40, 20);
 		getContentPane().add(AukeratuSexua);
 
-		//DNI ETA PASAHITZA BALIDATZEKO BOTOIA
-
-		Balidatu.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent arg0) {
-
-				//BALIDAZIORAKO BARIABLEAK
-				zenbakia=textNAN.getText();
-				letra=textLetra.getText();
-
-				nan=zenbakia+letra;
-				izena2=izena.getText();
-				abizena=abizenatextfield.getText();
-				jaio_data= "1998-01-04";
-				int sexuzbk;
-				sexuzbk=AukeratuSexua.getSelectedIndex();
-				if (sexuzbk==0)
-					sexua="V";
-				else
-					sexua="M";
-				pasahitza=Pasahitza.getText();
-				pasahitza=Metodoak.ateraMD5(pasahitza);
-			
-				Cliente2 cliente = new Cliente2(nan, izena2, abizena, jaio_data, sexua, pasahitza);
-				
-				
-				Metodoak.bezeroaIgo(cliente);
-			}
-		});
 		
 		//EZEZTATU BOTOIA
 				Ezeztatu.setFont(new Font("Comic Sans MS", Font.BOLD, 15));
@@ -318,7 +293,45 @@ public class Ventana2b extends JFrame {
 
 				String Data = SpinnerUrtea+"-"+SpinnerHilabetea+"-"+SpinnerEguna;
 				
-				System.out.println(Calendar.YEAR);
+				//DNI ETA PASAHITZA BALIDATZEKO BOTOIA
+
+				Balidatu.addActionListener(new ActionListener() {
+					public void actionPerformed(ActionEvent arg0) {
+
+						//BALIDAZIORAKO BARIABLEAK
+						
+						
+						a = (Integer) spinner_Urtea.getValue(); 
+						b = (Integer) spinner_Hilabetea.getValue(); 
+						c = (Integer) spinner_Eguna.getValue();
+						
+
+						zenbakia=textNAN.getText();
+						letra=textLetra.getText();
+
+						nan=zenbakia+letra;
+						izena2=izena.getText();
+						abizena=abizenatextfield.getText();
+						jaio_data= Data;
+						int sexuzbk;
+						sexuzbk=AukeratuSexua.getSelectedIndex();
+						if (sexuzbk==0)
+							sexua="V";
+						else
+							sexua="M";
+						pasahitza=Pasahitza.getText();
+						pasahitza=Metodoak.ateraMD5(pasahitza);
+					
+						Cliente2 cliente = new Cliente2(nan, izena2, abizena, jaio_data, sexua, pasahitza);
+						
+						
+						Metodoak.bezeroaIgo(cliente);
+					}
+				});
+				
+				
+				
+				
 				System.out.println(SpinnerUrtea);
 				System.out.println(SpinnerHilabetea);
 				System.out.println(SpinnerEguna);
