@@ -359,6 +359,13 @@ public class Metodoak {
 			ex.printStackTrace();
 		}
 	}
+	public static String KalkulatuLetra(int dni){
+		String karaktereak="TRWAGMYFPDXBNJZSQVHLCKE";
+		int modulo= dni % 23;
+		char letra1 = karaktereak.charAt(modulo);
+		String letra = Character.toString(letra1);
+		return letra; 
+	} 
 
 
 }

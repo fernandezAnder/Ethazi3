@@ -324,10 +324,12 @@ public class Ventana2b extends JFrame {
 
 						String Data = SpinnerUrtea+"-"+SpinnerHilabetea+"-"+SpinnerEguna;
 
-						System.out.println(SpinnerUrtea);
-						System.out.println(SpinnerHilabetea);
-						System.out.println(SpinnerEguna);
-						System.out.println(Data);
+						String d = textNAN.getText();
+						int dni = Integer.parseInt(d);
+						if (Metodoak.KalkulatuLetra(dni)==textLetra.getText()) {
+							//Jarraitu.setVisible(true);
+						}
+						
 						
 						zenbakia=textNAN.getText();
 						letra=textLetra.getText();
