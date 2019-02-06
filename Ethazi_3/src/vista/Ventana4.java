@@ -133,6 +133,8 @@ public class Ventana4 extends JFrame {
 		getContentPane().add(bigarrendata);
 		bigarrendata.getDate();
 		bigarrendata.cleanup();
+		bigarrendata.setSelectableDateRange(new Date(), lehen_data);
+		
 		//ITZULI DATA LABELA
 		lblItzuliData.setBounds(37, 394, 104, 28);
 		lblItzuliData.setVisible(false);

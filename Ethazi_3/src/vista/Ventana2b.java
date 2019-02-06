@@ -12,6 +12,7 @@ import java.util.Date;
 import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
+import javax.swing.JOptionPane;
 import javax.swing.JPasswordField;
 import javax.swing.JTextField;
 import javax.swing.SpinnerNumberModel;
@@ -26,6 +27,8 @@ import javax.swing.JComboBox;
 import javax.swing.ComboBoxEditor;
 import javax.swing.DefaultComboBoxModel;
 import java.awt.Color;
+
+import java.awt.event.KeyEvent;
 
 public class Ventana2b extends JFrame {
 
@@ -56,7 +59,9 @@ public class Ventana2b extends JFrame {
 
 
 	private String nan="";
+	private String nan2="1";
 	private String letra="";
+	private String letra2="";
 	private String zenbakia="";
 	private String pasahitza="";
 	private String izena2="";
@@ -167,6 +172,19 @@ public class Ventana2b extends JFrame {
 		lblIzena.setFont(new Font("Comic Sans MS", Font.BOLD, 20));
 		lblIzena.setBounds(92, 151, 63, 28);
 		getContentPane().add(lblIzena);
+		izena.addKeyListener(new KeyAdapter() {
+			@Override
+			public void keyTyped(java.awt.event.KeyEvent evt) {
+				char validar =evt.getKeyChar();
+				char c=evt.getKeyChar();
+				if(Character.isDigit(validar) ) {
+					getToolkit().beep();
+					evt.consume();	
+
+				}
+
+			}
+		});
 
 		//TEXT IZENA
 		izena.setFont(new Font("Tahoma", Font.PLAIN, 16));
@@ -181,6 +199,18 @@ public class Ventana2b extends JFrame {
 
 		//LABEL TEXT
 		abizenatextfield = new JTextField();
+		abizenatextfield.addKeyListener(new KeyAdapter() {
+			@Override
+			public void keyTyped(java.awt.event.KeyEvent evt) {
+				char validar =evt.getKeyChar();
+				if(Character.isDigit(validar) ) {
+					getToolkit().beep();
+					evt.consume();	
+
+				}
+
+			}
+		});
 		abizenatextfield.setFont(new Font("Tahoma", Font.PLAIN, 16));
 		abizenatextfield.setColumns(10);
 		abizenatextfield.setBounds(192, 216, 109, 28);
@@ -236,6 +266,7 @@ public class Ventana2b extends JFrame {
 			public void actionPerformed(ActionEvent arg0) {
 				dispose();
 				Metodoak.lehenengoLeihoa();
+
 
 			}
 		});
@@ -298,6 +329,10 @@ public class Ventana2b extends JFrame {
 			}
 		});
 		//JARRAITU BOTOIA
+
+				Ezeztatu.setBounds(165, 452, 109, 44);
+				getContentPane().add(Ezeztatu);
+
 				Jarraitu.setEnabled(false);
 				Jarraitu.addActionListener(new ActionListener() {
 					public void actionPerformed(ActionEvent e) {
@@ -310,6 +345,63 @@ public class Ventana2b extends JFrame {
 				Jarraitu.setFont(new Font("Comic Sans MS", Font.BOLD, 15));
 				Jarraitu.setBounds(462, 452, 115, 44);
 				getContentPane().add(Jarraitu);
+				
+				//DNI ETA PASAHITZA BALIDATZEKO BOTOIA
+
+				Balidatu.addActionListener(new ActionListener() {
+					public void actionPerformed(ActionEvent arg0) {
+
+						//BALIDAZIORAKO BARIABLEAK
+						
+						try {
+						zenbakia=textNAN.getText();
+						int zbk= Integer.parseInt(zenbakia);
+						letra=textLetra.getText();
+						nan=zenbakia+letra;
+						
+						letra2=Metodoak.KalkulatuLetra(zbk);
+						nan2=zenbakia+letra2;
+						System.out.println("Sartutako nan: "+nan);
+						System.out.println("Izan behar den nan: "+nan2);
+						}catch (Exception e) {
+					        //JOptionPane.showMessageDialog(null, "Textfield batzuk hutzik daude. Mesedez osotu");
+							//System.out.println("Errorea");
+						}
+								
+						if (nan.equals(nan2) && !izena.getText().equals("") && !abizenatextfield.getText().equals("") && !Pasahitza.getText().equals("")) {
+							Jarraitu.setEnabled(true);
+							Balidatu.setEnabled(false);
+						}else if(izena.getText().equals("") && abizenatextfield.getText().equals("") && Pasahitza.getText().equals("")) {
+					        JOptionPane.showMessageDialog(null, "Textfield batzuk hutzik daude. Mesedez osotu");
+							//System.out.println("Nan zenbakiak ez dira berdinak");
+						}else {
+					        JOptionPane.showMessageDialog(null, "Nan zenbaki letra txarto dago");
+						}
+						
+						
+						
+
+						
+						izena2=izena.getText();
+						abizena=abizenatextfield.getText();
+						
+						int sexuzbk;
+						sexuzbk=AukeratuSexua.getSelectedIndex();
+						if (sexuzbk==0)
+							sexua="V";
+						else
+							sexua="M";
+						pasahitza=Pasahitza.getText();
+						pasahitza=Metodoak.ateraMD5(pasahitza);
+					
+						Cliente2 cliente = new Cliente2(nan, izena2, abizena, jaio_data, sexua, pasahitza);
+						
+						
+						Metodoak.bezeroaIgo(cliente);
+					}
+				});
+
+
 	}
 }
 
