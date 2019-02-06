@@ -38,12 +38,12 @@ public class Ventana2 extends JFrame {
 		getContentPane().setLayout(null);
 
 		//LABEL TXARTEL ERREGISTROA
-		lblTxatelaErregistroa.setFont(new Font("Comic Sans MS", Font.BOLD, 26));
+		lblTxatelaErregistroa.setFont(new Font("Arial", Font.BOLD, 37));
 		lblTxatelaErregistroa.setBounds(222, 46, 250, 37);
 		getContentPane().add(lblTxatelaErregistroa);
 
 		//LABEL NAN
-		lblNan.setFont(new Font("Comic Sans MS", Font.BOLD, 20));
+		lblNan.setFont(new Font("Arial", Font.BOLD, 20));
 		lblNan.setBounds(165, 128, 47, 28);
 		getContentPane().add(lblNan);
 
@@ -103,17 +103,17 @@ public class Ventana2 extends JFrame {
 
 
 		//LETRA LABEL
-		lblLetra.setFont(new Font("Comic Sans MS", Font.BOLD, 20));
+		lblLetra.setFont(new Font("Arial", Font.BOLD, 20));
 		lblLetra.setBounds(360, 128, 52, 28);
 		getContentPane().add(lblLetra);
 
 		//LABEL PASAHITZA
-		lblPasahitza.setFont(new Font("Comic Sans MS", Font.BOLD, 20));
-		lblPasahitza.setBounds(165, 212, 92, 28);
+		lblPasahitza.setFont(new Font("Arial", Font.BOLD, 20));
+		lblPasahitza.setBounds(120, 212, 92, 28);
 		getContentPane().add(lblPasahitza);
 
 		//EZEZTATU BOTOIA
-		Atzera.setFont(new Font("Comic Sans MS", Font.BOLD, 15));
+		Atzera.setFont(new Font("Arial", Font.BOLD, 18));
 		Atzera.addActionListener(new ActionListener() {
 			@Override
 			public void actionPerformed(ActionEvent arg0) {
@@ -122,7 +122,7 @@ public class Ventana2 extends JFrame {
 
 			}
 		});
-		Atzera.setBounds(241, 343, 109, 44);
+		Atzera.setBounds(97, 372, 115, 55);
 		getContentPane().add(Atzera);
 
 		//JARRAITU BOTOIA
@@ -133,8 +133,8 @@ public class Ventana2 extends JFrame {
 				Metodoak.hirugarrenLeihoa(nan);
 			}
 		});
-		Jarraitu.setFont(new Font("Comic Sans MS", Font.BOLD, 15));
-		Jarraitu.setBounds(424, 343, 115, 44);
+		Jarraitu.setFont(new Font("Arial", Font.BOLD, 18));
+		Jarraitu.setBounds(488, 372, 115, 55);
 		getContentPane().add(Jarraitu);
 
 		
@@ -142,7 +142,7 @@ public class Ventana2 extends JFrame {
 		//PASAHITZA TEXTUA
 		Pasahitza = new JPasswordField();
 		Pasahitza.setFont(new Font("Tahoma", Font.PLAIN, 16));
-		Pasahitza.setBounds(302, 212, 170, 28);
+		Pasahitza.setBounds(241, 213, 170, 28);
 		getContentPane().add(Pasahitza);
 
 		//DNI ETA PASAHITZA BALIDATZEKO BOTOIA
@@ -176,8 +176,8 @@ public class Ventana2 extends JFrame {
 						}
 					}
 				});
-				Balidatu.setFont(new Font("Comic Sans MS", Font.BOLD, 15));
-				Balidatu.setBounds(529, 196, 115, 44);
+				Balidatu.setFont(new Font("Arial", Font.BOLD, 18));
+				Balidatu.setBounds(297, 372, 115, 55);
 				getContentPane().add(Balidatu);
 				
 				JButton btnKontuBerria = new JButton("Erregistratu");
@@ -187,8 +187,8 @@ public class Ventana2 extends JFrame {
 						Metodoak.bigarrenLeihoaB();
 					}
 				});
-				btnKontuBerria.setFont(new Font("Bookman Old Style", Font.BOLD, 20));
-				btnKontuBerria.setBounds(302, 433, 170, 44);
+				btnKontuBerria.setFont(new Font("Arial", Font.BOLD, 20));
+				btnKontuBerria.setBounds(464, 204, 170, 44);
 				getContentPane().add(btnKontuBerria);
 
 		

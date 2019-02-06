@@ -4,6 +4,7 @@ import java.awt.Font;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.event.KeyAdapter;
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.Date;
@@ -24,6 +25,7 @@ import javax.swing.JSpinner;
 import javax.swing.JComboBox;
 import javax.swing.ComboBoxEditor;
 import javax.swing.DefaultComboBoxModel;
+import java.awt.Color;
 
 public class Ventana2b extends JFrame {
 
@@ -39,10 +41,10 @@ public class Ventana2b extends JFrame {
 	private JButton Jarraitu = new JButton("Jarraitu");
 	private JButton Balidatu = new JButton("Balidatu");
 	private JTextField izena = new JTextField();
+	private JDateChooser jaiodata = new JDateChooser();
 	private JTextField abizenatextfield = new JTextField();
 	private JLabel lblSexua = new JLabel("Sexua*");
 	private JLabel lblIzena = new JLabel("Izena");
-	private final JTextField izenatextField = new JTextField();
 	private JLabel lblJaiotzeData = new JLabel("Jaiotze data ");
 	private JLabel lblAbizena = new JLabel("Abizena");
 	private JComboBox AukeratuSexua = new JComboBox();
@@ -50,13 +52,8 @@ public class Ventana2b extends JFrame {
 	private JLabel lblNewLabel = new JLabel("* V = Mutila");
 	private JLabel lblErabiltzaileDatuak = new JLabel("Erabiltzaile Datuak  ----------------------------------------------------------------------------------------------------------------------------------");
 	private JLabel lblDatuPertsonalak = new JLabel("Datu Pertsonalak  ----------------------------------------------------------------------------------------------------------------------------------");
-	private JLabel label = new JLabel("-");
-	private JLabel label_1_marra = new JLabel("-");
-	private JSpinner spinner_Urtea = new JSpinner(new SpinnerNumberModel(2019,1900,2019,1));
-	private JSpinner spinner_Hilabetea = new JSpinner(new SpinnerNumberModel((int)(Calendar.MONTH),1,12,1));
-	private JSpinner spinner_Eguna = new JSpinner(new SpinnerNumberModel((int)(Calendar.DAY_OF_MONTH),1,31,1));
+	SimpleDateFormat sm = new SimpleDateFormat("yyyy-MM-dd");
 
-	
 
 	private String nan="";
 	private String letra="";
@@ -66,9 +63,9 @@ public class Ventana2b extends JFrame {
 	private String abizena="";
 	private String jaio_data;
 	private String sexua;
-//	private final int a=0; 
-//	private final int b=0; 
-//	private final int c=0;
+	//	private final int a=0; 
+	//	private final int b=0; 
+	//	private final int c=0;
 
 
 
@@ -77,13 +74,13 @@ public class Ventana2b extends JFrame {
 		getContentPane().setLayout(null);
 
 		//LABEL TXARTEL ERREGISTROA
-		lblTxatelaErregistroa.setFont(new Font("Comic Sans MS", Font.BOLD, 26));
-		lblTxatelaErregistroa.setBounds(222, 46, 250, 37);
+		lblTxatelaErregistroa.setFont(new Font("Arial", Font.BOLD, 37));
+		lblTxatelaErregistroa.setBounds(181, 44, 351, 37);
 		getContentPane().add(lblTxatelaErregistroa);
 
 		//LABEL NAN
 		lblNan.setFont(new Font("Comic Sans MS", Font.BOLD, 20));
-		lblNan.setBounds(108, 274, 47, 28);
+		lblNan.setBounds(108, 321, 47, 28);
 		getContentPane().add(lblNan);
 
 		//TEXT NAN
@@ -105,7 +102,7 @@ public class Ventana2b extends JFrame {
 			}
 		});
 		zenbakia=textNAN.getText();
-		textNAN.setBounds(192, 276, 109, 28);
+		textNAN.setBounds(192, 323, 109, 28);
 		getContentPane().add(textNAN);
 		textNAN.setColumns(10);
 
@@ -136,27 +133,27 @@ public class Ventana2b extends JFrame {
 		});
 		letra=textLetra.getText();
 		textLetra.setColumns(10);
-		textLetra.setBounds(440, 276, 32, 28);
+		textLetra.setBounds(440, 323, 32, 28);
 		getContentPane().add(textLetra);
 
 		//LETRA LABEL
 		lblLetra.setFont(new Font("Comic Sans MS", Font.BOLD, 20));
-		lblLetra.setBounds(359, 274, 52, 28);
+		lblLetra.setBounds(359, 321, 52, 28);
 		getContentPane().add(lblLetra);
 
 		//LABEL PASAHITZA
 		lblPasahitza.setFont(new Font("Comic Sans MS", Font.BOLD, 20));
-		lblPasahitza.setBounds(63, 336, 92, 28);
+		lblPasahitza.setBounds(63, 378, 92, 28);
 		getContentPane().add(lblPasahitza);
 
-		
+
 
 
 
 		//PASAHITZA TEXTUA
 		Pasahitza = new JPasswordField();
 		Pasahitza.setFont(new Font("Tahoma", Font.PLAIN, 16));
-		Pasahitza.setBounds(192, 338, 170, 28);
+		Pasahitza.setBounds(192, 380, 170, 28);
 		getContentPane().add(Pasahitza);
 
 
@@ -168,192 +165,151 @@ public class Ventana2b extends JFrame {
 
 		//LABEL IZENA
 		lblIzena.setFont(new Font("Comic Sans MS", Font.BOLD, 20));
-		lblIzena.setBounds(92, 125, 63, 28);
+		lblIzena.setBounds(92, 151, 63, 28);
 		getContentPane().add(lblIzena);
 
 		//TEXT IZENA
 		izena.setFont(new Font("Tahoma", Font.PLAIN, 16));
 		izena.setColumns(10);
-		izena.setBounds(192, 127, 109, 28);
+		izena.setBounds(192, 153, 109, 28);
 		getContentPane().add(izena);
 
 		//LABEL ABIZENA
 		lblAbizena.setFont(new Font("Comic Sans MS", Font.BOLD, 20));
-		lblAbizena.setBounds(80, 180, 92, 28);
+		lblAbizena.setBounds(80, 214, 92, 28);
 		getContentPane().add(lblAbizena);
 
 		//LABEL TEXT
 		abizenatextfield = new JTextField();
 		abizenatextfield.setFont(new Font("Tahoma", Font.PLAIN, 16));
 		abizenatextfield.setColumns(10);
-		abizenatextfield.setBounds(192, 182, 109, 28);
+		abizenatextfield.setBounds(192, 216, 109, 28);
 		getContentPane().add(abizenatextfield);
 
-		//LABEL JAIOYTZE DATA
+		//LABEL JAIOTZE DATA
 		lblJaiotzeData.setFont(new Font("Comic Sans MS", Font.BOLD, 20));
-		lblJaiotzeData.setBounds(326, 125, 133, 28);
+		lblJaiotzeData.setBounds(327, 151, 133, 28);
 		getContentPane().add(lblJaiotzeData);
+
+		//DATA JCALENDAR
+		jaiodata.setBounds(470, 151, 122, 28);
+		jaiodata.setVerifyInputWhenFocusTarget(false);
+		jaiodata.setDateFormatString("yyyy-MM-dd");	
+		getContentPane().add(jaiodata);
+		jaiodata.getDate();
+		jaiodata.cleanup();
 
 		//LABEL SEXUA
 		lblSexua.setFont(new Font("Arial", Font.BOLD, 20));
-		lblSexua.setBounds(359, 180, 78, 28);
+		lblSexua.setBounds(359, 213, 78, 28);
 		getContentPane().add(lblSexua);
 
-		//IZENA TEXT
-		izenatextField.setFont(new Font("Tahoma", Font.PLAIN, 16));
-		izenatextField.setColumns(10);
-		izenatextField.setBounds(192, 127, 109, 28);
-		getContentPane().add(izenatextField);
-
-		lblDatuPertsonalak.setBounds(22, 92, 632, 22);
+		lblDatuPertsonalak.setBounds(22, 118, 632, 22);
 		getContentPane().add(lblDatuPertsonalak);
 
-		lblErabiltzaileDatuak.setBounds(22, 241, 632, 22);
+		lblErabiltzaileDatuak.setBounds(22, 288, 632, 22);
 		getContentPane().add(lblErabiltzaileDatuak);
 
 
 		lblNewLabel.setToolTipText("");
-		lblNewLabel.setBounds(533, 180, 74, 22);
+		lblNewLabel.setBounds(533, 213, 74, 22);
 		getContentPane().add(lblNewLabel);
 
 
 		lblMNeska.setToolTipText("");
-		lblMNeska.setBounds(533, 200, 74, 22);
+		lblMNeska.setBounds(533, 233, 74, 22);
 		getContentPane().add(lblMNeska);
+		AukeratuSexua.setForeground(Color.BLACK);
+		AukeratuSexua.setBackground(Color.WHITE);
 
-		
+
 		AukeratuSexua.setFont(new Font("Arial", Font.PLAIN, 18));
 		AukeratuSexua.setModel(new DefaultComboBoxModel(new String[] {"V", "M"}));
-		AukeratuSexua.setBounds(440, 186, 40, 20);
+		AukeratuSexua.setBounds(450, 220, 40, 20);
 		getContentPane().add(AukeratuSexua);
 
-		
+
 		//EZEZTATU BOTOIA
-				Ezeztatu.setFont(new Font("Comic Sans MS", Font.BOLD, 15));
-				Ezeztatu.addActionListener(new ActionListener() {
-					@Override
-					public void actionPerformed(ActionEvent arg0) {
-						dispose();
-						Metodoak.lehenengoLeihoa();
+		Ezeztatu.setFont(new Font("Comic Sans MS", Font.BOLD, 15));
+		Ezeztatu.addActionListener(new ActionListener() {
+			@Override
+			public void actionPerformed(ActionEvent arg0) {
+				dispose();
+				Metodoak.lehenengoLeihoa();
 
-					}
-				});
-				Ezeztatu.setBounds(165, 452, 109, 44);
-				getContentPane().add(Ezeztatu);
+			}
+		});
+		Ezeztatu.setBounds(165, 452, 109, 44);
+		getContentPane().add(Ezeztatu);
 
-				//JARRAITU BOTOIA
+		//				int a = (Integer) spinner_Urtea.getValue(); 
+		//				int b = (Integer) spinner_Hilabetea.getValue(); 
+		//				int c = (Integer) spinner_Eguna.getValue();
+		//				
+		//				//Inizializatu behar izango da
+		//				
+		//				
+		//				if(b<10) {
+		//					SpinnerHilabetea = "0"+b;
+		//				}else {
+		//					SpinnerHilabetea = Integer.toString(b);
+		//				}
+		//				if(c<10) {
+		//					SpinnerEguna = "0"+c;
+		//				}else {
+		//					SpinnerEguna = Integer.toString(c);
+		//				}
+		//				
+		//				String SpinnerUrtea = Integer.toString(a);
+		//
+		//				String Data = SpinnerUrtea+"-"+SpinnerHilabetea+"-"+SpinnerEguna;
+
+		//DNI ETA PASAHITZA BALIDATZEKO BOTOIA
+
+		Balidatu.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent arg0) {
+
+				
+				String d = textNAN.getText();
+				int dni = Integer.parseInt(d);
+				if (Metodoak.KalkulatuLetra(dni)==textLetra.getText()) {
+					//Jarraitu.setVisible(true);
+				}
+
+
+				zenbakia=textNAN.getText();
+				letra=textLetra.getText();
+
+				nan=zenbakia+letra;
+				izena2=izena.getText();
+				abizena=abizenatextfield.getText();
+				
+				int sexuzbk;
+				sexuzbk=AukeratuSexua.getSelectedIndex();
+				if (sexuzbk==0)
+					sexua="V";
+				else
+					sexua="M";
+				pasahitza=Pasahitza.getText();
+				pasahitza=Metodoak.ateraMD5(pasahitza);
+				Date jaio_data2= jaiodata.getDate();
+				jaio_data= sm.format(jaio_data2);
+
+			}
+		});
+		//JARRAITU BOTOIA
 				Jarraitu.setEnabled(false);
 				Jarraitu.addActionListener(new ActionListener() {
 					public void actionPerformed(ActionEvent e) {
 						dispose();
 						Metodoak.hirugarrenLeihoa(nan);
+						Cliente2 cliente = new Cliente2(nan, izena2, abizena, jaio_data, sexua, pasahitza);
+						Metodoak.bezeroaIgo(cliente);
 					}
 				});
 				Jarraitu.setFont(new Font("Comic Sans MS", Font.BOLD, 15));
 				Jarraitu.setBounds(462, 452, 115, 44);
 				getContentPane().add(Jarraitu);
-				
-				label.setFont(new Font("Bookman Old Style", Font.PLAIN, 40));
-				label.setBounds(518, 125, 32, 28);
-				getContentPane().add(label);
-				
-				label_1_marra.setFont(new Font("Bookman Old Style", Font.PLAIN, 40));
-				label_1_marra.setBounds(575, 125, 17, 28);
-				getContentPane().add(label_1_marra);
-				
-				spinner_Urtea.setBounds(462, 131, 59, 22);
-				getContentPane().add(spinner_Urtea);
-				
-				spinner_Hilabetea.setBounds(533, 131, 40, 22);
-				getContentPane().add(spinner_Hilabetea);
-				
-				spinner_Eguna.setBounds(593, 131, 50, 22);
-				getContentPane().add(spinner_Eguna);
-
-//				int a = (Integer) spinner_Urtea.getValue(); 
-//				int b = (Integer) spinner_Hilabetea.getValue(); 
-//				int c = (Integer) spinner_Eguna.getValue();
-//				
-//				//Inizializatu behar izango da
-//				
-//				
-//				if(b<10) {
-//					SpinnerHilabetea = "0"+b;
-//				}else {
-//					SpinnerHilabetea = Integer.toString(b);
-//				}
-//				if(c<10) {
-//					SpinnerEguna = "0"+c;
-//				}else {
-//					SpinnerEguna = Integer.toString(c);
-//				}
-//				
-//				String SpinnerUrtea = Integer.toString(a);
-//
-//				String Data = SpinnerUrtea+"-"+SpinnerHilabetea+"-"+SpinnerEguna;
-				
-				//DNI ETA PASAHITZA BALIDATZEKO BOTOIA
-
-				Balidatu.addActionListener(new ActionListener() {
-					public void actionPerformed(ActionEvent arg0) {
-
-						//BALIDAZIORAKO BARIABLEAK
-						
-						int a = (Integer) spinner_Urtea.getValue(); 
-						int b = (Integer) spinner_Hilabetea.getValue(); 
-						int c = (Integer) spinner_Eguna.getValue();
-						
-						//Inizializatu behar izango da
-						
-						String SpinnerHilabetea="";
-						String SpinnerEguna="";
-						
-						if(b<10) {
-							SpinnerHilabetea = "0"+b;
-						}else {
-							SpinnerHilabetea = Integer.toString(b);
-						}
-						if(c<10) {
-							SpinnerEguna = "0"+c;
-						}else {
-							SpinnerEguna = Integer.toString(c);
-						}
-						
-						String SpinnerUrtea = Integer.toString(a);
-						
-
-						String Data = SpinnerUrtea+"-"+SpinnerHilabetea+"-"+SpinnerEguna;
-
-						String d = textNAN.getText();
-						int dni = Integer.parseInt(d);
-						if (Metodoak.KalkulatuLetra(dni)==textLetra.getText()) {
-							//Jarraitu.setVisible(true);
-						}
-						
-						
-						zenbakia=textNAN.getText();
-						letra=textLetra.getText();
-
-						nan=zenbakia+letra;
-						izena2=izena.getText();
-						abizena=abizenatextfield.getText();
-						jaio_data= Data;
-						int sexuzbk;
-						sexuzbk=AukeratuSexua.getSelectedIndex();
-						if (sexuzbk==0)
-							sexua="V";
-						else
-							sexua="M";
-						pasahitza=Pasahitza.getText();
-						pasahitza=Metodoak.ateraMD5(pasahitza);
-					
-						Cliente2 cliente = new Cliente2(nan, izena2, abizena, jaio_data, sexua, pasahitza);
-						
-						
-						Metodoak.bezeroaIgo(cliente);
-					}
-				});
-
 	}
 }
 
