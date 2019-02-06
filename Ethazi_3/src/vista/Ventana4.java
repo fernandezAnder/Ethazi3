@@ -106,24 +106,24 @@ public class Ventana4 extends JFrame {
 
 		//JATORRI GELTOKIA LABELA
 		lblJatorriGeltokia.setRequestFocusEnabled(false);
-		lblJatorriGeltokia.setFont(new Font("Arial", Font.BOLD, 25));
+		lblJatorriGeltokia.setFont(new Font("Arial", Font.BOLD, 22));
 		getContentPane().add(lblJatorriGeltokia);
 
 		//HELMUGA GELTOKIA LABELA
 		lblHelmugaGeltokia.setBounds(37, 193, 216, 36);
 		lblHelmugaGeltokia.setRequestFocusEnabled(false);
-		lblHelmugaGeltokia.setFont(new Font("Arial", Font.BOLD, 25));
+		lblHelmugaGeltokia.setFont(new Font("Arial", Font.BOLD, 22));
 
 		getContentPane().add(lblHelmugaGeltokia);
 
 		//JOAN ETORRI LABELA
 		lblJoanEtaEtorri.setBounds(37, 258, 203, 36);
 		lblJoanEtaEtorri.setRequestFocusEnabled(false);
-		lblJoanEtaEtorri.setFont(new Font("Arial", Font.BOLD, 25));
+		lblJoanEtaEtorri.setFont(new Font("Arial", Font.BOLD, 22));
 		getContentPane().add(lblJoanEtaEtorri);
 		chckbxJoanEtorri.setFont(new Font("Tahoma", Font.PLAIN, 18));
 		chckbxJoanEtorri.setMaximumSize(new Dimension(49, 23));
-		chckbxJoanEtorri.setBounds(277, 261, 61, 36);
+		chckbxJoanEtorri.setBounds(258, 259, 61, 36);
 		getContentPane().add(chckbxJoanEtorri);
 
 		//DATA JCALENDAR
@@ -158,12 +158,12 @@ public class Ventana4 extends JFrame {
 
 			}
 		});
-		jarraitu.setBounds(491, 490, 131, 35);
+		jarraitu.setBounds(491, 481, 131, 44);
 
 
 
 		//EZEZTATU BOTOIA
-		ezeztatu.setFont(new Font("Comic Sans MS", Font.PLAIN, 18));
+		ezeztatu.setFont(new Font("Arial", Font.PLAIN, 18));
 		ezeztatu.addActionListener(new ActionListener() {
 			@Override
 			public void actionPerformed(ActionEvent e) {
@@ -172,7 +172,7 @@ public class Ventana4 extends JFrame {
 			}
 		});
 		getContentPane().add(ezeztatu);
-		atzera.setBounds(154, 490, 110, 35);
+		atzera.setBounds(154, 481, 110, 44);
 
 		//ATZERA BOTOIA
 		atzera.addActionListener(new ActionListener() {
@@ -201,7 +201,7 @@ public class Ventana4 extends JFrame {
 				ordenaketa.get(paradas);
 			}
 		});
-		atzera.setFont(new Font("Comic Sans MS", Font.PLAIN, 18));
+		atzera.setFont(new Font("Arial", Font.PLAIN, 18));
 		getContentPane().add(atzera);
 		modelo.addColumn("PARADAS");
 
@@ -228,7 +228,7 @@ public class Ventana4 extends JFrame {
 		Hasiera_geltoki.setBackground(Color.WHITE);
 
 		//Hasiera geltoki konbo box-a
-		Hasiera_geltoki.setBounds(258, 129, 175, 34);
+		Hasiera_geltoki.setBounds(236, 134, 206, 34);
 		for (int i=0;i<paradas.size();i++) {
 			Hasiera_geltoki.addItem(paradas.get(i).getNombre());
 
@@ -238,7 +238,7 @@ public class Ventana4 extends JFrame {
 		Amaiera_geltoki.setBackground(Color.WHITE);
 
 		//Amaiera geltoki konbo box-a
-		Amaiera_geltoki.setBounds(258, 193, 175, 34);
+		Amaiera_geltoki.setBounds(236, 198, 206, 34);
 		for (int i=0;i<paradas.size();i++) {
 			Amaiera_geltoki.addItem(paradas.get(i).getNombre());
 
@@ -246,7 +246,7 @@ public class Ventana4 extends JFrame {
 		getContentPane().add(Amaiera_geltoki);
 
 		//JARRAITU BOTOIA
-		jarraitu.setFont(new Font("Comic Sans MS", Font.PLAIN, 18));
+		jarraitu.setFont(new Font("Arial", Font.PLAIN, 18));
 		jarraitu.addActionListener(new ActionListener() {
 			@Override
 			public void actionPerformed(ActionEvent arg0) {
@@ -283,7 +283,7 @@ public class Ventana4 extends JFrame {
 			}
 		});
 		getContentPane().add(jarraitu);
-		ezeztatu.setBounds(326, 490, 131, 35);
+		ezeztatu.setBounds(311, 481, 131, 44);
 
 	}
 }

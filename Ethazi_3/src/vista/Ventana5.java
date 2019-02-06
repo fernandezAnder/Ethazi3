@@ -1,39 +1,19 @@
 package vista;
 
-import javax.swing.JPanel; 
-import javax.swing.JLabel;
-
-import java.awt.ComponentOrientation;
-import java.awt.Font;
-import javax.swing.JTextPane;
-
-import modelo.Consultas;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 
 import javax.swing.JButton;
 import javax.swing.JFrame;
-
-import java.awt.event.ActionListener;
-import java.util.ArrayList;
-import java.awt.event.ActionEvent;
-import javax.swing.JTable;
-import javax.swing.border.BevelBorder;
-import javax.swing.table.DefaultTableModel;
+import javax.swing.JLabel;
+import javax.swing.JTextArea;
 
 import controlador.Billete;
 import controlador.Metodoak;
 import controlador.Tiket;
-
-import java.awt.event.MouseAdapter;
-import java.awt.event.MouseEvent;
-import java.awt.Button;
-import java.awt.Canvas;
-import java.awt.Color;
-import javax.swing.ListSelectionModel;
+import java.awt.Font;
 import java.awt.Rectangle;
-import java.awt.GridLayout;
-import javax.swing.GroupLayout;
-import javax.swing.GroupLayout.Alignment;
-import javax.swing.JTextArea;
+import java.awt.Component;
 
 
 public class Ventana5 extends JFrame {
@@ -50,11 +30,14 @@ public class Ventana5 extends JFrame {
 		nan=billete.getDni();
 		this.setBounds(275,100,700,600);
 		getContentPane().setLayout(null);
+		lblNewLabel.setFont(new Font("Arial", Font.BOLD, 37));
 		
-		lblNewLabel.setBounds(228, 72, 199, 29);
+		lblNewLabel.setBounds(151, 40, 418, 44);
 		getContentPane().add(lblNewLabel);
+		textArea.setEditable(false);
+		textArea.setFont(new Font("Arial", Font.PLAIN, 16));
 		
-		textArea.setBounds(63, 134, 495, 176);
+		textArea.setBounds(100, 131, 495, 176);
 		getContentPane().add(textArea);
 		textArea.setText(t1.toString());
 		
