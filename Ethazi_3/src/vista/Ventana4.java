@@ -7,6 +7,8 @@ import java.awt.SystemColor;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.text.DecimalFormat;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Date;
@@ -66,6 +68,8 @@ public class Ventana4 extends JFrame {
 	private int amaiera_geltoki_kod=0;
 	private Date lehen_data;
 	private Date bigarren_data;
+	private String lehen_data_string;
+	private String bigarren_data_string;
 	private int bidaiakop=1;
 	private int cod_linea;
 	private double prezioa;
@@ -75,6 +79,7 @@ public class Ventana4 extends JFrame {
 	private int cod_billete;
 	private double prezio2;
 	DecimalFormat dezimal = new DecimalFormat("#.00");
+	SimpleDateFormat sm = new SimpleDateFormat("yyyy-MM-dd");
 
 	public Ventana4(ArrayList<Parada> paradas,ArrayList<Autobus> buses,String linea, int cod_bus, String nan) {
 
@@ -123,7 +128,7 @@ public class Ventana4 extends JFrame {
 		bigarrendata.setBounds(158, 402, 117, 20);
 		bigarrendata.setVerifyInputWhenFocusTarget(false);
 		bigarrendata.setVisible(false);
-		bigarrendata.setDateFormatString("dd-MM-yyyy");	
+		bigarrendata.setDateFormatString("yyyy-MM-dd");	
 		getContentPane().add(bigarrendata);
 		bigarrendata.getDate();
 		bigarrendata.cleanup();
@@ -204,7 +209,7 @@ public class Ventana4 extends JFrame {
 
 		//JCALENDAR LEHEN DATA
 		lehendata.setBounds(157, 337, 118, 20);
-		lehendata.setDateFormatString("dd-MM-yyyy");
+		lehendata.setDateFormatString("yyyy-MM-dd");
 		getContentPane().add(lehendata);
 		String geltokiak="";
 		for (int i=0;i<paradas.size();i++) {
@@ -242,9 +247,15 @@ public class Ventana4 extends JFrame {
 			@Override
 			public void actionPerformed(ActionEvent arg0) {
 				dispose();
-				lehen_data = lehendata.getDate();
-				bigarren_data=bigarrendata.getDate();
-				
+				lehen_data_string =  lehendata.getDateFormatString();
+				bigarren_data_string= bigarrendata.getDateFormatString();
+					try {
+					lehen_data= sm.parse(lehen_data_string);
+					bigarren_data= sm.parse(bigarren_data_string);
+				} catch (ParseException e) {
+					
+					e.printStackTrace();
+				}
 				for(int i=0;i<paradas.size();i++) {
 					//Hasiera geltoki bariableak
 					hasiera_geltokia=paradas.get(Hasiera_geltoki.getSelectedIndex()).getNombre();
@@ -265,7 +276,7 @@ public class Ventana4 extends JFrame {
 				}
 				if (biderketa==true)
 					prezio2=prezio2*2;
-				Tiket t1 = new Tiket(bidaiakop, linea, cod_bus, hasiera_geltokia, amaiera_geltokia, lehen_data, bigarren_data, prezio2);
+				Tiket t1 = new Tiket(bidaiakop, linea, cod_bus, hasiera_geltokia, amaiera_geltokia, lehen_data_string, bigarren_data_string, prezio2);
 				data= Metodoak.dataAtera();
 				ordua=Metodoak.orduaAtera();
 				Metodoak.bostgarrenLeihoa(Metodoak.billete(bidaiakop, linea, cod_bus, hasiera_geltoki_kod, amaiera_geltoki_kod, data, ordua, nan, prezio2),t1);

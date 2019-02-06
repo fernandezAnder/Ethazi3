@@ -1,5 +1,5 @@
 Billete Kodea: 1 Bidaia Kopurua: 2 	
-Linea: L4 Autobusa: 4001 	
-Hasiera GeltokiaDurango Amaiera GeltokiaTermibus-Bilbao 	
-Joateko DataSun Feb 17 17:30:18 CET 2019 Itzultzeko DataMon Feb 18 17:30:20 CET 2019 	
-Prezioa0.64
+Linea: L3 Autobusa: 3001 	
+Hasiera GeltokiaTermibus-Bilbao Amaiera GeltokiaEstacion Renfe Sodupe - Güeñes 	
+Joateko DataSat Feb 16 12:54:12 CET 2019 Itzultzeko DataSat Feb 09 12:54:13 CET 2019 	
+Prezioa0.22
