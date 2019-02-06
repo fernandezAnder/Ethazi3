@@ -88,7 +88,7 @@ public class Tiket {
 				+ "Linea: " + cod_linea+ " Autobusa: " + cod_bus+" \t\n"+" \t\n"
 				+ "Hasiera Geltokia " + parada_inicio + " Amaiera Geltokia " + parada_fin+" \t\n"+" \t\n" 
 				+ "Joateko Data " + fecha_ida + " Itzultzeko Data " + fecha_vuelta+" \t\n"+" \t\n" 
-				+ "Prezioa" + precio;
+				+ "Prezioa: " + precio;
 	}
 	
 	

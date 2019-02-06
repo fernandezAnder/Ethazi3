@@ -247,15 +247,11 @@ public class Ventana4 extends JFrame {
 			@Override
 			public void actionPerformed(ActionEvent arg0) {
 				dispose();
-				lehen_data_string =  lehendata.getDateFormatString();
-				bigarren_data_string= bigarrendata.getDateFormatString();
-					try {
-					lehen_data= sm.parse(lehen_data_string);
-					bigarren_data= sm.parse(bigarren_data_string);
-				} catch (ParseException e) {
-					
-					e.printStackTrace();
-				}
+				lehen_data= lehendata.getDate();
+				lehen_data_string=sm.format(lehen_data);
+				bigarren_data=bigarrendata.getDate();
+				bigarren_data_string=sm.format(bigarren_data);
+				
 				for(int i=0;i<paradas.size();i++) {
 					//Hasiera geltoki bariableak
 					hasiera_geltokia=paradas.get(Hasiera_geltoki.getSelectedIndex()).getNombre();
