@@ -8,6 +8,7 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.text.DecimalFormat;
 import java.util.ArrayList;
+import java.util.Calendar;
 import java.util.Collections;
 import java.util.Date;
 import java.util.Hashtable;
@@ -75,6 +76,7 @@ public class Ventana4 extends JFrame {
 	private int cod_billete;
 	private double prezio2;
 	DecimalFormat dezimal = new DecimalFormat("#.00");
+	Date date=lehendata.getDate();
 
 	public Ventana4(ArrayList<Parada> paradas,ArrayList<Autobus> buses,String linea, int cod_bus, String nan) {
 
@@ -127,6 +129,8 @@ public class Ventana4 extends JFrame {
 		getContentPane().add(bigarrendata);
 		bigarrendata.getDate();
 		bigarrendata.cleanup();
+		bigarrendata.setSelectableDateRange(new Date(), date);
+		
 		//ITZULI DATA LABELA
 		lblItzuliData.setBounds(37, 394, 104, 28);
 		lblItzuliData.setVisible(false);
