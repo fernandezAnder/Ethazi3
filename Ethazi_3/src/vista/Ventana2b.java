@@ -293,10 +293,16 @@ public class Ventana2b extends JFrame {
 				if (nan.equals(nan2) && !izena.getText().equals("") && !abizenatextfield.getText().equals("") && !Pasahitza.getText().equals("")) {
 					Jarraitu.setEnabled(true);
 					Balidatu.setEnabled(false);
-				}else if(izena.getText().equals("") && abizenatextfield.getText().equals("") && Pasahitza.getText().equals("")) {
-					JOptionPane.showMessageDialog(null, "Textfield batzuk hutzik daude. Mesedez osotu");
+				}else if(izena.getText().equals("")) {
+					JOptionPane.showMessageDialog(null, "Izena hutzik dago. Mesedez osotu");
 					//System.out.println("Nan zenbakiak ez dira berdinak");
-				}else {
+				}
+				else if(abizenatextfield.getText().equals("")) {
+					JOptionPane.showMessageDialog(null, "Abizena hutzik dago. Mesedez osotu");
+				}else if(Pasahitza.getText().equals("")) {
+					JOptionPane.showMessageDialog(null, "Pasahitza hutzik dago. Mesedez osotu");
+				}
+				else {
 					JOptionPane.showMessageDialog(null, "Nan zenbaki letra txarto dago");
 				}
 
