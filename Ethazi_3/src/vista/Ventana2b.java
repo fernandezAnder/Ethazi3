@@ -68,10 +68,6 @@ public class Ventana2b extends JFrame {
 	private String abizena="";
 	private String jaio_data;
 	private String sexua;
-	//	private final int a=0; 
-	//	private final int b=0; 
-	//	private final int c=0;
-
 
 
 	public Ventana2b() {
@@ -272,49 +268,41 @@ public class Ventana2b extends JFrame {
 		});
 		Ezeztatu.setBounds(165, 452, 109, 44);
 		getContentPane().add(Ezeztatu);
-
-		//				int a = (Integer) spinner_Urtea.getValue(); 
-		//				int b = (Integer) spinner_Hilabetea.getValue(); 
-		//				int c = (Integer) spinner_Eguna.getValue();
-		//				
-		//				//Inizializatu behar izango da
-		//				
-		//				
-		//				if(b<10) {
-		//					SpinnerHilabetea = "0"+b;
-		//				}else {
-		//					SpinnerHilabetea = Integer.toString(b);
-		//				}
-		//				if(c<10) {
-		//					SpinnerEguna = "0"+c;
-		//				}else {
-		//					SpinnerEguna = Integer.toString(c);
-		//				}
-		//				
-		//				String SpinnerUrtea = Integer.toString(a);
-		//
-		//				String Data = SpinnerUrtea+"-"+SpinnerHilabetea+"-"+SpinnerEguna;
-
 		//DNI ETA PASAHITZA BALIDATZEKO BOTOIA
 
 		Balidatu.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
 
-				
-				String d = textNAN.getText();
-				int dni = Integer.parseInt(d);
-				if (Metodoak.KalkulatuLetra(dni)==textLetra.getText()) {
-					//Jarraitu.setVisible(true);
+				//BALIDAZIORAKO BARIABLEAK
+
+				try {
+					zenbakia=textNAN.getText();
+					int zbk= Integer.parseInt(zenbakia);
+					letra=textLetra.getText();
+					nan=zenbakia+letra;
+
+					letra2=Metodoak.KalkulatuLetra(zbk);
+					nan2=zenbakia+letra2;
+					System.out.println("Sartutako nan: "+nan);
+					System.out.println("Izan behar den nan: "+nan2);
+				}catch (Exception e) {
+					//JOptionPane.showMessageDialog(null, "Textfield batzuk hutzik daude. Mesedez osotu");
+					//System.out.println("Errorea");
 				}
 
+				if (nan.equals(nan2) && !izena.getText().equals("") && !abizenatextfield.getText().equals("") && !Pasahitza.getText().equals("")) {
+					Jarraitu.setEnabled(true);
+					Balidatu.setEnabled(false);
+				}else if(izena.getText().equals("") && abizenatextfield.getText().equals("") && Pasahitza.getText().equals("")) {
+					JOptionPane.showMessageDialog(null, "Textfield batzuk hutzik daude. Mesedez osotu");
+					//System.out.println("Nan zenbakiak ez dira berdinak");
+				}else {
+					JOptionPane.showMessageDialog(null, "Nan zenbaki letra txarto dago");
+				}
 
-				zenbakia=textNAN.getText();
-				letra=textLetra.getText();
-
-				nan=zenbakia+letra;
 				izena2=izena.getText();
 				abizena=abizenatextfield.getText();
-				
+
 				int sexuzbk;
 				sexuzbk=AukeratuSexua.getSelectedIndex();
 				if (sexuzbk==0)
@@ -325,82 +313,26 @@ public class Ventana2b extends JFrame {
 				pasahitza=Metodoak.ateraMD5(pasahitza);
 				Date jaio_data2= jaiodata.getDate();
 				jaio_data= sm.format(jaio_data2);
-
 			}
 		});
+
 		//JARRAITU BOTOIA
 
-				Ezeztatu.setBounds(165, 452, 109, 44);
-				getContentPane().add(Ezeztatu);
+		Ezeztatu.setBounds(165, 452, 109, 44);
+		getContentPane().add(Ezeztatu);
 
-				Jarraitu.setEnabled(false);
-				Jarraitu.addActionListener(new ActionListener() {
-					public void actionPerformed(ActionEvent e) {
-						dispose();
-						Metodoak.hirugarrenLeihoa(nan);
-						Cliente2 cliente = new Cliente2(nan, izena2, abizena, jaio_data, sexua, pasahitza);
-						Metodoak.bezeroaIgo(cliente);
-					}
-				});
-				Jarraitu.setFont(new Font("Comic Sans MS", Font.BOLD, 15));
-				Jarraitu.setBounds(462, 452, 115, 44);
-				getContentPane().add(Jarraitu);
-				
-				//DNI ETA PASAHITZA BALIDATZEKO BOTOIA
-
-				Balidatu.addActionListener(new ActionListener() {
-					public void actionPerformed(ActionEvent arg0) {
-
-						//BALIDAZIORAKO BARIABLEAK
-						
-						try {
-						zenbakia=textNAN.getText();
-						int zbk= Integer.parseInt(zenbakia);
-						letra=textLetra.getText();
-						nan=zenbakia+letra;
-						
-						letra2=Metodoak.KalkulatuLetra(zbk);
-						nan2=zenbakia+letra2;
-						System.out.println("Sartutako nan: "+nan);
-						System.out.println("Izan behar den nan: "+nan2);
-						}catch (Exception e) {
-					        //JOptionPane.showMessageDialog(null, "Textfield batzuk hutzik daude. Mesedez osotu");
-							//System.out.println("Errorea");
-						}
-								
-						if (nan.equals(nan2) && !izena.getText().equals("") && !abizenatextfield.getText().equals("") && !Pasahitza.getText().equals("")) {
-							Jarraitu.setEnabled(true);
-							Balidatu.setEnabled(false);
-						}else if(izena.getText().equals("") && abizenatextfield.getText().equals("") && Pasahitza.getText().equals("")) {
-					        JOptionPane.showMessageDialog(null, "Textfield batzuk hutzik daude. Mesedez osotu");
-							//System.out.println("Nan zenbakiak ez dira berdinak");
-						}else {
-					        JOptionPane.showMessageDialog(null, "Nan zenbaki letra txarto dago");
-						}
-						
-						
-						
-
-						
-						izena2=izena.getText();
-						abizena=abizenatextfield.getText();
-						
-						int sexuzbk;
-						sexuzbk=AukeratuSexua.getSelectedIndex();
-						if (sexuzbk==0)
-							sexua="V";
-						else
-							sexua="M";
-						pasahitza=Pasahitza.getText();
-						pasahitza=Metodoak.ateraMD5(pasahitza);
-					
-						Cliente2 cliente = new Cliente2(nan, izena2, abizena, jaio_data, sexua, pasahitza);
-						
-						
-						Metodoak.bezeroaIgo(cliente);
-					}
-				});
-
+		Jarraitu.setEnabled(false);
+		Jarraitu.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				dispose();
+				Metodoak.hirugarrenLeihoa(nan);
+				Cliente2 cliente = new Cliente2(nan, izena2, abizena, jaio_data, sexua, pasahitza);
+				Metodoak.bezeroaIgo(cliente);
+			}
+		});
+		Jarraitu.setFont(new Font("Comic Sans MS", Font.BOLD, 15));
+		Jarraitu.setBounds(462, 452, 115, 44);
+		getContentPane().add(Jarraitu);
 
 	}
 }
