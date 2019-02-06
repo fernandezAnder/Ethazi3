@@ -4,8 +4,10 @@ import java.awt.SystemColor;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
 
+import javax.swing.ImageIcon;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
+
 
 import controlador.Metodoak;
 
@@ -17,7 +19,7 @@ public class Ventana1 extends JFrame {
    
     private JLabel txtOngiEotirriMaquina = new JLabel("Ongi Etorri");
     private JLabel Icono = new JLabel("");
-    private JLabel lblTxrtelSaltzailera = new JLabel("Txartel Saltzailea");
+    private JLabel lblTxrtelSaltzailera = new JLabel("Txartel Saltzailera");
 
 	public Ventana1() {
 			
@@ -32,25 +34,24 @@ public class Ventana1 extends JFrame {
 		   		 }
 		   	});
         	this.setBackground(SystemColor.control);
-        	setLayout(null);
+        	getContentPane().setLayout(null);
        	 
         	  //LABEL ONGI ETORRI
 
-        	txtOngiEotirriMaquina.setFont(new Font("Comic Sans MS", Font.PLAIN, 27));
-        	txtOngiEotirriMaquina.setBounds(179, 76, 161, 44);
-        	add(txtOngiEotirriMaquina);
+        	txtOngiEotirriMaquina.setFont(new Font("Arial", Font.PLAIN, 46));
+        	txtOngiEotirriMaquina.setBounds(233, 78, 239, 54);
+        	getContentPane().add(txtOngiEotirriMaquina);
        	 
         	//LABEL ICONO
 
-        	//Icono.setIcon(new ImageIcon(Ventana1.class.getResource("/ethazi2/fotos/termibus.png")));
-        	Icono.setBounds(257, 271, 301, 139);
-        	add(Icono);
-       	 
+        	Icono.setBounds(202, 264, 301, 139);
+        	getContentPane().add(Icono);
+        	Icono.setIcon(new ImageIcon(Ventana1.class.getResource("/argazkiak/termibus.png")));
         	 //LABEL TXARTEL SALTZAILEA
 
-        	lblTxrtelSaltzailera.setFont(new Font("Comic Sans MS", Font.PLAIN, 26));
-        	lblTxrtelSaltzailera.setBounds(321, 131, 255, 44);
-        	add(lblTxrtelSaltzailera);
+        	lblTxrtelSaltzailera.setFont(new Font("Arial", Font.PLAIN, 46));
+        	lblTxrtelSaltzailera.setBounds(159, 157, 377, 44);
+        	getContentPane().add(lblTxrtelSaltzailera);
        	 
         
     	}
