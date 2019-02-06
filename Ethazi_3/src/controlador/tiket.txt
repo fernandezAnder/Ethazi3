@@ -3,3 +3,7 @@ Linea: L1 Autobusa: 1001
 Hasiera GeltokiaTermibus-Bilbao Amaiera GeltokiaMetro Berango 	
 Joateko DataThu Feb 14 08:52:06 CET 2019 Itzultzeko DataThu Feb 28 08:52:08 CET 2019 	
 Prezioa0.2
+Linea: L3 Autobusa: 3001 	
+Hasiera GeltokiaTermibus-Bilbao Amaiera GeltokiaEstacion Renfe Sodupe - Güeñes 	
+Joateko DataSat Feb 16 12:54:12 CET 2019 Itzultzeko DataSat Feb 09 12:54:13 CET 2019 	
+Prezioa0.22
