@@ -18,6 +18,7 @@ import javax.swing.JCheckBox;
 import javax.swing.JComboBox;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
+import javax.swing.JOptionPane;
 import javax.swing.JTextPane;
 import javax.swing.table.DefaultTableModel;
 
@@ -250,11 +251,15 @@ public class Ventana4 extends JFrame {
 		jarraitu.addActionListener(new ActionListener() {
 			@Override
 			public void actionPerformed(ActionEvent arg0) {
-				dispose();
+				try {
 				lehen_data= lehendata.getDate();
 				lehen_data_string=sm.format(lehen_data);
 				bigarren_data=bigarrendata.getDate();
 				bigarren_data_string=sm.format(bigarren_data);
+				}catch (Exception e) {
+					JOptionPane.showMessageDialog(null, "Data hutsik dago. Mesedez osotu");
+				}
+				
 
 				for(int i=0;i<paradas.size();i++) {
 					//Hasiera geltoki bariableak
@@ -279,7 +284,10 @@ public class Ventana4 extends JFrame {
 				Tiket t1 = new Tiket(bidaiakop, linea, cod_bus, hasiera_geltokia, amaiera_geltokia, lehen_data_string, bigarren_data_string, prezio2);
 				data= Metodoak.dataAtera();
 				ordua=Metodoak.orduaAtera();
-				Metodoak.bostgarrenLeihoa(Metodoak.billete(bidaiakop, linea, cod_bus, hasiera_geltoki_kod, amaiera_geltoki_kod, data, ordua, nan, prezio2),t1);
+				if(!lehen_data_string.equals("")) {
+					dispose();
+					Metodoak.bostgarrenLeihoa(Metodoak.billete(bidaiakop, linea, cod_bus, hasiera_geltoki_kod, amaiera_geltoki_kod, data, ordua, nan, prezio2),t1);
+				}
 			}
 		});
 		getContentPane().add(jarraitu);

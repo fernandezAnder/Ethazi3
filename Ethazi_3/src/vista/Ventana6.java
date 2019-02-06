@@ -4,6 +4,7 @@ import java.awt.Font;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.event.KeyAdapter;
+import java.text.DecimalFormat;
 import java.util.ArrayList;
 
 import javax.swing.JButton;
@@ -32,6 +33,7 @@ public class Ventana6 extends JFrame {
 	private double prezioa;
 	private double prezioBerria=0;
 	private double prezio2 = 0;
+	private DecimalFormat formateador = new DecimalFormat("###.##");
 
 	
 	public Ventana6(Billete billete, Tiket t1) {
@@ -142,10 +144,6 @@ public class Ventana6 extends JFrame {
 							Ventana6.Itzuliak.setText(mezua);	
 							Ventana6.btnAtzera.setEnabled(false);
 							Ventana6.btnAmaitu.setEnabled(false);
-							//		   					ordaindu = dirua.getText();
-							//		   					zbk= Double.parseDouble(ordaindu);
-							//		   					diru_falta=Metodoak.diruFalta(zbk, preziotot.get(preziotot.size()-1));
-
 
 						}else {
 							if (preziototala<0) {
