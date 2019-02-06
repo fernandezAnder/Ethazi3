@@ -53,8 +53,8 @@ public class Ventana2b extends JFrame {
 	private JLabel label = new JLabel("-");
 	private JLabel label_1_marra = new JLabel("-");
 	private JSpinner spinner_Urtea = new JSpinner(new SpinnerNumberModel(2019,1900,2019,1));
-	private JSpinner spinner_Hilabetea = new JSpinner(new SpinnerNumberModel((int)((Calendar.MONTH)-1),1,12,1));
-	private JSpinner spinner_Eguna = new JSpinner(new SpinnerNumberModel((int)((Calendar.DAY_OF_MONTH)-1),1,31,1));
+	private JSpinner spinner_Hilabetea = new JSpinner(new SpinnerNumberModel((int)(Calendar.MONTH),1,12,1));
+	private JSpinner spinner_Eguna = new JSpinner(new SpinnerNumberModel((int)(Calendar.DAY_OF_MONTH),1,31,1));
 
 	
 
@@ -66,9 +66,9 @@ public class Ventana2b extends JFrame {
 	private String abizena="";
 	private String jaio_data;
 	private String sexua;
-	private final int a=0; 
-	private final int b=0; 
-	private final int c=0;
+//	private final int a=0; 
+//	private final int b=0; 
+//	private final int c=0;
 
 
 
@@ -270,28 +270,27 @@ public class Ventana2b extends JFrame {
 				spinner_Eguna.setBounds(593, 131, 50, 22);
 				getContentPane().add(spinner_Eguna);
 
-				int a = (Integer) spinner_Urtea.getValue(); 
-				int b = (Integer) spinner_Hilabetea.getValue(); 
-				int c = (Integer) spinner_Eguna.getValue();
-				
-				//Inizializatu behar izango da
-				String SpinnerHilabetea = "";
-				String SpinnerEguna = "";
-				
-				if(b<10) {
-					SpinnerHilabetea = "0"+b;
-				}else {
-					SpinnerHilabetea = Integer.toString(b);
-				}
-				if(c<10) {
-					SpinnerEguna = "0"+c;
-				}else {
-					SpinnerEguna = Integer.toString(c);
-				}
-				
-				String SpinnerUrtea = Integer.toString(a);
-
-				String Data = SpinnerUrtea+"-"+SpinnerHilabetea+"-"+SpinnerEguna;
+//				int a = (Integer) spinner_Urtea.getValue(); 
+//				int b = (Integer) spinner_Hilabetea.getValue(); 
+//				int c = (Integer) spinner_Eguna.getValue();
+//				
+//				//Inizializatu behar izango da
+//				
+//				
+//				if(b<10) {
+//					SpinnerHilabetea = "0"+b;
+//				}else {
+//					SpinnerHilabetea = Integer.toString(b);
+//				}
+//				if(c<10) {
+//					SpinnerEguna = "0"+c;
+//				}else {
+//					SpinnerEguna = Integer.toString(c);
+//				}
+//				
+//				String SpinnerUrtea = Integer.toString(a);
+//
+//				String Data = SpinnerUrtea+"-"+SpinnerHilabetea+"-"+SpinnerEguna;
 				
 				//DNI ETA PASAHITZA BALIDATZEKO BOTOIA
 
@@ -300,12 +299,38 @@ public class Ventana2b extends JFrame {
 
 						//BALIDAZIORAKO BARIABLEAK
 						
+						int a = (Integer) spinner_Urtea.getValue(); 
+						int b = (Integer) spinner_Hilabetea.getValue(); 
+						int c = (Integer) spinner_Eguna.getValue();
 						
-						a = (Integer) spinner_Urtea.getValue(); 
-						b = (Integer) spinner_Hilabetea.getValue(); 
-						c = (Integer) spinner_Eguna.getValue();
+						//Inizializatu behar izango da
+						
+						String SpinnerHilabetea="";
+						String SpinnerEguna="";
+						
+						if(b<10) {
+							SpinnerHilabetea = "0"+b;
+						}else {
+							SpinnerHilabetea = Integer.toString(b);
+						}
+						if(c<10) {
+							SpinnerEguna = "0"+c;
+						}else {
+							SpinnerEguna = Integer.toString(c);
+						}
+						
+						String SpinnerUrtea = Integer.toString(a);
 						
 
+						String Data = SpinnerUrtea+"-"+SpinnerHilabetea+"-"+SpinnerEguna;
+
+						String d = textNAN.getText();
+						int dni = Integer.parseInt(d);
+						if (Metodoak.KalkulatuLetra(dni)==textLetra.getText()) {
+							//Jarraitu.setVisible(true);
+						}
+						
+						
 						zenbakia=textNAN.getText();
 						letra=textLetra.getText();
 
@@ -328,14 +353,6 @@ public class Ventana2b extends JFrame {
 						Metodoak.bezeroaIgo(cliente);
 					}
 				});
-				
-				
-				
-				
-				System.out.println(SpinnerUrtea);
-				System.out.println(SpinnerHilabetea);
-				System.out.println(SpinnerEguna);
-				System.out.println(Data);
 
 	}
 }
