@@ -11,12 +11,12 @@ public class Tiket {
 	private int cod_bus;
 	private String parada_inicio;
 	private String parada_fin;
-	private Date fecha_ida;
-	private Date fecha_vuelta;
+	private String fecha_ida;
+	private String fecha_vuelta;
 	private double precio;
 	
 	public Tiket( int n_trayecto, String cod_linea, int cod_bus, String parada_inicio,
-			String parada_fin, Date fecha_ida, Date fecha_vuelta, double precio) {
+			String parada_fin, String fecha_ida, String fecha_vuelta, double precio) {
 		
 		this.cod_billete = kontagailua++;
 		this.n_trayecto = n_trayecto;
@@ -64,16 +64,16 @@ public class Tiket {
 	public void setParada_fin(String parada_fin) {
 		this.parada_fin = parada_fin;
 	}
-	public Date getFecha_ida() {
+	public String getFecha_ida() {
 		return fecha_ida;
 	}
-	public void setFecha_ida(Date fecha_ida) {
+	public void setFecha_ida(String fecha_ida) {
 		this.fecha_ida = fecha_ida;
 	}
-	public Date getFecha_vuelta() {
+	public String getFecha_vuelta() {
 		return fecha_vuelta;
 	}
-	public void setFecha_vuelta(Date fecha_vuelta) {
+	public void setFecha_vuelta(String fecha_vuelta) {
 		this.fecha_vuelta = fecha_vuelta;
 	}
 	public double getPrecio() {
@@ -84,9 +84,11 @@ public class Tiket {
 	}
 	@Override
 	public String toString() {
-		return "Billete Kodea: " + cod_billete + " Bidaia Kopurua: " + n_trayecto+" \t\n" + "Linea: " + cod_linea
-				+ " Autobusa: " + cod_bus+" \t\n" + "Hasiera Geltokia" + parada_inicio + " Amaiera Geltokia" + parada_fin
-				+" \t\n"+ "Joateko Data" + fecha_ida + " Itzultzeko Data" + fecha_vuelta+" \t\n" + "Prezioa" + precio;
+		return "Billete Kodea: " + cod_billete +" "+" "+ " Bidaia Kopurua: " + n_trayecto+" \t\n"+" \t\n"  
+				+ "Linea: " + cod_linea+" "+" "+ " Autobusa: " + cod_bus+" \t\n"+" \t\n"
+				+ "Hasiera Geltokia " + parada_inicio+" "+" " + " Amaiera Geltokia " + parada_fin+" \t\n"+" \t\n" 
+				+ "Joateko Data " + fecha_ida +" "+" "+ " Itzultzeko Data " + fecha_vuelta+" \t\n"+" \t\n" 
+				+ "Prezioa: " + precio;
 	}
 	
 	
