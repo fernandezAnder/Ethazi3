@@ -52,7 +52,7 @@ public class Ventana2b extends JFrame {
 	private JLabel lblAbizena = new JLabel("Abizena");
 	private JComboBox AukeratuSexua = new JComboBox();
 	private JLabel lblMNeska = new JLabel("   M = Neska");
-	private JLabel lblNewLabel = new JLabel("* V = Mutila");
+	private JLabel lblMutila = new JLabel("* V = Mutila");
 	private JLabel lblErabiltzaileDatuak = new JLabel("Erabiltzaile Datuak  ----------------------------------------------------------------------------------------------------------------------------------");
 	private JLabel lblDatuPertsonalak = new JLabel("Datu Pertsonalak  ----------------------------------------------------------------------------------------------------------------------------------");
 	SimpleDateFormat sm = new SimpleDateFormat("yyyy-MM-dd");
@@ -237,9 +237,9 @@ public class Ventana2b extends JFrame {
 		getContentPane().add(lblErabiltzaileDatuak);
 
 
-		lblNewLabel.setToolTipText("");
-		lblNewLabel.setBounds(533, 213, 74, 22);
-		getContentPane().add(lblNewLabel);
+		lblMutila.setToolTipText("");
+		lblMutila.setBounds(533, 213, 74, 22);
+		getContentPane().add(lblMutila);
 
 
 		lblMNeska.setToolTipText("");
@@ -294,16 +294,17 @@ public class Ventana2b extends JFrame {
 					Jarraitu.setEnabled(true);
 					Balidatu.setEnabled(false);
 				}else if(izena.getText().equals("")) {
-					JOptionPane.showMessageDialog(null, "Izena hutzik dago. Mesedez osotu");
+					JOptionPane.showMessageDialog(null, "Izena hutsik dago. Mesedez osotu");
 					//System.out.println("Nan zenbakiak ez dira berdinak");
 				}
 				else if(abizenatextfield.getText().equals("")) {
-					JOptionPane.showMessageDialog(null, "Abizena hutzik dago. Mesedez osotu");
-				}else if(Pasahitza.getText().equals("")) {
-					JOptionPane.showMessageDialog(null, "Pasahitza hutzik dago. Mesedez osotu");
+					JOptionPane.showMessageDialog(null, "Abizena hutsik dago. Mesedez osotu");
+				}
+				else if(Pasahitza.getText().equals("")) {
+					JOptionPane.showMessageDialog(null, "Pasahitza hutsik dago. Mesedez osotu");
 				}
 				else {
-					JOptionPane.showMessageDialog(null, "Nan zenbaki letra txarto dago");
+					JOptionPane.showMessageDialog(null, "Nan letra txarto dago");
 				}
 
 				izena2=izena.getText();
@@ -317,8 +318,12 @@ public class Ventana2b extends JFrame {
 					sexua="M";
 				pasahitza=Pasahitza.getText();
 				pasahitza=Metodoak.ateraMD5(pasahitza);
+				try {
 				Date jaio_data2= jaiodata.getDate();
 				jaio_data= sm.format(jaio_data2);
+				}catch (Exception e) {
+					JOptionPane.showMessageDialog(null, "Data hutsik dago. Mesedez osotu");
+				}
 			}
 		});
 
