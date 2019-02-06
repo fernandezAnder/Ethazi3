@@ -11,6 +11,7 @@ import java.util.Date;
 import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
+import javax.swing.JOptionPane;
 import javax.swing.JPasswordField;
 import javax.swing.JTextField;
 import javax.swing.SpinnerNumberModel;
@@ -24,6 +25,7 @@ import javax.swing.JSpinner;
 import javax.swing.JComboBox;
 import javax.swing.ComboBoxEditor;
 import javax.swing.DefaultComboBoxModel;
+import java.awt.event.KeyEvent;
 
 public class Ventana2b extends JFrame {
 
@@ -59,7 +61,9 @@ public class Ventana2b extends JFrame {
 	
 
 	private String nan="";
+	private String nan2="1";
 	private String letra="";
+	private String letra2="";
 	private String zenbakia="";
 	private String pasahitza="";
 	private String izena2="";
@@ -170,6 +174,19 @@ public class Ventana2b extends JFrame {
 		lblIzena.setFont(new Font("Comic Sans MS", Font.BOLD, 20));
 		lblIzena.setBounds(92, 125, 63, 28);
 		getContentPane().add(lblIzena);
+		izena.addKeyListener(new KeyAdapter() {
+			@Override
+			public void keyTyped(java.awt.event.KeyEvent evt) {
+				char validar =evt.getKeyChar();
+				char c=evt.getKeyChar();
+				if(Character.isDigit(validar) ) {
+					getToolkit().beep();
+					evt.consume();	
+
+				}
+
+			}
+		});
 
 		//TEXT IZENA
 		izena.setFont(new Font("Tahoma", Font.PLAIN, 16));
@@ -184,6 +201,18 @@ public class Ventana2b extends JFrame {
 
 		//LABEL TEXT
 		abizenatextfield = new JTextField();
+		abizenatextfield.addKeyListener(new KeyAdapter() {
+			@Override
+			public void keyTyped(java.awt.event.KeyEvent evt) {
+				char validar =evt.getKeyChar();
+				if(Character.isDigit(validar) ) {
+					getToolkit().beep();
+					evt.consume();	
+
+				}
+
+			}
+		});
 		abizenatextfield.setFont(new Font("Tahoma", Font.PLAIN, 16));
 		abizenatextfield.setColumns(10);
 		abizenatextfield.setBounds(192, 182, 109, 28);
@@ -240,8 +269,6 @@ public class Ventana2b extends JFrame {
 				});
 				Ezeztatu.setBounds(165, 452, 109, 44);
 				getContentPane().add(Ezeztatu);
-
-				//JARRAITU BOTOIA
 				Jarraitu.setEnabled(false);
 				Jarraitu.addActionListener(new ActionListener() {
 					public void actionPerformed(ActionEvent e) {
@@ -320,21 +347,37 @@ public class Ventana2b extends JFrame {
 						}
 						
 						String SpinnerUrtea = Integer.toString(a);
+						try {
+						zenbakia=textNAN.getText();
+						int zbk= Integer.parseInt(zenbakia);
+						letra=textLetra.getText();
+						nan=zenbakia+letra;
 						
-
+						letra2=Metodoak.KalkulatuLetra(zbk);
+						nan2=zenbakia+letra2;
+						System.out.println("Sartutako nan: "+nan);
+						System.out.println("Izan behar den nan: "+nan2);
+						}catch (Exception e) {
+					        //JOptionPane.showMessageDialog(null, "Textfield batzuk hutzik daude. Mesedez osotu");
+							//System.out.println("Errorea");
+						}
 						String Data = SpinnerUrtea+"-"+SpinnerHilabetea+"-"+SpinnerEguna;
 
-						String d = textNAN.getText();
-						int dni = Integer.parseInt(d);
-						if (Metodoak.KalkulatuLetra(dni)==textLetra.getText()) {
-							//Jarraitu.setVisible(true);
+						
+						if (nan.equals(nan2) && !izena.getText().equals("") && !abizenatextfield.getText().equals("") && !Pasahitza.getText().equals("")) {
+							Jarraitu.setEnabled(true);
+							Balidatu.setEnabled(false);
+						}else if(izena.getText().equals("") && abizenatextfield.getText().equals("") && Pasahitza.getText().equals("")) {
+					        JOptionPane.showMessageDialog(null, "Textfield batzuk hutzik daude. Mesedez osotu");
+							//System.out.println("Nan zenbakiak ez dira berdinak");
+						}else {
+					        JOptionPane.showMessageDialog(null, "Nan zenbaki letra txarto dago");
 						}
 						
 						
-						zenbakia=textNAN.getText();
-						letra=textLetra.getText();
+						
 
-						nan=zenbakia+letra;
+						
 						izena2=izena.getText();
 						abizena=abizenatextfield.getText();
 						jaio_data= Data;
