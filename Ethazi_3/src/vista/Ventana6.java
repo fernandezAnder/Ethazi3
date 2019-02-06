@@ -14,20 +14,24 @@ import javax.swing.JTextArea;
 import javax.swing.JTextField;
 
 import controlador.Billete;
+import controlador.Contador;
 import controlador.Metodoak;
 import controlador.Tiket;
+import javax.swing.SwingConstants;
 public class Ventana6 extends JFrame {
-	//private JTextField textSartzekoDirua;
+
 	private JLabel lblOrdainketa = new JLabel("Ordainketa :");
 	private JLabel lblSartuDirua = new JLabel("Sartu Dirua :");
 	private JLabel lblItzuliak = new JLabel("Itzuliak :");
-	private static JButton btnAmaitu = new JButton("Amaitu");
-	private static JTextField dirua= new JTextField();
-	private static JButton btnEzeztatu = new JButton("Ezeztatu");
-	private static JButton btnAtzera = new JButton("Atzera");
-	private final static JButton btnOrdaindu = new JButton("Ordaindu");
-	private static JTextArea Itzuliak = new JTextArea();
+	private JButton btnAmaitu = new JButton("Amaitu");
+	private JTextField dirua= new JTextField();
+	private JButton btnEzeztatu = new JButton("Ezeztatu");
+	private JButton btnAtzera = new JButton("Atzera");
+	private JButton btnOrdaindu = new JButton("Ordaindu");
+	private JTextArea Itzuliak = new JTextArea();
 	private JLabel lblOrdaintzeko = new JLabel("");
+
+
 	private double preziototala=0;
 	private ArrayList<Double> preziotot = new ArrayList<Double>();
 	private double prezioa;
@@ -35,35 +39,37 @@ public class Ventana6 extends JFrame {
 	private double prezio2 = 0;
 	private DecimalFormat formateador = new DecimalFormat("###.##");
 
-	
+
 	public Ventana6(Billete billete, Tiket t1) {
 		prezioa=billete.getPrecio();
 		this.setBounds(275,100,700,600);
 		getContentPane().setLayout(null);
-		lblOrdainketa.setBounds(104, 11, 162, 34);
+		lblOrdainketa.setBounds(90, 106, 162, 34);
 
 		//LABEL ORDAINKETA
-		lblOrdainketa.setFont(new Font("Bookman Old Style", Font.PLAIN, 25));
+		lblOrdainketa.setFont(new Font("Arial", Font.BOLD, 25));
 		getContentPane().add(lblOrdainketa);
-		lblSartuDirua.setBounds(90, 67, 162, 37);
+		lblSartuDirua.setBounds(90, 151, 162, 37);
 
 		//LABEL SARTU DIRUA
-		lblSartuDirua.setFont(new Font("Bookman Old Style", Font.PLAIN, 24));
+		lblSartuDirua.setFont(new Font("Arial", Font.BOLD, 24));
 		getContentPane().add(lblSartuDirua);
-		lblItzuliak.setBounds(120, 153, 136, 34);
+		lblItzuliak.setBounds(135, 199, 105, 34);
 
 
 		//LABEL ITZULIAK
-		lblItzuliak.setFont(new Font("Bookman Old Style", Font.PLAIN, 24));
+		lblItzuliak.setFont(new Font("Arial", Font.BOLD, 24));
 		getContentPane().add(lblItzuliak);
-		btnAmaitu.setBounds(460, 466, 120, 37);
+		btnAmaitu.setBounds(514, 467, 97, 43);
 
 		//BOTOIA AMAITU
-		btnAmaitu.setFont(new Font("Bookman Old Style", Font.PLAIN, 20));
+		btnAmaitu.setFont(new Font("Arial", Font.PLAIN, 18));
 		btnAmaitu.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				dispose();
 				Metodoak.imprimatuTiketa(t1);
+				Contador contador = new Contador();
+				contador.start();
 				Metodoak.zazpigarrenLeihoa();
 			}
 		});
@@ -71,7 +77,7 @@ public class Ventana6 extends JFrame {
 
 		//TEXTUA SARTZEKO DIRUA
 		dirua = new JTextField();
-		dirua.setBounds(308, 76, 136, 26);
+		dirua.setBounds(262, 161, 136, 26);
 		dirua.addKeyListener(new KeyAdapter() {
 			@Override
 			public void keyTyped(java.awt.event.KeyEvent evt) {
@@ -89,9 +95,9 @@ public class Ventana6 extends JFrame {
 		});
 		getContentPane().add(dirua);
 		dirua.setColumns(10);
-		btnEzeztatu.setBounds(288, 468, 136, 33);
+		btnEzeztatu.setBounds(339, 468, 112, 41);
 
-		btnEzeztatu.setFont(new Font("Bookman Old Style", Font.PLAIN, 20));
+		btnEzeztatu.setFont(new Font("Arial", Font.PLAIN, 18));
 		btnEzeztatu.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				dispose();
@@ -99,7 +105,7 @@ public class Ventana6 extends JFrame {
 			}
 		});
 		getContentPane().add(btnEzeztatu);
-		btnAtzera.setBounds(126, 468, 136, 33);
+		btnAtzera.setBounds(176, 467, 105, 43);
 		String nan = billete.getDni();
 		btnAtzera.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
@@ -107,9 +113,9 @@ public class Ventana6 extends JFrame {
 				Metodoak.hirugarrenLeihoa(nan);
 			}
 		});
-		btnAtzera.setFont(new Font("Bookman Old Style", Font.PLAIN, 20));
+		btnAtzera.setFont(new Font("Arial", Font.PLAIN, 18));
 		getContentPane().add(btnAtzera);
-		btnOrdaindu.setBounds(494, 74, 141, 27);
+		btnOrdaindu.setBounds(470, 151, 141, 37);
 		//Arraylistari prezioa sartu
 		preziotot.add(prezioa);
 		//ORDAINDU BOTOIA
@@ -141,9 +147,9 @@ public class Ventana6 extends JFrame {
 							preziotot.add(preziototala);
 							mezua=(preziotot.get(preziotot.size()-1)+" € falta zaizkizu");
 							System.out.println(mezua);
-							Ventana6.Itzuliak.setText(mezua);	
-							Ventana6.btnAtzera.setEnabled(false);
-							Ventana6.btnAmaitu.setEnabled(false);
+							Itzuliak.setText(mezua);	
+							btnAtzera.setEnabled(false);
+							btnAmaitu.setEnabled(false);
 
 						}else {
 							if (preziototala<0) {
@@ -151,39 +157,46 @@ public class Ventana6 extends JFrame {
 								preziototala=preziototala*(-1);
 								System.out.println(preziototala);
 								String kanbioak=Metodoak.kanbioMetodoa(preziototala);
-								Ventana6.Itzuliak.setText(kanbioak);
-								Ventana6.btnAmaitu.setEnabled(true);
-								Ventana6.btnEzeztatu.setEnabled(false);
-								Ventana6.btnAtzera.setEnabled(false);
-								Ventana6.btnOrdaindu.setEnabled(false);
+								Itzuliak.setText(kanbioak);
+								btnAmaitu.setEnabled(true);
+								btnEzeztatu.setEnabled(false);
+								btnAtzera.setEnabled(false);
+								btnOrdaindu.setEnabled(false);
 
 							}else if(preziototala==0) {
 								mezua="Eskerrik asko erosteagatik";
-								Ventana6.Itzuliak.setText(mezua);
-								Ventana6.btnAmaitu.setEnabled(true);
-								Ventana6.btnEzeztatu.setEnabled(false);
-								Ventana6.btnAtzera.setEnabled(false);
-								Ventana6.btnOrdaindu.setEnabled(false);
+								Itzuliak.setText(mezua);
+								btnAmaitu.setEnabled(true);
+								btnEzeztatu.setEnabled(false);
+								btnAtzera.setEnabled(false);
+								btnOrdaindu.setEnabled(false);
 
 							}
 						}
 					}
 
 				}
-				Ventana6.dirua.setText("");	
+				dirua.setText("");	
 			}
 		});
-		btnOrdaindu.setFont(new Font("Bookman Old Style", Font.PLAIN, 20));
+		btnOrdaindu.setFont(new Font("Arial", Font.PLAIN, 20));
 
 		getContentPane().add(btnOrdaindu);
 
-		Itzuliak.setBounds(120, 216, 491, 223);
+		Itzuliak.setBounds(231, 244, 380, 195);
 		getContentPane().add(Itzuliak);
 		String ordaintzeko = String.valueOf(billete.getPrecio());
+		lblOrdaintzeko.setHorizontalAlignment(SwingConstants.CENTER);
 		lblOrdaintzeko.setText(ordaintzeko);
 		lblOrdaintzeko.setFont(new Font("Arial", Font.PLAIN, 18));
-		lblOrdaintzeko.setBounds(308, 15, 120, 30);
+		lblOrdaintzeko.setBounds(274, 112, 52, 30);
 		getContentPane().add(lblOrdaintzeko);
+		
+		JLabel lblOrdainketa_1 = new JLabel("ORDAINKETA");
+		lblOrdainketa_1.setHorizontalAlignment(SwingConstants.CENTER);
+		lblOrdainketa_1.setFont(new Font("Arial", Font.BOLD, 37));
+		lblOrdainketa_1.setBounds(223, 41, 273, 43);
+		getContentPane().add(lblOrdainketa_1);
 
 	}
 }

@@ -9,14 +9,8 @@ import java.util.Calendar;
 import java.util.Date;
 
 import modelo.Consultas;
-import vista.Ventana1;
-import vista.Ventana2;
-import vista.Ventana2b;
-import vista.Ventana3;
-import vista.Ventana4;
-import vista.Ventana5;
-import vista.Ventana6;
-import vista.Ventana7;
+import vista.*;
+
 
 public class Metodoak {
 
@@ -39,6 +33,7 @@ public class Metodoak {
 		}
 	}
 	public static void lehenengoLeihoa() {
+		
 		Ventana1 ventana1= new Ventana1();
 		ventana1.setVisible(true);
 
@@ -82,10 +77,10 @@ public class Metodoak {
 
 
 	}
-	public static Billete billete(/*int cod_billete,*/int bidaiakop,String cod_linea,int cod_bus,int
+	public static Billete billete(int bidaiakop,String cod_linea,int cod_bus,int
 			hasiera_geltoki_kod,int amaiera_geltoki_kod,String lehen_data, 
 			String ordua, String nan, double prezioa) {
-		Billete billete= new Billete(/*cod_billete,*/bidaiakop,cod_linea,cod_bus,hasiera_geltoki_kod,amaiera_geltoki_kod,lehen_data,ordua,nan,prezioa);
+		Billete billete= new Billete(bidaiakop,cod_linea,cod_bus,hasiera_geltoki_kod,amaiera_geltoki_kod,lehen_data,ordua,nan,prezioa);
 		return billete;
 
 	}
@@ -374,7 +369,7 @@ public class Metodoak {
 //		return konprobatu;
 //	}
 
-
+	
 }
 
 

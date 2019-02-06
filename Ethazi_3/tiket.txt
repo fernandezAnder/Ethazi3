@@ -1,5 +1,0 @@
-Billete Kodea: 3 Bidaia Kopurua: 2 	
-Linea: L3 Autobusa: 3001 	
-Hasiera GeltokiaTermibus-Bilbao Amaiera GeltokiaBarakaldo - Sagrado Corazon 	
-Joateko DataThu Feb 14 16:53:31 CET 2019 Itzultzeko DataSun Feb 17 16:53:32 CET 2019 	
-Prezioa0.1Kaixo

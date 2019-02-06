@@ -37,9 +37,10 @@ public class Ventana5 extends JFrame {
 		textArea.setEditable(false);
 		textArea.setFont(new Font("Arial", Font.PLAIN, 16));
 		
-		textArea.setBounds(100, 131, 495, 176);
+		textArea.setBounds(100, 131, 495, 251);
 		getContentPane().add(textArea);
 		textArea.setText(t1.toString());
+		btnAtzera.setFont(new Font("Arial", Font.PLAIN, 18));
 		
 		btnAtzera.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
@@ -47,8 +48,9 @@ public class Ventana5 extends JFrame {
 				Metodoak.hirugarrenLeihoa(nan);
 			}
 		});
-		btnAtzera.setBounds(100, 472, 89, 23);
+		btnAtzera.setBounds(357, 451, 89, 44);
 		getContentPane().add(btnAtzera);
+		btnBalidatu.setFont(new Font("Arial", Font.PLAIN, 18));
 		
 		btnBalidatu.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
@@ -56,7 +58,7 @@ public class Ventana5 extends JFrame {
 				Metodoak.seigarrenLeihoa(billete,t1);
 			}
 		});
-		btnBalidatu.setBounds(356, 472, 89, 23);
+		btnBalidatu.setBounds(498, 451, 97, 44);
 		getContentPane().add(btnBalidatu);
 		
 		
