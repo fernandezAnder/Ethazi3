@@ -7,10 +7,8 @@ import java.awt.SystemColor;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.text.DecimalFormat;
-import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
-import java.util.Calendar;
 import java.util.Collections;
 import java.util.Date;
 import java.util.Hashtable;
@@ -29,6 +27,7 @@ import controlador.Autobus;
 import controlador.Metodoak;
 import controlador.Parada;
 import controlador.Tiket;
+import javax.swing.SwingConstants;
 public class Ventana4 extends JFrame {
 
 
@@ -88,37 +87,39 @@ public class Ventana4 extends JFrame {
 		setBackground(SystemColor.control);
 		this.setBounds(275,100,700,600);
 		getContentPane().setLayout(null);
-		lblGeltokiak.setBounds(473, 73, 146, 36);
+		lblGeltokiak.setHorizontalAlignment(SwingConstants.CENTER);
+		lblGeltokiak.setBounds(489, 84, 146, 36);
 		lblGeltokiak.setRequestFocusEnabled(false);
 
 		//LABEL ZERRENDA
-		lblGeltokiak.setFont(new Font("Comic Sans MS", Font.BOLD, 25));
+		lblGeltokiak.setFont(new Font("Arial", Font.BOLD, 25));
 		getContentPane().add(lblGeltokiak);
-		lblXLinearenInformazioa.setBounds(211, 22, 381, 36);
+		lblXLinearenInformazioa.setHorizontalAlignment(SwingConstants.CENTER);
+		lblXLinearenInformazioa.setBounds(71, 26, 564, 36);
 
 		//TITULOAREN LABELA
 		lblXLinearenInformazioa.setRequestFocusEnabled(false);
-		lblXLinearenInformazioa.setFont(new Font("Comic Sans MS", Font.BOLD, 25));
+		lblXLinearenInformazioa.setFont(new Font("Arial", Font.BOLD, 37));
 		lblXLinearenInformazioa.setText(linea+" Linearen Informazioa");
 		getContentPane().add(lblXLinearenInformazioa);
 		lblJatorriGeltokia.setBounds(37, 129, 196, 36);
 
 		//JATORRI GELTOKIA LABELA
 		lblJatorriGeltokia.setRequestFocusEnabled(false);
-		lblJatorriGeltokia.setFont(new Font("Comic Sans MS", Font.BOLD, 25));
+		lblJatorriGeltokia.setFont(new Font("Arial", Font.BOLD, 25));
 		getContentPane().add(lblJatorriGeltokia);
 
 		//HELMUGA GELTOKIA LABELA
-		lblHelmugaGeltokia.setBounds(37, 193, 208, 36);
+		lblHelmugaGeltokia.setBounds(37, 193, 216, 36);
 		lblHelmugaGeltokia.setRequestFocusEnabled(false);
-		lblHelmugaGeltokia.setFont(new Font("Comic Sans MS", Font.BOLD, 25));
+		lblHelmugaGeltokia.setFont(new Font("Arial", Font.BOLD, 25));
 
 		getContentPane().add(lblHelmugaGeltokia);
 
 		//JOAN ETORRI LABELA
 		lblJoanEtaEtorri.setBounds(37, 258, 203, 36);
 		lblJoanEtaEtorri.setRequestFocusEnabled(false);
-		lblJoanEtaEtorri.setFont(new Font("Comic Sans MS", Font.BOLD, 25));
+		lblJoanEtaEtorri.setFont(new Font("Arial", Font.BOLD, 25));
 		getContentPane().add(lblJoanEtaEtorri);
 		chckbxJoanEtorri.setFont(new Font("Tahoma", Font.PLAIN, 18));
 		chckbxJoanEtorri.setMaximumSize(new Dimension(49, 23));
@@ -134,11 +135,11 @@ public class Ventana4 extends JFrame {
 		bigarrendata.getDate();
 		bigarrendata.cleanup();
 		bigarrendata.setSelectableDateRange(new Date(), lehen_data);
-		
+
 		//ITZULI DATA LABELA
 		lblItzuliData.setBounds(37, 394, 104, 28);
 		lblItzuliData.setVisible(false);
-		lblItzuliData.setFont(new Font("Comic Sans MS", Font.BOLD, 20));
+		lblItzuliData.setFont(new Font("Arial", Font.BOLD, 20));
 		getContentPane().add(lblItzuliData);
 
 		//CHECKBOX JOAN ETORRI
@@ -207,7 +208,7 @@ public class Ventana4 extends JFrame {
 		//LABEL DATA
 		lblData.setBounds(37, 325, 50, 32);
 		lblData.setRequestFocusEnabled(false);
-		lblData.setFont(new Font("Comic Sans MS", Font.BOLD, 22));
+		lblData.setFont(new Font("Arial", Font.BOLD, 22));
 		getContentPane().add(lblData);
 
 		//JCALENDAR LEHEN DATA
@@ -254,7 +255,7 @@ public class Ventana4 extends JFrame {
 				lehen_data_string=sm.format(lehen_data);
 				bigarren_data=bigarrendata.getDate();
 				bigarren_data_string=sm.format(bigarren_data);
-				
+
 				for(int i=0;i<paradas.size();i++) {
 					//Hasiera geltoki bariableak
 					hasiera_geltokia=paradas.get(Hasiera_geltoki.getSelectedIndex()).getNombre();

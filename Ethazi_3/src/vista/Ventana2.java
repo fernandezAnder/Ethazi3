@@ -113,7 +113,7 @@ public class Ventana2 extends JFrame {
 		getContentPane().add(lblPasahitza);
 
 		//EZEZTATU BOTOIA
-		Atzera.setFont(new Font("Arial", Font.BOLD, 18));
+		Atzera.setFont(new Font("Arial", Font.PLAIN, 18));
 		Atzera.addActionListener(new ActionListener() {
 			@Override
 			public void actionPerformed(ActionEvent arg0) {
@@ -133,7 +133,7 @@ public class Ventana2 extends JFrame {
 				Metodoak.hirugarrenLeihoa(nan);
 			}
 		});
-		Jarraitu.setFont(new Font("Arial", Font.BOLD, 18));
+		Jarraitu.setFont(new Font("Arial", Font.PLAIN, 18));
 		Jarraitu.setBounds(488, 372, 115, 55);
 		getContentPane().add(Jarraitu);
 
@@ -176,7 +176,7 @@ public class Ventana2 extends JFrame {
 						}
 					}
 				});
-				Balidatu.setFont(new Font("Arial", Font.BOLD, 18));
+				Balidatu.setFont(new Font("Arial", Font.PLAIN, 18));
 				Balidatu.setBounds(297, 372, 115, 55);
 				getContentPane().add(Balidatu);
 				
@@ -187,7 +187,7 @@ public class Ventana2 extends JFrame {
 						Metodoak.bigarrenLeihoaB();
 					}
 				});
-				btnKontuBerria.setFont(new Font("Arial", Font.BOLD, 20));
+				btnKontuBerria.setFont(new Font("Arial", Font.PLAIN, 20));
 				btnKontuBerria.setBounds(464, 204, 170, 44);
 				getContentPane().add(btnKontuBerria);
 
