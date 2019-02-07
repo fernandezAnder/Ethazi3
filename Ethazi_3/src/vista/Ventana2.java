@@ -9,6 +9,7 @@ import java.util.ArrayList;
 import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
+import javax.swing.JOptionPane;
 import javax.swing.JPasswordField;
 import javax.swing.JTextField;
 import javax.swing.SwingConstants;
@@ -161,7 +162,7 @@ public class Ventana2 extends JFrame {
 							//System.out.println(clientes.get(i).getDni());
 							//System.out.println(nan);
 						}
-
+						boolean balidatu=true;
 						for (int i=0;i<clientes.size();i++) {
 							if (clientes.get(i).getDni().equals(nan)) {
 								System.out.println(nan);
@@ -171,9 +172,22 @@ public class Ventana2 extends JFrame {
 									Jarraitu.setEnabled(true);
 									Balidatu.setEnabled(false);
 									
+								}else {
+									balidatu=false;
+									Pasahitza.setText("");
+									JOptionPane.showMessageDialog(null,"Pasahitza gaizki dago. Mesedez sartu berriro.");
+									
+									}
+								
+							}else {
+								if(i==clientes.size()-1 && balidatu==true) {
+								textNAN.setText("");
+								textLetra.setText("");
+								JOptionPane.showMessageDialog(null,"NAN-a gaizki dago. Mesedez sartu berriro.");
 								}
 							}
 						}
+						
 					}
 				});
 				Balidatu.setFont(new Font("Arial", Font.PLAIN, 18));
