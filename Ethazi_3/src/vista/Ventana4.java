@@ -9,6 +9,7 @@ import java.awt.event.ActionListener;
 import java.text.DecimalFormat;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.Calendar;
 import java.util.Collections;
 import java.util.Date;
 import java.util.Hashtable;
@@ -70,7 +71,7 @@ public class Ventana4 extends JFrame {
 	private Date lehen_data;
 	private Date bigarren_data;
 	private String lehen_data_string;
-	private String bigarren_data_string;
+	private String bigarren_data_string="";
 	private int bidaiakop=1;
 	private int cod_linea;
 	private double prezioa;
@@ -81,7 +82,8 @@ public class Ventana4 extends JFrame {
 	private double prezio2;
 	DecimalFormat dezimal = new DecimalFormat("#.00");
 	SimpleDateFormat sm = new SimpleDateFormat("yyyy-MM-dd");
-
+	private Boolean Bigarren_data=false;
+	
 	public Ventana4(ArrayList<Parada> paradas,ArrayList<Autobus> buses,String linea, int cod_bus, String nan) {
 
 		cod_billete++;
@@ -149,12 +151,15 @@ public class Ventana4 extends JFrame {
 				if (chckbxJoanEtorri.isSelected()==false) {
 					lblItzuliData.setVisible(false);
 					bigarrendata.setVisible(false);
+					//Bigarren data ez hartzeko
+					Bigarren_data=false;
 				}else {
 					lblItzuliData.setVisible(true);
 					bigarrendata.setVisible(true);
 					bidaiakop=2;
 					biderketa=true;
-
+					//Bigarren data hartzeko
+					Bigarren_data=true;
 				}
 
 			}
@@ -252,13 +257,20 @@ public class Ventana4 extends JFrame {
 			@Override
 			public void actionPerformed(ActionEvent arg0) {
 				try {
-				lehen_data= lehendata.getDate();
-				lehen_data_string=sm.format(lehen_data);
-				bigarren_data=bigarrendata.getDate();
-				bigarren_data_string=sm.format(bigarren_data);
+					lehen_data= lehendata.getDate();
+					lehen_data_string=sm.format(lehen_data);
 				}catch (Exception e) {
-					JOptionPane.showMessageDialog(null, "Data hutsik dago. Mesedez osotu");
+					JOptionPane.showMessageDialog(null, "Joateko data hutsik dago. Mesedez osotu");
 				}
+				if (Bigarren_data==true) {
+					try {
+						bigarren_data=bigarrendata.getDate();
+						bigarren_data_string=sm.format(bigarren_data);
+					}catch (Exception e) {
+						
+					}
+				}
+
 				
 
 				for(int i=0;i<paradas.size();i++) {
@@ -284,9 +296,13 @@ public class Ventana4 extends JFrame {
 				Tiket t1 = new Tiket(bidaiakop, linea, cod_bus, hasiera_geltokia, amaiera_geltokia, lehen_data_string, bigarren_data_string, prezio2);
 				data= Metodoak.dataAtera();
 				ordua=Metodoak.orduaAtera();
-				if(!lehen_data_string.equals("")) {
-					dispose();
-					Metodoak.bostgarrenLeihoa(Metodoak.billete(bidaiakop, linea, cod_bus, hasiera_geltoki_kod, amaiera_geltoki_kod, data, ordua, nan, prezio2),t1);
+				if(!lehen_data_string.equals("") && bigarren_data_string.equals("")) {
+					if(chckbxJoanEtorri.isSelected()==true && bigarren_data_string.equals("")) {
+						JOptionPane.showMessageDialog(null, "Itzultzeko data hutsik dago. Mesedez osotu");
+					}else {
+						dispose();
+						Metodoak.bostgarrenLeihoa(Metodoak.billete(bidaiakop, linea, cod_bus, hasiera_geltoki_kod, amaiera_geltoki_kod, data, ordua, nan, prezio2),t1);
+					}
 				}
 			}
 		});
