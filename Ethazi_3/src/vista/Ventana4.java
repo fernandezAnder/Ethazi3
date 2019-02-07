@@ -181,25 +181,6 @@ public class Ventana4 extends JFrame {
 			public void actionPerformed(ActionEvent arg0) {
 				dispose();
 				Metodoak.hirugarrenLeihoa(nan);
-				Hashtable<String,Double> ordenaketa=new Hashtable<String,Double>();
-				ArrayList <Double> distantziaarray= new ArrayList<Double>();
-				double termi_lati=43.2614;
-				double termi_longi=-2.94974;
-				double distantzia=0;
-				for (int i=0;i<paradas.size();i++) {
-					if(!"Termibus-Bilbao".equals(paradas.get(i).getNombre())) {
-						distantzia= Metodoak.distanciaCoord(termi_lati, termi_longi, paradas.get(i).getLatitud(), paradas.get(i).getLongitud());
-
-						distantziaarray.add(distantzia);
-						ordenaketa.put(paradas.get(i).getNombre(), distantzia);
-					}
-				}
-				Collections.sort(distantziaarray);
-
-				for (int i=0;i<distantziaarray.size();i++) {
-
-				}
-				ordenaketa.get(paradas);
 			}
 		});
 		atzera.setFont(new Font("Arial", Font.PLAIN, 18));
