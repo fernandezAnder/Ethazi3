@@ -199,12 +199,6 @@ public class Ventana4 extends JFrame {
 		lblData.setRequestFocusEnabled(false);
 		lblData.setFont(new Font("Arial", Font.BOLD, 22));
 		getContentPane().add(lblData);
-
-		Calendar cal = Calendar.getInstance();
-		cal.add(Calendar.YEAR, -15);//15 year before
-		Date min = cal.getTime();
-
-		Date max = new Date();//actual date
 		
 		//JCALENDAR LEHEN DATA
 		lehendata.setBounds(157, 337, 118, 20);
@@ -213,7 +207,7 @@ public class Ventana4 extends JFrame {
 		lehendata.setSelectableDateRange(new Date(), null);
 		
 		
-		//DATA JCALENDAR BIGARREN DATA
+		//JCALENDAR BIGARREN DATA
 		bigarrendata.setBounds(158, 402, 117, 20);
 		bigarrendata.setVerifyInputWhenFocusTarget(false);
 		bigarrendata.setVisible(false);
@@ -223,10 +217,8 @@ public class Ventana4 extends JFrame {
 		bigarrendata.cleanup();
 		bigarrendata.getCalendarButton().addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
+				lehen_data= lehendata.getDate();
 				 bigarrendata.setMinSelectableDate(lehen_data);
-				 bigarrendata.setMaxSelectableDate(null);
-				//Date selectedDate = ((JCalendar)lehendata.getSource()).getDate();
-				//bigarrendata.setSelectableDateRange(new Date(), null);
 			}
 		});
 
