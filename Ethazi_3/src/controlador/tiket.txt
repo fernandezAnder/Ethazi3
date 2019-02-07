@@ -1,13 +1,13 @@
  
                                                              TERMIBUS BILBAO S.L.                         	
  ********************************************************************************************************************** 	
- -Billete Kodea: 4 	-Bidaia Kopurua: 2 
+ -Billete Kodea: 1 	-Bidaia Kopurua: 2 
  
  -Linea: L3 		-Autobusa: 3001 	
  ********************************************************************************************************************** 	
- -Hasiera Geltokia: Termibus-Bilbao     -Amaiera Geltokia: Barakaldo - Sagrado Corazon 	
+ -Hasiera Geltokia: Termibus-Bilbao     -Amaiera Geltokia: Estacion Renfe La cuadra - Güeñes 	
  	
- -Joateko Data: 2019-02-07                  -Itzultzeko Data  	
+ -Joateko Data: 2019-02-15                  -Itzultzeko Data 2019-02-16 	
  	
  ********************************************************************************************************************** 	
- -Prezioa: 0.1 €
+ -Prezioa: 0.16 €
