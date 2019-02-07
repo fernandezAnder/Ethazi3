@@ -8,6 +8,7 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.text.DecimalFormat;
 import java.text.SimpleDateFormat;
+import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.Collections;
@@ -129,16 +130,6 @@ public class Ventana4 extends JFrame {
 		chckbxJoanEtorri.setBounds(258, 259, 61, 36);
 		getContentPane().add(chckbxJoanEtorri);
 
-		//DATA JCALENDAR
-		bigarrendata.setBounds(158, 402, 117, 20);
-		bigarrendata.setVerifyInputWhenFocusTarget(false);
-		bigarrendata.setVisible(false);
-		bigarrendata.setDateFormatString("yyyy-MM-dd");	
-		getContentPane().add(bigarrendata);
-		bigarrendata.getDate();
-		bigarrendata.cleanup();
-		bigarrendata.setSelectableDateRange(new Date(), lehen_data);
-
 		//ITZULI DATA LABELA
 		lblItzuliData.setBounds(37, 394, 104, 28);
 		lblItzuliData.setVisible(false);
@@ -202,6 +193,21 @@ public class Ventana4 extends JFrame {
 		lehendata.setBounds(157, 337, 118, 20);
 		lehendata.setDateFormatString("yyyy-MM-dd");
 		getContentPane().add(lehendata);
+		lehendata.setSelectableDateRange(new Date(), null);
+		
+		//DATA JCALENDAR BIGARREN DATA
+		bigarrendata.setBounds(158, 402, 117, 20);
+		bigarrendata.setVerifyInputWhenFocusTarget(false);
+		bigarrendata.setVisible(false);
+		bigarrendata.setDateFormatString("yyyy-MM-dd");	
+		getContentPane().add(bigarrendata);
+		bigarrendata.getDate();
+		bigarrendata.cleanup();
+		bigarrendata.setSelectableDateRange(new Date(), lehen_data);
+
+
+		
+		
 		String geltokiak="";
 		for (int i=0;i<paradas.size();i++) {
 			geltokiak=geltokiak+(paradas.get(i).getNombre()+"\r\n");
