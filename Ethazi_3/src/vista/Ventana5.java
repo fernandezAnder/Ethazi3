@@ -58,7 +58,7 @@ public class Ventana5 extends JFrame {
 				Metodoak.seigarrenLeihoa(billete,t1);
 			}
 		});
-		btnBalidatu.setBounds(498, 451, 97, 44);
+		btnBalidatu.setBounds(498, 451, 108, 44);
 		getContentPane().add(btnBalidatu);
 		
 		

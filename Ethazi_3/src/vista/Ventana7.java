@@ -3,6 +3,10 @@ package vista;
 import javax.swing.ImageIcon;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
+
+import controlador.Contador;
+import controlador.Metodoak;
+
 import java.awt.Font;
 
 public class Ventana7 extends JFrame {
@@ -11,6 +15,8 @@ public class Ventana7 extends JFrame {
 	private JLabel icono = new JLabel();
 
 	public Ventana7() {
+		
+		
 		this.setBounds(275,100,700,600);
 		getContentPane().setLayout(null);
 		
@@ -29,5 +35,8 @@ public class Ventana7 extends JFrame {
 		icono.setBounds(194, 306, 307, 141);
 		getContentPane().add(icono);
 		icono.setIcon(new ImageIcon(Ventana7.class.getResource("/argazkiak/termibus.png")));
+		
+		
+		
 	}
 }

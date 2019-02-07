@@ -70,7 +70,7 @@ public class Ventana6 extends JFrame {
 				Metodoak.imprimatuTiketa(t1);
 				Contador contador = new Contador();
 				contador.start();
-				Metodoak.zazpigarrenLeihoa();
+				
 			}
 		});
 		getContentPane().add(btnAmaitu);

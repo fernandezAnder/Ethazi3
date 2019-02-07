@@ -14,9 +14,7 @@ import controlador.Metodoak;
 
 public class Ventana1 extends JFrame {
 
-	private static final long serialVersionUID = 1L;
-	private Font fuente = new Font("Comic Sans MS", Font.ITALIC, 40);
-   
+	private final long serialVersionUID = 1L;
     private JLabel txtOngiEotirriMaquina = new JLabel("Ongi Etorri");
     private JLabel Icono = new JLabel("");
     private JLabel lblTxrtelSaltzailera = new JLabel("Txartel Saltzailera");
@@ -28,9 +26,7 @@ public class Ventana1 extends JFrame {
 		   		 @Override
 		   		 public void mouseClicked(MouseEvent e) {
 		   			dispose();
-		   			Metodoak.bigarrenLeihoa();
-		   			 
-		   			
+		   			Metodoak.bigarrenLeihoa();	
 		   		 }
 		   	});
         	this.setBackground(SystemColor.control);

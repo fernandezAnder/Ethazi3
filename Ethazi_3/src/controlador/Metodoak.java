@@ -105,12 +105,16 @@ public class Metodoak {
 	}
 
 	public static void zazpigarrenLeihoa() {
-
 		Ventana7 ventana7= new Ventana7();
 		ventana7.setVisible(true);
-
+		
 	}
 
+	public static void kontagailua() {
+		Contador contador = new Contador();
+		contador.start();
+	}
+	
 	public static double distanciaCoord(double lat1, double lng1, double lat2, double lng2) {  
 		//double radioTierra = 3958.75;//en millas  
 		double radioTierra = 6371;//en kilómetros  
