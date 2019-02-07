@@ -35,9 +35,9 @@ public class Ventana5 extends JFrame {
 		lblNewLabel.setBounds(151, 40, 418, 44);
 		getContentPane().add(lblNewLabel);
 		textArea.setEditable(false);
-		textArea.setFont(new Font("Arial", Font.PLAIN, 16));
+		textArea.setFont(new Font("Arial", Font.PLAIN, 14));
 		
-		textArea.setBounds(100, 131, 495, 251);
+		textArea.setBounds(44, 131, 603, 251);
 		getContentPane().add(textArea);
 		textArea.setText(t1.toString());
 		btnAtzera.setFont(new Font("Arial", Font.PLAIN, 18));
