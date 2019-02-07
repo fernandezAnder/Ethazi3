@@ -13,6 +13,7 @@ import java.util.Calendar;
 import java.util.Collections;
 import java.util.Date;
 import java.util.Hashtable;
+import java.util.spi.CalendarDataProvider;
 
 import javax.swing.JButton;
 import javax.swing.JCheckBox;
@@ -138,13 +139,13 @@ public class Ventana4 extends JFrame {
 		bigarrendata.getDate();
 		bigarrendata.cleanup();
 		bigarrendata.setSelectableDateRange(new Date(), lehen_data);
-
+		
 		//ITZULI DATA LABELA
 		lblItzuliData.setBounds(37, 394, 104, 28);
 		lblItzuliData.setVisible(false);
 		lblItzuliData.setFont(new Font("Arial", Font.BOLD, 20));
 		getContentPane().add(lblItzuliData);
-
+		
 		//CHECKBOX JOAN ETORRI
 		chckbxJoanEtorri.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
