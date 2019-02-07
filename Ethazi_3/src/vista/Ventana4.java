@@ -85,7 +85,7 @@ public class Ventana4 extends JFrame {
 	DecimalFormat dezimal = new DecimalFormat("#.00");
 	SimpleDateFormat sm = new SimpleDateFormat("yyyy-MM-dd");
 	private Boolean Bigarren_data=false;
-	
+	private Boolean jarraituBotoia=true;
 	public Ventana4(ArrayList<Parada> paradas,ArrayList<Autobus> buses,String linea, int cod_bus, String nan) {
 
 		cod_billete++;
@@ -254,10 +254,12 @@ public class Ventana4 extends JFrame {
 		jarraitu.addActionListener(new ActionListener() {
 			@Override
 			public void actionPerformed(ActionEvent arg0) {
+				jarraituBotoia=true;
 				try {
 					lehen_data= lehendata.getDate();
 					lehen_data_string=sm.format(lehen_data);
 				}catch (Exception e) {
+					jarraituBotoia=false;
 					JOptionPane.showMessageDialog(null, "Joateko data hutsik dago. Mesedez osotu");
 				}
 				if (Bigarren_data==true) {
@@ -288,18 +290,25 @@ public class Ventana4 extends JFrame {
 				}
 				if (biderketa==true)
 					prezio2=prezio2*2;
+				
 				Tiket t1 = new Tiket(bidaiakop, linea, cod_bus, hasiera_geltokia, amaiera_geltokia, lehen_data_string, bigarren_data_string, prezio2);
 				data= Metodoak.dataAtera();
 				ordua=Metodoak.orduaAtera();
 				if(!lehen_data_string.equals("") && bigarren_data_string.equals("")) {
 					if(chckbxJoanEtorri.isSelected()==true && bigarren_data_string.equals("")) {
+						jarraituBotoia=false;
 						JOptionPane.showMessageDialog(null, "Itzultzeko data hutsik dago. Mesedez osotu");
 					}else {
 					}
 				}
+				if (prezio2==0) {
+					jarraituBotoia=false;
+					JOptionPane.showMessageDialog(null, "Hasiera eta Amaiera geltokiak berdinak dira.");
+				}
+				if(jarraituBotoia==true) {
 				dispose();
 				Metodoak.bostgarrenLeihoa(Metodoak.billete(bidaiakop, linea, cod_bus, hasiera_geltoki_kod, amaiera_geltoki_kod, data, ordua, nan, prezio2),t1);
-		
+				}
 			}
 		});
 		getContentPane().add(jarraitu);
