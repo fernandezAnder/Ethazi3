@@ -158,7 +158,7 @@ public class Ventana2 extends JFrame {
 						pasahitza=Pasahitza.getText();
 						
 						for (int i=0;i<clientes.size();i++) {
-							System.out.println(clientes.get(i).getDni());
+							//System.out.println(clientes.get(i).getDni());
 							//System.out.println(nan);
 						}
 

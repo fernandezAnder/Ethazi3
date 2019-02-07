@@ -338,9 +338,9 @@ public class Ventana2b extends JFrame {
 		Jarraitu.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				dispose();
-				Metodoak.bigarrenLeihoa();
 				Cliente2 cliente = new Cliente2(nan, izena2, abizena, jaio_data, sexua, pasahitza);
 				Metodoak.bezeroaIgo(cliente);
+				Metodoak.bigarrenLeihoa();
 			}
 		});
 		Jarraitu.setFont(new Font("Comic Sans MS", Font.BOLD, 15));
