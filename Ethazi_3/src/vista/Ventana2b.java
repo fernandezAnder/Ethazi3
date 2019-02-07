@@ -224,6 +224,8 @@ public class Ventana2b extends JFrame {
 		getContentPane().add(jaiodata);
 		jaiodata.getDate();
 		jaiodata.cleanup();
+		jaiodata.setMaxSelectableDate(new Date());
+
 
 		//LABEL SEXUA
 		lblSexua.setFont(new Font("Arial", Font.BOLD, 20));
