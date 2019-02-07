@@ -131,15 +131,15 @@ public class Ventana4 extends JFrame {
 		chckbxJoanEtorri.setBounds(258, 259, 61, 36);
 		getContentPane().add(chckbxJoanEtorri);
 
-		//DATA JCALENDAR
-		bigarrendata.setBounds(158, 402, 117, 20);
-		bigarrendata.setVerifyInputWhenFocusTarget(false);
-		bigarrendata.setVisible(false);
-		bigarrendata.setDateFormatString("yyyy-MM-dd");	
-		getContentPane().add(bigarrendata);
-		bigarrendata.getDate();
-		bigarrendata.cleanup();
-		bigarrendata.setSelectableDateRange(new Date(), lehen_data);
+//		//DATA JCALENDAR
+//		bigarrendata.setBounds(158, 402, 117, 20);
+//		bigarrendata.setVerifyInputWhenFocusTarget(false);
+//		bigarrendata.setVisible(false);
+//		bigarrendata.setDateFormatString("yyyy-MM-dd");	
+//		getContentPane().add(bigarrendata);
+//		bigarrendata.getDate();
+//		bigarrendata.cleanup();
+//		bigarrendata.setSelectableDateRange(new Date(), lehen_data);
 		
 		//ITZULI DATA LABELA
 		lblItzuliData.setBounds(37, 394, 104, 28);
@@ -200,11 +200,18 @@ public class Ventana4 extends JFrame {
 		lblData.setFont(new Font("Arial", Font.BOLD, 22));
 		getContentPane().add(lblData);
 
+		Calendar cal = Calendar.getInstance();
+		cal.add(Calendar.YEAR, -15);//15 year before
+		Date min = cal.getTime();
+
+		Date max = new Date();//actual date
+		
 		//JCALENDAR LEHEN DATA
 		lehendata.setBounds(157, 337, 118, 20);
 		lehendata.setDateFormatString("yyyy-MM-dd");
 		getContentPane().add(lehendata);
 		lehendata.setSelectableDateRange(new Date(), null);
+		
 		
 		//DATA JCALENDAR BIGARREN DATA
 		bigarrendata.setBounds(158, 402, 117, 20);
@@ -214,8 +221,14 @@ public class Ventana4 extends JFrame {
 		getContentPane().add(bigarrendata);
 		bigarrendata.getDate();
 		bigarrendata.cleanup();
-		bigarrendata.setSelectableDateRange(new Date(), lehen_data);
-
+		bigarrendata.getCalendarButton().addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				 bigarrendata.setMinSelectableDate(lehen_data);
+				 bigarrendata.setMaxSelectableDate(null);
+				//Date selectedDate = ((JCalendar)lehendata.getSource()).getDate();
+				//bigarrendata.setSelectableDateRange(new Date(), null);
+			}
+		});
 
 		
 		
