@@ -84,8 +84,10 @@ public class Tiket {
 	}
 	@Override
 	public String toString() {
-		return "Billete Kodea: " + cod_billete +" "+" "+ " Bidaia Kopurua: " + n_trayecto+" \t\n"+" \t\n"  
+		return 	"****************************************************************"+" \t\n"+" \t\n"
+				+"Billete Kodea: " + cod_billete +" \t"+" Bidaia Kopurua: " + n_trayecto+" \t\n"+" \t\n"  
 				+ "Linea: " + cod_linea+" "+" "+ " Autobusa: " + cod_bus+" \t\n"+" \t\n"
+				+"****************************************************************"+" \t\n"+" \t\n"
 				+ "Hasiera Geltokia " + parada_inicio+" "+" " + " Amaiera Geltokia " + parada_fin+" \t\n"+" \t\n" 
 				+ "Joateko Data " + fecha_ida +" "+" "+ " Itzultzeko Data " + fecha_vuelta+" \t\n"+" \t\n" 
 				+ "Prezioa: " + precio;

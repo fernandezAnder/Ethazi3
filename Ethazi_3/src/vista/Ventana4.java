@@ -268,9 +268,6 @@ public class Ventana4 extends JFrame {
 						
 					}
 				}
-
-				
-
 				for(int i=0;i<paradas.size();i++) {
 					//Hasiera geltoki bariableak
 					hasiera_geltokia=paradas.get(Hasiera_geltoki.getSelectedIndex()).getNombre();
@@ -298,10 +295,11 @@ public class Ventana4 extends JFrame {
 					if(chckbxJoanEtorri.isSelected()==true && bigarren_data_string.equals("")) {
 						JOptionPane.showMessageDialog(null, "Itzultzeko data hutsik dago. Mesedez osotu");
 					}else {
-						dispose();
-						Metodoak.bostgarrenLeihoa(Metodoak.billete(bidaiakop, linea, cod_bus, hasiera_geltoki_kod, amaiera_geltoki_kod, data, ordua, nan, prezio2),t1);
 					}
 				}
+				dispose();
+				Metodoak.bostgarrenLeihoa(Metodoak.billete(bidaiakop, linea, cod_bus, hasiera_geltoki_kod, amaiera_geltoki_kod, data, ordua, nan, prezio2),t1);
+		
 			}
 		});
 		getContentPane().add(jarraitu);
