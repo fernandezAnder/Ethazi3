@@ -171,7 +171,7 @@ public class Ventana2 extends JFrame {
 									System.out.println(pasahitza);
 									Jarraitu.setEnabled(true);
 									Balidatu.setEnabled(false);
-									
+									break;
 								}else {
 									balidatu=false;
 									Pasahitza.setText("");
