@@ -1,13 +1,13 @@
  
                                                              TERMIBUS BILBAO S.L.                         	
  ********************************************************************************************************************** 	
- -Billete Kodea: 1 	-Bidaia Kopurua: 2 
+ -Billete Kodea: 1 	-Bidaia Kopurua: 1 
  
- -Linea: L3 		-Autobusa: 3001 	
+ -Linea: L4 		-Autobusa: 4001 	
  ********************************************************************************************************************** 	
- -Hasiera Geltokia: Termibus-Bilbao     -Amaiera Geltokia: Estacion Renfe La cuadra - Güeñes 	
+ -Hasiera Geltokia: Amorebieta - Centro     -Amaiera Geltokia: Amorebieta - Boroa 	
  	
- -Joateko Data: 2019-02-15                  -Itzultzeko Data 2019-02-16 	
+ -Joateko Data: 2019-02-08                  -Itzultzeko Data  	
  	
  ********************************************************************************************************************** 	
- -Prezioa: 0.16 €
+ -Prezioa: 0.02 €
