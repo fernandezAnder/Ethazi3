@@ -131,15 +131,6 @@ public class Ventana4 extends JFrame {
 		chckbxJoanEtorri.setBounds(258, 259, 61, 36);
 		getContentPane().add(chckbxJoanEtorri);
 
-//		//DATA JCALENDAR
-//		bigarrendata.setBounds(158, 402, 117, 20);
-//		bigarrendata.setVerifyInputWhenFocusTarget(false);
-//		bigarrendata.setVisible(false);
-//		bigarrendata.setDateFormatString("yyyy-MM-dd");	
-//		getContentPane().add(bigarrendata);
-//		bigarrendata.getDate();
-//		bigarrendata.cleanup();
-//		bigarrendata.setSelectableDateRange(new Date(), lehen_data);
 		
 		//ITZULI DATA LABELA
 		lblItzuliData.setBounds(37, 394, 104, 28);
@@ -155,6 +146,7 @@ public class Ventana4 extends JFrame {
 					bigarrendata.setVisible(false);
 					//Bigarren data ez hartzeko
 					Bigarren_data=false;
+					bidaiakop=1;
 				}else {
 					lblItzuliData.setVisible(true);
 					bigarrendata.setVisible(true);
@@ -296,22 +288,29 @@ public class Ventana4 extends JFrame {
 				if (biderketa==true)
 					prezio2=prezio2*2;
 				
-				Tiket t1 = new Tiket(bidaiakop, linea, cod_bus, hasiera_geltokia, amaiera_geltokia, lehen_data_string, bigarren_data_string, prezio2);
 				data= Metodoak.dataAtera();
 				ordua=Metodoak.orduaAtera();
 				if(!lehen_data_string.equals("") && bigarren_data_string.equals("")) {
 					if(chckbxJoanEtorri.isSelected()==true && bigarren_data_string.equals("")) {
 						jarraituBotoia=false;
 						JOptionPane.showMessageDialog(null, "Itzultzeko data hutsik dago. Mesedez osotu");
-					}else {
 					}
 				}
 				if (prezio2==0) {
 					jarraituBotoia=false;
 					JOptionPane.showMessageDialog(null, "Hasiera eta Amaiera geltokiak berdinak dira.");
 				}
+				if(chckbxJoanEtorri.isSelected()==true && bigarren_data.before(lehen_data)==true) {
+					jarraituBotoia=false;
+					JOptionPane.showMessageDialog(null, "Itzultzeko data txarto dago");
+				}
+				if(bidaiakop==1) {
+					jarraituBotoia=true;
+					bigarren_data_string="";
+				}
 				if(jarraituBotoia==true) {
 				dispose();
+				Tiket t1 = new Tiket(bidaiakop, linea, cod_bus, hasiera_geltokia, amaiera_geltokia, lehen_data_string, bigarren_data_string, prezio2);
 				Metodoak.bostgarrenLeihoa(Metodoak.billete(bidaiakop, linea, cod_bus, hasiera_geltoki_kod, amaiera_geltoki_kod, data, ordua, nan, prezio2),t1);
 				}
 			}
