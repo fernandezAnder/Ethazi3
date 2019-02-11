@@ -31,7 +31,7 @@ public class Ventana6 extends JFrame {
 	private JTextArea Itzuliak = new JTextArea();
 	private JLabel lblOrdaintzeko = new JLabel("");
 
-
+	private int biletekod=0;
 	private double preziototala=0;
 	private ArrayList<Double> preziotot = new ArrayList<Double>();
 	private double prezioa;
@@ -102,7 +102,11 @@ public class Ventana6 extends JFrame {
 		btnEzeztatu.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				dispose();
+				biletekod=t1.getCod_billete();
+				biletekod=biletekod-1;
+				t1.setCod_billete(biletekod);
 				Metodoak.lehenengoLeihoa();
+				
 			}
 		});
 		getContentPane().add(btnEzeztatu);
@@ -111,7 +115,11 @@ public class Ventana6 extends JFrame {
 		btnAtzera.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				dispose();
+				biletekod=t1.getCod_billete();
+				biletekod=biletekod-1;
+				t1.setCod_billete(biletekod);
 				Metodoak.hirugarrenLeihoa(nan);
+				
 			}
 		});
 		btnAtzera.setFont(new Font("Arial", Font.PLAIN, 18));
@@ -183,6 +191,7 @@ public class Ventana6 extends JFrame {
 		btnOrdaindu.setFont(new Font("Arial", Font.PLAIN, 20));
 
 		getContentPane().add(btnOrdaindu);
+		Itzuliak.setFont(new Font("Arial", Font.PLAIN, 18));
 
 		Itzuliak.setBounds(231, 244, 380, 195);
 		getContentPane().add(Itzuliak);

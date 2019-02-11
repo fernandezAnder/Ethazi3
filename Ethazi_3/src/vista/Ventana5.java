@@ -21,7 +21,7 @@ public class Ventana5 extends JFrame {
 	JTextArea textArea = new JTextArea();
 	JButton btnAtzera = new JButton("Atzera");
 	JButton btnBalidatu = new JButton("Balidatu");
-
+	private int biletekod=0;
 	private String nan="";
 
 	
@@ -45,7 +45,11 @@ public class Ventana5 extends JFrame {
 		btnAtzera.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
 				dispose();
+				biletekod=t1.getCod_billete();
+				biletekod=biletekod-1;
+				t1.setCod_billete(biletekod);
 				Metodoak.hirugarrenLeihoa(nan);
+				
 			}
 		});
 		btnAtzera.setBounds(357, 451, 89, 44);
