@@ -163,7 +163,7 @@ public class Ventana6 extends JFrame {
 								btnEzeztatu.setEnabled(false);
 								btnAtzera.setEnabled(false);
 								btnOrdaindu.setEnabled(false);
-
+								dirua.setEditable(false);
 							}else if(preziototala==0) {
 								mezua="Eskerrik asko erosteagatik";
 								Itzuliak.setText(mezua);
@@ -171,7 +171,7 @@ public class Ventana6 extends JFrame {
 								btnEzeztatu.setEnabled(false);
 								btnAtzera.setEnabled(false);
 								btnOrdaindu.setEnabled(false);
-
+								dirua.setEditable(false);
 							}
 						}
 					}
@@ -186,6 +186,7 @@ public class Ventana6 extends JFrame {
 
 		Itzuliak.setBounds(231, 244, 380, 195);
 		getContentPane().add(Itzuliak);
+		Itzuliak.setEditable(false);
 		String ordaintzeko = String.valueOf(billete.getPrecio());
 		lblOrdaintzeko.setHorizontalAlignment(SwingConstants.CENTER);
 		lblOrdaintzeko.setText(ordaintzeko);

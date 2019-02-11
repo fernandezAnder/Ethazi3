@@ -86,6 +86,7 @@ public class Ventana4 extends JFrame {
 	SimpleDateFormat sm = new SimpleDateFormat("yyyy-MM-dd");
 	private Boolean Bigarren_data=false;
 	private Boolean jarraituBotoia=true;
+	private Boolean JarraituParadaBerdinak=false;
 	public Ventana4(ArrayList<Parada> paradas,ArrayList<Autobus> buses,String linea, int cod_bus, String nan) {
 
 		cod_billete++;
@@ -252,6 +253,7 @@ public class Ventana4 extends JFrame {
 			@Override
 			public void actionPerformed(ActionEvent arg0) {
 				jarraituBotoia=true;
+				JarraituParadaBerdinak=false;
 				try {
 					lehen_data= lehendata.getDate();
 					lehen_data_string=sm.format(lehen_data);
@@ -299,6 +301,7 @@ public class Ventana4 extends JFrame {
 				if (prezio2==0) {
 					jarraituBotoia=false;
 					JOptionPane.showMessageDialog(null, "Hasiera eta Amaiera geltokiak berdinak dira.");
+					JarraituParadaBerdinak=true;
 				}
 				if(chckbxJoanEtorri.isSelected()==true && bigarren_data.before(lehen_data)==true) {
 					jarraituBotoia=false;
@@ -308,7 +311,7 @@ public class Ventana4 extends JFrame {
 					jarraituBotoia=true;
 					bigarren_data_string="";
 				}
-				if(jarraituBotoia==true) {
+				if(jarraituBotoia==true && JarraituParadaBerdinak==false) {
 				dispose();
 				Tiket t1 = new Tiket(bidaiakop, linea, cod_bus, hasiera_geltokia, amaiera_geltokia, lehen_data_string, bigarren_data_string, prezio2);
 				Metodoak.bostgarrenLeihoa(Metodoak.billete(bidaiakop, linea, cod_bus, hasiera_geltoki_kod, amaiera_geltoki_kod, data, ordua, nan, prezio2),t1);

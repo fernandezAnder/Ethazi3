@@ -1,13 +1,13 @@
  
                                                              TERMIBUS BILBAO S.L.                         	
  ********************************************************************************************************************** 	
- -Billete Kodea: 8 	-Bidaia Kopurua: 2 
+ -Billete Kodea: 1 	-Bidaia Kopurua: 1 
  
  -Linea: L3 		-Autobusa: 3001 	
  ********************************************************************************************************************** 	
- -Hasiera Geltokia: Termibus-Bilbao     -Amaiera Geltokia: Estacion Renfe Sodupe - Güeñes 	
+ -Hasiera Geltokia: Termibus-Bilbao     -Amaiera Geltokia: Estacion Renfe La cuadra - Güeñes 	
  	
- -Joateko Data: 2020-02-15                  -Itzultzeko Data 2021-02-26 	
+ -Joateko Data: 2019-02-14                  -Itzultzeko Data  	
  	
  ********************************************************************************************************************** 	
- -Prezioa: 0.22 €
+ -Prezioa: 0.08 €
