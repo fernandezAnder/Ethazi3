@@ -115,8 +115,8 @@ public class Metodoak {
 		contador.start();
 	}
 	
-	public static double distanciaCoord(double lat1, double lng1, double lat2, double lng2) {  
-		//double radioTierra = 3958.75;//en millas  
+	public static double distanciaCoord(double lng1, double lat1, double lng2, double lat2) {  
+	
 		double radioTierra = 6371;//en kilómetros  
 		double dLat = Math.toRadians(lat2 - lat1);  
 		double dLng = Math.toRadians(lng2 - lng1);  
@@ -126,10 +126,15 @@ public class Metodoak {
 		* Math.cos(Math.toRadians(lat1)) * Math.cos(Math.toRadians(lat2));  
 		double va2 = 2 * Math.atan2(Math.sqrt(va1), Math.sqrt(1 - va1));  
 		double distancia = radioTierra * va2;  
-
+		
 		return distancia;  
 	}
 	public static double prezioaKalkulatu(double distantzia,double kontsumo_bus,int bidaiariak) {
+		
+		System.out.println("distantzia "+distantzia);
+		System.out.println("kontusmo "+kontsumo_bus);
+		System.out.println("bidaiariak "+bidaiariak);
+		
 		double prezioa=0;
 		final double erregaia=0.80;
 		final double onurak=0.20;
@@ -140,7 +145,7 @@ public class Metodoak {
 		prezioa=bidaia_totala/bidaiariak;
 
 
-		return prezioa;
+		return prezioa; 
 
 	}
 	public static boolean konprobatuNegatibo(double zbk) {

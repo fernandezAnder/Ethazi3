@@ -280,13 +280,16 @@ public class Ventana4 extends JFrame {
 					amaiera_geltoki_kod=paradas.get(Amaiera_geltoki.getSelectedIndex()).getParadanum();
 					amaiera_geltoki_latit=paradas.get(Amaiera_geltoki.getSelectedIndex()).getLatitud();
 					amaiera_geltoki_longi=paradas.get(Amaiera_geltoki.getSelectedIndex()).getLongitud();
+
 				}
 
 				Double distantzia=Metodoak.distanciaCoord(hasiera_geltoki_latit, hasiera_geltoki_longi, amaiera_geltoki_latit, amaiera_geltoki_longi);
-				for (int i=0;i<buses.size();i++) {
-					prezioa=Metodoak.prezioaKalkulatu(distantzia, buses.get(i).getConsumo_km(),buses.get(i).getN_plazas());
+				
+					prezioa=Metodoak.prezioaKalkulatu(distantzia, buses.get(0).getConsumo_km(),buses.get(0).getN_plazas());
+					System.out.println(prezioa+" prezio1");
 					prezio2=Metodoak.Redondear(prezioa);
-				}
+					System.out.println(prezio2+" prezio2");
+				
 				if (biderketa==true)
 					prezio2=prezio2*2;
 				
