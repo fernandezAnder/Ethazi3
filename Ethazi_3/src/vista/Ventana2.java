@@ -29,6 +29,7 @@ public class Ventana2 extends JFrame {
 	private JButton Atzera = new JButton("Atzera");
 	private JButton Jarraitu = new JButton("Jarraitu");
 	private JButton Balidatu = new JButton("Balidatu");
+	private JButton btnKontuBerria = new JButton("Erregistratu");
 	private String nan="";
 	private String letra="";
 	private String zenbakia="";
@@ -187,6 +188,7 @@ public class Ventana2 extends JFrame {
 								}
 							}
 						}
+						btnKontuBerria.setEnabled(false);
 						
 					}
 				});
@@ -194,7 +196,6 @@ public class Ventana2 extends JFrame {
 				Balidatu.setBounds(297, 372, 115, 55);
 				getContentPane().add(Balidatu);
 				
-				JButton btnKontuBerria = new JButton("Erregistratu");
 				btnKontuBerria.addActionListener(new ActionListener() {
 					public void actionPerformed(ActionEvent arg0) {
 						dispose();

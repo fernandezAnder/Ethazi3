@@ -21,6 +21,10 @@ public class Ventana3 extends JFrame {
 	private JButton btnBilbodonosti = new JButton("Bilbao-Balmaseda");
 	private JButton btnBilboPlentzia = new JButton("Bilbao-Durango");
 	private JButton btnAtzera = new JButton("Ezeztatu");
+	private JLabel lbl_L1 = new JLabel("L1");
+	private JLabel lbl_L2 = new JLabel("L2");
+	private JLabel lbl_L3 = new JLabel("L3");
+	private JLabel lbl_L4 = new JLabel("L4");
 	
 
 	public Ventana3(String nan) {
@@ -106,29 +110,25 @@ public class Ventana3 extends JFrame {
 		btnBilboPlentzia.setBounds(274, 423, 198, 48);
 		getContentPane().add(btnBilboPlentzia);
 		
-		JLabel lblL = new JLabel("L1");
-		lblL.setHorizontalAlignment(SwingConstants.CENTER);
-		lblL.setFont(new Font("Arial", Font.PLAIN, 23));
-		lblL.setBounds(226, 164, 38, 33);
-		getContentPane().add(lblL);
+		lbl_L1.setHorizontalAlignment(SwingConstants.CENTER);
+		lbl_L1.setFont(new Font("Arial", Font.PLAIN, 23));
+		lbl_L1.setBounds(226, 164, 38, 33);
+		getContentPane().add(lbl_L1);
 		
-		JLabel lblL_1 = new JLabel("L2");
-		lblL_1.setHorizontalAlignment(SwingConstants.CENTER);
-		lblL_1.setFont(new Font("Arial", Font.PLAIN, 23));
-		lblL_1.setBounds(226, 244, 38, 37);
-		getContentPane().add(lblL_1);
+		lbl_L2.setHorizontalAlignment(SwingConstants.CENTER);
+		lbl_L2.setFont(new Font("Arial", Font.PLAIN, 23));
+		lbl_L2.setBounds(226, 244, 38, 37);
+		getContentPane().add(lbl_L2);
 		
-		JLabel lblL_2 = new JLabel("L3");
-		lblL_2.setHorizontalAlignment(SwingConstants.CENTER);
-		lblL_2.setFont(new Font("Arial", Font.PLAIN, 23));
-		lblL_2.setBounds(226, 340, 38, 28);
-		getContentPane().add(lblL_2);
+		lbl_L3.setHorizontalAlignment(SwingConstants.CENTER);
+		lbl_L3.setFont(new Font("Arial", Font.PLAIN, 23));
+		lbl_L3.setBounds(226, 340, 38, 28);
+		getContentPane().add(lbl_L3);
 		
-		JLabel lblL_3 = new JLabel("L4");
-		lblL_3.setFont(new Font("Arial", Font.PLAIN, 23));
-		lblL_3.setHorizontalAlignment(SwingConstants.CENTER);
-		lblL_3.setBounds(226, 428, 38, 37);
-		getContentPane().add(lblL_3);
+		lbl_L4.setFont(new Font("Arial", Font.PLAIN, 23));
+		lbl_L4.setHorizontalAlignment(SwingConstants.CENTER);
+		lbl_L4.setBounds(226, 428, 38, 37);
+		getContentPane().add(lbl_L4);
 
 	}
 }
