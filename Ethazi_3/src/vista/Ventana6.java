@@ -60,6 +60,7 @@ public class Ventana6 extends JFrame {
 		//LABEL ITZULIAK
 		lblItzuliak.setFont(new Font("Arial", Font.BOLD, 24));
 		getContentPane().add(lblItzuliak);
+		btnAmaitu.setEnabled(false);
 		btnAmaitu.setBounds(514, 467, 97, 43);
 
 		//BOTOIA AMAITU
