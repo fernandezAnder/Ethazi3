@@ -1,5 +1,6 @@
 package vista;
 
+import java.awt.Font;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
@@ -11,9 +12,6 @@ import javax.swing.JTextArea;
 import controlador.Billete;
 import controlador.Metodoak;
 import controlador.Tiket;
-import java.awt.Font;
-import java.awt.Rectangle;
-import java.awt.Component;
 
 
 public class Ventana5 extends JFrame {

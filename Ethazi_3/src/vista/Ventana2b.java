@@ -329,12 +329,14 @@ public class Ventana2b extends JFrame {
 			}
 		});
 
-		//JARRAITU BOTOIA
+		//Ezeztatu Botoia
 
 		Ezeztatu.setBounds(165, 452, 109, 44);
 		getContentPane().add(Ezeztatu);
-
+		
+		//JARRAITU BOTOIA
 		Jarraitu.setEnabled(false);
+		//Jarraitu Botoiak egiten duena
 		Jarraitu.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				dispose();
@@ -343,6 +345,7 @@ public class Ventana2b extends JFrame {
 				Metodoak.bigarrenLeihoa();
 			}
 		});
+		//Jarraitu Botoiaren egitura
 		Jarraitu.setFont(new Font("Comic Sans MS", Font.BOLD, 15));
 		Jarraitu.setBounds(462, 452, 115, 44);
 		getContentPane().add(Jarraitu);

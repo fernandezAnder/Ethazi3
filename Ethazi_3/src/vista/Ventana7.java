@@ -1,13 +1,10 @@
 package vista;
 
+import java.awt.Font;
+
 import javax.swing.ImageIcon;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
-
-import controlador.Contador;
-import controlador.Metodoak;
-
-import java.awt.Font;
 
 public class Ventana7 extends JFrame {
 	private JLabel lblEskerrikAsko = new JLabel("Eskerrik asko erosteagatik ");

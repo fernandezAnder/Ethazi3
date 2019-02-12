@@ -28,6 +28,7 @@ public class Ventana3 extends JFrame {
 	
 
 	public Ventana3(String nan) {
+		//Leihoaren egitura
 		this.setBounds(275,100,700,600);
 		getContentPane().setLayout(null);
 
@@ -47,6 +48,7 @@ public class Ventana3 extends JFrame {
 				Metodoak.laugarrenLeihoa(linea,cod_bus,nan);
 			}
 		});
+		//BilboMungia Botoiaren Egitura
 		btnBilbomungia.setBounds(274, 154, 198, 48);
 		getContentPane().add(btnBilbomungia);
 
@@ -60,13 +62,10 @@ public class Ventana3 extends JFrame {
 				Metodoak.laugarrenLeihoa(linea, cod_bus,nan);
 			}
 		});
+		//BilboGernika Botoia
 		btnBilbogernika.setFont(new Font("Arial", Font.PLAIN, 20));
 		btnBilbogernika.setBounds(274, 239, 198, 48);
 		getContentPane().add(btnBilbogernika);
-		btnBilbodonosti.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent arg0) {
-			}
-		});
 
 		//BILBO-DONOSTIA BOTOIA
 		btnBilbodonosti.addMouseListener(new MouseAdapter() {
@@ -94,10 +93,11 @@ public class Ventana3 extends JFrame {
 
 			}
 		});
+		//Atzera botoiaren egitura
 		btnAtzera.setBounds(515, 492, 120, 35);
 		getContentPane().add(btnAtzera);
 		
-		
+		//BilbaoPlentzia botoiak egiten duena
 		btnBilboPlentzia.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
 				dispose();
@@ -106,25 +106,30 @@ public class Ventana3 extends JFrame {
 				Metodoak.laugarrenLeihoa(linea, cod_bus,nan);
 			}
 		});
+		//BilboPlentzia botoiaren egitura
 		btnBilboPlentzia.setFont(new Font("Arial", Font.PLAIN, 20));
 		btnBilboPlentzia.setBounds(274, 423, 198, 48);
 		getContentPane().add(btnBilboPlentzia);
 		
+		//Label L1
 		lbl_L1.setHorizontalAlignment(SwingConstants.CENTER);
 		lbl_L1.setFont(new Font("Arial", Font.PLAIN, 23));
 		lbl_L1.setBounds(226, 164, 38, 33);
 		getContentPane().add(lbl_L1);
 		
+		//Label L2
 		lbl_L2.setHorizontalAlignment(SwingConstants.CENTER);
 		lbl_L2.setFont(new Font("Arial", Font.PLAIN, 23));
 		lbl_L2.setBounds(226, 244, 38, 37);
 		getContentPane().add(lbl_L2);
 		
+		//Label L3
 		lbl_L3.setHorizontalAlignment(SwingConstants.CENTER);
 		lbl_L3.setFont(new Font("Arial", Font.PLAIN, 23));
 		lbl_L3.setBounds(226, 340, 38, 28);
 		getContentPane().add(lbl_L3);
 		
+		//Label L4
 		lbl_L4.setFont(new Font("Arial", Font.PLAIN, 23));
 		lbl_L4.setHorizontalAlignment(SwingConstants.CENTER);
 		lbl_L4.setBounds(226, 428, 38, 37);

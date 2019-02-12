@@ -4,7 +4,6 @@ import java.awt.Font;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.event.KeyAdapter;
-import java.text.DecimalFormat;
 import java.util.ArrayList;
 
 import javax.swing.JButton;
@@ -12,12 +11,12 @@ import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JTextArea;
 import javax.swing.JTextField;
+import javax.swing.SwingConstants;
 
 import controlador.Billete;
 import controlador.Contador;
 import controlador.Metodoak;
 import controlador.Tiket;
-import javax.swing.SwingConstants;
 public class Ventana6 extends JFrame {
 
 	private JLabel lblOrdainketa = new JLabel("Ordainketa :");
@@ -30,14 +29,13 @@ public class Ventana6 extends JFrame {
 	private JButton btnOrdaindu = new JButton("Ordaindu");
 	private JTextArea Itzuliak = new JTextArea();
 	private JLabel lblOrdaintzeko = new JLabel("");
+	private JLabel lblOrdainketa_Tituloa = new JLabel("ORDAINKETA");
 
 	private int biletekod=0;
 	private double preziototala=0;
 	private ArrayList<Double> preziotot = new ArrayList<Double>();
 	private double prezioa;
-	private double prezioBerria=0;
 	private double prezio2 = 0;
-	private DecimalFormat formateador = new DecimalFormat("###.##");
 
 
 	public Ventana6(Billete billete, Tiket t1) {
@@ -155,7 +153,6 @@ public class Ventana6 extends JFrame {
 						if (diru_falta==true){
 							preziotot.add(preziototala);
 							mezua=(preziotot.get(preziotot.size()-1)+" € falta zaizkizu");
-							System.out.println(mezua);
 							Itzuliak.setText(mezua);	
 							btnAtzera.setEnabled(false);
 							btnAmaitu.setEnabled(false);
@@ -164,7 +161,6 @@ public class Ventana6 extends JFrame {
 							if (preziototala<0) {
 
 								preziototala=preziototala*(-1);
-								System.out.println(preziototala);
 								String kanbioak=Metodoak.kanbioMetodoa(preziototala);
 								Itzuliak.setText(kanbioak);
 								btnAmaitu.setEnabled(true);
@@ -203,11 +199,10 @@ public class Ventana6 extends JFrame {
 		lblOrdaintzeko.setBounds(274, 112, 52, 30);
 		getContentPane().add(lblOrdaintzeko);
 		
-		JLabel lblOrdainketa_1 = new JLabel("ORDAINKETA");
-		lblOrdainketa_1.setHorizontalAlignment(SwingConstants.CENTER);
-		lblOrdainketa_1.setFont(new Font("Arial", Font.BOLD, 37));
-		lblOrdainketa_1.setBounds(223, 41, 273, 43);
-		getContentPane().add(lblOrdainketa_1);
+		lblOrdainketa_Tituloa.setHorizontalAlignment(SwingConstants.CENTER);
+		lblOrdainketa_Tituloa.setFont(new Font("Arial", Font.BOLD, 37));
+		lblOrdainketa_Tituloa.setBounds(223, 41, 273, 43);
+		getContentPane().add(lblOrdainketa_Tituloa);
 
 	}
 }

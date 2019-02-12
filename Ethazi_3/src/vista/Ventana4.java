@@ -8,13 +8,8 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.text.DecimalFormat;
 import java.text.SimpleDateFormat;
-import java.time.LocalDate;
 import java.util.ArrayList;
-import java.util.Calendar;
-import java.util.Collections;
 import java.util.Date;
-import java.util.Hashtable;
-import java.util.spi.CalendarDataProvider;
 
 import javax.swing.JButton;
 import javax.swing.JCheckBox;
@@ -23,6 +18,7 @@ import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JOptionPane;
 import javax.swing.JTextPane;
+import javax.swing.SwingConstants;
 import javax.swing.table.DefaultTableModel;
 
 import com.toedter.calendar.JDateChooser;
@@ -31,7 +27,6 @@ import controlador.Autobus;
 import controlador.Metodoak;
 import controlador.Parada;
 import controlador.Tiket;
-import javax.swing.SwingConstants;
 public class Ventana4 extends JFrame {
 
 
@@ -86,7 +81,6 @@ public class Ventana4 extends JFrame {
 	SimpleDateFormat sm = new SimpleDateFormat("yyyy-MM-dd");
 	private Boolean Bigarren_data=false;
 	private Boolean jarraituBotoia=true;
-	private Boolean JarraituParadaBerdinak=false;
 	public Ventana4(ArrayList<Parada> paradas,ArrayList<Autobus> buses,String linea, int cod_bus, String nan) {
 
 		cod_billete++;
@@ -253,7 +247,6 @@ public class Ventana4 extends JFrame {
 			@Override
 			public void actionPerformed(ActionEvent arg0) {
 				jarraituBotoia=true;
-				JarraituParadaBerdinak=false;
 				try {
 					lehen_data= lehendata.getDate();
 					lehen_data_string=sm.format(lehen_data);
@@ -280,16 +273,13 @@ public class Ventana4 extends JFrame {
 					amaiera_geltoki_kod=paradas.get(Amaiera_geltoki.getSelectedIndex()).getParadanum();
 					amaiera_geltoki_latit=paradas.get(Amaiera_geltoki.getSelectedIndex()).getLatitud();
 					amaiera_geltoki_longi=paradas.get(Amaiera_geltoki.getSelectedIndex()).getLongitud();
-
 				}
 
 				Double distantzia=Metodoak.distanciaCoord(hasiera_geltoki_latit, hasiera_geltoki_longi, amaiera_geltoki_latit, amaiera_geltoki_longi);
-				
-					prezioa=Metodoak.prezioaKalkulatu(distantzia, buses.get(0).getConsumo_km(),buses.get(0).getN_plazas());
-					System.out.println(prezioa+" prezio1");
+				for (int i=0;i<buses.size();i++) {
+					prezioa=Metodoak.prezioaKalkulatu(distantzia, buses.get(i).getConsumo_km(),buses.get(i).getN_plazas());
 					prezio2=Metodoak.Redondear(prezioa);
-					System.out.println(prezio2+" prezio2");
-				
+				}
 				if (biderketa==true)
 					prezio2=prezio2*2;
 				
@@ -304,7 +294,6 @@ public class Ventana4 extends JFrame {
 				if (prezio2==0) {
 					jarraituBotoia=false;
 					JOptionPane.showMessageDialog(null, "Hasiera eta Amaiera geltokiak berdinak dira.");
-					JarraituParadaBerdinak=true;
 				}
 				if(chckbxJoanEtorri.isSelected()==true && bigarren_data.before(lehen_data)==true) {
 					jarraituBotoia=false;
@@ -314,7 +303,7 @@ public class Ventana4 extends JFrame {
 					jarraituBotoia=true;
 					bigarren_data_string="";
 				}
-				if(jarraituBotoia==true && JarraituParadaBerdinak==false) {
+				if(jarraituBotoia==true) {
 				dispose();
 				Tiket t1 = new Tiket(bidaiakop, linea, cod_bus, hasiera_geltokia, amaiera_geltokia, lehen_data_string, bigarren_data_string, prezio2);
 				Metodoak.bostgarrenLeihoa(Metodoak.billete(bidaiakop, linea, cod_bus, hasiera_geltoki_kod, amaiera_geltoki_kod, data, ordua, nan, prezio2),t1);
