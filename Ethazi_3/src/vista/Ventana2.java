@@ -172,7 +172,7 @@ public class Ventana2 extends JFrame {
 									System.out.println(pasahitza);
 									Jarraitu.setEnabled(true);
 									Balidatu.setEnabled(false);
-									break;
+									btnKontuBerria.setEnabled(false);									break;
 								}else {
 									balidatu=false;
 									Pasahitza.setText("");
@@ -188,7 +188,6 @@ public class Ventana2 extends JFrame {
 								}
 							}
 						}
-						btnKontuBerria.setEnabled(false);
 						
 					}
 				});
