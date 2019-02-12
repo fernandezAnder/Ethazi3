@@ -4,8 +4,8 @@ import java.util.Date;
 
 public class Tiket {
 
-	private static int kontagailua=1;
-	private int cod_billete;
+	//private static int kontagailua=1;
+	private static int cod_billete=1;
 	private int n_trayecto;
 	private String cod_linea;
 	private int cod_bus;
@@ -18,7 +18,7 @@ public class Tiket {
 	public Tiket( int n_trayecto, String cod_linea, int cod_bus, String parada_inicio,
 			String parada_fin, String fecha_ida, String fecha_vuelta, double precio) {
 		
-		this.cod_billete = kontagailua++;
+		this.cod_billete = cod_billete;
 		this.n_trayecto = n_trayecto;
 		this.cod_linea = cod_linea;
 		this.cod_bus = cod_bus;

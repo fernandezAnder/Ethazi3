@@ -131,10 +131,6 @@ public class Metodoak {
 	}
 	public static double prezioaKalkulatu(double distantzia,double kontsumo_bus,int bidaiariak) {
 		
-		System.out.println("distantzia "+distantzia);
-		System.out.println("kontusmo "+kontsumo_bus);
-		System.out.println("bidaiariak "+bidaiariak);
-		
 		double prezioa=0;
 		final double erregaia=0.80;
 		final double onurak=0.20;
@@ -143,7 +139,6 @@ public class Metodoak {
 		double irabaziak= bidai_gastua*onurak;
 		double bidaia_totala=irabaziak+bidai_gastua;
 		prezioa=bidaia_totala/bidaiariak;
-
 
 		return prezioa; 
 
@@ -170,72 +165,72 @@ public class Metodoak {
 		kanbioa=kanbioa+pantailaratu;
 		// para cada moneda
 		if (itzultzeko >= 20000) {
-			pantailaratu=("200€-ko billeteak: " + itzultzeko / 20000+" \n");
+			pantailaratu=(" 200€-ko billeteak: " + itzultzeko / 20000+" \n");
 			kanbioa=kanbioa+pantailaratu;
 			itzultzeko = itzultzeko % 20000;
 		}
 		if (itzultzeko >= 10000) {
-			pantailaratu=("100€-ko billeteak: " + itzultzeko / 10000+" \n");
+			pantailaratu=(" 100€-ko billeteak: " + itzultzeko / 10000+" \n");
 			kanbioa=kanbioa+pantailaratu;
 			itzultzeko = itzultzeko % 10000;
 		}
 		if (itzultzeko >= 5000) {
-			pantailaratu=("50€-ko billeteak: " + itzultzeko / 5000+" \n");
+			pantailaratu=(" 50€-ko billeteak: " + itzultzeko / 5000+" \n");
 			kanbioa=kanbioa+pantailaratu;
 			itzultzeko = itzultzeko % 5000;
 		}
 		if (itzultzeko >= 2000) {
-			pantailaratu=("20€-ko billeteak: " + itzultzeko / 2000+" \n");
+			pantailaratu=(" 20€-ko billeteak: " + itzultzeko / 2000+" \n");
 			kanbioa=kanbioa+pantailaratu;
 			itzultzeko = itzultzeko % 2000;
 		}
 		if (itzultzeko >= 1000) {
-			pantailaratu=("10€-ko billeteak: " + itzultzeko / 1000+" \n");
+			pantailaratu=(" 10€-ko billeteak: " + itzultzeko / 1000+" \n");
 			kanbioa=kanbioa+pantailaratu;
 			itzultzeko = itzultzeko % 1000;
 		}
 		if (itzultzeko >= 500) {
-			pantailaratu=("5€-ko billeteak: " + itzultzeko / 500+" \n");
+			pantailaratu=(" 5€-ko billeteak: " + itzultzeko / 500+" \n");
 			kanbioa=kanbioa+pantailaratu;
 			itzultzeko = itzultzeko % 500;
 		}
 		if (itzultzeko >= 200) {
-			pantailaratu=("2€-ko txanponak: " + itzultzeko / 200+" \n");
+			pantailaratu=(" 2€-ko txanponak: " + itzultzeko / 200+" \n");
 			kanbioa=kanbioa+pantailaratu;
 			itzultzeko = itzultzeko % 200;
 		}
 		if (itzultzeko >= 100) {
-			pantailaratu=("1€-ko txanponak: " + itzultzeko / 100+" \n");
+			pantailaratu=(" 1€-ko txanponak: " + itzultzeko / 100+" \n");
 			kanbioa=kanbioa+pantailaratu;
 			itzultzeko = itzultzeko % 100;
 		}
 		if (itzultzeko >= 50) {
-			pantailaratu=("50 zentimoko txanponak: " + itzultzeko / 50+"\n");
+			pantailaratu=(" 50 zentimoko txanponak: " + itzultzeko / 50+"\n");
 			kanbioa=kanbioa+pantailaratu;
 			itzultzeko = itzultzeko % 50;
 		}
 		if (itzultzeko >= 20) {
-			pantailaratu=("20 zentimoko txanponak: " + itzultzeko / 20+" \n");
+			pantailaratu=(" 20 zentimoko txanponak: " + itzultzeko / 20+" \n");
 			kanbioa=kanbioa+pantailaratu;
 			itzultzeko = itzultzeko % 20;
 		}
 		if (itzultzeko >= 10) {
-			pantailaratu=("10 zentimoko txanponak: " + itzultzeko / 10+" \n");
+			pantailaratu=(" 10 zentimoko txanponak: " + itzultzeko / 10+" \n");
 			kanbioa=kanbioa+pantailaratu;
 			itzultzeko = itzultzeko % 10;
 		}
 		if (itzultzeko >= 5) {
-			pantailaratu=("5 zentimoko txanponak: " + itzultzeko / 5+" \n");
+			pantailaratu=(" 5 zentimoko txanponak: " + itzultzeko / 5+" \n");
 			kanbioa=kanbioa+pantailaratu;
 			itzultzeko = itzultzeko % 5;
 		}
 		if (itzultzeko >= 2) {
-			pantailaratu=("2 zentimoko txanponak: " + itzultzeko / 2+" \n");
+			pantailaratu=(" 2 zentimoko txanponak: " + itzultzeko / 2+" \n");
 			kanbioa=kanbioa+pantailaratu;
 			itzultzeko = itzultzeko % 2;
 		}
 		if (itzultzeko >= 1) {
-			pantailaratu=("1 zentimoko txanponak: " + itzultzeko+" \n");
+			pantailaratu=(" 1 zentimoko txanponak: " + itzultzeko+" \n");
 			kanbioa=kanbioa+pantailaratu;
 			itzultzeko = 0;
 		}
@@ -309,32 +304,7 @@ public class Metodoak {
 		System.out.println(data);
 		return data;
 	}
-//	public static String dataSpinners (int spinner_Hilabetea,int spinner_Eguna) {
-//		Calendar fecha = Calendar.getInstance();
-//		String data="";
-//		String dia="";
-//		String mes="";
-//		
-//		if(spinner_Eguna<10) {
-//			dia = "0"+dia+"-"+mes;
-//		}
-//		if(spinner_Hilabetea<10) {
-//			mes = "0"+spinner_Hilabetea;
-//		}
-//		if (spinner_Eguna<10 && spinner_Hilabetea<10) {
-//			data = "0"+dia+"-"+"0"+mes;
-//		}
-//		
-//		System.out.println(data);
-//		return data;
-//	}
 
-	public static java.sql.Date ateraData(java.sql.Date date)
-	{
-		Date fecha2 = new Date();
-		java.sql.Date data = new java.sql.Date(fecha2.getTime());
-		return (java.sql.Date) data ;
-	}
 	public static java.sql.Time ateraOrdua()
 	{
 		Date fecha2 = new Date();
@@ -371,13 +341,6 @@ public class Metodoak {
 		String letra = Character.toString(letra1);
 		return letra; 
 	} 
-//	public static Boolean konpobratuErregistroa() {
-//		Boolean konprobatu=false;
-//		if()
-//		
-//		return konprobatu;
-//	}
-
 	
 }
 

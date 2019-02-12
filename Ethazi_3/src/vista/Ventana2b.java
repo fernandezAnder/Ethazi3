@@ -147,19 +147,13 @@ public class Ventana2b extends JFrame {
 		lblPasahitza.setBounds(63, 378, 92, 28);
 		getContentPane().add(lblPasahitza);
 
-
-
-
-
 		//PASAHITZA TEXTUA
 		Pasahitza = new JPasswordField();
 		Pasahitza.setFont(new Font("Tahoma", Font.PLAIN, 16));
 		Pasahitza.setBounds(192, 380, 170, 28);
 		getContentPane().add(Pasahitza);
 
-
-
-
+		//Balidatu botoia
 		Balidatu.setFont(new Font("Comic Sans MS", Font.BOLD, 15));
 		Balidatu.setBounds(315, 452, 115, 44);
 		getContentPane().add(Balidatu);
@@ -226,23 +220,23 @@ public class Ventana2b extends JFrame {
 		jaiodata.cleanup();
 		jaiodata.setMaxSelectableDate(new Date());
 
-
 		//LABEL SEXUA
 		lblSexua.setFont(new Font("Arial", Font.BOLD, 20));
 		lblSexua.setBounds(359, 213, 78, 28);
 		getContentPane().add(lblSexua);
 
+		//LABEL DATU PERSTSONALAK
 		lblDatuPertsonalak.setBounds(22, 118, 632, 22);
 		getContentPane().add(lblDatuPertsonalak);
 
+		//LABEL ERABILTZAILE DATUAK
 		lblErabiltzaileDatuak.setBounds(22, 288, 632, 22);
 		getContentPane().add(lblErabiltzaileDatuak);
 
-
+		//LABEL INFO TESTUA
 		lblMutila.setToolTipText("");
 		lblMutila.setBounds(533, 213, 74, 22);
 		getContentPane().add(lblMutila);
-
 
 		lblMNeska.setToolTipText("");
 		lblMNeska.setBounds(533, 233, 74, 22);
@@ -274,9 +268,7 @@ public class Ventana2b extends JFrame {
 
 		Balidatu.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
-
 				//BALIDAZIORAKO BARIABLEAK
-
 				try {
 					zenbakia=textNAN.getText();
 					int zbk= Integer.parseInt(zenbakia);
@@ -288,8 +280,7 @@ public class Ventana2b extends JFrame {
 					System.out.println("Sartutako nan: "+nan);
 					System.out.println("Izan behar den nan: "+nan2);
 				}catch (Exception e) {
-					//JOptionPane.showMessageDialog(null, "Textfield batzuk hutzik daude. Mesedez osotu");
-					//System.out.println("Errorea");
+
 				}
 
 				if (nan.equals(nan2) && !izena.getText().equals("") && !abizenatextfield.getText().equals("") && !Pasahitza.getText().equals("")) {
@@ -297,7 +288,7 @@ public class Ventana2b extends JFrame {
 					Balidatu.setEnabled(false);
 				}else if(izena.getText().equals("")) {
 					JOptionPane.showMessageDialog(null, "Izena hutsik dago. Mesedez osotu");
-					//System.out.println("Nan zenbakiak ez dira berdinak");
+
 				}
 				else if(abizenatextfield.getText().equals("")) {
 					JOptionPane.showMessageDialog(null, "Abizena hutsik dago. Mesedez osotu");
@@ -321,8 +312,8 @@ public class Ventana2b extends JFrame {
 				pasahitza=Pasahitza.getText();
 				pasahitza=Metodoak.ateraMD5(pasahitza);
 				try {
-				Date jaio_data2= jaiodata.getDate();
-				jaio_data= sm.format(jaio_data2);
+					Date jaio_data2= jaiodata.getDate();
+					jaio_data= sm.format(jaio_data2);
 				}catch (Exception e) {
 					JOptionPane.showMessageDialog(null, "Data hutsik dago. Mesedez osotu");
 				}
@@ -352,4 +343,3 @@ public class Ventana2b extends JFrame {
 
 	}
 }
-
