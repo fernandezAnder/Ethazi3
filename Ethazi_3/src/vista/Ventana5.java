@@ -45,9 +45,7 @@ public class Ventana5 extends JFrame {
 		btnAtzera.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
 				dispose();
-				biletekod=t1.getCod_billete();
-				biletekod=biletekod-1;
-				t1.setCod_billete(biletekod);
+				t1.setCod_billete(t1.getCod_billete()-1);
 				Metodoak.hirugarrenLeihoa(nan);
 				
 			}
