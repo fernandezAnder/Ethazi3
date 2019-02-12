@@ -160,24 +160,20 @@ public class Ventana2 extends JFrame {
 						pasahitza=Pasahitza.getText();
 						
 						for (int i=0;i<clientes.size();i++) {
-							//System.out.println(clientes.get(i).getDni());
-							//System.out.println(nan);
+							
 						}
 						boolean balidatu=true;
 						for (int i=0;i<clientes.size();i++) {
-							if (clientes.get(i).getDni().equals(nan)) {
-								System.out.println(nan);
-								
+							if (clientes.get(i).getDni().equals(nan)) {								
 								if (clientes.get(i).getContraseña().equals(Metodoak.ateraMD5(pasahitza))) {
-									System.out.println(pasahitza);
 									Jarraitu.setEnabled(true);
 									Balidatu.setEnabled(false);
-									btnKontuBerria.setEnabled(false);									break;
+									btnKontuBerria.setEnabled(false);									
+									break;
 								}else {
 									balidatu=false;
 									Pasahitza.setText("");
 									JOptionPane.showMessageDialog(null,"Pasahitza gaizki dago. Mesedez sartu berriro.");
-									
 									}
 								
 							}else {
@@ -204,8 +200,5 @@ public class Ventana2 extends JFrame {
 				btnKontuBerria.setFont(new Font("Arial", Font.PLAIN, 20));
 				btnKontuBerria.setBounds(464, 204, 170, 44);
 				getContentPane().add(btnKontuBerria);
-
-		
 	}
 }
-
