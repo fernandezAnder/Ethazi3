@@ -13,7 +13,7 @@ public class Autobus {
 	
 	/**
 	 * 
-	 * @param cod_bus
+	 * @param cod_bus busaren kodea
 	 * @param n_plazas
 	 * @param consumo_km
 	 * @param color

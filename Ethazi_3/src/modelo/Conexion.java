@@ -80,7 +80,7 @@ public class Conexion {
  
 /**
  * 
- * @return
+ * @return conexion
  */
     //Devuelve el objeto Connection que se usará en la clase Controller
     public static Connection getConexion() {
