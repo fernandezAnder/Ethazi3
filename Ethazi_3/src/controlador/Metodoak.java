@@ -335,7 +335,6 @@ public class Metodoak {
 	}
 	public static String KalkulatuLetra(int dni){
 		String karaktereak="TRWAGMYFPDXBNJZSQVHLCKE";
-		//Integer entero = Integer.parseInt(dni);
 		int modulo= dni % 23;
 		char letra1 = karaktereak.charAt(modulo);
 		String letra = Character.toString(letra1);
