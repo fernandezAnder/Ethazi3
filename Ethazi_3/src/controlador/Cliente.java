@@ -3,7 +3,11 @@ package controlador;
 import java.util.Date;
 
 //import java.sql.Date;
-
+/**
+ * 
+ * @author oier, ander, aintzane
+ *
+ */
 public class Cliente {
 
 	private String dni;
@@ -12,6 +16,16 @@ public class Cliente {
 	private Date fecha_nac;
 	private String sexo;
 	private String contraseña;
+	
+	/**
+	 * 
+	 * @param dni
+	 * @param nombre
+	 * @param apellido
+	 * @param fecha_nac
+	 * @param sexo
+	 * @param contraseña
+	 */
 	
 	public Cliente(String dni, String nombre, String apellido,Date fecha_nac, String sexo, String contraseña) {
 		
@@ -26,7 +40,10 @@ public class Cliente {
 	public String getDni() {
 		return dni;
 	}
-
+/**
+ * 
+ * @param dni
+ */
 	public void setDni(String dni) {
 		this.dni = dni;
 	}
@@ -34,7 +51,10 @@ public class Cliente {
 	public String getNombre() {
 		return nombre;
 	}
-
+/**
+ * 
+ * @param nombre
+ */
 	public void setNombre(String nombre) {
 		this.nombre = nombre;
 	}
@@ -42,7 +62,10 @@ public class Cliente {
 	public String getApellido() {
 		return apellido;
 	}
-
+/**
+ * 
+ * @param apellido
+ */
 	public void setApellido(String apellido) {
 		this.apellido = apellido;
 	}
@@ -50,7 +73,10 @@ public class Cliente {
 	public Date getFecha_nac() {
 		return fecha_nac;
 	}
-
+/**
+ * 
+ * @param fecha_nac
+ */
 	public void setFecha_nac(Date fecha_nac) {
 		this.fecha_nac = fecha_nac;
 	}
@@ -58,7 +84,10 @@ public class Cliente {
 	public String getSexo() {
 		return sexo;
 	}
-
+/**
+ * 
+ * @param sexo
+ */
 	public void setSexo(String sexo) {
 		this.sexo = sexo;
 	}
@@ -66,7 +95,10 @@ public class Cliente {
 	public String getContraseña() {
 		return contraseña;
 	}
-
+/**
+ * 
+ * @param contraseña
+ */
 	public void setContraseña(String contraseña) {
 		this.contraseña = contraseña;
 	}

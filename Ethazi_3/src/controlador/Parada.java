@@ -1,12 +1,23 @@
 package controlador;
-
+/**
+ * 
+ * @author oier, ander, aintzane
+ *
+ */
 public class Parada {
 	private int paradanum;
 	private String nombre;
 	private String calle;
 	private double latitud;
 	private double longitud;
-	
+	/**
+	 * 
+	 * @param paradanum
+	 * @param nombre
+	 * @param calle
+	 * @param latitud
+	 * @param longitud
+	 */
 	public Parada(int paradanum, String nombre, String calle, double latitud, double longitud) {
 	
 		this.paradanum = paradanum;

@@ -2,8 +2,13 @@ package controlador;
 
 import vista.Ventana7;
 
+/**
+ * 
+ * @author oier, ander, aintzane
+ *
+ */
 public class Contador extends Thread {
-   
+
 	
 	@Override
     public void run(){

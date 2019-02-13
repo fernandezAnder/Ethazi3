@@ -11,11 +11,19 @@ import java.util.Date;
 import modelo.Consultas;
 import vista.*;
 
-
+/**
+ * 
+ * @author oier, ander, aintzane
+ *
+ */
 public class Metodoak {
 
 	Calendar fecha = Calendar.getInstance();
-
+/**
+ * 
+ * @param input
+ * @return
+ */
 	public static String ateraMD5(String input) {
 		try {
 			MessageDigest md = MessageDigest.getInstance("MD5");
@@ -32,6 +40,7 @@ public class Metodoak {
 			throw new RuntimeException(e);
 		}
 	}
+	
 	public static void lehenengoLeihoa() {
 		
 		Ventana1 ventana1= new Ventana1();
@@ -51,12 +60,24 @@ public class Metodoak {
 		Ventana2b ventana2b= new Ventana2b();
 		ventana2b.setVisible(true);
 	}
+	
+	/**
+	 * 
+	 * @param nan
+	 */
 	public static void hirugarrenLeihoa(String nan) {
 
 		Ventana3 ventana3= new Ventana3(nan);
 		ventana3.setVisible(true);
 
 	}
+	
+	/**
+	 * 
+	 * @param linea
+	 * @param cod_bus
+	 * @param nan
+	 */
 	public static void laugarrenLeihoa(String linea, int cod_bus, String nan) {
 
 		ArrayList <Parada> paradas= new ArrayList <Parada>();
@@ -69,7 +90,11 @@ public class Metodoak {
 		ventana4.setVisible(true);
 
 	}
-
+/**
+ * 
+ * @param billete
+ * @param t1
+ */
 	public static void bostgarrenLeihoa(Billete billete, Tiket t1) {
 
 		Ventana5 ventana5= new Ventana5(billete,t1);
@@ -77,6 +102,20 @@ public class Metodoak {
 
 
 	}
+	
+	/**
+	 * 
+	 * @param bidaiakop
+	 * @param cod_linea
+	 * @param cod_bus
+	 * @param hasiera_geltoki_kod
+	 * @param amaiera_geltoki_kod
+	 * @param lehen_data
+	 * @param ordua
+	 * @param nan
+	 * @param prezioa
+	 * @return
+	 */
 	public static Billete billete(int bidaiakop,String cod_linea,int cod_bus,int
 			hasiera_geltoki_kod,int amaiera_geltoki_kod,String lehen_data, 
 			String ordua, String nan, double prezioa) {
@@ -84,14 +123,27 @@ public class Metodoak {
 		return billete;
 
 	}
-
+/**
+ * 
+ * @param dni
+ * @param nombre
+ * @param apellido
+ * @param fecha_nac
+ * @param sexo
+ * @param contraseña
+ * @return
+ */
 	public static Cliente cliente(String dni,String nombre,String apellido,java.sql.Date fecha_nac,String
 			sexo,String contraseña) {
 		Cliente cliente= new Cliente(dni,nombre,apellido,fecha_nac,sexo,contraseña);
 		return cliente;
 
 	}
-
+/**
+ * 
+ * @param billete
+ * @param t1
+ */
 	public static void seigarrenLeihoa(Billete billete, Tiket t1) {
 
 		Metodoak.igoDatuak(billete);
@@ -99,7 +151,10 @@ public class Metodoak {
 		ventana6.setVisible(true);
 
 	}
-
+/**
+ * 
+ * @param billete
+ */
 	public static void igoDatuak(Billete billete) {
 		Consultas.datubaseraIgo(billete);
 	}
@@ -114,7 +169,14 @@ public class Metodoak {
 		Contador contador = new Contador();
 		contador.start();
 	}
-	
+	/**
+	 * 
+	 * @param lng1
+	 * @param lat1
+	 * @param lng2
+	 * @param lat2
+	 * @return
+	 */
 	public static double distanciaCoord(double lng1, double lat1, double lng2, double lat2) {  
 	
 		double radioTierra = 6371;//en kilómetros  
@@ -129,6 +191,14 @@ public class Metodoak {
 		
 		return distancia;  
 	}
+	
+	/**
+	 * 
+	 * @param distantzia
+	 * @param kontsumo_bus
+	 * @param bidaiariak
+	 * @return
+	 */
 	public static double prezioaKalkulatu(double distantzia,double kontsumo_bus,int bidaiariak) {
 		
 		double prezioa=0;
@@ -143,12 +213,23 @@ public class Metodoak {
 		return prezioa; 
 
 	}
+	/**
+	 * 
+	 * @param zbk
+	 * @return
+	 */
 	public static boolean konprobatuNegatibo(double zbk) {
 		boolean balidatu=false;
 		if (zbk>0)
 			balidatu=true;
 		return balidatu;
 	}
+	
+	/**
+	 * 
+	 * @param zbk
+	 * @return
+	 */
 	public static String kanbioMetodoa(double zbk) {
 
 
@@ -236,6 +317,12 @@ public class Metodoak {
 		}
 		return kanbioa;
 	}
+	
+	/**
+	 * 
+	 * @param zbk
+	 * @return
+	 */
 	public static boolean konprobatuLetra(String zbk) {
 		boolean balidatu=false;
 
@@ -247,6 +334,13 @@ public class Metodoak {
 		}
 		return balidatu;
 	}
+	
+	/**
+	 * 
+	 * @param zbk
+	 * @param prezioa
+	 * @return
+	 */
 	public static boolean diruFalta(double zbk,double prezioa) {
 
 		boolean diru_falta=false;
@@ -311,7 +405,11 @@ public class Metodoak {
 		java.sql.Time ordua = new java.sql.Time(fecha2.getTime());
 		return (java.sql.Time) ordua ;
 	}
-
+/**
+ * 
+ * @param numero
+ * @return
+ */
 	public static double Redondear(double numero)
 	{
 		return Math.rint(numero*100)/100;
@@ -320,7 +418,10 @@ public class Metodoak {
 	public static void bezeroaIgo(Cliente2 cliente) {
 		Consultas.bezeroIgo(cliente);
 	}
-
+/**
+ * 
+ * @param t1
+ */
 	public static void imprimatuTiketa(Tiket t1) {
 
 		String nombre = "tiket.txt";
@@ -333,6 +434,11 @@ public class Metodoak {
 			ex.printStackTrace();
 		}
 	}
+	/**
+	 * 
+	 * @param dni
+	 * @return
+	 */
 	public static String KalkulatuLetra(int dni){
 		String karaktereak="TRWAGMYFPDXBNJZSQVHLCKE";
 		int modulo= dni % 23;
