@@ -1,7 +1,11 @@
 package controlador;
 
 import java.util.Date;
-
+/**
+ * 
+ * @author oier, ander, aintzane
+ *
+ */
 public class Tiket {
 
 	//private static int kontagailua=1;
@@ -14,7 +18,17 @@ public class Tiket {
 	private String fecha_ida;
 	private String fecha_vuelta;
 	private double precio;
-	
+	/**
+	 * 
+	 * @param n_trayecto
+	 * @param cod_linea
+	 * @param cod_bus
+	 * @param parada_inicio
+	 * @param parada_fin
+	 * @param fecha_ida
+	 * @param fecha_vuelta
+	 * @param precio
+	 */
 	public Tiket( int n_trayecto, String cod_linea, int cod_bus, String parada_inicio,
 			String parada_fin, String fecha_ida, String fecha_vuelta, double precio) {
 		
@@ -31,54 +45,90 @@ public class Tiket {
 	public int getCod_billete() {
 		return cod_billete;
 	}
+	/**
+	 * 
+	 * @param cod_billete
+	 */
 	public void setCod_billete(int cod_billete) {
 		this.cod_billete = cod_billete;
 	}
 	public int getN_trayecto() {
 		return n_trayecto;
 	}
+	/**
+	 * 
+	 * @param n_trayecto
+	 */
 	public void setN_trayecto(int n_trayecto) {
 		this.n_trayecto = n_trayecto;
 	}
 	public String getCod_linea() {
 		return cod_linea;
 	}
+	/**
+	 * 
+	 * @param cod_linea
+	 */
 	public void setCod_linea(String cod_linea) {
 		this.cod_linea = cod_linea;
 	}
 	public int getCod_bus() {
 		return cod_bus;
 	}
+	/**
+	 * 
+	 * @param cod_bus
+	 */
 	public void setCod_bus(int cod_bus) {
 		this.cod_bus = cod_bus;
 	}
 	public String getParada_inicio() {
 		return parada_inicio;
 	}
+	/**
+	 * 
+	 * @param parada_inicio
+	 */
 	public void setParada_inicio(String parada_inicio) {
 		this.parada_inicio = parada_inicio;
 	}
 	public String getParada_fin() {
 		return parada_fin;
 	}
+	/**
+	 * 
+	 * @param parada_fin
+	 */
 	public void setParada_fin(String parada_fin) {
 		this.parada_fin = parada_fin;
 	}
 	public String getFecha_ida() {
 		return fecha_ida;
 	}
+	/**
+	 * 
+	 * @param fecha_ida
+	 */
 	public void setFecha_ida(String fecha_ida) {
 		this.fecha_ida = fecha_ida;
 	}
 	public String getFecha_vuelta() {
 		return fecha_vuelta;
 	}
+	/**
+	 * 
+	 * @param fecha_vuelta
+	 */
 	public void setFecha_vuelta(String fecha_vuelta) {
 		this.fecha_vuelta = fecha_vuelta;
 	}
 	public double getPrecio() {
 		return precio;
 	}
+	/**
+	 * 
+	 * @param precio
+	 */
 	public void setPrecio(double precio) {
 		this.precio = precio;
 	}
