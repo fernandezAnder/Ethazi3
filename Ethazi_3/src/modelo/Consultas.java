@@ -13,8 +13,17 @@ import controlador.Billete;
 import controlador.Cliente;
 import controlador.Cliente2;
 import controlador.Parada;
-public class Consultas {
 
+/**
+ * 
+ * @author oier, ander, aintzane
+ *
+ */
+public class Consultas {
+/**
+ * 
+ * @return
+ */
 	public static ArrayList <Cliente> datosCliente() {
 
 		ArrayList <Cliente> arraycliente = new ArrayList<Cliente>();
@@ -44,7 +53,12 @@ public class Consultas {
 		}catch(Exception e) {e.getMessage();}
 		return arraycliente;
 	}
-
+/**
+ * 
+ * @param linea
+ * @param cod_bus
+ * @return
+ */
 	public static ArrayList <Autobus> datosAutobus(String linea,int cod_bus) {
 
 		ArrayList <Autobus> arraybus = new ArrayList<Autobus>();
@@ -70,7 +84,11 @@ public class Consultas {
 		}catch(Exception e) {e.getMessage();}
 		return arraybus;
 	}
-
+/**
+ * 
+ * @param linea
+ * @return
+ */
 	public static ArrayList <Parada> paradastabla(String linea){
 
 		ArrayList <Parada> arrayparada=new ArrayList<Parada>();
@@ -101,7 +119,10 @@ public class Consultas {
 		}catch(Exception e) {e.getMessage();}
 		return arrayparada;
 	}
-
+/**
+ * 
+ * @param billete
+ */
 	public static void datubaseraIgo(Billete billete) {
 
 
@@ -127,6 +148,10 @@ public class Consultas {
 
 		}catch(Exception e) {e.getMessage();}
 	}
+	/**
+	 * 
+	 * @param cliente
+	 */
 	public static void bezeroIgo(Cliente2 cliente) {
 
 

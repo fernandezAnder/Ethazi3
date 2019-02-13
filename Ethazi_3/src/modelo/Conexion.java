@@ -4,7 +4,11 @@ import java.io.FileReader;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.SQLException;
-
+/**
+ * 
+ * @author oier, ander, aintzane
+ *
+ */
 public class Conexion {
 	private String  maquina;
     private String  usuario;
@@ -15,6 +19,10 @@ public class Conexion {
  
     //CONSTRUCTOR
     //Recibe el nombre de la base de datos
+    /**
+     * 
+     * @param baseDatos
+     */
     public Conexion(String baseDatos){
        
     		String fichero = "src\\modelo\\Fitxeroa.txt";
@@ -70,7 +78,10 @@ public class Conexion {
         System.out.println("Conectado a "+baseDatos);
     }
  
-
+/**
+ * 
+ * @return
+ */
     //Devuelve el objeto Connection que se usará en la clase Controller
     public static Connection getConexion() {
         return conexion;
