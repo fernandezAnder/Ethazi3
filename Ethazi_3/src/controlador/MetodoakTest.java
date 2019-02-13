@@ -54,6 +54,7 @@ class MetodoakTest {
 	@Test
 	public void dataAtera() {
 		assertEquals(Metodoak.dataAtera(), Metodoak.dataAtera());
+		
 	}
 	@Test
 	public void Redondear() {
