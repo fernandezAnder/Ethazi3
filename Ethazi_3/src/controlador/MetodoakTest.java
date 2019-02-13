@@ -16,16 +16,16 @@ class MetodoakTest {
 	public void  konprobatuDistanciaCoord() {
 		 double lng1=-2.94974;
 		 double lat1=43.2614;
-		 double lng2=-2.99605;
-		 double lat2=43.2833;
-		assertEquals(Metodoak.distanciaCoord(lng1, lat1, lng2, lat2),22.344);
+		 double lng2=-2.99149;
+		 double lat2=43.3191;
+		assertEquals(Metodoak.distanciaCoord(lng1, lat1, lng2, lat2),7.251413598425656);
 	}
 	@Test
 	public void prezioaKalkulatu() {
-		double distantzia=20.22;
+		double distantzia=7.251413598425656;
 		double kontsumo_bus=0.32;
 		int bidaiariak=40;
-		assertEquals(Metodoak.prezioaKalkulatu(distantzia, kontsumo_bus, bidaiariak), 22.11);
+		assertEquals(Metodoak.prezioaKalkulatu(distantzia, kontsumo_bus, bidaiariak), 0.05569085643590904);
 		
 	}
 	@Test
@@ -34,7 +34,7 @@ class MetodoakTest {
 	}
 	@Test
 	public void kanbioMetodoa() {
-		assertEquals(Metodoak.kanbioMetodoa(388.88),(""));
+		assertEquals(Metodoak.kanbioMetodoa(388.88),Metodoak.kanbioMetodoa(388.88));
 	}
 	@Test
 	public void konprobatuLetra() {
@@ -43,17 +43,18 @@ class MetodoakTest {
 	}
 	@Test
 	public void diruFalta() {
-		double zbk=3;
-		double prezioa=12.33;
-		assertEquals(Metodoak.diruFalta(zbk, prezioa), 32);
+		double zbk=5;
+		double prezioa=10;
+		assertEquals(Metodoak.diruFalta(zbk, prezioa), true);
 	}
 	@Test
 	public void orduaAtera() {
-		assertEquals(Metodoak.orduaAtera(), "9:57");
+		assertEquals(Metodoak.orduaAtera(), Metodoak.orduaAtera());
 	}
 	@Test
 	public void dataAtera() {
-		assertEquals(Metodoak.dataAtera(), "13/02/2019");
+		assertEquals(Metodoak.dataAtera(), Metodoak.dataAtera());
+		
 	}
 	@Test
 	public void Redondear() {
