@@ -27,6 +27,11 @@ import controlador.Autobus;
 import controlador.Metodoak;
 import controlador.Parada;
 import controlador.Tiket;
+/**
+ * 
+ * @author oier, ander, aintzane
+ *
+ */
 public class Ventana4 extends JFrame {
 
 
@@ -81,6 +86,15 @@ public class Ventana4 extends JFrame {
 	SimpleDateFormat sm = new SimpleDateFormat("yyyy-MM-dd");
 	private Boolean Bigarren_data=false;
 	private Boolean jarraituBotoia=true;
+	
+	/**
+	 * 
+	 * @param paradas
+	 * @param buses
+	 * @param linea
+	 * @param cod_bus
+	 * @param nan
+	 */
 	public Ventana4(ArrayList<Parada> paradas,ArrayList<Autobus> buses,String linea, int cod_bus, String nan) {
 
 		cod_billete++;

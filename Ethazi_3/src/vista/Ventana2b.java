@@ -29,7 +29,11 @@ import javax.swing.DefaultComboBoxModel;
 import java.awt.Color;
 
 import java.awt.event.KeyEvent;
-
+/**
+ * 
+ * @author oier, ander, aintzane
+ *
+ */
 public class Ventana2b extends JFrame {
 
 	private JTextField textNAN;

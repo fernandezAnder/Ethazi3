@@ -15,7 +15,11 @@ import javax.swing.JTextField;
 import javax.swing.SwingConstants;
 
 import controlador.*;
-
+/**
+ * 
+ * @author oier, ander, aintzane
+ *
+ */
 public class Ventana2 extends JFrame {
 
 	private JTextField textNAN;
@@ -34,7 +38,10 @@ public class Ventana2 extends JFrame {
 	private String letra="";
 	private String zenbakia="";
 	private String pasahitza="";
-
+/**
+ * 
+ * @param clientes
+ */
 	public Ventana2(ArrayList<Cliente> clientes) {
 		this.setBounds(275,100,700,600);
 		getContentPane().setLayout(null);

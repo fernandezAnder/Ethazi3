@@ -11,7 +11,11 @@ import javax.swing.JLabel;
 
 import controlador.Metodoak;
 import javax.swing.SwingConstants;
-
+/**
+ * 
+ * @author oier, ander, aintzane
+ *
+ */
 public class Ventana3 extends JFrame {
 
 	//Botoiak eta Jlabelak sortzen dira
@@ -26,7 +30,10 @@ public class Ventana3 extends JFrame {
 	private JLabel lbl_L3 = new JLabel("L3");
 	private JLabel lbl_L4 = new JLabel("L4");
 	
-
+/**
+ * 
+ * @param nan
+ */
 	public Ventana3(String nan) {
 		//Leihoaren egitura
 		this.setBounds(275,100,700,600);

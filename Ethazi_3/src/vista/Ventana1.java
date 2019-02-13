@@ -11,7 +11,11 @@ import javax.swing.JLabel;
 
 import controlador.Metodoak;
 
-
+/**
+ * 
+ * @author oier, ander, aintzane
+ *
+ */
 public class Ventana1 extends JFrame {
 
 	private final long serialVersionUID = 1L;

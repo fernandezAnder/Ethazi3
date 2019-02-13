@@ -13,7 +13,11 @@ import controlador.Billete;
 import controlador.Metodoak;
 import controlador.Tiket;
 
-
+/**
+ * 
+ * @author oier, ander, aintzane
+ *
+ */
 public class Ventana5 extends JFrame {
 	JLabel lblNewLabel = new JLabel("Biletearen Informazioa");
 	JTextArea textArea = new JTextArea();
@@ -22,7 +26,11 @@ public class Ventana5 extends JFrame {
 	private int biletekod=0;
 	private String nan="";
 
-	
+	/**
+	 * 
+	 * @param billete
+	 * @param t1
+	 */
 
 	public Ventana5(Billete billete, Tiket t1) {
 		nan=billete.getDni();

@@ -3,6 +3,11 @@ package vista;
 import java.awt.GridBagConstraints;
 
 import javax.swing.JFrame;
+/**
+ * 
+ * @author oier, ander, aintzane
+ *
+ */
 public class Frame extends JFrame {
 
 

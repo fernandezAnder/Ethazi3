@@ -17,6 +17,11 @@ import controlador.Billete;
 import controlador.Contador;
 import controlador.Metodoak;
 import controlador.Tiket;
+/**
+ * 
+ * @author oier, ander, aintzane
+ *
+ */
 public class Ventana6 extends JFrame {
 
 	private JLabel lblOrdainketa = new JLabel("Ordainketa :");
@@ -37,7 +42,11 @@ public class Ventana6 extends JFrame {
 	private double prezioa;
 	private double prezio2 = 0;
 
-
+/**
+ * 
+ * @param billete
+ * @param t1
+ */
 	public Ventana6(Billete billete, Tiket t1) {
 		prezioa=billete.getPrecio();
 		this.setBounds(275,100,700,600);

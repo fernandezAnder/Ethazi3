@@ -5,7 +5,11 @@ import java.awt.Font;
 import javax.swing.ImageIcon;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
-
+/**
+ * 
+ * @author oier, ander, aintzane
+ *
+ */
 public class Ventana7 extends JFrame {
 	private JLabel lblEskerrikAsko = new JLabel("Eskerrik asko erosteagatik ");
 	private JLabel lblZureTxartelaOrain = new JLabel("Zure txartela orain aterako da");
