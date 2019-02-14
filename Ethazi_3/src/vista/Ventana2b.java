@@ -283,7 +283,7 @@ public class Ventana2b extends JFrame {
 
 				}
 
-				if (nan.equals(nan2) && !izena.getText().equals("") && !abizenatextfield.getText().equals("") && !Pasahitza.getText().equals("")) {
+				if (nan.equals(nan2) && !izena.getText().equals("") && !abizenatextfield.getText().equals("") && !Pasahitza.getText().equals("") && zenbakia.length()==8) {
 					Jarraitu.setEnabled(true);
 					Balidatu.setEnabled(false);
 				}else if(izena.getText().equals("")) {
@@ -295,6 +295,9 @@ public class Ventana2b extends JFrame {
 				}
 				else if(Pasahitza.getText().equals("")) {
 					JOptionPane.showMessageDialog(null, "Pasahitza hutsik dago. Mesedez osotu");
+				}
+				else if(zenbakia.length()<8) {
+					JOptionPane.showMessageDialog(null, "Nan zenbakia txarto dago");
 				}
 				else {
 					JOptionPane.showMessageDialog(null, "Nan letra txarto dago");
