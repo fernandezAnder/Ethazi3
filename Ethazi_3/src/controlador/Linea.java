@@ -22,7 +22,10 @@ public class Linea {
 	public int getCod_linea() {
 		return cod_linea;
 	}
-
+/**
+ * 
+ * @param cod_linea
+ */
 	public void setCod_linea(int cod_linea) {
 		this.cod_linea = cod_linea;
 	}
@@ -30,7 +33,10 @@ public class Linea {
 	public String getNombre() {
 		return nombre;
 	}
-
+/**
+ * 
+ * @param nombre
+ */
 	public void setNombre(String nombre) {
 		this.nombre = nombre;
 	}

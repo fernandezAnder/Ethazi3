@@ -30,7 +30,10 @@ public class Parada {
 	public int getParadanum() {
 		return paradanum;
 	}
-
+/**
+ * 
+ * @param paradanum
+ */
 	public void setParadanum(int paradanum) {
 		this.paradanum = paradanum;
 	}
@@ -38,7 +41,10 @@ public class Parada {
 	public String getNombre() {
 		return nombre;
 	}
-
+/**
+ * 
+ * @param nombre
+ */
 	public void setNombre(String nombre) {
 		this.nombre = nombre;
 	}
@@ -46,7 +52,10 @@ public class Parada {
 	public String getCalle() {
 		return calle;
 	}
-
+/**
+ * 
+ * @param calle
+ */
 	public void setCalle(String calle) {
 		this.calle = calle;
 	}
@@ -54,7 +63,10 @@ public class Parada {
 	public double getLatitud() {
 		return latitud;
 	}
-
+/**
+ * 
+ * @param latitud
+ */
 	public void setLatitud(double latitud) {
 		this.latitud = latitud;
 	}
@@ -62,7 +74,10 @@ public class Parada {
 	public double getLongitud() {
 		return longitud;
 	}
-
+/**
+ * 
+ * @param longitud
+ */
 	public void setLongitud(double longitud) {
 		this.longitud = longitud;
 	}
