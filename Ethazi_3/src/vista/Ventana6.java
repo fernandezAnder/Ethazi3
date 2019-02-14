@@ -24,6 +24,8 @@ import controlador.Tiket;
  */
 public class Ventana6 extends JFrame {
 
+
+	private static final long serialVersionUID = 1L;
 	private JLabel lblOrdainketa = new JLabel("Ordainketa :");
 	private JLabel lblSartuDirua = new JLabel("Sartu Dirua :");
 	private JLabel lblItzuliak = new JLabel("Itzuliak :");
@@ -36,7 +38,7 @@ public class Ventana6 extends JFrame {
 	private JLabel lblOrdaintzeko = new JLabel("");
 	private JLabel lblOrdainketa_Tituloa = new JLabel("ORDAINKETA");
 
-	private int biletekod=0;
+	
 	private double preziototala=0;
 	private ArrayList<Double> preziotot = new ArrayList<Double>();
 	private double prezioa;
@@ -109,6 +111,7 @@ public class Ventana6 extends JFrame {
 		btnEzeztatu.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				dispose();
+				billete.setCod_billete(billete.getCod_billete()-1);
 				t1.setCod_billete(t1.getCod_billete()-1);
 				Metodoak.lehenengoLeihoa();
 				
@@ -120,6 +123,7 @@ public class Ventana6 extends JFrame {
 		btnAtzera.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				dispose();
+				billete.setCod_billete(billete.getCod_billete()-1);
 				t1.setCod_billete(t1.getCod_billete()-1);
 				Metodoak.hirugarrenLeihoa(nan);
 				

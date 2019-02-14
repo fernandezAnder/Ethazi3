@@ -1,6 +1,5 @@
 package controlador;
 
-import java.util.Date;
 /**
  * 
  * @author oier, ander, aintzane
@@ -8,7 +7,7 @@ import java.util.Date;
  */
 public class Tiket {
 
-	//private static int kontagailua=1;
+	
 	private static int cod_billete=1;
 	private int n_trayecto;
 	private String cod_linea;

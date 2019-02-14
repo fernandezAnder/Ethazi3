@@ -1,34 +1,27 @@
 package vista;
 
+import java.awt.Color;
 import java.awt.Font;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.event.KeyAdapter;
 import java.text.SimpleDateFormat;
-import java.util.ArrayList;
-import java.util.Calendar;
 import java.util.Date;
 
+import javax.swing.DefaultComboBoxModel;
 import javax.swing.JButton;
+import javax.swing.JComboBox;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JOptionPane;
 import javax.swing.JPasswordField;
 import javax.swing.JTextField;
-import javax.swing.SpinnerNumberModel;
 import javax.swing.SwingConstants;
 
-import controlador.*;
-import com.toedter.calendar.JCalendar;
-import com.toedter.components.JLocaleChooser;
 import com.toedter.calendar.JDateChooser;
-import javax.swing.JSpinner;
-import javax.swing.JComboBox;
-import javax.swing.ComboBoxEditor;
-import javax.swing.DefaultComboBoxModel;
-import java.awt.Color;
 
-import java.awt.event.KeyEvent;
+import controlador.Cliente2;
+import controlador.Metodoak;
 /**
  * 
  * @author oier, ander, aintzane
@@ -36,6 +29,8 @@ import java.awt.event.KeyEvent;
  */
 public class Ventana2b extends JFrame {
 
+	
+	private static final long serialVersionUID = 1L;
 	private JTextField textNAN;
 	private JTextField textLetra;
 	private JPasswordField Pasahitza;
@@ -43,7 +38,6 @@ public class Ventana2b extends JFrame {
 	private JLabel lblNan = new JLabel("NAN");
 	private JLabel lblLetra = new JLabel("Letra");
 	private JLabel lblPasahitza = new JLabel("Pasahitza");
-	private JButton btnEzeztatu = new JButton("Ezeztatu");
 	private JButton Ezeztatu = new JButton("Atzera");
 	private JButton Jarraitu = new JButton("Jarraitu");
 	private JButton Balidatu = new JButton("Balidatu");
@@ -74,6 +68,7 @@ public class Ventana2b extends JFrame {
 	private String sexua;
 
 
+	@SuppressWarnings({ "rawtypes", "unchecked" })
 	public Ventana2b() {
 		this.setBounds(275,100,700,600);
 		getContentPane().setLayout(null);
@@ -170,7 +165,7 @@ public class Ventana2b extends JFrame {
 			@Override
 			public void keyTyped(java.awt.event.KeyEvent evt) {
 				char validar =evt.getKeyChar();
-				char c=evt.getKeyChar();
+				
 				if(Character.isDigit(validar) ) {
 					getToolkit().beep();
 					evt.consume();	
@@ -271,6 +266,7 @@ public class Ventana2b extends JFrame {
 		//DNI ETA PASAHITZA BALIDATZEKO BOTOIA
 
 		Balidatu.addActionListener(new ActionListener() {
+			@SuppressWarnings("deprecation")
 			public void actionPerformed(ActionEvent arg0) {
 				//BALIDAZIORAKO BARIABLEAK
 				try {

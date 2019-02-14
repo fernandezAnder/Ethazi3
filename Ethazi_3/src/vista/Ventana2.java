@@ -22,6 +22,10 @@ import controlador.*;
  */
 public class Ventana2 extends JFrame {
 
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
 	private JTextField textNAN;
 	private JTextField textLetra;
 	private JPasswordField Pasahitza;
@@ -29,7 +33,7 @@ public class Ventana2 extends JFrame {
 	private JLabel lblNan = new JLabel("NAN");
 	private JLabel lblLetra = new JLabel("Letra");
 	private JLabel lblPasahitza = new JLabel("Pasahitza");
-	private JButton btnEzeztatu = new JButton("Ezeztatu");
+	
 	private JButton Atzera = new JButton("Atzera");
 	private JButton Jarraitu = new JButton("Jarraitu");
 	private JButton Balidatu = new JButton("Balidatu");
@@ -159,6 +163,7 @@ public class Ventana2 extends JFrame {
 				
 				
 				Balidatu.addActionListener(new ActionListener() {
+					@SuppressWarnings("deprecation")
 					public void actionPerformed(ActionEvent arg0) {
 						//BALIDAZIORAKO BARIABLEAK
 						zenbakia=textNAN.getText();

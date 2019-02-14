@@ -18,7 +18,11 @@ import controlador.Metodoak;
  */
 public class Ventana1 extends JFrame {
 
-	private final long serialVersionUID = 1L;
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
+
 	private JLabel txtOngiEotirriMaquina = new JLabel("Ongi Etorri");
 	private JLabel Icono = new JLabel("");
 	private JLabel lblTxrtelSaltzailera = new JLabel("Txartel Saltzailera");

@@ -19,11 +19,12 @@ import controlador.Tiket;
  *
  */
 public class Ventana5 extends JFrame {
+
+	private static final long serialVersionUID = 1L;
 	JLabel lblNewLabel = new JLabel("Biletearen Informazioa");
 	JTextArea textArea = new JTextArea();
 	JButton btnAtzera = new JButton("Atzera");
 	JButton btnBalidatu = new JButton("Balidatu");
-	private int biletekod=0;
 	private String nan="";
 
 	/**
@@ -51,6 +52,7 @@ public class Ventana5 extends JFrame {
 		btnAtzera.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
 				dispose();
+				billete.setCod_billete(billete.getCod_billete()-1);
 				t1.setCod_billete(t1.getCod_billete()-1);
 				Metodoak.hirugarrenLeihoa(nan);
 				
