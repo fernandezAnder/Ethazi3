@@ -6,6 +6,7 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.event.KeyAdapter;
 import java.text.SimpleDateFormat;
+import java.util.ArrayList;
 import java.util.Date;
 
 import javax.swing.DefaultComboBoxModel;
@@ -20,6 +21,7 @@ import javax.swing.SwingConstants;
 
 import com.toedter.calendar.JDateChooser;
 
+import controlador.Cliente;
 import controlador.Cliente2;
 import controlador.Metodoak;
 /**
@@ -69,7 +71,7 @@ public class Ventana2b extends JFrame {
 
 
 	@SuppressWarnings({ "rawtypes", "unchecked" })
-	public Ventana2b() {
+	public Ventana2b(ArrayList<Cliente> clientes) {
 		this.setBounds(275,100,700,600);
 		getContentPane().setLayout(null);
 
@@ -303,6 +305,15 @@ public class Ventana2b extends JFrame {
 					JOptionPane.showMessageDialog(null, "Nan letra txarto dago");
 				}
 
+				for (int i=0;i<clientes.size();i++) {
+					if (clientes.get(i).getDni().equals(nan)) {
+						
+						Jarraitu.setEnabled(false);
+						Balidatu.setEnabled(true);
+						JOptionPane.showMessageDialog(null, "Nan hau erregistratuta dago");
+					}
+				}
+				
 				izena2=izena.getText();
 				abizena=abizenatextfield.getText();
 

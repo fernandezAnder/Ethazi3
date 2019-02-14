@@ -56,8 +56,8 @@ public class Metodoak {
 
 
 	}
-	public static void bigarrenLeihoaB() {
-		Ventana2b ventana2b= new Ventana2b();
+	public static void bigarrenLeihoaB(ArrayList<Cliente> clientes) {
+		Ventana2b ventana2b= new Ventana2b(clientes);
 		ventana2b.setVisible(true);
 	}
 	

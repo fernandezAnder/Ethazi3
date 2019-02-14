@@ -206,7 +206,7 @@ public class Ventana2 extends JFrame {
 				btnKontuBerria.addActionListener(new ActionListener() {
 					public void actionPerformed(ActionEvent arg0) {
 						dispose();
-						Metodoak.bigarrenLeihoaB();
+						Metodoak.bigarrenLeihoaB(clientes);
 					}
 				});
 				btnKontuBerria.setFont(new Font("Arial", Font.PLAIN, 20));

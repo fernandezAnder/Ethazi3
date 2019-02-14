@@ -319,8 +319,10 @@ public class Ventana4 extends JFrame {
 				}
 				if(jarraituBotoia==true) {
 				dispose();
+				
 				Tiket t1 = new Tiket(bidaiakop, linea, cod_bus, hasiera_geltokia, amaiera_geltokia, lehen_data_string, bigarren_data_string, prezio2);
 				Metodoak.bostgarrenLeihoa(Metodoak.billete(bidaiakop, linea, cod_bus, hasiera_geltoki_kod, amaiera_geltoki_kod, data, ordua, nan, prezio2),t1);
+				
 				t1.setCod_billete(t1.getCod_billete()+1);
 				}
 			}
