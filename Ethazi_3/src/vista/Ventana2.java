@@ -22,9 +22,6 @@ import controlador.*;
  */
 public class Ventana2 extends JFrame {
 
-	/**
-	 * 
-	 */
 	private static final long serialVersionUID = 1L;
 	private JTextField textNAN;
 	private JTextField textLetra;
